@@ -1,0 +1,1287 @@
+[
+ {
+  "id": "harvia-legend-240-vision",
+  "brand": "Harvia",
+  "category": "wood-stove",
+  "name": "Harvia Legend 240 Vision",
+  "specs": {
+   "type": "wood",
+   "power_kw": "15.9",
+   "room_m3": "10–20",
+   "stones_kg": "200",
+   "material": "Steel, matte black",
+   "dimensions_mm": "600 × 600 × 835 (W×D×H)",
+   "weight_kg": "76.1",
+   "model_code": "WKLE20GM",
+   "features": "Large glass door; replaceable side and back fire plates; adjustable feet; chimney connection top or back (115 mm); optional water tank / protective walls"
+  },
+  "description": {
+   "az": "Mat qara polad gövdəli, alovu tam göstərən böyük şüşə qapılı odunla işləyən döşəmə sobası. Təxminən 200 kq daş tutumu 10–20 m³ saunada yumşaq və bərabər buxar yaradır; yan və arxa od lövhələri dəyişdirilə bilir.",
+   "ru": "Напольная дровяная печь в матово-чёрном стальном корпусе с большой стеклянной дверцей, через которую виден огонь. Вмещает около 200 кг камней и даёт мягкий ровный пар в саунах 10–20 м³; боковые и задние огнеупорные пластины сменные.",
+   "en": "Floor-standing wood-burning heater with a matte black steel body and a large glass door that puts the fire on display. Holds about 200 kg of stones for soft, even steam in 10–20 m³ saunas; the side and back fire plates are replaceable."
+  },
+  "image": "img/harvia-legend-240-vision.jpg",
+  "source_url": "https://www.harvia.com/en/products/WKLE20GM/legend-240-vision-black"
+ },
+ {
+  "id": "harvia-legend-150",
+  "brand": "Harvia",
+  "category": "wood-stove",
+  "name": "Harvia Legend 150",
+  "specs": {
+   "type": "wood",
+   "power_kw": "16",
+   "room_m3": "6–13",
+   "stones_kg": "120",
+   "material": "Steel, black",
+   "dimensions_mm": "530 × 530 × 740 (W×D×H)",
+   "weight_kg": "61.5",
+   "model_code": "WK150LD",
+   "features": "Cast-iron door with glass; adjustable legs; reduced safety distances; optional chimney water heater"
+  },
+  "description": {
+   "az": "Legend seriyasının kompakt modeli: 120 kq-a qədər daş yerləşən qara polad karkas 6–13 m³ kiçik saunalarda nəmli, yumşaq istilik verir. Şüşəli çuqun qapı, tənzimlənən ayaqlar və bacaya quraşdırılan su qızdırıcısı seçimi var.",
+   "ru": "Компактная модель серии Legend: чёрный стальной каркас вмещает до 120 кг камней и даёт влажный мягкий жар в небольших саунах 6–13 м³. Чугунная дверца со стеклом, регулируемые ножки, возможна установка бака для воды на трубу.",
+   "en": "The compact member of the Legend family: a black steel frame filled with up to 120 kg of stones for moist, gentle heat in small saunas of 6–13 m³. It has a cast-iron door with glass, adjustable legs and the option of a chimney-mounted water heater."
+  },
+  "image": "img/harvia-legend-150.jpg",
+  "source_url": "https://www.harvia.com/en/products/WK150LD/legend-150-black"
+ },
+ {
+  "id": "harvia-legend-300",
+  "brand": "Harvia",
+  "category": "wood-stove",
+  "name": "Harvia Legend 300",
+  "specs": {
+   "type": "wood",
+   "power_kw": "23",
+   "room_m3": "14–28",
+   "stones_kg": "260",
+   "material": "Steel, black",
+   "dimensions_mm": "600 × 660 × 1040 (W×D×H)",
+   "weight_kg": "91.4",
+   "model_code": "WKLE36M",
+   "features": "Large steel-framed glass door; firewood up to 47 cm; adjustable legs; optional chimney water heater"
+  },
+  "description": {
+   "az": "Legend seriyasının ən böyük odun sobası – 14–28 m³ orta və böyük saunalar üçün. 260 kq-lıq daş kütləsi aşağı temperaturda belə bol və yumşaq buxar verir, geniş ocaq isə enli şüşə qapı arxasında 47 sm-ə qədər odunu qəbul edir.",
+   "ru": "Самая большая дровяная печь серии Legend для средних и больших саун 14–28 м³. Масса камней 260 кг даёт обильный мягкий пар даже при невысокой температуре, а вместительная топка за широкой стеклянной дверцей принимает поленья до 47 см.",
+   "en": "The largest Legend wood-burning heater, built for medium and large saunas of 14–28 m³. Its 260 kg stone mass gives generous, soft steam even at lower bathing temperatures, and the roomy firebox takes logs up to 47 cm behind a wide glass door."
+  },
+  "image": "img/harvia-legend-300.jpg",
+  "source_url": "https://www.harvia.com/en/products/WKLE36M/legend-300-black"
+ },
+ {
+  "id": "harvia-m3",
+  "brand": "Harvia",
+  "category": "wood-stove",
+  "name": "Harvia M3",
+  "specs": {
+   "type": "wood",
+   "power_kw": "16.5",
+   "room_m3": "6–13",
+   "stones_kg": "30",
+   "material": "Steel, graphite black",
+   "dimensions_mm": "390 × 430 × 710 (W×D×H)",
+   "weight_kg": "45",
+   "model_code": "WKM3",
+   "features": "Glass door; stainless steel air-flow spoiler; optional pipe-model water heater"
+  },
+  "description": {
+   "az": "6–13 m³ kiçik saunalar üçün klassik və sərfəli odun sobası. Paslanmayan poladdan hava axını yönləndiricisi olan qrafit-qara gövdə, alovu seyr etmək üçün şüşə qapı və təxminən 30 kq daş tutumu; boruya quraşdırılan su qızdırıcısı əlavə oluna bilər.",
+   "ru": "Классическая доступная дровяная печь для небольших саун 6–13 м³. Корпус цвета графит с дефлектором из нержавеющей стали, стеклянная дверца и около 30 кг камней; можно установить бак для воды на трубу.",
+   "en": "A classic, budget-friendly wood-burning heater for small saunas of 6–13 m³. Graphite-black body with a stainless steel air-flow spoiler, a glass door to enjoy the flames and room for about 30 kg of stones; it can be fitted with a pipe-model water heater."
+  },
+  "image": "img/harvia-m3.jpg",
+  "source_url": "https://www.harvia.com/en/products/WKM3/m3-black"
+ },
+ {
+  "id": "harvia-pro-20",
+  "brand": "Harvia",
+  "category": "wood-stove",
+  "name": "Harvia Pro 20",
+  "specs": {
+   "type": "wood",
+   "power_kw": "24.1",
+   "room_m3": "8–20",
+   "stones_kg": "40",
+   "material": "Steel, graphite black; stainless steel front and top",
+   "dimensions_mm": "430 × 510 × 760 (W×D×H)",
+   "weight_kg": "53",
+   "model_code": "WKPR20M",
+   "features": "Cast-iron glass door; adjustable feet; chimney opening top or back; optional water tank and protective sheath"
+  },
+  "description": {
+   "az": "8–20 m³ orta ölçülü saunalar üçün güclü odun sobası – sürətlə qızır və klassik isti sauna təmin edir. Ön və üst hissə paslanmayan poladdandır, şüşəli çuqun qapı, tənzimlənən ayaqlar, baca çıxışı yuxarıdan və ya arxadan.",
+   "ru": "Мощная дровяная печь для средних саун (8–20 м³): быстро прогревается и даёт классический жаркий пар. Передняя и верхняя панели из нержавеющей стали, чугунная дверца со стеклом, регулируемые ножки, подключение дымохода сверху или сзади.",
+   "en": "A powerful wood-burning heater for medium-sized saunas (8–20 m³) that heats up fast and delivers a hot, classic sauna. Stainless steel front and top, cast-iron glass door, adjustable feet and a chimney connection from the top or back."
+  },
+  "image": "img/harvia-pro-20.jpg",
+  "source_url": "https://www.harvia.com/en/products/WKPR20M/pro-20-black"
+ },
+ {
+  "id": "harvia-linear-22-vision",
+  "brand": "Harvia",
+  "category": "wood-stove",
+  "name": "Harvia Linear 22 Vision",
+  "specs": {
+   "type": "wood",
+   "power_kw": "15.7",
+   "room_m3": "9–18",
+   "stones_kg": "40",
+   "material": "Steel, matte black",
+   "dimensions_mm": "450 × 510 × 770 (W×D×H)",
+   "weight_kg": "66",
+   "model_code": "WKLI20GM",
+   "features": "Large glass door; redesigned firebox; replaceable flame-guide panels; chimney top or back (115 mm); optional protective walls"
+  },
+  "description": {
+   "az": "Böyük şüşə qapılı və nəzarətli yanma ilə uzun xidmət müddəti üçün yenilənmiş ocaqlı müasir mat-qara odun sobası. 9–18 m³ saunalar üçün nəzərdə tutulub; daxili panellər dəyişdirilə bilir, baca bağlantısı (115 mm) yuxarıdan və ya arxadandır.",
+   "ru": "Современная матово-чёрная дровяная печь с большой стеклянной дверцей и обновлённой топкой для контролируемого горения и долгого срока службы. Для саун 9–18 м³; сменные внутренние панели, дымоход 115 мм сверху или сзади.",
+   "en": "A modern matte-black wood-burning heater with a large glass door and a redesigned firebox for controlled combustion and long service life. Suited to 9–18 m³ saunas, with replaceable inner panels and a 115 mm chimney connection on the top or back."
+  },
+  "image": "img/harvia-linear-22-vision.jpg",
+  "source_url": "https://www.harvia.com/en/products/WKLI20GM/linear-22-vision-black"
+ },
+ {
+  "id": "harvia-cilindro-20-steel",
+  "brand": "Harvia",
+  "category": "wood-stove",
+  "name": "Harvia Cilindro 20 Steel",
+  "specs": {
+   "type": "wood",
+   "power_kw": "17",
+   "room_m3": "8–20",
+   "stones_kg": "120",
+   "material": "Stainless steel",
+   "dimensions_mm": "557 × 557 × 773 (W×D×H)",
+   "weight_kg": "62",
+   "model_code": "WKPC20S",
+   "features": "Pillar design; glass door; rear ventilation duct for fast heating; replaceable air-control plates"
+  },
+  "description": {
+   "az": "120 kq daş tutumlu, paslanmayan poladdan sütun tipli odun sobası 8–20 m³ saunalarda bol buxar verir. Arxadakı ventilyasiya kanalı qızmanı sürətləndirir, şüşə qapı xoş atmosfer yaradır, ocaqdakı hava lövhələri isə dəyişdirilə bilir.",
+   "ru": "Дровяная печь-колонна из нержавеющей стали на 120 кг камней для насыщенного пара в саунах 8–20 м³. Вентиляционный канал сзади ускоряет прогрев, стеклянная дверца создаёт атмосферу, а воздухонаправляющие пластины в топке сменные.",
+   "en": "A stainless steel wood-burning pillar heater holding 120 kg of stones for rich steam in 8–20 m³ saunas. A ventilation duct at the back speeds up heating, the glass door adds atmosphere and the air-control plates in the firebox are replaceable."
+  },
+  "image": "img/harvia-cilindro-20-steel.jpg",
+  "source_url": "https://www.harvia.com/en/products/WKPC20S/cilindro-20-steel"
+ },
+ {
+  "id": "harvia-cilindro-pc90e",
+  "brand": "Harvia",
+  "category": "electric-stove",
+  "name": "Harvia Cilindro PC90E",
+  "specs": {
+   "type": "electric",
+   "power_kw": "9",
+   "room_m3": "8–14",
+   "stones_kg": "90",
+   "material": "Stainless steel",
+   "dimensions_mm": "320 × 320 × 930 (W×D×H)",
+   "installation": "Floor",
+   "control": "Separate control unit (sold separately)",
+   "model_code": "HPCE900400",
+   "features": "Pillar heater; large stone mass; adjustable soft/sharp steam; can be embedded in the bench"
+  },
+  "description": {
+   "az": "90 kq böyük daş kütləli, paslanmayan poladdan sütun tipli elektrik sobası 8–14 m³ saunalarda yumşaq, eyni zamanda güclü istilik verir. Barmaqlıqlı gövdə sayəsində buxarı yumşaq və ya kəskin seçmək olar; E modeli ayrıca idarəetmə bloku ilə işləyir (ayrıca satılır).",
+   "ru": "Электрическая печь-колонна из нержавеющей стали с массой камней 90 кг для мягкого и сильного жара в саунах 8–14 м³. Решётчатый корпус позволяет выбирать мягкий или более жёсткий пар; модель E управляется отдельным пультом (продаётся отдельно).",
+   "en": "A stainless steel electric pillar heater with a large 90 kg stone mass for soft yet strong heat in 8–14 m³ saunas. The open grate shell lets bathers choose softer or sharper steam; this E model runs from a separate control unit (sold separately)."
+  },
+  "image": "img/harvia-cilindro-pc90e.jpg",
+  "source_url": "https://www.harvia.com/en/products/HPCE900400/cilindro-pc90e-90-kw-steel"
+ },
+ {
+  "id": "harvia-virta-hl110",
+  "brand": "Harvia",
+  "category": "electric-stove",
+  "name": "Harvia Virta HL110",
+  "specs": {
+   "type": "electric",
+   "power_kw": "11",
+   "room_m3": "9–18",
+   "stones_kg": "70",
+   "material": "Steel, black",
+   "dimensions_mm": "415 × 410 × 810 (W×D×H)",
+   "installation": "Floor",
+   "control": "Separate control unit",
+   "model_code": "HL110400",
+   "features": "Heating elements separated from stones; front maintenance hatch; for home and professional use"
+  },
+  "description": {
+   "az": "9–18 m³ saunalarda tez-tez ev və peşəkar istifadə üçün möhkəm, döşəməyə qoyulan elektrik sobası. Təxminən 70 kq daş bol yumşaq buxar verir, qızdırıcı elementlər daşlardan ayrı yerləşdiyindən daha uzun xidmət edir, bütün bağlantılara öndəki servis qapağından çatmaq olur.",
+   "ru": "Надёжная напольная электрокаменка для частого домашнего и профессионального использования в саунах 9–18 м³. Около 70 кг камней дают обильный мягкий пар, ТЭНы отделены от камней и служат дольше, а все подключения доступны через сервисный люк спереди.",
+   "en": "A sturdy floor-standing electric heater for frequent home and professional use in 9–18 m³ saunas. Around 70 kg of stones give abundant soft steam, the heating elements are kept apart from the stones for a longer life, and all connections are reached through a front service hatch."
+  },
+  "image": "img/harvia-virta-hl110.jpg",
+  "source_url": "https://www.harvia.com/en/products/HL110400/virta-hl110-110-kw-black"
+ },
+ {
+  "id": "harvia-vega-bc90",
+  "brand": "Harvia",
+  "category": "electric-stove",
+  "name": "Harvia Vega BC90",
+  "specs": {
+   "type": "electric",
+   "power_kw": "9",
+   "room_m3": "8–14",
+   "stones_kg": "20",
+   "material": "Stainless steel",
+   "dimensions_mm": "480 × 310 × 540 (W×D×H)",
+   "installation": "Wall",
+   "control": "Built-in switches",
+   "model_code": "HCB900400S",
+   "features": "Built-in controls on either side; low wall mounting for steam on lower benches"
+  },
+  "description": {
+   "az": "8–14 m³ saunalar üçün paslanmayan polad gövdəli məşhur divar elektrik sobası. Daxili idarəetmə düymələri yuxarıda rahat yerləşir və istənilən tərəfə köçürülə bilər; aşağı quraşdırma buxarın alt oturacaqlara da çatmasını təmin edir.",
+   "ru": "Популярная настенная электрокаменка в корпусе из нержавеющей стали для саун 8–14 м³. Встроенные переключатели удобно расположены сверху и могут быть с любой стороны, а низкий монтаж обеспечивает пар и на нижних полках.",
+   "en": "A popular wall-mounted electric heater in a stainless steel casing for 8–14 m³ saunas. The built-in controls sit ergonomically at the top and can be placed on either side, and low mounting sends steam to the lower benches too."
+  },
+  "image": "img/harvia-vega-bc90.jpg",
+  "source_url": "https://www.harvia.com/en/products/HCB900400S/vega-bc90-90-kw-steel"
+ },
+ {
+  "id": "harvia-spirit-sp90e",
+  "brand": "Harvia",
+  "category": "electric-stove",
+  "name": "Harvia Spirit SP90E",
+  "specs": {
+   "type": "electric",
+   "power_kw": "9",
+   "room_m3": "8–14",
+   "stones_kg": "60",
+   "material": "Steel, black",
+   "dimensions_mm": "385 × 334 × 687 (W×D×H)",
+   "installation": "Wall",
+   "control": "Separate control unit (e.g. Harvia Xenio WiFi)",
+   "model_code": "HSPE904M",
+   "features": "Curved design with visible round stones; hidden ventilation channels; made in Finland"
+  },
+  "description": {
+   "az": "Yumru daşların böyük hissəsini (təxminən 60 kq) nümayiş etdirən, yumşaq əyri xətli Fin dizaynlı soba. Gizli ventilyasiya kanalları divarı soyudur və 8–14 m³ saunada temperaturu bərabərləşdirir; Harvia Xenio WiFi kimi ayrıca blokla idarə olunur.",
+   "ru": "Дизайнерская финская каменка с плавными изогнутыми формами и открытой массой круглых камней (около 60 кг). Скрытые вентиляционные каналы охлаждают стену и выравнивают температуру в саунах 8–14 м³; управляется отдельным пультом, например Harvia Xenio WiFi.",
+   "en": "A Finnish design heater with soft curved lines that leave a large mass of round stones on display (about 60 kg). Hidden ventilation channels cool the wall and even out the temperature in 8–14 m³ saunas; it is run by a separate unit such as Harvia Xenio WiFi."
+  },
+  "image": "img/harvia-spirit-sp90e.jpg",
+  "source_url": "https://www.harvia.com/en/products/HSPE904M/spirit-sp90e-90-kw-black"
+ },
+ {
+  "id": "harvia-kip80e",
+  "brand": "Harvia",
+  "category": "electric-stove",
+  "name": "Harvia KIP80E",
+  "specs": {
+   "type": "electric",
+   "power_kw": "8",
+   "room_m3": "7–12",
+   "stones_kg": "25",
+   "material": "Steel, black",
+   "dimensions_mm": "410 × 280 × 600 (W×D×H)",
+   "installation": "Wall",
+   "control": "Separate control unit",
+   "model_code": "HEK800230",
+   "features": "Large stone space; outer casing stays cool; proven traditional design"
+  },
+  "description": {
+   "az": "7–12 m³ saunalar üçün geniş daş bölməli (25 kq), zamanla sınanmış ənənəvi divar sobası. Xarici gövdə nisbətən sərin qalır, E versiyası isə ayrıca idarəetmə bloku ilə işləyir.",
+   "ru": "Традиционная проверенная настенная электрокаменка с вместительным отсеком для камней (25 кг) для саун 7–12 м³. Внешний корпус остаётся относительно холодным; версия E управляется отдельным пультом.",
+   "en": "A traditional, proven wall-mounted heater with a large stone space (25 kg) for 7–12 m³ saunas. The outer casing stays relatively cool, and this E version is run from a separate control unit."
+  },
+  "image": "img/harvia-kip80e.jpg",
+  "source_url": "https://www.harvia.com/en/products/HEK800230/kip80e-80-kw-black"
+ },
+ {
+  "id": "harvia-the-wall-sw90e",
+  "brand": "Harvia",
+  "category": "electric-stove",
+  "name": "Harvia The Wall SW90E",
+  "specs": {
+   "type": "electric",
+   "power_kw": "9",
+   "room_m3": "8–14",
+   "stones_kg": "20",
+   "material": "Stainless steel",
+   "dimensions_mm": "380 × 260 × 700 (W×D×H)",
+   "installation": "Wall (or integrated in bench)",
+   "control": "Separate control unit",
+   "model_code": "HSWE900400",
+   "features": "Slim space-saving design; supported heating elements; electronics protected at the bottom; wall rack included"
+  },
+  "description": {
+   "az": "8–14 m³ saunalarda kompakt yerlərə uyğun, nazik və axıcı formalı divar sobası. Qızdırıcı elementlərin öz dayaq çərçivəsi ömrü uzadır, elektronika istidən uzaqda – aşağıda yerləşir; ayrıca idarəetmə bloku ilə oturacağa da quraşdırıla bilər.",
+   "ru": "Тонкая обтекаемая настенная каменка для компактных пространств в саунах 8–14 м³. ТЭНы имеют собственную опорную раму, электроника вынесена вниз подальше от жара, а с отдельным пультом печь можно встроить в полок.",
+   "en": "A slim, streamlined wall heater that fits compact spaces in 8–14 m³ saunas. The heating elements have their own support frame for a longer life, the electronics sit at the bottom away from the heat, and with a separate control unit it can even be built into a bench."
+  },
+  "image": "img/harvia-the-wall-sw90e.jpg",
+  "source_url": "https://www.harvia.com/en/products/HSWE900400/the-wall-sw90e-90-kw-steel"
+ },
+ {
+  "id": "harvia-legend-po110e",
+  "brand": "Harvia",
+  "category": "electric-stove",
+  "name": "Harvia Legend PO110E",
+  "specs": {
+   "type": "electric",
+   "power_kw": "10.8",
+   "room_m3": "9–18",
+   "stones_kg": "100",
+   "material": "Steel, anthracite/black",
+   "dimensions_mm": "325 × 325 × 1080 (W×D×H)",
+   "installation": "Floor (can be embedded in bench)",
+   "control": "Separate control unit (e.g. Harvia Xenio)",
+   "model_code": "HPOE1104",
+   "features": "Tall pillar shape; large stone mass for soft humid steam; rustic Legend styling"
+  },
+  "description": {
+   "az": "Rustik Legend seriyasının elektrik versiyası: təxminən 100 kq daş tutan hündür qara polad sütun Legend-ə xas yumşaq və nəmli buxar yaradır. 9–18 m³ saunalar üçün uyğundur, oturacağa quraşdırıla bilər və Xenio kimi ayrıca Harvia idarəetmə bloku ilə işləyir.",
+   "ru": "Электрическая версия рустикальной Legend: высокая чёрная стальная колонна вмещает около 100 кг камней и даёт фирменный мягкий влажный пар. Для саун 9–18 м³, может встраиваться в полок, работает с отдельным пультом Harvia, например Xenio.",
+   "en": "The electric version of the rustic Legend: a tall black steel pillar holding about 100 kg of stones for the smooth, humid steam Legend is known for. It suits 9–18 m³ saunas, can be embedded into benches and works with a separate Harvia control unit such as Xenio."
+  },
+  "image": "img/harvia-legend-po110e.jpg",
+  "source_url": "https://www.harvia.com/en/products/HPOE1104/legend-po110e-108-kw-black"
+ },
+ {
+  "id": "harvia-xenio-cx110",
+  "brand": "Harvia",
+  "category": "control-panel",
+  "name": "Harvia Xenio CX110",
+  "specs": {
+   "type": "control",
+   "power_kw": "up to 11",
+   "material": "Black touch panel; steel power unit",
+   "temperature_range": "40–110 °C",
+   "supply": "400 V 3N~",
+   "model_code": "CX110400",
+   "features": "Touch control panel; pre-set timer 0–12 h; operating time 1–6 h (home) / 1–12 h (commercial); lighting and fan control"
+  },
+  "description": {
+   "az": "11 kVt-a qədər elektrik sobaları üçün sensorlu idarəetmə bloku; kompakt qara paneli saunada, duş otağında və ya qonaq otağında quraşdırmaq olar. Temperatur diapazonu 40–110 °C, 12 saata qədər əvvəlcədən qoşulma taymeri, işıq və ventilyator idarəsi.",
+   "ru": "Сенсорный пульт для электрокаменок до 11 кВт с компактной чёрной панелью, которую можно установить в сауне, душевой или жилой комнате. Диапазон 40–110 °C, отложенный старт до 12 ч, управление освещением и вентиляцией.",
+   "en": "A touch control unit for electric heaters up to 11 kW, with a compact black panel that can be mounted in the sauna, washroom or living area. Temperature range 40–110 °C, pre-set timer up to 12 h, plus lighting and fan control."
+  },
+  "image": "img/harvia-xenio-cx110.jpg",
+  "source_url": "https://www.harvia.com/en/products/CX110400/xenio-cx110-110-kw-black"
+ },
+ {
+  "id": "harvia-fenix-fx110",
+  "brand": "Harvia",
+  "category": "control-panel",
+  "name": "Harvia Fenix FX110 WiFi Core",
+  "specs": {
+   "type": "control",
+   "power_kw": "up to 11",
+   "material": "4.3\" glass touchscreen, black",
+   "connectivity": "WiFi (MyHarvia app)",
+   "protection": "IPX5",
+   "model_code": "FX1104XC",
+   "features": "Panel can be installed inside the sauna; controls heater, lighting and ventilation; door-sensor support; remote monitoring"
+  },
+  "description": {
+   "az": "Saunanın içində quraşdırıla bilən 4,3 düymlük nəmə davamlı şüşə sensor ekranlı ağıllı idarəetmə. 11 kVt-a qədər elektrik sobasını, işıqlandırma və ventilyasiyanı idarə edir, WiFi ilə MyHarvia tətbiqinə qoşularaq uzaqdan nəzarət imkanı verir.",
+   "ru": "Умный пульт с влагостойким стеклянным сенсорным экраном 4,3″, который можно устанавливать прямо в сауне. Управляет электрокаменками до 11 кВт, освещением и вентиляцией, подключается по WiFi к приложению MyHarvia для мониторинга и удалённого управления.",
+   "en": "A smart sauna control with a 4.3\" moisture-resistant glass touchscreen that can be installed inside the sauna. It controls electric heaters up to 11 kW plus lighting and ventilation, and connects over WiFi to the MyHarvia app for monitoring and remote use."
+  },
+  "image": "img/harvia-fenix-fx110.jpg",
+  "source_url": "https://www.harvia.com/en/products/FX1104XC/fenix-fx110-wifi-core-ipx5"
+ },
+ {
+  "id": "harvia-hgx90xw",
+  "brand": "Harvia",
+  "category": "steam-generator",
+  "name": "Harvia HGX90XW",
+  "specs": {
+   "type": "steam",
+   "power_kw": "9",
+   "material": "Stainless steel",
+   "connectivity": "WiFi (MyHarvia app)",
+   "dimensions_mm": "150 × 530 × 230 (W×D×H)",
+   "supply": "400 V 3N~",
+   "model_code": "HGX90XW",
+   "features": "Touch control panel; fragrance pump, lighting and fan control; sediment cup; compact size"
+  },
+  "description": {
+   "az": "Ev və ya SPA buxar otaqları üçün 9 kVt-lıq buxar generatoru; zərif sensor paneli ətir nasosunu, işığı və ventilyatoru da idarə edir. Daxili WiFi MyHarvia vasitəsilə uzaqdan işə salmağa imkan verir; çöküntü qabı və kompakt paslanmayan polad gövdə baxım və quraşdırmanı asanlaşdırır.",
+   "ru": "Парогенератор 9 кВт для домашних и спа-хаммамов со стильной сенсорной панелью, которая управляет также ароматическим насосом, светом и вентилятором. Встроенный WiFi позволяет запускать его удалённо через MyHarvia; отстойник и компактный корпус из нержавеющей стали упрощают монтаж и обслуживание.",
+   "en": "A 9 kW steam generator for home or spa steam rooms with a stylish touch panel that also runs a fragrance pump, lighting and fan. Built-in WiFi lets you start it remotely via MyHarvia, while a sediment cup and compact stainless steel body make maintenance and installation easy."
+  },
+  "image": "img/harvia-hgx90xw.jpg",
+  "source_url": "https://www.harvia.com/en/products/HGX90XW/hgx90xw-90-kw-wifi-steel"
+ },
+ {
+  "id": "harvia-legend-bucket",
+  "brand": "Harvia",
+  "category": "bucket-ladle",
+  "name": "Harvia Legend Bucket",
+  "specs": {
+   "capacity": "9 L",
+   "material": "Stainless steel, black painted; heat-treated birch handle",
+   "model_code": "SASPO100"
+  },
+  "description": {
+   "az": "Legend seriyasından 9 litrlik sauna vedrəsi – qara rənglənmiş paslanmayan poladdan, qızmayan termik işlənmiş ağcaqayın tutacaqla. Rustik Legend sobaları və aksesuarları ilə ahəngdardır.",
+   "ru": "Ведро для сауны объёмом 9 л из серии Legend: нержавеющая сталь с чёрным покрытием и ручка из термообработанной берёзы, которая не нагревается. Гармонирует с рустикальными печами и аксессуарами Legend.",
+   "en": "A 9-litre sauna bucket from the Legend range, made of black-painted stainless steel with a heat-treated birch handle that stays cool. It matches the rustic Legend heaters and accessories."
+  },
+  "image": "img/harvia-legend-bucket.jpg",
+  "source_url": "https://www.harvia.com/en/products/SASPO100/legend-bucket"
+ },
+ {
+  "id": "harvia-legend-ladle",
+  "brand": "Harvia",
+  "category": "bucket-ladle",
+  "name": "Harvia Legend Ladle",
+  "specs": {
+   "length": "52 cm",
+   "material": "Black metal; heat-treated birch handle",
+   "model_code": "SASPO101"
+  },
+  "description": {
+   "az": "Legend seriyasından 52 sm uzunluğunda sauna çömçəsi: qara metal qab və toxunanda isinməyən termik işlənmiş ağcaqayın tutacaq. Legend vedrəsi ilə dəst kimi istifadə üçün idealdır.",
+   "ru": "Черпак для сауны длиной 52 см из серии Legend: чёрный металлический ковш и ручка из термообработанной берёзы, которая не нагревается. Идеально дополняет ведро Legend.",
+   "en": "A 52 cm sauna ladle from the Legend range, combining a black metal scoop with a heat-treated birch handle that stays cool to the touch. It pairs naturally with the Legend bucket."
+  },
+  "image": "img/harvia-legend-ladle.jpg",
+  "source_url": "https://www.harvia.com/en/products/SASPO101/legend-ladle"
+ },
+ {
+  "id": "harvia-helmi-pail-ladle-black",
+  "brand": "Harvia",
+  "category": "bucket-ladle",
+  "name": "Harvia Helmi Pail and Ladle, Black",
+  "specs": {
+   "material": "Hard-wearing plastic",
+   "color": "Black",
+   "dimensions_mm": "245 × 245 × 350",
+   "model_code": "SA011M"
+  },
+  "description": {
+   "az": "Harvia Helmi xəttindən yumşaq, yuvarlaq formalı mat qara vedrə və çömçə dəsti. Möhkəm plastik vedrə yüngül, asan təmizlənən və daşınması rahatdır.",
+   "ru": "Современный набор из ведра и черпака линии Harvia Helmi с мягкими округлыми формами в чёрном цвете. Прочное пластиковое ведро лёгкое, легко моется и удобно в руке.",
+   "en": "A modern pail-and-ladle set from Harvia's Helmi line with soft, rounded shapes in black. The hard-wearing plastic bucket is light, easy to clean and comfortable to carry."
+  },
+  "image": "img/harvia-helmi-pail-ladle-black.jpg",
+  "source_url": "https://www.harvia.com/en/products/SA011M/helmi-pail-and-ladle-black"
+ },
+ {
+  "id": "harvia-legend-thermometer",
+  "brand": "Harvia",
+  "category": "thermometer-hygrometer",
+  "name": "Harvia Legend Thermometer",
+  "specs": {
+   "material": "Heat-treated aspen, black steel details",
+   "dimensions_mm": "115 × 230",
+   "model_code": "SASPO104"
+  },
+  "description": {
+   "az": "Legend seriyasından termik işlənmiş titrək qovaq və qara polad detallı sauna termometri. Ölçüsü 115 × 230 mm-dir və Legend sobaları ilə aksesuarlarına uyğun dizayndadır.",
+   "ru": "Термометр для сауны из серии Legend: термообработанная осина с деталями из чёрной стали. Размер 115 × 230 мм, в едином стиле с печами и аксессуарами Legend.",
+   "en": "A sauna thermometer from the Legend range, made of heat-treated aspen with black steel details. It measures 115 × 230 mm and is designed to match Legend heaters and accessories."
+  },
+  "image": "img/harvia-legend-thermometer.jpg",
+  "source_url": "https://www.harvia.com/en/products/SASPO104/legend-thermometer"
+ },
+ {
+  "id": "harvia-thermo-hygrometer",
+  "brand": "Harvia",
+  "category": "thermometer-hygrometer",
+  "name": "Harvia Thermo-Hygrometer",
+  "specs": {
+   "material": "Light wood",
+   "dimensions_mm": "240 × 130",
+   "model_code": "SAS92300"
+  },
+  "description": {
+   "az": "Saunanın həm temperaturunu, həm də rütubətini göstərən birləşmiş termometr-hiqrometr. Sadə açıq rəngli taxta korpusdakı (240 × 130 mm) aydın şkalalar zəif işıqda belə rahat oxunur.",
+   "ru": "Комбинированный термометр-гигрометр показывает температуру и влажность в сауне. Чёткие шкалы в простом корпусе из светлого дерева (240 × 130 мм) хорошо читаются даже при приглушённом свете.",
+   "en": "A combined thermometer and hygrometer that shows both sauna temperature and humidity. Clear dials set in simple light-coloured wood (240 × 130 mm) are easy to read even in dim light."
+  },
+  "image": "img/harvia-thermo-hygrometer.jpg",
+  "source_url": "https://www.harvia.com/en/products/SAS92300/thermohygrometer"
+ },
+ {
+  "id": "harvia-legend-sauna-light",
+  "brand": "Harvia",
+  "category": "lighting",
+  "name": "Harvia Legend Sauna Light",
+  "specs": {
+   "material": "Metal, black",
+   "dimensions_mm": "230 × 180 × 70",
+   "model_code": "SAS21107"
+  },
+  "description": {
+   "az": "Legend kolleksiyasından rustik qara divar işığı – Legend sobaları və aksesuarları ilə ahəng üçün hazırlanıb. Kompakt (230 × 180 × 70 mm) və asan quraşdırılan bu işıq saunaya yumşaq, xoş işıq verir.",
+   "ru": "Рустикальный чёрный настенный светильник из коллекции Legend, созданный в пару к печам и аксессуарам Legend. Компактный (230 × 180 × 70 мм) и простой в монтаже, он даёт мягкий атмосферный свет.",
+   "en": "A rustic black wall light from the Legend collection, designed to complement Legend heaters and accessories. Compact (230 × 180 × 70 mm) and easy to install, it gives the sauna a soft, atmospheric glow."
+  },
+  "image": "img/harvia-legend-sauna-light.jpg",
+  "source_url": "https://www.harvia.com/en/products/SAS21107/legend-sauna-light-black"
+ },
+ {
+  "id": "harvia-sauna-stones-10-15cm",
+  "brand": "Harvia",
+  "category": "stones",
+  "name": "Harvia Sauna Heater Stones 10–15 cm, 20 kg",
+  "specs": {
+   "stone_type": "Olivine diabase (split-face)",
+   "stone_size": "10–15 cm",
+   "weight_kg": "20",
+   "model_code": "AC3020",
+   "use": "Large electric heaters and all wood-burning heaters"
+  },
+  "description": {
+   "az": "Klassik Fin olivin diabaz sauna daşları, 10–15 sm, 20 kq-lıq qutuda. Sıx, kəsik səthli daşlar çoxlu istilik toplayır və suyu effektiv buxarlandırır; böyük elektrik sobaları və bütün odun sobaları üçün uyğundur.",
+   "ru": "Классические финские камни из оливинового диабаза размером 10–15 см, коробка 20 кг. Плотные колотые камни хорошо накапливают тепло и эффективно испаряют воду; подходят для мощных электрокаменок и всех дровяных печей.",
+   "en": "Classic Finnish olivine diabase sauna stones, 10–15 cm, in a 20 kg box. The dense, split-face stones store plenty of heat and vaporise water efficiently; suitable for large electric heaters and all wood-burning heaters."
+  },
+  "image": "img/harvia-sauna-stones-10-15cm.jpg",
+  "source_url": "https://www.harvia.com/en/products/AC3020/sauna-heater-stones-1015-cm-20-kg"
+ },
+ {
+  "id": "harvia-sauna-scent-birch-400ml",
+  "brand": "Harvia",
+  "category": "aroma",
+  "name": "Harvia Sauna Scent Birch 400 ml",
+  "specs": {
+   "volume": "400 ml",
+   "scent": "Birch",
+   "origin": "Made in Finland",
+   "model_code": "SAC25022"
+  },
+  "description": {
+   "az": "Finlandiyada istehsal olunan, 400 ml-lik şüşədə ağcaqayın ətirli sauna aroması. Vedrədəki suya bir az əlavə edin – yay ağcaqayın meşəsinin təravətli, yaşıl ətri saunanı bürüyəcək.",
+   "ru": "Ароматизатор для сауны с запахом берёзы во флаконе 400 мл, произведён в Финляндии. Добавьте немного в воду для поддавания — и сауну наполнит свежий зелёный аромат летнего березняка.",
+   "en": "A birch-scented sauna fragrance in a 400 ml bottle, made in Finland. Mix a little into the bucket water and the sauna fills with the fresh, green aroma of a summer birch forest."
+  },
+  "image": "img/harvia-sauna-scent-birch-400ml.jpg",
+  "source_url": "https://www.harvia.com/en/products/SAC25022/sauna-scent-birch-400-ml"
+ },
+ {
+  "id": "harvia-towel-70x140-red",
+  "brand": "Harvia",
+  "category": "textile",
+  "name": "Harvia Towel 70 × 140 cm, Red",
+  "specs": {
+   "material": "100% cotton terry, 600 g/m²",
+   "dimensions": "70 × 140 cm",
+   "certificate": "OEKO-TEX® Standard 100",
+   "model_code": "SAC80401"
+  },
+  "description": {
+   "az": "Harvia qırmızı rəngində 70 × 140 sm ölçülü qalın mahra dəsmal, 100% pambıq (600 q/m²). Yüksək nəm çəkən və yumşaqdır, OEKO-TEX® Standard 100 sertifikatlıdır və Avropa İttifaqında istehsal olunub.",
+   "ru": "Плотное махровое полотенце 70 × 140 см фирменного красного цвета Harvia из 100% хлопка (600 г/м²). Мягкое и хорошо впитывает влагу, сертификат OEKO-TEX® Standard 100, произведено в ЕС.",
+   "en": "A thick 70 × 140 cm terry towel in Harvia red, made of 100% cotton (600 g/m²). Soft and highly absorbent, OEKO-TEX® Standard 100 certified and made in the EU."
+  },
+  "image": "img/harvia-towel-70x140-red.jpg",
+  "source_url": "https://www.harvia.com/en/products/SAC80401/towel-harvia-70-x-140cm-red"
+ },
+ {
+  "id": "harvia-legend-glass-door-8x19",
+  "brand": "Harvia",
+  "category": "door-window",
+  "name": "Harvia Legend Glass Door 8×19, Clear",
+  "specs": {
+   "glass": "Clear",
+   "frame": "Black-painted pine",
+   "handle": "Black-painted hardwood",
+   "dimensions_mm": "790 × 1890 (frame)",
+   "hinges": "Stainless steel",
+   "model_code": "D81904ML"
+  },
+  "description": {
+   "az": "Legend seriyasından şəffaf şüşəli, qara rənglənmiş şam ağacı çərçivəli və qara bərk ağac tutacaqlı sauna qapısı. Standart 8×19 ölçüdədir (çərçivə təxminən 790 × 1890 mm), paslanmayan polad petlələrlə.",
+   "ru": "Стеклянная дверь для сауны серии Legend: прозрачное стекло, коробка из сосны с чёрным покрытием и ручка из чёрного твёрдого дерева. Стандартный размер 8×19 (коробка около 790 × 1890 мм), петли из нержавеющей стали.",
+   "en": "A sauna glass door from the Legend range with clear glass, a black-painted pine frame and a black hardwood handle. Standard 8×19 size (frame approx. 790 × 1890 mm) with stainless steel hinges."
+  },
+  "image": "img/harvia-legend-glass-door-8x19.jpg",
+  "source_url": "https://www.harvia.com/en/products/D81904ML/legend-clear-8x19-black-pine-frame"
+ },
+ {
+  "id": "sawo-tower-wall-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Tower Wall NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "3–24",
+   "room_m3": "2–40",
+   "stones_kg": "60–360",
+   "material": "Stainless steel",
+   "installation": "Wall (tower)",
+   "control": "Saunova / Innova (separate); built-in on some models",
+   "features": "Removable stone spacer; movable steel rings; adjustable legs; optional heater guard and integration collar"
+  },
+  "description": {
+   "az": "Divar yanında dayanan, yer qənaət edən hündür qüllə tipli soba, uzunmüddətli nəmli istiliyi bərabər paylayır. 3–24 kVt gücündə, təxminən 2–40 m³ saunalar üçündür; çıxarıla bilən daş arakəsməsi ya daha sürətli qızma, ya da daha çox daş (360 kq-a qədər) və yumşaq buxar seçməyə imkan verir.",
+   "ru": "Высокая пристенная каменка-башня экономит место и равномерно распределяет долгий влажный жар. Мощность от 3 до 24 кВт для саун примерно 2–40 м³; съёмная вставка-разделитель позволяет выбрать быстрый прогрев или больше камней (до 360 кг) и более мягкий пар.",
+   "en": "A tall, space-saving tower heater that stands against the wall and spreads long-lasting humid heat evenly. Available from 3 to 24 kW for saunas of about 2–40 m³; a removable stone spacer lets you choose faster heating or more stones (up to 360 kg) and softer steam."
+  },
+  "image": "img/sawo-tower-wall-ns.png",
+  "source_url": "https://www.sawo.com/tower-wall-ns/"
+ },
+ {
+  "id": "sawo-tower-round-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Tower Round NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "3–24",
+   "room_m3": "2–40",
+   "stones_kg": "60–360",
+   "material": "Stainless steel",
+   "installation": "Floor, centre of room or embedded in bench",
+   "control": "Saunova / Innova (separate); built-in on some models",
+   "features": "Removable stone spacer; movable steel rings for replacing broken stones; adjustable legs; optional heater guard and integration collar"
+  },
+  "description": {
+   "az": "Otağın mərkəzində quraşdırmaq və ya oturacağa yerləşdirmək üçün silindrik paslanmayan polad qüllə sobası. 3–24 kVt versiyaları təxminən 2–40 m³ saunaları əhatə edir; çıxarıla bilən daş arakəsməsi və hərəkətli polad halqalar daş miqdarını tənzimləməyi və sınmış daşları dəyişməyi asanlaşdırır.",
+   "ru": "Цилиндрическая каменка-башня из нержавеющей стали для установки в центре помещения или встраивания в полок. Модели 3–24 кВт рассчитаны на сауны примерно 2–40 м³; съёмный разделитель и подвижные стальные кольца упрощают регулировку загрузки камней и замену треснувших.",
+   "en": "A cylindrical stainless steel tower heater designed for the centre of the room or for building into a bench. The 3–24 kW versions cover saunas of about 2–40 m³, and the removable stone spacer and movable steel rings make it easy to adjust the stone load and replace broken stones."
+  },
+  "image": "img/sawo-tower-round-ns.png",
+  "source_url": "https://www.sawo.com/tower-round-ns/"
+ },
+ {
+  "id": "sawo-nordex-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Nordex NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "4.5–9",
+   "room_m3": "3–14",
+   "stones_kg": "18–22",
+   "material": "Stainless steel",
+   "installation": "Wall",
+   "control": "Saunova / Innova",
+   "features": "Streamlined minimal design; space-efficient wall mounting"
+  },
+  "description": {
+   "az": "Paslanmayan poladdan minimalist, kompakt divar sobası – ev saunası üçün sadə və etibarlı seçim. 3–14 m³ saunalar üçün 4,5–9 kVt güc və 18–22 kq daş; tənzimləmələr SAWO Saunova və ya Innova idarəetmə paneli ilə aparılır.",
+   "ru": "Минималистичная компактная настенная каменка из нержавеющей стали — простой и надёжный выбор для домашней сауны. 4,5–9 кВт для саун 3–14 м³, 18–22 кг камней; управление через пульты SAWO Saunova или Innova.",
+   "en": "A minimalist, compact wall heater in stainless steel – a simple, reliable choice for a home sauna. 4.5–9 kW for saunas of 3–14 m³ with 18–22 kg of stones; settings are handled by a SAWO Saunova or Innova control."
+  },
+  "image": "img/sawo-nordex-ns.png",
+  "source_url": "https://www.sawo.com/nordex-ns/"
+ },
+ {
+  "id": "sawo-nordex-mini-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Nordex Mini NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "2.3–3.6",
+   "room_m3": "1.3–6",
+   "stones_kg": "8–11",
+   "material": "Stainless steel",
+   "installation": "Wall, straight or corner",
+   "control": "Saunova / Innova (separate)",
+   "features": "Ultra-compact; also available in black metal casing"
+  },
+  "description": {
+   "az": "1,3–6 m³ çox kiçik saunalar və ev sauna kabinləri üçün ultra-kompakt divar sobası. 2,3–3,6 kVt güc və 8–11 kq daş tutumu; düz divara və ya küncə quraşdırıla bilər və ayrıca Saunova və ya Innova paneli ilə idarə olunur.",
+   "ru": "Ультракомпактная настенная каменка для очень маленьких саун и домашних кабин 1,3–6 м³. Мощность 2,3–3,6 кВт, 8–11 кг камней; монтируется на ровную стену или в угол, управляется отдельным пультом Saunova или Innova.",
+   "en": "An ultra-compact wall heater for very small saunas and home sauna cabins of 1.3–6 m³. Rated 2.3–3.6 kW with 8–11 kg of stones, it can be mounted on a flat wall or in a corner and is run by a separate Saunova or Innova control."
+  },
+  "image": "img/sawo-nordex-mini-ns.png",
+  "source_url": "https://www.sawo.com/nordex-mini-ns/"
+ },
+ {
+  "id": "sawo-krios-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Krios NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "4.5–9",
+   "room_m3": "3–14",
+   "stones_kg": "40–50",
+   "material": "Stainless steel with SAWO pattern",
+   "installation": "Wall",
+   "control": "Saunova / Innova",
+   "features": "Enlarged stone container; heat reflector included"
+  },
+  "description": {
+   "az": "Daha isti və nəmli buxar üçün böyüdülmüş daş qabı (40–50 kq) olan divar sobası. SAWO-ya xas naxışlı paslanmayan polad gövdə və dəstə daxil istilik reflektoru; 3–14 m³ saunalar üçün 4,5–9 kVt.",
+   "ru": "Настенная каменка с увеличенной ёмкостью для камней (40–50 кг) для более жаркого и влажного пара. Корпус из нержавеющей стали с фирменным узором SAWO и теплоотражатель в комплекте; 4,5–9 кВт для саун 3–14 м³.",
+   "en": "A wall-mounted heater with an enlarged stone container (40–50 kg) for hotter, more humid steam. Stainless steel casing with SAWO's signature pattern and an included heat reflector; 4.5–9 kW for 3–14 m³ saunas."
+  },
+  "image": "img/sawo-krios-ns.png",
+  "source_url": "https://www.sawo.com/krios-ns/"
+ },
+ {
+  "id": "sawo-scandia-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Scandia NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "4.5–9",
+   "room_m3": "3–14",
+   "stones_kg": "18–23",
+   "material": "Stainless steel (fibre-coated version available)",
+   "installation": "Wall",
+   "control": "Saunova / Innova",
+   "features": "Classic traditional design; cool-to-touch fibre-coated option"
+  },
+  "description": {
+   "az": "Ənənəvi Fin saunası təcrübəsi üçün klassik, sadə divar sobası. 3–14 m³ otaqlar üçün 4,5–9 kVt güc və təxminən 18–23 kq daş; toxunanda qızmayan fiber örtüklü versiyası da var və Saunova və ya Innova ilə idarə olunur.",
+   "ru": "Классическая простая настенная каменка для традиционной финской сауны. 4,5–9 кВт для помещений 3–14 м³ и около 18–23 кг камней; есть версия с не нагревающимся на ощупь волоконным покрытием, управление — Saunova или Innova.",
+   "en": "A classic, simple wall heater for the traditional Finnish sauna experience. 4.5–9 kW for 3–14 m³ rooms with about 18–23 kg of stones; also available with a cool-to-touch fibre coating and controlled via Saunova or Innova."
+  },
+  "image": "img/sawo-scandia-ns.png",
+  "source_url": "https://www.sawo.com/scandia-ns/"
+ },
+ {
+  "id": "sawo-mini-x-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Mini X NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "2.3–3.6",
+   "room_m3": "1.3–6",
+   "stones_kg": "8–11",
+   "material": "Stainless steel (fibre-coated version available)",
+   "installation": "Wall, corner",
+   "control": "Saunova / Innova (separate)",
+   "features": "Space-saving corner design"
+  },
+  "description": {
+   "az": "1,3–6 m³ kompakt saunalar üçün yer qənaət edən künc sobası. 2,3–3,6 kVt güc və 8–11 kq daş; paslanmayan polad və ya toxunanda qızmayan fiber örtüklü variantda, Saunova və ya Innova ilə işləyir.",
+   "ru": "Компактная угловая каменка для небольших саун 1,3–6 м³. Мощность 2,3–3,6 кВт, 8–11 кг камней; корпус из нержавеющей стали или с волоконным покрытием, не нагревающимся на ощупь; работает с пультами Saunova или Innova.",
+   "en": "A space-saving corner heater for compact saunas of 1.3–6 m³. Output 2.3–3.6 kW with 8–11 kg of stones, in stainless steel or with a cool-to-touch fibre coating; works with Saunova or Innova controls."
+  },
+  "image": "img/sawo-mini-x-ns.png",
+  "source_url": "https://www.sawo.com/mini-x-ns/"
+ },
+ {
+  "id": "sawo-cumulus-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Cumulus NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "4.5–9",
+   "room_m3": "3–14",
+   "stones_kg": "18",
+   "material": "Stainless steel with Finnish soapstone front",
+   "installation": "Wall",
+   "control": "Saunova / Innova",
+   "features": "Soapstone front stores heat; built-in aroma cup"
+  },
+  "description": {
+   "az": "Daşların daha tez qızmasına və istiliyi daha uzun saxlamasına kömək edən dekorativ Fin sabun daşı ön paneli olan, paslanmayan poladdan zərif divar sobası. Daxili aroma qabı SPA üslubunda aromaterapiya imkanı verir; 3–14 m³ saunalar üçün 4,5–9 kVt.",
+   "ru": "Элегантная настенная каменка из нержавеющей стали с декоративной фронтальной панелью из финского талькохлорита, которая помогает камням быстрее нагреваться и дольше держать тепло. Встроенная чаша для аромата добавляет спа-ароматерапию; 4,5–9 кВт для саун 3–14 м³.",
+   "en": "An elegant stainless steel wall heater with a decorative Finnish soapstone front that helps the stones heat up faster and hold heat longer. A built-in aroma cup adds spa-style aromatherapy; 4.5–9 kW for 3–14 m³ saunas."
+  },
+  "image": "img/sawo-cumulus-ns.png",
+  "source_url": "https://www.sawo.com/cumulus-ns/"
+ },
+ {
+  "id": "sawo-savonia-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Savonia NS",
+  "specs": {
+   "type": "electric",
+   "power_kw": "9–24",
+   "room_m3": "8–42",
+   "stones_kg": "50–100",
+   "material": "Stainless steel (fibre-coated version available)",
+   "installation": "Floor",
+   "control": "Saunova / Innova (separate)",
+   "features": "Built for heavy/commercial use; low maintenance; adjustable legs"
+  },
+  "description": {
+   "az": "Böyük və kommersiya saunaları üçün minimal baxımla intensiv istifadəyə davamlı möhkəm döşəmə sobası. Təxminən 8–42 m³ üçün 9–24 kVt güc, 50–100 kq daş tutumu və tənzimlənən ayaqlar; paslanmayan polad və ya fiber örtüklü versiyalar.",
+   "ru": "Мощная напольная каменка для больших и коммерческих саун, рассчитанная на интенсивную эксплуатацию при минимальном обслуживании. 9–24 кВт для помещений примерно 8–42 м³, вмещает 50–100 кг камней, стоит на регулируемых ножках; корпус из нержавеющей стали или с волоконным покрытием.",
+   "en": "A robust floor-standing heater for large and commercial saunas, built to withstand heavy use with minimal maintenance. 9–24 kW for roughly 8–42 m³, it holds 50–100 kg of stones and stands on adjustable legs; stainless or fibre-coated versions."
+  },
+  "image": "img/sawo-savonia-ns.png",
+  "source_url": "https://www.sawo.com/savonia-ns/"
+ },
+ {
+  "id": "sawo-scandifire-black-ns",
+  "brand": "SAWO",
+  "category": "electric-stove",
+  "name": "SAWO Scandifire Black NS (Dragonfire)",
+  "specs": {
+   "type": "electric",
+   "power_kw": "4.5–9",
+   "room_m3": "3–14",
+   "stones_kg": "18–22",
+   "material": "Black fibre coating with Junglefire pattern",
+   "installation": "Wall",
+   "control": "Saunova / Innova",
+   "designer": "Stefan Lindfors",
+   "features": "Dragonfire series design; coating protects against moisture and heat"
+  },
+  "description": {
+   "az": "SAWO-nun Dragonfire seriyasından, dizayner Stefan Lindfors tərəfindən klassik Scandia əsasında yaradılmış model. Cəsur Junglefire naxışlı qara fiber örtük sobanı nəm və istidən qoruyur; 3–14 m³ saunalar üçün 4,5–9 kVt, 22 kq-a qədər daş.",
+   "ru": "Дизайнерская версия классической Scandia от Стефана Линдфорса из серии SAWO Dragonfire. Чёрное волоконное покрытие с выразительным узором Junglefire защищает печь от влаги и жара; 4,5–9 кВт для саун 3–14 м³, до 22 кг камней.",
+   "en": "A designer take on the classic Scandia by Stefan Lindfors, part of SAWO's Dragonfire series. The black fibre coating with its bold Junglefire pattern shields the heater from moisture and heat; 4.5–9 kW for 3–14 m³ saunas with up to 22 kg of stones."
+  },
+  "image": "img/sawo-scandifire-black-ns.png",
+  "source_url": "https://www.sawo.com/scandifire-black-ns/"
+ },
+ {
+  "id": "sawo-saunova-2-built-in",
+  "brand": "SAWO",
+  "category": "control-panel",
+  "name": "SAWO Saunova 2.0 Built-In (SAU-B-V2)",
+  "specs": {
+   "type": "control",
+   "power_kw": "up to 9 (more with contactor unit)",
+   "temperature_range": "30–110 °C",
+   "supply": "400 V 3N~ / 230 V 1N~",
+   "dimensions_mm": "320 × 270 × 78",
+   "session_time": "6 h default, 24 h max",
+   "features": "User interface and power controller in one housing; remembers settings; pre-set timer; door-sensor compatible; optional fan and Combi"
+  },
+  "description": {
+   "az": "İstifadəçi panelini və güc blokunu bir korpusda birləşdirən hamısı-birində sauna idarəetməsi. 9 kVt-a qədər NS sobaları üçün (kontaktor bloku ilə daha güclü), 30–110 °C temperatur, əvvəlcədən qoşulma taymeri, sevimli parametrlərin yaddaşı, əlavə ventilyator və Combi funksiyaları.",
+   "ru": "Пульт «всё в одном», объединяющий панель управления и силовой блок в одном корпусе. Для каменок NS до 9 кВт (мощнее — с контакторным блоком), температура 30–110 °C, отложенный старт, память настроек и опционально управление вентилятором и режимом Combi.",
+   "en": "An all-in-one sauna control that combines the user interface and power controller in a single housing. For NS heaters up to 9 kW (larger with a contactor unit), with a 30–110 °C range, pre-set timer, memory for your favourite settings and optional fan and Combi functions."
+  },
+  "image": "img/sawo-saunova-2-built-in.webp",
+  "source_url": "https://www.sawo.com/saunova-2-0-built-in-control/"
+ },
+ {
+  "id": "sawo-sense",
+  "brand": "SAWO",
+  "category": "control-panel",
+  "name": "SAWO Sense (SEN-UI)",
+  "specs": {
+   "type": "control",
+   "power_kw": "up to 9 (18 with contactor unit)",
+   "connectivity": "Built-in Wi-Fi (SAWO app)",
+   "compatible_heaters": "SAWO Ni2 and NS",
+   "features": "Touchscreen; temperature and lighting control; real-time monitoring and remote access"
+  },
+  "description": {
+   "az": "Zərif sensor ekranlı və SAWO tətbiqi üçün daxili Wi-Fi-lı ağıllı sauna idarəetməsi. Temperaturu, işıqlandırmanı və seansları paneldən və ya uzaqdan idarə edin; 9 kVt-a qədər Ni2 və NS sobaları üçündür, kontaktor bloku ilə 18 kVt-a qədər genişlənir.",
+   "ru": "Умный пульт SAWO со стильным сенсорным экраном и встроенным Wi-Fi для приложения SAWO. Управление температурой, светом и сеансами с панели или удалённо; для каменок Ni2 и NS до 9 кВт, с контакторным блоком — до 18 кВт.",
+   "en": "SAWO's smart sauna control with a sleek touchscreen and built-in Wi-Fi for the SAWO app. Manage temperature, lighting and sessions on the panel or remotely; designed for Ni2 and NS heaters up to 9 kW, expandable to 18 kW with a contactor unit."
+  },
+  "image": "img/sawo-sense.webp",
+  "source_url": "https://www.sawo.com/sawo-sense/"
+ },
+ {
+  "id": "sawo-stn-s-steam-generator",
+  "brand": "SAWO",
+  "category": "steam-generator",
+  "name": "SAWO STN-S Steam Generator",
+  "specs": {
+   "type": "steam",
+   "power_kw": "3–15",
+   "room_m3": "2–40",
+   "material": "Stainless steel",
+   "steam_output": "up to 7.5 kg/h (3–7.5 kW models)",
+   "control": "SAWO STP 2.0 / Stainless Touch",
+   "features": "Separate electronics compartment; cassette-type heating elements; auto drain; aroma, fan and dimmer control; demand button; up to 5 units linkable (75 kW)"
+  },
+  "description": {
+   "az": "Buxar otaqları üçün paslanmayan poladdan buxar generatoru, 3–15 kVt (təxminən 40 m³-ə qədər otaqlar). Ayrıca elektronika bölməsi çevik quraşdırma imkanı verir, kaset tipli qızdırıcı elementlər təmizliyi asanlaşdırır; avtomatik drenaj, aroma, ventilyator və işıq tənzimləyicisi idarəsi var.",
+   "ru": "Парогенератор из нержавеющей стали для паровых комнат мощностью от 3 до 15 кВт (помещения до ~40 м³). Отдельный отсек электроники даёт гибкость монтажа, кассетные ТЭНы упрощают чистку бака; есть автослив и управление ароматом, вентилятором и диммером.",
+   "en": "A stainless steel steam generator for steam rooms, available from 3 to 15 kW (rooms up to about 40 m³). A separate electronics compartment allows flexible installation, cassette-type heating elements simplify cleaning, and it offers auto-drain plus aroma, fan and dimmer control."
+  },
+  "image": "img/sawo-stn-s-steam-generator.png",
+  "source_url": "https://www.sawo.com/stn-s-steam-generator/"
+ },
+ {
+  "id": "sawo-kanto-pail",
+  "brand": "SAWO",
+  "category": "bucket-ladle",
+  "name": "SAWO Kanto Pail 4 L",
+  "specs": {
+   "capacity": "4 L",
+   "options": "Hemlock / White / Black",
+   "model_code": "347-H / 347-WH / 347-BL"
+  },
+  "description": {
+   "az": "4 litr tutumlu, sadə və müasir dizaynlı Kanto sauna vedrəsi. Sauna interyerinə uyğun təbii hemlok, ağ və ya qara rəngdə təqdim olunur; Kanto çömçəsi ilə dəst təşkil edir.",
+   "ru": "Ведро для сауны Kanto объёмом 4 л в лаконичном современном дизайне. Доступно в натуральном хемлоке, белом или чёрном цвете; сочетается с черпаком Kanto.",
+   "en": "The Kanto sauna pail has a 4-litre capacity and a clean, contemporary design. It comes in natural hemlock, white or black to suit the sauna interior and pairs with the Kanto ladle."
+  },
+  "image": "img/sawo-kanto-pail.webp",
+  "source_url": "https://www.sawo.com/accessory-products/#section-pails"
+ },
+ {
+  "id": "sawo-ladle-puro-51cm",
+  "brand": "SAWO",
+  "category": "bucket-ladle",
+  "name": "SAWO Wooden Ladle Puro 51 cm",
+  "specs": {
+   "length": "51 cm",
+   "material": "Wood",
+   "options": "Cedar / Hemlock / Black",
+   "model_code": "459-D / 459-H / 459-BL"
+  },
+  "description": {
+   "az": "51 sm uzunluğunda, sadə və minimalist formalı Puro taxta sauna çömçəsi. SAWO vedrələri və interyeri ilə uyğunlaşmaq üçün sidr, hemlok və ya qara variantda təqdim olunur.",
+   "ru": "Деревянный черпак для сауны Puro длиной 51 см с лаконичной минималистичной формой. Варианты из кедра, хемлока или в чёрном исполнении под вёдра и интерьер SAWO.",
+   "en": "The Puro wooden sauna ladle is 51 cm long with a clean, minimalist shape. It is offered in cedar, hemlock or black to match SAWO pails and sauna interiors."
+  },
+  "image": "img/sawo-ladle-puro-51cm.webp",
+  "source_url": "https://www.sawo.com/accessory-products/#section-ladles"
+ },
+ {
+  "id": "sawo-square-thermo-hygrometer",
+  "brand": "SAWO",
+  "category": "thermometer-hygrometer",
+  "name": "SAWO Square Thermo-Hygrometer",
+  "specs": {
+   "dimensions_mm": "180 × 180",
+   "options": "Cedar / Aspen / Hemlock / Black metal",
+   "model_code": "225-THD / 225-THA / 225-THH / 225-BL"
+  },
+  "description": {
+   "az": "Temperatur və rütubəti bir paneldə göstərən kvadrat taxta termohiqrometr (180 × 180 mm). Sidr, titrək qovaq, hemlok və ya qara metal variantlarında mövcuddur.",
+   "ru": "Квадратный деревянный термогигрометр (180 × 180 мм), показывающий температуру и влажность на одной панели. Варианты: кедр, осина, хемлок или чёрный металл.",
+   "en": "A square wooden thermo-hygrometer (180 × 180 mm) that shows temperature and humidity on one face. Available in cedar, aspen, hemlock or black metal."
+  },
+  "image": "img/sawo-square-thermo-hygrometer.webp",
+  "source_url": "https://www.sawo.com/accessory-products/#section-meters"
+ },
+ {
+  "id": "sawo-sand-timer-15min",
+  "brand": "SAWO",
+  "category": "thermometer-hygrometer",
+  "name": "SAWO Sand Timer 15 min",
+  "specs": {
+   "duration": "15 min",
+   "dimensions_mm": "65 × 340",
+   "options": "Cedar / Aspen / Hemlock / Black",
+   "model_code": "553-D / 553-A / 553-H / 553-BL"
+  },
+  "description": {
+   "az": "Hər sauna seansının vaxtını izləmək üçün taxta çərçivəli (65 × 340 mm), divara bərkidilən 15 dəqiqəlik qum saatı. Çərçivə variantları: sidr, titrək qovaq, hemlok və ya qara.",
+   "ru": "Настенные песочные часы на 15 минут в деревянной рамке (65 × 340 мм) для контроля каждого захода в сауну. Рамка: кедр, осина, хемлок или чёрная.",
+   "en": "A wall-mounted 15-minute sand timer in a wooden frame (65 × 340 mm) to keep track of each sauna round. Frame options: cedar, aspen, hemlock or black."
+  },
+  "image": "img/sawo-sand-timer-15min.webp",
+  "source_url": "https://www.sawo.com/accessory-products/#section-clock-timer"
+ },
+ {
+  "id": "sawo-wave-headrest",
+  "brand": "SAWO",
+  "category": "headrest-backrest",
+  "name": "SAWO Wave Wooden Headrest",
+  "specs": {
+   "dimensions_mm": "190 × 480",
+   "material": "Wood",
+   "options": "Cedar / Aspen / Hemlock / Black",
+   "model_code": "515-D / 515-A / 515-H / 515-BL"
+  },
+  "description": {
+   "az": "Sauna oturacağında rahat dincəlmək üçün erqonomik dalğavarı profilli Wave taxta baş dayağı. Ölçüsü 190 × 480 mm-dir; sidr, titrək qovaq, hemlok və ya qara rəngdə.",
+   "ru": "Деревянный подголовник Wave с эргономичным волнистым профилем для отдыха на полке. Размер 190 × 480 мм; кедр, осина, хемлок или чёрный.",
+   "en": "The Wave wooden headrest has an ergonomic curved profile for relaxing on the sauna bench. It measures 190 × 480 mm and comes in cedar, aspen, hemlock or black."
+  },
+  "image": "img/sawo-wave-headrest.webp",
+  "source_url": "https://www.sawo.com/accessory-products/#section-headrest-backrest"
+ },
+ {
+  "id": "sawo-wooden-curve-light-364",
+  "brand": "SAWO",
+  "category": "lighting",
+  "name": "SAWO Wooden Curve Light 364",
+  "specs": {
+   "dimensions_mm": "365 × 85 × 60",
+   "material": "Wood",
+   "options": "Cedar / Hemlock / Black",
+   "model_code": "924-D / 924-H / 924-BL"
+  },
+  "description": {
+   "az": "Divar və ya oturacaq boyunca yumşaq, dolayı işıq salan əyri formalı taxta sauna işığı. 364 modelinin ölçüsü 365 × 85 × 60 mm-dir; sidr, hemlok və ya qara variantda təqdim olunur.",
+   "ru": "Изогнутый деревянный светильник для сауны, дающий мягкий рассеянный свет вдоль стен или полков. Модель 364 размером 365 × 85 × 60 мм; кедр, хемлок или чёрный.",
+   "en": "A curved wooden sauna light that casts soft, indirect light along walls or benches. The 364 model measures 365 × 85 × 60 mm and comes in cedar, hemlock or black."
+  },
+  "image": "img/sawo-wooden-curve-light-364.png",
+  "source_url": "https://www.sawo.com/accessory-products/#section-sauna-lights"
+ },
+ {
+  "id": "sawo-clear-glass-reversible-door",
+  "brand": "SAWO",
+  "category": "door-window",
+  "name": "SAWO Clear Glass Reversible Sauna Door",
+  "specs": {
+   "glass": "Clear",
+   "frame": "Wood – Cedar / Aspen / Hemlock",
+   "dimensions_mm": "690 × 1890 (frame); opening 600 × 1800",
+   "model_code": "730-4SCD / 730-4SCA / 730-4SCH",
+   "features": "Reversible – left or right opening"
+  },
+  "description": {
+   "az": "Sola və ya sağa açılacaq şəkildə quraşdırıla bilən, şəffaf şüşəli və taxta çərçivəli sauna qapısı. Çərçivə 690 × 1890 mm (keçid 600 × 1800 mm); sidr, titrək qovaq və ya hemlok.",
+   "ru": "Реверсивная дверь для сауны с прозрачным стеклом и деревянной коробкой — навешивается под левое или правое открывание. Коробка 690 × 1890 мм (проём 600 × 1800 мм); кедр, осина или хемлок.",
+   "en": "A reversible sauna door with clear glass and a wooden frame that can be hung for left or right opening. Frame 690 × 1890 mm (opening 600 × 1800 mm), available in cedar, aspen or hemlock."
+  },
+  "image": "img/sawo-clear-glass-reversible-door.webp",
+  "source_url": "https://www.sawo.com/accessory-products/#section-doors-handles"
+ },
+ {
+  "id": "sawo-signature-accessory-set",
+  "brand": "SAWO",
+  "category": "other-accessory",
+  "name": "SAWO Signature Accessory Set",
+  "specs": {
+   "contents": "Kanto 4 L pail, Puro 51 cm ladle, square thermo-hygrometer, sand timer, Wave headrest, aroma cup, eucalyptus aroma 250 ml, sauna sign, sauna guidelines",
+   "options": "Hemlock / Black",
+   "model_code": "SET-SIG-D / SET-SIG-BL"
+  },
+  "description": {
+   "az": "Tam sauna başlanğıc dəsti: Kanto 4 L vedrə, Puro 51 sm çömçə, kvadrat termohiqrometr, qum saatı, Wave baş dayağı, aroma qabı və 250 ml evkalipt aroması, həmçinin sauna lövhəsi və qaydalar. Hemlok və ya qara rəngdə.",
+   "ru": "Полный стартовый набор для сауны: ведро Kanto 4 л, черпак Puro 51 см, квадратный термогигрометр, песочные часы, подголовник Wave, чаша для аромата и эвкалиптовый аромат 250 мл, а также табличка и правила сауны. Хемлок или чёрный цвет.",
+   "en": "A complete sauna starter kit: Kanto 4 L pail, Puro 51 cm ladle, square thermo-hygrometer, sand timer, Wave headrest, aroma cup and 250 ml eucalyptus aroma, plus a sauna sign and guidelines. Available in hemlock or black."
+  },
+  "image": "img/sawo-signature-accessory-set.webp",
+  "source_url": "https://www.sawo.com/accessory-products/#section-accessory-sets"
+ },
+ {
+  "id": "saunabee-sauna-hat-wool-grey-white",
+  "brand": "Saunabee",
+  "category": "textile",
+  "name": "Sauna Hat – Grey and White, 100% Wool",
+  "specs": {
+   "material": "100% natural wool felt",
+   "size": "One size (unisex)",
+   "care": "Hand wash, cold water"
+  },
+  "description": {
+   "az": "Boz-ağ rəngdə, 100% təbii yundan hazırlanmış klassik keçə sauna papağı. Saçı və başı yüksək istidən qoruyur, artıq nəmi çəkir; uniseks, universal ölçü, soyuq suda əllə yuyulur.",
+   "ru": "Классическая войлочная шапка для сауны из 100% натуральной шерсти, серо-белая. Защищает волосы и голову от сильного жара и впитывает лишнюю влагу; унисекс, один размер, ручная стирка в холодной воде.",
+   "en": "A classic felted sauna hat made of 100% natural wool in grey and white. It protects hair and head from high heat and absorbs excess moisture; unisex, one size, hand wash cold."
+  },
+  "image": "img/saunabee-sauna-hat-wool-grey-white.jpg",
+  "source_url": "https://saunabee.com/sauna-accessories/sauna-hats/sauna-hat-grey-and-white-100-wool"
+ },
+ {
+  "id": "saunabee-rento-bamboo-duo-bucket",
+  "brand": "Saunabee",
+  "category": "bucket-ladle",
+  "name": "Rento Bamboo Duo Sauna Bucket, Dark",
+  "specs": {
+   "manufacturer": "Rento",
+   "material": "Bamboo with plastic inner bucket",
+   "dimensions": "23.5 × 35 cm",
+   "color": "Dark"
+  },
+  "description": {
+   "az": "İstənilən oturacaq ağacı ilə uyğunlaşan tünd bambuk örtüklü Rento Bamboo Duo sauna vedrəsi. Daxili plastik qab təmizliyi asanlaşdırır və xidmət müddətini uzadır; ölçülər 23,5 × 35 sm.",
+   "ru": "Ведро для сауны Rento Bamboo Duo из тёмного бамбука, которое сочетается с любой древесиной полков. Внутренняя пластиковая ёмкость облегчает уход и продлевает срок службы; размеры 23,5 × 35 см.",
+   "en": "The Rento Bamboo Duo sauna bucket in dark bamboo goes well with any bench wood. A plastic inner bucket makes cleaning easy and extends its service life; dimensions 23.5 × 35 cm."
+  },
+  "image": "img/saunabee-rento-bamboo-duo-bucket.jpg",
+  "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/sauna-bucket-rento-bamboo-duo-dark"
+ },
+ {
+  "id": "saunabee-black-steel-bucket-ladle-set",
+  "brand": "Saunabee",
+  "category": "bucket-ladle",
+  "name": "Black Steel Bucket 4.5 L and Ladle 42 cm",
+  "specs": {
+   "capacity": "4.5 L",
+   "length": "42 cm (ladle)",
+   "material": "Stainless steel, matte black"
+  },
+  "description": {
+   "az": "4,5 litrlik vedrə və 42 sm-lik çömçədən ibarət uyğun sauna dəsti – hər ikisi mat qara örtüklü paslanmayan poladdan. Müasir saunalar üçün davamlı və zərif seçimdir.",
+   "ru": "Комплект для сауны из ведра 4,5 л и черпака 42 см — оба из нержавеющей стали с матовым чёрным покрытием. Долговечный и стильный вариант для современной сауны.",
+   "en": "A matching sauna set of a 4.5-litre bucket and a 42 cm ladle, both in stainless steel with a matte black finish. A durable, stylish option for contemporary saunas."
+  },
+  "image": "img/saunabee-black-steel-bucket-ladle-set.jpg",
+  "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/black-steel-bucket-4-5-l-and-ladle-42-cm"
+ },
+ {
+  "id": "saunabee-leilivihmuti-shower-ladle",
+  "brand": "Saunabee",
+  "category": "bucket-ladle",
+  "name": "Leilivihmuti Ladle with Shower Effect",
+  "specs": {
+   "length": "90 cm",
+   "capacity": "approx. 300 ml",
+   "features": "Shower-head effect spreads water evenly over the stones"
+  },
+  "description": {
+   "az": "Suyu sauna daşlarının üzərinə bərabər səpən duş effektli uzun Leilivihmuti çömçəsi (90 sm, təxminən 300 ml). Bərabər səpələnmə sabit buxar axını yaradır və daşlar adi çömçə ilə müqayisədə daha yavaş soyuyur.",
+   "ru": "Длинный черпак Leilivihmuti (90 см, около 300 мл) с эффектом душа, равномерно распределяющий воду по камням. Равномерное разбрызгивание даёт ровный поток пара, а камни остывают медленнее, чем при обычном черпаке.",
+   "en": "A long Leilivihmuti ladle (90 cm, approx. 300 ml) with a shower-head effect that spreads water evenly over the sauna stones. The even sprinkle produces a steady flow of steam, and the stones cool more slowly than with a regular ladle."
+  },
+  "image": "img/saunabee-leilivihmuti-shower-ladle.jpg",
+  "source_url": "https://saunabee.com/sauna-accessories/sauna-ladles/leilivihmuti-ladle-with-shower-effect"
+ },
+ {
+  "id": "saunabee-sauflex-thermotimer-3in1-black",
+  "brand": "Saunabee",
+  "category": "thermometer-hygrometer",
+  "name": "SAUFLEX ThermoTimer 3-in-1, Black",
+  "specs": {
+   "manufacturer": "SAUFLEX",
+   "functions": "Timer 1–99 min, thermometer (°C), hygrometer (%RH)",
+   "protection": "IP54",
+   "color": "Black"
+  },
+  "description": {
+   "az": "SAUFLEX ThermoTimer sauna, buxar hamamı və SPA zonaları üçün 1–99 dəqiqəlik taymeri, termometri və hiqrometri bir qara rəqəmsal cihazda birləşdirir. Böyük rəqəmli ekran, sadə düymə idarəsi və IP54 nəm qoruması var.",
+   "ru": "SAUFLEX ThermoTimer 3-в-1 объединяет таймер на 1–99 минут, термометр и гигрометр в одном чёрном цифровом устройстве для саун, паровых и спа-зон. Крупные цифры на дисплее, простое кнопочное управление и влагозащита IP54.",
+   "en": "The SAUFLEX ThermoTimer 3-in-1 combines a 1–99 minute timer, thermometer and hygrometer in one black digital unit for saunas, steam baths and spa areas. Large-digit display, simple button operation and IP54 moisture protection."
+  },
+  "image": "img/saunabee-sauflex-thermotimer-3in1-black.png",
+  "source_url": "https://saunabee.com/sauna-accessories/sauna-sand-timers/sauflex-3-in-1-multifunctional-timer-thermometer-and-hygrometer-black"
+ },
+ {
+  "id": "saunabee-taive-headrest",
+  "brand": "Saunabee",
+  "category": "headrest-backrest",
+  "name": "TAIVE® Sauna Headrest",
+  "specs": {
+   "manufacturer": "TAIVE",
+   "dimensions_mm": "300 × 300 × 70",
+   "material": "Finnish birch plywood with European oak veneer; D4 glue"
+  },
+  "description": {
+   "az": "TAIVE® arxa dayağı ilə eyni hamar əyri profilə malik TAIVE® sauna baş dayağı (300 × 300 × 70 mm). Fin ağcaqayın kontrplakından, üstü Avropa palıdı şponu ilə və deformasiyanı azaldan suya davamlı D4 yapışqanı ilə hazırlanıb.",
+   "ru": "Подголовник для сауны TAIVE® (300 × 300 × 70 мм) с тем же плавным изогнутым профилем, что и спинка TAIVE. Изготовлен из финской берёзовой фанеры с верхним шпоном европейского дуба на влагостойком клее D4 и мало деформируется.",
+   "en": "The TAIVE® sauna headrest (300 × 300 × 70 mm) shares the smooth curved profile of the TAIVE backrest. It is made of Finnish birch plywood with a European oak top veneer and weatherproof D4 glue for low deformation."
+  },
+  "image": "img/saunabee-taive-headrest.jpg",
+  "source_url": "https://saunabee.com/sauna-accessories/sauna-headrests/taive-headrest-hemlock"
+ },
+ {
+  "id": "saunabee-sauflex-backrest-aspen",
+  "brand": "Saunabee",
+  "category": "headrest-backrest",
+  "name": "SAUFLEX Foldable Sauna Backrest, Aspen",
+  "specs": {
+   "manufacturer": "SAUFLEX",
+   "material": "Natural aspen",
+   "features": "Foldable; adjustable angle; anatomically curved slatted surface"
+  },
+  "description": {
+   "az": "Təbii titrək qovaqdan hazırlanmış, sauna oturacağında beli dəstəkləyən anatomik əyri, lamelli səthə malik qatlanan SAUFLEX arxa dayağı. Bucağı tənzimlənir və saxlamaq üçün qatlanır; titrək qovaq yüksək temperaturda da bədənə xoş olaraq qalır.",
+   "ru": "Складная спинка SAUFLEX из натуральной осины с анатомически изогнутой реечной поверхностью для поддержки спины на полке. Угол наклона регулируется, в сложенном виде удобно хранится; осина остаётся приятной на ощупь даже при высокой температуре.",
+   "en": "A SAUFLEX foldable backrest made of natural aspen, with an anatomically curved, slatted surface that supports the back on the sauna bench. The angle is adjustable and it folds for storage; aspen stays pleasant to the touch at high temperatures."
+  },
+  "image": "img/saunabee-sauflex-backrest-aspen.png",
+  "source_url": "https://saunabee.com/sauna-accessories/sauna-headrests/sauna-backrest-sauflex-aspen"
+ },
+ {
+  "id": "saunabee-rento-natural-scent-aurora",
+  "brand": "Saunabee",
+  "category": "aroma",
+  "name": "Rento Natural Sauna Scent Aurora 100 ml",
+  "specs": {
+   "manufacturer": "Rento",
+   "volume": "100 ml",
+   "scent": "Lemongrass & bergamot",
+   "composition": "100% essential oils; vegan",
+   "dosage": "About 3 capfuls per 1 L of water"
+  },
+  "description": {
+   "az": "Təravətli limon otu və berqamot notlu Rento təbii sauna ətri \"Aurora\". 100% efir yağları ilə hazırlanıb və veqan məhsuldur; vedrədəki hər litr suya təxminən üç qapaq əlavə edin. Həcmi 100 ml.",
+   "ru": "Натуральный аромат для сауны Rento «Aurora» со свежими нотами лемонграсса и бергамота. Создан на 100% эфирных маслах, подходит веганам; добавляйте около трёх колпачков на литр воды в ведре. Флакон 100 мл.",
+   "en": "Rento natural sauna scent \"Aurora\" with crisp lemongrass and bergamot notes. Made with 100% essential oils and vegan; add about three capfuls per litre of water in the sauna bucket. 100 ml bottle."
+  },
+  "image": "img/saunabee-rento-natural-scent-aurora.jpg",
+  "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/sauna-essence/rento-natural-sauna-scent-100-ml-aurora"
+ },
+ {
+  "id": "saunabee-jadeite-stones-polished",
+  "brand": "Saunabee",
+  "category": "stones",
+  "name": "Jadeite Sauna Stones 10–15 cm, 10 kg, Polished",
+  "specs": {
+   "stone_type": "Jadeite, polished",
+   "stone_size": "10–15 cm",
+   "weight_kg": "10"
+  },
+  "description": {
+   "az": "Cilalanmış jadeit sauna daşları, 10–15 sm, 10 kq-lıq qablaşdırmada. Jadeit davamlılığı və istiliyi saxlama qabiliyyəti ilə qiymətləndirilən sıx yarımqiymətli daşdır və sobada adətən adi daşlardan daha uzun xidmət edir.",
+   "ru": "Полированные камни жадеит для сауны, 10–15 см, упаковка 10 кг. Жадеит — плотный полудрагоценный камень, ценимый за прочность и теплоёмкость; на каменке он обычно служит дольше обычных камней.",
+   "en": "Polished jadeite sauna stones, 10–15 cm, in a 10 kg pack. Jadeite is a dense semi-precious stone valued for its durability and heat retention, and it typically lasts longer on the heater than ordinary stones."
+  },
+  "image": "img/saunabee-jadeite-stones-polished.png",
+  "source_url": "https://saunabee.com/sauna-stones/jadeite-sauna-stones-10-15-cm-10kg-polished"
+ },
+ {
+  "id": "saunabee-horizontal-shower-bucket-15l",
+  "brand": "Saunabee",
+  "category": "other-accessory",
+  "name": "Horizontal Cold Shower Bucket 15 L",
+  "specs": {
+   "capacity": "approx. 15 L",
+   "color": "Black (painted)",
+   "weight_kg": "approx. 7 (with wall holders)",
+   "mounting": "Wall; water connection on either side",
+   "note": "Wall screws not included; wall must carry 42 kg or more"
+  },
+  "description": {
+   "az": "Divara bərkidilən, təxminən 15 litrlik üfüqi soyuq duş vedrəsi (aşırılan rus duşu). Qara rənglənmiş, divar tutacaqları ilə birlikdə çəkisi ~7 kq-dır və su xəttinə hər iki tərəfdən qoşula bilər; divar vintləri dəstə daxil deyil.",
+   "ru": "Настенное горизонтальное обливное ведро (русский холодный душ) объёмом около 15 л. Окрашено в чёрный цвет, весит около 7 кг вместе с кронштейнами, подключение воды возможно с любой стороны; шурупы для крепления не входят в комплект.",
+   "en": "A wall-mounted horizontal cold-shower bucket (Russian-style tipping shower) holding about 15 litres. Painted black, it weighs about 7 kg with the wall holders and can be connected to the water supply from either side; wall screws are not included."
+  },
+  "image": "img/saunabee-horizontal-shower-bucket-15l.jpg",
+  "source_url": "https://saunabee.com/sauna-accessories/shower-bucket/horizontal-shower-bucket-cold-shower-russian-shower-15l"
+ },
+ {
+  "id": "saunabee-birch-sauna-whisk",
+  "brand": "Saunabee",
+  "category": "other-accessory",
+  "name": "Sauna Whisk – Birch",
+  "specs": {
+   "material": "Natural birch branches"
+  },
+  "description": {
+   "az": "Təbii ağcaqayın budaqlarından hazırlanmış ənənəvi sauna süpürgəsi (venik). Sauna seansı zamanı yüngül masaj və ətirli buxar üçün istifadə olunur; ən çox sevilən süpürgə növüdür.",
+   "ru": "Традиционный берёзовый веник для сауны из натуральных берёзовых веток. Используется для мягкого массажа и ароматного пара во время парения; это самый популярный вид веника.",
+   "en": "A traditional birch sauna whisk made from natural birch branches. It is used for a gentle massage and aromatic steam during the sauna session and is the most popular whisk type."
+  },
+  "image": "img/saunabee-birch-sauna-whisk.jpg",
+  "source_url": "https://saunabee.com/sauna-accessories/sauna-whisks/sauna-whisk-birch"
+ },
+ {
+  "id": "saunabee-sauflex-himalayan-salt-lamp",
+  "brand": "Saunabee",
+  "category": "lighting",
+  "name": "SAUFLEX Himalayan Salt Lamp, Natural Shape, 5–7 kg",
+  "specs": {
+   "manufacturer": "SAUFLEX",
+   "material": "Natural Himalayan rock salt",
+   "weight_kg": "5–7"
+  },
+  "description": {
+   "az": "5–7 kq çəkili, təbii formalı SAUFLEX Himalay duz lampası. Sauna yanındakı istirahət otağı və ya lounge zonası üçün isti kəhrəba rəngli işıq yayır.",
+   "ru": "Гималайская солевая лампа SAUFLEX натуральной формы весом 5–7 кг. Даёт тёплое янтарное свечение для комнаты отдыха или лаунж-зоны рядом с сауной.",
+   "en": "A SAUFLEX Himalayan salt lamp in a natural, rough-cut shape weighing 5–7 kg. It gives a warm amber glow for the relaxation room or lounge next to the sauna."
+  },
+  "image": "img/saunabee-sauflex-himalayan-salt-lamp.jpg",
+  "source_url": "https://saunabee.com/sauna-accessories/himalayan-salt-lamps/sauflex-himalaya-salt-lamp-natural-shape-5-7-kg"
+ },
+ {
+  "id": "saunabee-led-strip-warm-white-ip67",
+  "brand": "Saunabee",
+  "category": "lighting",
+  "name": "Sauna LED Strip Warm White IP67, 5 m",
+  "specs": {
+   "length": "5 m",
+   "voltage": "12 V DC (constant voltage)",
+   "power": "8 W/m",
+   "leds_per_m": "120",
+   "color_temperature": "3500 K",
+   "protection": "IP67",
+   "note": "Constant-voltage driver required (not included); 20 mounting clips included"
+  },
+  "description": {
+   "az": "Sauna və SPA işıqlandırması üçün isti ağ (3500 K) LED lent: 5 m-lik çarx, 12 V DC, metrə 8 Vt və metrə 120 LED. IP67 qoruma dərəcəlidir, 20 bərkidici klipslə gəlir; uyğun sabit gərginlikli qida bloku tələb olunur.",
+   "ru": "Светодиодная лента тёплого белого света (3500 K) для сауны и спа: катушка 5 м, 12 В DC, 8 Вт/м, 120 светодиодов на метр. Степень защиты IP67, в комплекте 20 клипс; нужен подходящий блок питания постоянного напряжения.",
+   "en": "A warm white (3500 K) LED strip for sauna and spa lighting: 5 m reel, 12 V DC, 8 W per metre and 120 LEDs per metre. IP67-rated and supplied with 20 mounting clips; a suitable constant-voltage driver is required."
+  },
+  "image": "img/saunabee-led-strip-warm-white-ip67.jpg",
+  "source_url": "https://saunabee.com/sauna-and-hammam-lighting/sauna-led-lights/sauna-led-warm-white-ip67-5m-3500k-12v-8w-1m"
+ }
+]

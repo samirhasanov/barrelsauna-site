@@ -1,0 +1,68 @@
+---
+import Icon from './Icon.astro';
+import Photo from './Photo.astro';
+import { SITE, type Lang } from '../data/site';
+import { VIDEOS, type SocialVideo } from '../data/social';
+import { hasImg } from '../lib/images';
+interface Props { lang: Lang; section?: string; limit?: number; compact?: boolean }
+const { lang, section, limit = 8, compact = false } = Astro.props;
+let list: SocialVideo[] = section ? VIDEOS.filter((v) => v.section === section) : VIDEOS;
+if (section && list.length < 3) list = [...list, ...VIDEOS.filter((v) => !list.includes(v))];
+list = list.slice(0, limit);
+const label: Record<string, Record<Lang, string>> = {
+  barrel: { az: 'Barrel sauna', en: 'Barrel sauna', ru: 'Сауна-бочка' },
+  cube: { az: 'Kub sauna', en: 'Cube sauna', ru: 'Сауна-куб' },
+  cabin: { az: 'Kabin sauna', en: 'Cabin sauna', ru: 'Сауна-кабина' },
+  cottage: { az: 'Kotec sauna', en: 'Cottage sauna', ru: 'Сауна-коттедж' },
+  spa: { az: 'Outdoor SPA', en: 'Outdoor spa', ru: 'Уличный SPA' },
+  indoor: { az: 'Daxili sauna', en: 'Indoor sauna', ru: 'Сауна в доме' },
+  jacuzzi: { az: 'Odunla qızan jakuzi', en: 'Wood-fired hot tub', ru: 'Чан на дровах' },
+  process: { az: 'Tikinti prosesi', en: 'Construction process', ru: 'Процесс строительства' },
+  general: { az: 'Sauna atmosferi', en: 'Sauna atmosphere', ru: 'Атмосфера сауны' },
+};
+const c = {
+  az: { eyebrow: 'Videolar', title: 'Instagram və TikTok-da <em>bizi izləyin</em>', text: 'Tikinti prosesi, hazır saunalar və sauna atmosferi — qısa videolarda.', follow: 'Bizi izləyin' },
+  en: { eyebrow: 'Videos', title: 'Follow us on <em>Instagram & TikTok</em>', text: 'Construction, finished saunas and the sauna atmosphere — in short videos.', follow: 'Follow us' },
+  ru: { eyebrow: 'Видео', title: 'Мы в <em>Instagram и TikTok</em>', text: 'Процесс строительства, готовые сауны и атмосфера парения — в коротких видео.', follow: 'Подписывайтесь' },
+}[lang];
+---
+<section class:list={['section', 'social', { compact }]}>
+  <div class="container">
+    <div class="section-head split reveal">
+      <div class="stack-sm">
+        <span class="eyebrow">{c.eyebrow}</span>
+        <h2 class="h2" set:html={c.title} />
+        <p class="lede">{c.text}</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-ghost btn-sm" href={SITE.instagram} target="_blank" rel="noopener"><Icon name="instagram" size={18} /> @barrelsauna.az</a>
+        <a class="btn btn-ghost btn-sm" href={SITE.tiktok} target="_blank" rel="noopener"><Icon name="tiktok" size={18} /> @barrelsauna.az</a>
+      </div>
+    </div>
+    {list.length > 0 && (
+      <div class="reel-row">
+        {list.map((v) => (
+          <a class="reel reveal" href={v.url} target="_blank" rel="noopener" aria-label={`${v.platform === 'tiktok' ? 'TikTok' : 'Instagram'}: ${label[v.section]?.[lang] ?? ''} — ${v.caption}`}>
+            {v.thumb && hasImg(v.thumb) ? <Photo name={v.thumb} alt={`${label[v.section]?.[lang] ?? ''} — ${v.caption}`} widths={[300, 500]} sizes="240px" class="cover" /> : <span class="reel-ph" />}
+            <span class="reel-play"><Icon name="play" size={22} /></span>
+            <span class="reel-cap"><Icon name={v.platform} size={16} /> <span>{label[v.section]?.[lang] ?? v.caption}</span></span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+<style>
+  .reel-row { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(200px, 1fr); gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: thin; }
+  .reel { position: relative; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; background: var(--forest); color: #fff; text-decoration: none; scroll-snap-align: start; }
+  .reel :global(picture), .reel :global(img) { width: 100%; height: 100%; }
+  .reel :global(img) { transition: transform 0.6s; }
+  .reel:hover :global(img) { transform: scale(1.05); }
+  .reel::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.7), transparent 50%); }
+  .reel-ph { position: absolute; inset: 0; background: linear-gradient(135deg, var(--forest-2), var(--wood-2)); }
+  .reel-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.2); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.4); }
+  .reel-cap { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 1; display: flex; gap: 6px; align-items: flex-start; font-size: 0.82rem; font-weight: 600; line-height: 1.35; }
+  .reel-cap :global(svg) { flex: none; margin-top: 2px; }
+  .reel-cap span { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  @media (min-width: 1100px) { .reel-row { grid-auto-columns: calc((100% - 4 * 14px) / 5); } }
+</style>

@@ -1,0 +1,29 @@
+---
+import Photo from './Photo.astro';
+import Icon from './Icon.astro';
+import type { OutdoorModel } from '../data/models';
+import { path } from '../data/routes';
+import { type Lang } from '../data/site';
+import { t } from '../i18n/ui';
+import { fmtPrice } from '../lib/format';
+interface Props { m: OutdoorModel; lang: Lang; heading?: 'h2' | 'h3' }
+const { m, lang, heading = 'h3' } = Astro.props;
+const ui = t(lang);
+const H = heading;
+---
+<article class="card model-card">
+  <div class="card-media">
+    <Photo name={m.cover} alt={m.name[lang]} widths={[400, 700, 900]} sizes="(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw" />
+  </div>
+  <div class="card-body">
+    <H class="card-title"><a class="card-link" href={path(m.key, lang)}>{m.name[lang]}</a></H>
+    <p class="muted small">{m.short[lang]}</p>
+    <div class="card-meta">
+      <span class="chip"><Icon name="users" /> {m.capacity[0]}–{m.capacity[1]} {ui.labels.people}</span>
+      <span class="chip"><Icon name="tag" /> {fmtPrice(m.price, lang)}</span>
+    </div>
+  </div>
+</article>
+<style>
+  .model-card .card-media { aspect-ratio: 5 / 4; }
+</style>

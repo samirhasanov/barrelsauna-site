@@ -1,0 +1,227 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Photo from '../components/Photo.astro';
+import Icon from '../components/Icon.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { MODELS } from '../data/models';
+import { PROJECTS } from '../data/projects';
+import { t } from '../i18n/ui';
+import { faqLd, serviceLd } from '../lib/schema';
+import { ogImage } from '../lib/images';
+import { fmtPrice } from '../lib/format';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ui = t(lang);
+
+const c = {
+  az: {
+    title: 'Sauna Tikintisi Bakıda – Çöl, Daxili və Fin Saunası | Barrel Sauna',
+    desc: 'Azərbaycanda sauna tikintisi: çöl və daxili saunalar, fin saunası, buxar otağı, hamam və SPA kompleksləri. Layihə, istehsal, quraşdırma. ☎ 010 101 06 36',
+    eyebrow: 'Sauna tikintisi xidməti',
+    h1: 'Azərbaycanda <em>sauna tikintisi</em>',
+    lede: [
+      'Ev, bağ evi, villa, otel və istirahət mərkəzləri üçün fərdi ölçü və dizaynda saunalar tikirik. Fin saunası, buxar otağı, türk hamamı və tam SPA kompleksləri — layihələndirmə, material seçimi, istehsal və quraşdırma bir komandadan.',
+      'Barrel Sauna Azərbaycanın ilk çöl saunalarını inşa edən şirkətdir. İstehsalatımız Bakıdadır, quraşdırmanı isə bütün bölgələrdə həyata keçiririk.',
+    ],
+    whatTitle: 'Nə tikirik',
+    what: [
+      { key: 'outdoor', img: 'barrel-3', t: 'Çöl saunaları', d: 'Barrel, oval, kub, kabin və kotec saunalar — həyətiniz və bağ eviniz üçün, 2–20 nəfər.' },
+      { key: 'indoor', img: 'render-4', t: 'Daxili saunalar', d: 'Evin, villanın, otelin istənilən otağında ölçüyə görə lipa, kedr, abaşi saunalar.' },
+      { key: 'spa', img: 'proj-qabala-spa-2', t: 'SPA və hamam kompleksləri', d: 'Sauna, buxar otağı, duz otağı, türk hamamı, masaj otağı və hovuz bir layihədə.' },
+      { key: 'container', img: 'container-2', t: 'Sauna və jakuzi', d: 'Sauna ilə jakuzi və ya isti/soyuq vannanı birləşdirən hazır həllər.' },
+    ],
+    incTitle: 'Xidmətə nələr daxildir',
+    inc: [
+      ['pencil', 'Layihələndirmə', 'Ölçü, plan, oturacaq düzülüşü və lazım olduqda 3D vizualizasiya.'],
+      ['leaf', 'Material seçimi', 'Listvenica, lipa, termo lipa, kedr, abaşi, tik; dekorativ daş, Himalay duzu, kötük dekoru.'],
+      ['layers', 'İzolyasiya', 'Mineral daş yunu və membrandan ibarət çoxtəbəqəli istilik və buxar izolyasiyası.'],
+      ['flame', 'Soba və avadanlıq', 'Harvia və SAWO odun və elektrik sobaları, idarəetmə panelləri, aksesuarlar.'],
+      ['home', 'İstehsal və yığım', 'Bakıdakı istehsalatımızda hazırlanır, yerində peşəkar ustalar tərəfindən yığılır.'],
+      ['truck', 'Bütün bölgələrə', 'Bakı, Abşeron və Azərbaycanın bütün bölgələrində quraşdırma.'],
+    ],
+    priceTitle: 'Sauna tikintisi qiymətləri',
+    priceLede: 'Çöl saunası modelləri üçün təxmini qiymət aralıqları. Daxili saunaların qiyməti otağın ölçüsünə və seçilən materiallara görə fərdi hesablanır.',
+    colModel: 'Model', colCap: 'Tutum', colPrice: 'Təxmini qiymət',
+    regionsTitle: 'Harada tikirik',
+    regionsText: 'Bakı və Abşerondan Qəbələ, Qax, İsmayıllı, Şamaxı, Quba, Qusar, Şəki, Lənkəran və Gəncəyə qədər — Azərbaycanın bütün bölgələrində sauna tikintisi və quraşdırma.',
+    projTitle: 'Tikdiyimiz saunalardan',
+    faq: [
+      { q: 'Sauna tikintisi neçəyə başa gəlir?', a: 'Çöl saunaları təxminən 6 000 AZN-dən başlayır (barrel və kub sauna 6 000 – 12 000 AZN), kotec sauna 10 000 – 50 000 AZN, SPA kompleks 15 000 – 45 000 AZN. Daxili sauna qiyməti otağın ölçüsünə və materiallara görə hesablanır.' },
+      { q: 'Fin saunası ilə buxar otağı (rus banyası) arasında fərq nədir?', a: 'Fin saunası quru isti hava ilə işləyir (yüksək temperatur, aşağı rütubət), buxar otağında isə temperatur daha aşağı, rütubət daha yüksəkdir. Kotec sauna və SPA komplekslərində hər ikisini bir layihədə birləşdirmək mümkündür.' },
+      { q: 'Sauna tikintisinə nə daxildir?', a: 'Layihələndirmə, material seçimi, çoxtəbəqəli izolyasiya, istehsal, yerində yığım, soba və aksesuarların quraşdırılması. Detalları layihəyə görə razılaşdırırıq.' },
+      { q: 'Mövcud otaqda sauna tikmək olarmı?', a: 'Bəli, daxili saunalar mövcud otağın ölçüsünə uyğun sıfırdan yığılır və divarlar xüsusi izolyasiya ilə buxardan qorunur.' },
+      { q: 'Bölgələrdə sauna tikirsinizmi?', a: 'Bəli. Qəbələ, Qax (İlisu), İsmayıllı və digər bölgələrdə tamamlanmış layihələrimiz var.' },
+    ],
+  },
+  en: {
+    title: 'Sauna Construction in Baku – Indoor & Outdoor | Barrel Sauna',
+    desc: 'Sauna construction in Azerbaijan: outdoor and indoor saunas, Finnish sauna, steam room, hammam and spa complexes. Design, production and installation.',
+    eyebrow: 'Sauna construction service',
+    h1: '<em>Sauna construction</em> in Azerbaijan',
+    lede: [
+      'We build made-to-measure saunas for homes, country houses, villas, hotels and resorts. Finnish saunas, steam rooms, Turkish hammams and complete spa complexes — design, materials, production and installation from one team.',
+      'Barrel Sauna built Azerbaijan’s first outdoor saunas. Our workshop is in Baku and we install in every region.',
+    ],
+    whatTitle: 'What we build',
+    what: [
+      { key: 'outdoor', img: 'barrel-3', t: 'Outdoor saunas', d: 'Barrel, oval, cube, cabin and cottage saunas for gardens and country houses, 2–20 people.' },
+      { key: 'indoor', img: 'render-4', t: 'Indoor saunas', d: 'Linden, cedar and abachi saunas built to measure in any room of a home, villa or hotel.' },
+      { key: 'spa', img: 'proj-qabala-spa-2', t: 'Spa & hammam complexes', d: 'Sauna, steam room, salt room, Turkish hammam, massage room and pool in one project.' },
+      { key: 'container', img: 'container-2', t: 'Sauna & jacuzzi', d: 'Ready solutions combining a sauna with a jacuzzi or hot/cold tub.' },
+    ],
+    incTitle: 'What’s included',
+    inc: [
+      ['pencil', 'Design', 'Dimensions, layout, bench arrangement and 3D visualisation when needed.'],
+      ['leaf', 'Materials', 'Larch, linden, thermo linden, cedar, abachi, teak; decorative stone, Himalayan salt, log décor.'],
+      ['layers', 'Insulation', 'Multilayer thermal and vapour insulation of mineral stone wool and membrane.'],
+      ['flame', 'Heaters & equipment', 'Harvia and SAWO wood-burning and electric heaters, control panels, accessories.'],
+      ['home', 'Production & assembly', 'Made in our Baku workshop, assembled on site by experienced craftsmen.'],
+      ['truck', 'Nationwide', 'Installation in Baku, Absheron and every region of Azerbaijan.'],
+    ],
+    priceTitle: 'Sauna construction prices',
+    priceLede: 'Approximate price ranges for outdoor sauna models. Indoor saunas are priced individually by room size and materials.',
+    colModel: 'Model', colCap: 'Capacity', colPrice: 'Approx. price',
+    regionsTitle: 'Where we build',
+    regionsText: 'From Baku and Absheron to Gabala, Gakh, Ismayilli, Shamakhi, Guba, Gusar, Sheki, Lankaran and Ganja — sauna construction and installation across Azerbaijan.',
+    projTitle: 'Saunas we have built',
+    faq: [
+      { q: 'How much does sauna construction cost?', a: 'Outdoor saunas start at around 6,000 AZN (barrel and cube 6,000 – 12,000 AZN), cottage saunas 10,000 – 50,000 AZN, spa complexes 15,000 – 45,000 AZN. Indoor saunas are priced by room size and materials.' },
+      { q: 'Finnish sauna vs steam room — what’s the difference?', a: 'A Finnish sauna uses dry hot air (high temperature, low humidity); a steam room is cooler with much higher humidity. Cottage saunas and spa complexes can combine both.' },
+      { q: 'What does the service include?', a: 'Design, material selection, multilayer insulation, production, on-site assembly, and installation of the heater and accessories. Details are agreed per project.' },
+      { q: 'Can you build a sauna in an existing room?', a: 'Yes — indoor saunas are built from scratch to fit the room, with insulation that protects the walls from steam.' },
+      { q: 'Do you build in the regions?', a: 'Yes. We have completed projects in Gabala, Gakh (Ilisu), Ismayilli and elsewhere.' },
+    ],
+  },
+  ru: {
+    title: 'Строительство саун в Баку под ключ – цены | Barrel Sauna',
+    desc: 'Строительство саун в Азербайджане: уличные сауны и сауны в доме, финская сауна, парная, хамам и SPA-комплексы. Проект, производство и монтаж.',
+    eyebrow: 'Строительство саун',
+    h1: '<em>Строительство саун</em> в Азербайджане',
+    lede: [
+      'Строим сауны по индивидуальным размерам и дизайну для домов, дач, вилл, отелей и баз отдыха. Финская сауна, парная, турецкий хамам и полноценные SPA-комплексы — проект, материалы, производство и монтаж от одной команды.',
+      'Barrel Sauna построила первые уличные сауны в Азербайджане. Производство — в Баку, монтаж — во всех регионах.',
+    ],
+    whatTitle: 'Что мы строим',
+    what: [
+      { key: 'outdoor', img: 'barrel-3', t: 'Уличные сауны', d: 'Бочки, овальные, кубы, кабины и коттеджи для двора и дачи, 2–20 человек.' },
+      { key: 'indoor', img: 'render-4', t: 'Сауны в доме', d: 'Сауны из липы, кедра и абаши по размерам любой комнаты дома, виллы или отеля.' },
+      { key: 'spa', img: 'proj-qabala-spa-2', t: 'SPA и хамам-комплексы', d: 'Сауна, парная, соляная комната, хамам, массажная и бассейн в одном проекте.' },
+      { key: 'container', img: 'container-2', t: 'Сауна и джакузи', d: 'Готовые решения: сауна с джакузи или горячей/холодной купелью.' },
+    ],
+    incTitle: 'Что входит в услугу',
+    inc: [
+      ['pencil', 'Проектирование', 'Размеры, планировка, расположение полков и при необходимости 3D-визуализация.'],
+      ['leaf', 'Подбор материалов', 'Лиственница, липа, термолипа, кедр, абаши, тик; декоративный камень, гималайская соль, спилы.'],
+      ['layers', 'Утепление', 'Многослойная тепло- и пароизоляция из минеральной ваты и мембраны.'],
+      ['flame', 'Печи и оборудование', 'Дровяные и электрические печи Harvia и SAWO, пульты, аксессуары.'],
+      ['home', 'Производство и сборка', 'Изготавливаем на производстве в Баку, собирают опытные мастера на месте.'],
+      ['truck', 'По всей стране', 'Монтаж в Баку, на Абшероне и во всех регионах Азербайджана.'],
+    ],
+    priceTitle: 'Цены на строительство саун',
+    priceLede: 'Ориентировочные цены на модели уличных саун. Сауны в доме рассчитываются индивидуально по размерам и материалам.',
+    colModel: 'Модель', colCap: 'Вместимость', colPrice: 'Ориентир. цена',
+    regionsTitle: 'Где мы строим',
+    regionsText: 'От Баку и Абшерона до Габалы, Гаха, Исмаиллы, Шамахы, Губы, Гусара, Шеки, Ленкорани и Гянджи — строительство и монтаж саун по всему Азербайджану.',
+    projTitle: 'Наши построенные сауны',
+    faq: [
+      { q: 'Сколько стоит строительство сауны?', a: 'Уличные сауны — от ~6 000 AZN (бочка и куб 6 000 – 12 000 AZN), коттедж — 10 000 – 50 000 AZN, SPA-комплекс — 15 000 – 45 000 AZN. Сауна в доме рассчитывается по размерам и материалам.' },
+      { q: 'Чем финская сауна отличается от русской бани (парной)?', a: 'В финской сауне сухой горячий воздух (высокая температура, низкая влажность), в парной — ниже температура и намного выше влажность. В коттеджах и SPA-комплексах можно объединить оба варианта.' },
+      { q: 'Что входит в работы?', a: 'Проектирование, подбор материалов, многослойное утепление, производство, сборка на месте, установка печи и аксессуаров. Детали согласуем под проект.' },
+      { q: 'Можно ли построить сауну в существующей комнате?', a: 'Да, сауна собирается с нуля под размеры помещения, а стены защищаются от пара специальным утеплением.' },
+      { q: 'Строите ли вы в регионах?', a: 'Да. У нас есть готовые проекты в Габале, Гахе (Илису), Исмаиллы и других районах.' },
+    ],
+  },
+}[lang];
+
+const og = await ogImage('render-6');
+const steps = {
+  az: ['Məsləhət və ölçü', 'Layihə və vizualizasiya', 'İstehsal', 'Quraşdırma və təhvil'],
+  en: ['Consultation & measuring', 'Design & visualisation', 'Production', 'Installation & handover'],
+  ru: ['Консультация и замер', 'Проект и визуализация', 'Производство', 'Монтаж и сдача'],
+}[lang];
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.construction} image={og}
+  jsonLd={[serviceLd({ name: c.eyebrow, description: c.desc, url: path('construction', lang) }), faqLd(c.faq)]}>
+  <PageHero lang={lang} crumbs={[{ label: c.eyebrow }]} eyebrow={c.eyebrow} title={c.h1} lede={c.lede} image="render-6" />
+
+  <section class="section-sm">
+    <div class="container">
+      <h2 class="h2" style="margin-bottom:28px">{c.whatTitle}</h2>
+      <div class="grid grid-4">
+        {c.what.map((w) => (
+          <article class="card">
+            <div class="card-media"><Photo name={w.img} alt={w.t} widths={[400, 700]} sizes="(max-width: 640px) 100vw, 25vw" /></div>
+            <div class="card-body"><h3 class="card-title" style="font-size:1.4rem"><a class="card-link" href={path(w.key as any, lang)}>{w.t}</a></h3><p class="small muted">{w.d}</p></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-forest">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">{c.eyebrow}</span><h2 class="h2">{c.incTitle}</h2></div>
+      <div class="grid grid-3">
+        {c.inc.map(([ic, h, p]) => <div class="inc"><span class="inc-ic"><Icon name={ic} size={24} /></span><h3>{h}</h3><p>{p}</p></div>)}
+      </div>
+      <ol class="flow">{steps.map((s, i) => <li><span>{i + 1}</span>{s}</li>)}</ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container-narrow stack">
+      <h2 class="h2">{c.priceTitle}</h2>
+      <p class="lede">{c.priceLede}</p>
+      <div class="prose">
+        <table>
+          <thead><tr><th>{c.colModel}</th><th>{c.colCap}</th><th>{c.colPrice}</th></tr></thead>
+          <tbody>{MODELS.map((m) => <tr><td><a href={path(m.key, lang)}>{m.name[lang]}</a></td><td>{m.capacity[0]}–{m.capacity[1]} {ui.labels.people}</td><td>{fmtPrice(m.price, lang)}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p class="small muted">* {ui.labels.priceNote}</p>
+    </div>
+  </section>
+
+  <section class="section bg-cream2">
+    <div class="container">
+      <div class="section-head split">
+        <div class="stack-sm"><h2 class="h2">{c.projTitle}</h2><p class="lede">{c.regionsText}</p></div>
+        <a class="link-arrow" href={path('projects', lang)}>{ui.nav.projects}</a>
+      </div>
+      <div class="grid grid-4">
+        {PROJECTS.slice(0, 4).map((p) => (
+          <a class="pj" href={`${path('projects', lang)}#${p.id}`}>
+            <Photo name={p.images[0]} alt={`${p.title[lang]} — ${p.place[lang]}`} widths={[400, 700]} sizes="(max-width: 640px) 100vw, 25vw" class="cover" />
+            <span><small>{p.place[lang]}</small>{p.title[lang]}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
+  </section>
+
+  <CtaBand lang={lang} />
+</Base>
+<style>
+  .inc { padding: 26px; border-radius: var(--radius); background: rgba(246, 241, 228, 0.05); border: 1px solid rgba(246, 241, 228, 0.12); display: grid; gap: 10px; align-content: start; }
+  .inc h3 { font-size: 1.12rem; font-weight: 750; }
+  .inc p { color: rgba(246, 241, 228, 0.75); font-size: 0.95rem; }
+  .inc-ic { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 14px; background: rgba(217, 160, 102, 0.15); color: var(--amber); }
+  .flow { list-style: none; padding: 0; margin: 40px 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .flow li { display: flex; align-items: center; gap: 10px; padding: 10px 18px 10px 10px; border-radius: 999px; background: rgba(246, 241, 228, 0.08); font-weight: 650; }
+  .flow span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--amber); color: var(--forest); font-weight: 800; }
+  .pj { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: var(--radius); overflow: hidden; color: #fff; text-decoration: none; }
+  .pj :global(img) { width: 100%; height: 100%; transition: transform 0.6s; }
+  .pj:hover :global(img) { transform: scale(1.04); }
+  .pj::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.7), transparent 55%); }
+  .pj span { position: absolute; left: 16px; right: 16px; bottom: 14px; z-index: 1; font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; line-height: 1.15; }
+  .pj small { display: block; font-family: var(--font-sans); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; opacity: 0.85; }
+</style>

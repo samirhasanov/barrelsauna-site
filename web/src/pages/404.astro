@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { waLink } from '../data/site';
+import { path } from '../data/routes';
+import { MODELS } from '../data/models';
+import { t } from '../i18n/ui';
+const lang = 'az' as const;
+const ui = t(lang);
+---
+<Base lang={lang} title="404 — Səhifə tapılmadı | Barrel Sauna" description={ui.notFound.text} alternates={{}} noindex>
+  <section class="section">
+    <div class="container container-narrow stack" style="text-align:center;justify-items:center">
+      <p class="display" style="color:var(--wood)">404</p>
+      <h1 class="h2">{ui.notFound.title}</h1>
+      <p class="lede">{ui.notFound.text}</p>
+      <p class="small muted">Page not found · Страница не найдена — <a href="/en">English</a> · <a href="/ru">Русский</a></p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn" href="/">{ui.notFound.home}</a>
+        <a class="btn btn-wa" href={waLink(ui.wa.default)} target="_blank" rel="noopener"><Icon name="whatsapp" /> WhatsApp</a>
+      </div>
+      <div class="chips" style="justify-content:center;margin-top:20px">
+        {MODELS.map((m) => <a class="chip" href={path(m.key, lang)}>{m.name[lang]}</a>)}
+        <a class="chip" href={path('indoor', lang)}>{ui.nav.indoor}</a>
+        <a class="chip" href={path('stoves', lang)}>{ui.nav.stoves}</a>
+        <a class="chip" href={path('blog', lang)}>{ui.nav.blog}</a>
+      </div>
+    </div>
+  </section>
+</Base>

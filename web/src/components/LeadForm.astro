@@ -1,0 +1,55 @@
+---
+import Icon from './Icon.astro';
+import { SITE, type Lang } from '../data/site';
+import { t } from '../i18n/ui';
+interface Props { lang: Lang; preset?: string; id?: string }
+const { lang, preset = '', id = 'sifaris' } = Astro.props;
+const ui = t(lang);
+const opts = Object.entries(ui.form.opts);
+---
+<form class="lead" id={id} data-lead data-wa={SITE.whatsapp} data-intro={ui.form.msgIntro}>
+  <div class="row2">
+    <div class="field"><label for={`${id}-name`}>{ui.form.name}</label><input class="input" id={`${id}-name`} name="name" autocomplete="name" required /></div>
+    <div class="field"><label for={`${id}-phone`}>{ui.form.phone}</label><input class="input" id={`${id}-phone`} name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+994 __ ___ __ __" required /></div>
+  </div>
+  <div class="row2">
+    <div class="field">
+      <label for={`${id}-interest`}>{ui.form.interest}</label>
+      <select class="input" id={`${id}-interest`} name="interest">
+        {opts.map(([k, v]) => <option value={v} selected={k === preset}>{v}</option>)}
+      </select>
+    </div>
+    <div class="field"><label for={`${id}-loc`}>{ui.form.location}</label><input class="input" id={`${id}-loc`} name="location" /></div>
+  </div>
+  <div class="field"><label for={`${id}-msg`}>{ui.form.message}</label><textarea class="input" id={`${id}-msg`} name="message" rows="3"></textarea></div>
+  <button class="btn btn-wa" type="submit"><Icon name="whatsapp" /> {ui.form.submit}</button>
+</form>
+<style>
+  .lead { display: grid; gap: 16px; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .row2 { grid-template-columns: 1fr; } }
+  .lead .btn { justify-self: start; }
+  @media (max-width: 640px) { .lead .btn { justify-self: stretch; } }
+</style>
+<script>
+  document.querySelectorAll<HTMLFormElement>('form[data-lead]').forEach((f) => {
+    f.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const d = new FormData(f);
+      const lines = [
+        f.dataset.intro,
+        '',
+        `👤 ${d.get('name')}`,
+        `📞 ${d.get('phone')}`,
+        `🛖 ${d.get('interest')}`,
+        d.get('location') ? `📍 ${d.get('location')}` : '',
+        d.get('message') ? `📝 ${d.get('message')}` : '',
+      ].filter((l) => l !== '');
+      const url = `https://wa.me/${f.dataset.wa}?text=${encodeURIComponent(lines.join('\n'))}`;
+      const w = window as any;
+      w.gtag?.('event', 'generate_lead', { method: 'whatsapp_form', interest: String(d.get('interest')) });
+      w.fbq?.('track', 'Lead');
+      window.open(url, '_blank', 'noopener');
+    });
+  });
+</script>

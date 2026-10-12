@@ -1,0 +1,81 @@
+---
+import Icon from './Icon.astro';
+import { SITE, waLink, type Lang } from '../data/site';
+import { path } from '../data/routes';
+import { MODELS } from '../data/models';
+import { t } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const ui = t(lang);
+const about = {
+  az: 'Azərbaycanın ilk çöl saunalarını inşa edən şirkət. Barrel, kub, kabin, kotec saunalar, SPA kompleksləri və daxili saunaların layihələndirilməsi, istehsalı və quraşdırılması.',
+  en: 'The company that built Azerbaijan’s first outdoor saunas. Design, production and installation of barrel, cube, cabin and cottage saunas, spa complexes and indoor saunas.',
+  ru: 'Компания, построившая первые уличные сауны в Азербайджане. Проектирование, производство и монтаж саун-бочек, кубов, кабин, коттеджей, SPA-комплексов и саун в доме.',
+}[lang];
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="f-top">
+      <div class="f-brand">
+        <img src="/brand/logo-light.webp" alt="Barrel Sauna" width="260" height="198" loading="lazy" />
+        <p>{about}</p>
+        <div class="socials">
+          <a href={SITE.instagram} target="_blank" rel="noopener" aria-label="Instagram"><Icon name="instagram" size={20} /></a>
+          <a href={SITE.tiktok} target="_blank" rel="noopener" aria-label="TikTok"><Icon name="tiktok" size={20} /></a>
+          <a href={waLink(ui.wa.default)} target="_blank" rel="noopener" aria-label="WhatsApp"><Icon name="whatsapp" size={20} /></a>
+        </div>
+      </div>
+      <div>
+        <p class="f-h">{ui.labels.models}</p>
+        <ul class="f-list">
+          {MODELS.map((m) => <li><a href={path(m.key, lang)}>{m.name[lang]}</a></li>)}
+          <li><a href={path('indoor', lang)}>{ui.nav.indoor}</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="f-h">{ui.labels.quickLinks}</p>
+        <ul class="f-list">
+          <li><a href={path('construction', lang)}>{{ az: 'Sauna tikintisi', en: 'Sauna construction', ru: 'Строительство саун' }[lang]}</a></li>
+          <li><a href={path('container', lang)}>{{ az: 'Konteyner sauna', en: 'Container sauna', ru: 'Сауна-контейнер' }[lang]}</a></li>
+          <li><a href={path('jacuzzi', lang)}>{{ az: 'Jakuzi və hot tub', en: 'Hot tubs & jacuzzi', ru: 'Джакузи и купели' }[lang]}</a></li>
+          <li><a href={path('portable', lang)}>{{ az: 'Daşınabilən sauna', en: 'Portable sauna', ru: 'Мобильная сауна' }[lang]}</a></li>
+          <li><a href={path('stoves', lang)}>{ui.nav.stoves}</a></li>
+          <li><a href={path('accessories', lang)}>{ui.nav.accessories}</a></li>
+          <li><a href={path('projects', lang)}>{ui.nav.projects}</a></li>
+          <li><a href={path('blog', lang)}>{ui.nav.blog}</a></li>
+          <li><a href={path('about', lang)}>{ui.nav.about}</a></li>
+        </ul>
+      </div>
+      <div class="f-contact">
+        <p class="f-h">{ui.nav.contact}</p>
+        <a href={`tel:${SITE.phone}`}><Icon name="phone" size={18} /> {SITE.phoneDisplay}</a>
+        <a href={`mailto:${SITE.email}`}><Icon name="mail" size={18} /> {SITE.email}</a>
+        <p><Icon name="pin" size={18} /> <span>{SITE.address[lang]}</span></p>
+        <p><Icon name="clock" size={18} /> <span>{SITE.hours[lang].map((h) => <>{h}<br /></>)}</span></p>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <span>© {year} Barrel Sauna — barrelsauna.az. {ui.labels.rights}</span>
+      <span class="f-brands">Harvia · SAWO · Saunabee</span>
+    </div>
+  </div>
+</footer>
+<style>
+  .site-footer { background: #182410; color: rgba(246, 241, 228, 0.82); padding: 72px 0 28px; font-size: 0.95rem; }
+  .f-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.3fr; gap: 40px; }
+  .f-brand img { height: 74px; width: auto; margin-bottom: 18px; }
+  .f-brand p { max-width: 40ch; }
+  .socials { display: flex; gap: 10px; margin-top: 20px; }
+  .socials a { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(246,241,228,.22); color: var(--cream); transition: background .2s; }
+  .socials a:hover { background: rgba(246,241,228,.12); }
+  .f-h { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); font-weight: 750; margin-bottom: 16px; }
+  .f-list { list-style: none; display: grid; gap: 9px; }
+  .f-list a, .f-contact a { text-decoration: none; }
+  .f-list a:hover, .f-contact a:hover { color: #fff; text-decoration: underline; }
+  .f-contact { display: grid; gap: 12px; align-content: start; }
+  .f-contact a, .f-contact p { display: flex; gap: 10px; align-items: flex-start; }
+  .f-contact :global(svg) { flex: none; margin-top: 3px; color: var(--amber); }
+  .f-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 56px; padding-top: 22px; border-top: 1px solid rgba(246,241,228,.12); font-size: 0.85rem; opacity: 0.75; }
+  @media (max-width: 960px) { .f-top { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .f-top { grid-template-columns: 1fr; } .site-footer { padding-bottom: 100px; } }
+</style>

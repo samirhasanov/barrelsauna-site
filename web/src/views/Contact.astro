@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import Crumbs from '../components/Crumbs.astro';
+import Icon from '../components/Icon.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { SITE, waLink, type Lang } from '../data/site';
+import { ROUTES } from '../data/routes';
+import { t } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ui = t(lang);
+const c = {
+  az: { title: 'Əlaqə – Barrel Sauna, Bakı (Nərimanov)', desc: 'Barrel Sauna ilə əlaqə: WhatsApp və telefon +994 10 101 06 36, e-poçt, ünvan Bakı, Nərimanov, Əhməd Rəcəbli 1/25. İş saatları və pulsuz məsləhət.', h1: 'Bizimlə <em>əlaqə</em>', lede: 'Sauna ilə bağlı istənilən sualınız üçün WhatsApp-da yazın, zəng edin və ya formu doldurun. Ölçü, şəkil və ya istədiyiniz model barədə məlumat göndərsəniz, daha tez təxmini qiymət verə bilərik.', map: 'Xəritədə aç' },
+  en: { title: 'Contact – Barrel Sauna Baku', desc: 'Contact Barrel Sauna: WhatsApp and phone +994 10 101 06 36, email, address 1/25 Ahmad Rajabli St, Narimanov, Baku. Opening hours and free consultation.', h1: 'Get in <em>touch</em>', lede: 'Message us on WhatsApp, call or fill in the form with any sauna question. If you send dimensions, photos or the model you like, we can give you an estimate faster.', map: 'Open in maps' },
+  ru: { title: 'Контакты – Barrel Sauna, Баку', desc: 'Контакты Barrel Sauna: WhatsApp и телефон +994 10 101 06 36, e-mail, адрес: Баку, Наримановский р-н, ул. Ахмеда Раджабли 1/25. Часы работы.', h1: '<em>Контакты</em>', lede: 'Напишите в WhatsApp, позвоните или заполните форму — ответим на любые вопросы о саунах. Пришлите размеры, фото или понравившуюся модель — так мы быстрее назовём ориентировочную цену.', map: 'Открыть на карте' },
+}[lang];
+const mapQ = encodeURIComponent('Əhməd Rəcəbli 1/25, Nərimanov, Bakı');
+const contactLd = { '@context': 'https://schema.org', '@type': 'ContactPage', name: c.title, url: SITE.url + ROUTES.contact[lang] };
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.contact} jsonLd={[contactLd]}>
+  <section class="page-hero">
+    <div class="container">
+      <Crumbs lang={lang} items={[{ label: ui.nav.contact }]} />
+      <div class="contact-grid">
+        <div class="stack">
+          <h1 class="h1" set:html={c.h1} />
+          <p class="lede">{c.lede}</p>
+          <div class="cards">
+            <a class="cc wa" href={waLink(ui.wa.default)} target="_blank" rel="noopener"><Icon name="whatsapp" size={26} /><span><small>WhatsApp</small>{SITE.phoneDisplay}</span></a>
+            <a class="cc" href={`tel:${SITE.phone}`}><Icon name="phone" size={22} /><span><small>{ui.labels.phone}</small>{SITE.phoneDisplay}</span></a>
+            <a class="cc" href={`mailto:${SITE.email}`}><Icon name="mail" size={22} /><span><small>{ui.labels.email}</small>{SITE.email}</span></a>
+            <a class="cc" href={`https://www.google.com/maps/search/?api=1&query=${mapQ}`} target="_blank" rel="noopener"><Icon name="pin" size={22} /><span><small>{ui.labels.address} · {c.map}</small>{SITE.address[lang]}</span></a>
+            <div class="cc"><Icon name="clock" size={22} /><span><small>{ui.labels.hours}</small>{SITE.hours[lang].join(' · ')}</span></div>
+            <div class="cc social">
+              <a href={SITE.instagram} target="_blank" rel="noopener"><Icon name="instagram" size={20} /> Instagram</a>
+              <a href={SITE.tiktok} target="_blank" rel="noopener"><Icon name="tiktok" size={20} /> TikTok</a>
+            </div>
+          </div>
+        </div>
+        <div class="form-card" id="sifaris">
+          <h2 class="h3">{ui.form.title}</h2>
+          <p class="small muted">{ui.form.subtitle}</p>
+          <LeadForm lang={lang} id="lead-contact" />
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: start; margin-bottom: var(--section); }
+  .cards { display: grid; gap: 10px; }
+  .cc { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 16px; background: var(--paper); border: 1px solid var(--line); text-decoration: none; font-weight: 700; color: var(--ink); }
+  .cc small { display: block; font-size: 0.78rem; font-weight: 600; color: var(--muted); }
+  .cc :global(svg) { flex: none; color: var(--wood); }
+  a.cc:hover { border-color: var(--forest); }
+  .cc.wa { background: var(--wa); color: #fff; border-color: transparent; }
+  .cc.wa small, .cc.wa :global(svg) { color: #fff; }
+  .cc.social { gap: 20px; }
+  .cc.social a { display: inline-flex; gap: 8px; align-items: center; text-decoration: none; }
+  .form-card { background: var(--paper); border: 1px solid var(--line); padding: clamp(22px, 3vw, 36px); border-radius: var(--radius-lg); box-shadow: var(--shadow); display: grid; gap: 14px; position: sticky; top: calc(var(--header-h) + 20px); }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .form-card { position: static; } }
+</style>

@@ -1,0 +1,103 @@
+---
+import SolutionPage, { type SolutionContent } from '../components/SolutionPage.astro';
+import { type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+
+const { lang } = Astro.props as { lang: Lang };
+
+const content: Record<Lang, SolutionContent> = {
+  az: {
+    title: 'Hot Tub və Jakuzi – Çöl üçün İsti və Soyuq Vanna | Barrel Sauna',
+    desc: 'Çöl üçün odunla və ya elektriklə qızan hot tub, hidromassajlı jakuzi və soyuq vanna (cold plunge). Bağ evi, otel və SPA üçün quraşdırma, sauna ilə inteqrasiya.',
+    eyebrow: 'Jakuzi və isti-soyuq vanna',
+    h1: 'Jakuzi, hot tub və <em>isti-soyuq vanna</em>',
+    lede: [
+      'Hot tub və jakuzi istirahət və bədənin rahatlaması üçün nəzərdə tutulmuş su sistemləridir. Sauna və hamam layihələrində əlavə rahatlıq və estetika üçün geniş istifadə olunur.',
+      'Həm şəxsi həyət evləri, həm də turizm obyektləri üçün uyğun olan bu sistemləri saunanızla birlikdə layihələndirir və quraşdırırıq — sizə tam istirahət və SPA təcrübəsi təqdim edirik.',
+    ],
+    featTitle: 'Saunadan sonra ideal davam',
+    features: [
+      { icon: 'flame', t: 'Odun və ya elektrik', d: 'Hot tub odunla və ya elektriklə qızdırıla bilər; jakuzi elektriklə işləyir.' },
+      { icon: 'droplet', t: 'Hidromassaj', d: 'Jakuzi su jetləri ilə hidromassaj, istilik və işıqlandırma nəzarəti təklif edir.' },
+      { icon: 'snow', t: 'Soyuq vanna', d: 'Saunadan sonra kontrast prosedur üçün soyuq vanna (cold plunge) seçimi.' },
+      { icon: 'leaf', t: 'Təbii görünüş', d: 'Taxta hot tub rustik, təbii görünüşü ilə çöl saunası ilə mükəmməl uyğunlaşır.' },
+      { icon: 'home', t: 'Sauna ilə inteqrasiya', d: 'Barrel, kub, kotec sauna və SPA komplekslərinə vahid layihə kimi əlavə edilir.' },
+      { icon: 'truck', t: 'Quraşdırma', d: 'Bakıda və bütün bölgələrdə quraşdırma xidməti.' },
+    ],
+    blocksTitle: 'Hot tub və jakuzi: fərqlər',
+    blocks: [
+      { title: '🔥 Hot Tub', items: ['Odunla və ya elektriklə isidilən su sistemi', 'Adətən taxtadan hazırlanır — rustik, təbii görünüş', 'Sauna sobası ilə eyni enerji növündən istifadə edə bilər', 'Açıq hava üçün ideal, çöl saunasına əlavə dəyər qatır'] },
+      { title: '✨ Jakuzi', items: ['Elektriklə işləyən, su jetləri ilə hidromassajlı müasir sistem', 'Akril materialdan hazırlanır', 'İstilik və işıqlandırma nəzarəti kimi komfort imkanları', 'Daxili sauna və fərdi SPA zonaları ilə birgə istifadə'] },
+    ],
+    galleryTitle: 'Jakuzi və hot tub nümunələri',
+    faq: [
+      { q: 'Hot tub ilə jakuzi arasında fərq nədir?', a: 'Hot tub adətən taxtadan olur və odunla və ya elektriklə qızdırılır; jakuzi isə akril, elektrikli və hidromassaj jetləri olan sistemdir.' },
+      { q: 'Jakuzini sauna ilə birlikdə quraşdırırsınız?', a: 'Bəli. Jakuzi, hot tub və ya soyuq vannanı sauna layihəsinə inteqrasiya edir, vahid istirahət zonası yaradırıq. Konteyner sauna və jakuzi həllimizə də baxın.' },
+      { q: 'Qiyməti nə qədərdir?', a: 'Ölçü, növ (taxta hot tub, akril jakuzi, soyuq vanna) və qızdırma sisteminə görə dəyişir. WhatsApp-da yazın — seçimləri və qiyməti göndərək.' },
+    ],
+  },
+  en: {
+    title: 'Outdoor Hot Tubs, Jacuzzi & Cold Plunge in Baku | Barrel Sauna',
+    desc: 'Wood-fired or electric outdoor hot tubs, hydromassage jacuzzi and cold plunge tubs. Installed for villas, hotels and spas, integrated with your sauna.',
+    eyebrow: 'Hot tubs & jacuzzi',
+    h1: 'Jacuzzi, hot tubs and <em>hot & cold tubs</em>',
+    lede: [
+      'Hot tubs and jacuzzis are water systems designed for relaxation. They are widely used in sauna and spa projects for extra comfort and aesthetics.',
+      'Suitable for private homes and hospitality venues alike, we design and install them together with your sauna for a complete spa experience.',
+    ],
+    featTitle: 'The perfect follow-up to the sauna',
+    features: [
+      { icon: 'flame', t: 'Wood or electric', d: 'Hot tubs can be wood-fired or electric; jacuzzis run on electricity.' },
+      { icon: 'droplet', t: 'Hydromassage', d: 'Jacuzzis offer water-jet hydromassage, temperature and lighting control.' },
+      { icon: 'snow', t: 'Cold plunge', d: 'A cold plunge tub for contrast therapy after the sauna.' },
+      { icon: 'leaf', t: 'Natural look', d: 'A wooden hot tub’s rustic look pairs perfectly with an outdoor sauna.' },
+      { icon: 'home', t: 'Sauna integration', d: 'Added to barrel, cube and cottage saunas or spa complexes as one project.' },
+      { icon: 'truck', t: 'Installation', d: 'Installed in Baku and every region.' },
+    ],
+    blocksTitle: 'Hot tub vs jacuzzi',
+    blocks: [
+      { title: '🔥 Hot tub', items: ['Water heated by wood or electricity', 'Usually wooden — rustic, natural look', 'Can share the same energy source as the sauna heater', 'Ideal outdoors, adds value to an outdoor sauna'] },
+      { title: '✨ Jacuzzi', items: ['Electric system with water-jet hydromassage', 'Made of acrylic', 'Comfort features like temperature and lighting control', 'Works with indoor saunas and private spa zones'] },
+    ],
+    galleryTitle: 'Jacuzzi & hot tub examples',
+    faq: [
+      { q: 'What is the difference between a hot tub and a jacuzzi?', a: 'A hot tub is usually wooden and heated by wood or electricity; a jacuzzi is an acrylic, electric system with hydromassage jets.' },
+      { q: 'Do you install a jacuzzi together with a sauna?', a: 'Yes. We integrate a jacuzzi, hot tub or cold plunge into the sauna project to create one relaxation zone. See also our container sauna & jacuzzi solution.' },
+      { q: 'How much does it cost?', a: 'It depends on size, type (wooden hot tub, acrylic jacuzzi, cold plunge) and heating. Message us on WhatsApp for options and prices.' },
+    ],
+  },
+  ru: {
+    title: 'Чан, купель и джакузи для улицы в Баку | Barrel Sauna',
+    desc: 'Уличные чаны на дровах или электричестве, джакузи с гидромассажем и холодные купели. Установка для дач, отелей и SPA, в комплексе с сауной.',
+    eyebrow: 'Джакузи и купели',
+    h1: 'Джакузи, чаны и <em>горячие и холодные купели</em>',
+    lede: [
+      'Чан (hot tub) и джакузи — водные системы для отдыха и расслабления. Их часто добавляют в проекты саун и бань для дополнительного комфорта и красоты.',
+      'Подходят и для частных домов, и для туристических объектов: мы проектируем и устанавливаем их вместе с сауной — для полноценного SPA-отдыха.',
+    ],
+    featTitle: 'Идеальное продолжение сауны',
+    features: [
+      { icon: 'flame', t: 'Дрова или электричество', d: 'Чан нагревается дровами или электричеством; джакузи — электрическое.' },
+      { icon: 'droplet', t: 'Гидромассаж', d: 'Джакузи: гидромассажные форсунки, контроль температуры и подсветки.' },
+      { icon: 'snow', t: 'Холодная купель', d: 'Холодная купель для контрастных процедур после парной.' },
+      { icon: 'leaf', t: 'Натуральный вид', d: 'Деревянный чан в рустикальном стиле идеально сочетается с уличной сауной.' },
+      { icon: 'home', t: 'Вместе с сауной', d: 'Добавляем к бочке, кубу, коттеджу или SPA-комплексу единым проектом.' },
+      { icon: 'truck', t: 'Монтаж', d: 'Устанавливаем в Баку и во всех регионах.' },
+    ],
+    blocksTitle: 'Чан и джакузи: в чём разница',
+    blocks: [
+      { title: '🔥 Чан (hot tub)', items: ['Вода нагревается дровами или электричеством', 'Обычно из дерева — натуральный рустикальный вид', 'Может использовать тот же источник энергии, что и печь сауны', 'Идеален на улице, дополняет уличную сауну'] },
+      { title: '✨ Джакузи', items: ['Электрическая система с гидромассажными форсунками', 'Изготавливается из акрила', 'Контроль температуры и подсветки', 'Подходит для саун в доме и частных SPA-зон'] },
+    ],
+    galleryTitle: 'Примеры джакузи и чанов',
+    faq: [
+      { q: 'Чем чан отличается от джакузи?', a: 'Чан обычно деревянный и греется дровами или электричеством; джакузи — акриловая электрическая система с гидромассажем.' },
+      { q: 'Устанавливаете ли вы джакузи вместе с сауной?', a: 'Да. Встраиваем джакузи, чан или холодную купель в проект сауны — получается единая зона отдыха. См. также сауну-контейнер с джакузи.' },
+      { q: 'Сколько стоит?', a: 'Зависит от размера, типа (деревянный чан, акриловое джакузи, купель) и нагрева. Напишите в WhatsApp — пришлём варианты и цены.' },
+    ],
+  },
+};
+---
+<SolutionPage lang={lang} c={content[lang]} alternates={ROUTES.jacuzzi} url={path('jacuzzi', lang)} hero="hottub-2"
+  gallery={['hottub-2', 'hottub-1', 'jacuzzi-1', 'jacuzzi-2', 'jacuzzi-3', 'hottub-3', 'proj-qabala-barrel-1', 'spa-1']}
+  preset="jacuzzi" related={['spa', 'cottage', 'barrel']} />

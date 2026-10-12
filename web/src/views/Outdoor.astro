@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ModelCard from '../components/ModelCard.astro';
+import Photo from '../components/Photo.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { MODELS, OUTDOOR_BUILD } from '../data/models';
+import { t } from '../i18n/ui';
+import { faqLd } from '../lib/schema';
+import { ogImage } from '../lib/images';
+import { fmtPrice } from '../lib/format';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ui = t(lang);
+
+const c = {
+  az: {
+    title: 'Çöl Saunaları – Barrel, Kub, Kabin Modelləri | Barrel Sauna',
+    desc: 'Çöl saunası modelləri: barrel, oval, kub, kabin, kotec sauna və SPA kompleks. 2–20 nəfər, 6 000 AZN-dən. Listvenica, lipa, odun və elektrik soba. Bütün bölgələr.',
+    eyebrow: 'Outdoor sauna',
+    h1: 'Çöl saunaları — <em>açıq hava</em> üçün 6 model',
+    lede: [
+      'Barrel Sauna Azərbaycanın ilk çöl saunalarını inşa edən şirkətdir. Təbiətlə iç-içə məkanlar üçün nəzərdə tutulmuş dizaynlarda keyfiyyətli və davamlı saunalar təklif edirik.',
+      'Xarici hissədə suya davamlı termo listvenica (gəmi taxtası), daxildə lipa ağacı və ya istəyə görə kedr, abaşi, tik. Yağışlı, qarlı və rütubətli iqlimdə belə dayanıqlı saunalar — həm evinizin həyəti, həm də qonaqlarınız üçün əlavə cazibə.',
+    ],
+    compare: 'Modelləri müqayisə edin',
+    colModel: 'Model', colCap: 'Tutum', colPrice: 'Təxmini qiymət',
+    buildTitle: 'Bütün modellərdə eyni keyfiyyət',
+    layersTitle: 'Çoxtəbəqəli divar quruluşu',
+    layersText: 'Sauna divarlarının xüsusi layihələndirilmiş çoxtəbəqəli strukturu mükəmməl istilik izolyasiyasına zəmanət verir. Konstruksiyaya inteqrasiya olunmuş mineral daş yunu istiliyi maksimum səviyyədə qoruyur, taxtalararası membran isə rütubət və buxarın ağac karkasa nüfuz etməsinin qarşısını tam alır.',
+    roofTitle: 'Tegola + tol: ikiqat qalxan',
+    roofText: 'Dam örtüyündə istifadə etdiyimiz tegola və onun altındakı möhkəm tol qatı qoruyucu ikiqat qalxan rolunu oynayır. Fərqli modellərdə zövqə və məkana uyğun ondulin və profnastil seçimləri də var — nəticədə həm uzunömürlü izolyasiya, həm də həyətinizə yaraşan premium dizayn.',
+    faq: [
+      { q: 'Hansı çöl saunası modelini seçməliyəm?', a: '2–4 nəfərlik ailə istifadəsi üçün barrel və ya kub sauna; daha geniş məkan və soyunma bölməsi istəyirsinizsə oval və ya kabin sauna; sauna, hamam, hovuz və istirahət otağını birləşdirmək istəyirsinizsə kotec sauna və ya SPA kompleks ideal seçimdir.' },
+      { q: 'Çöl saunasının qiyməti nədən asılıdır?', a: 'Model və ölçüdən, daxili taxtadan (lipa, kedr, abaşi), soba növündən (odun və ya elektrik), şüşə sahəsindən, dam örtüyündən və əlavə bölmələrdən.' },
+      { q: 'Quraşdırma nə qədər vaxt aparır?', a: 'Müddət model və layihənin həcmindən asılıdır. Dəqiq qrafiki layihəni təsdiqlədikdən sonra bildiririk.' },
+      { q: 'Saunanı bölgəyə çatdırırsınız?', a: 'Bəli, Bakı, Abşeron və Azərbaycanın bütün bölgələrində quraşdırma xidməti göstəririk.' },
+    ],
+  },
+  en: {
+    title: 'Outdoor Saunas in Azerbaijan – Barrel, Cube, Cabin',
+    desc: 'Outdoor sauna models: barrel, oval, cube, cabin, cottage sauna and spa complex. 2–20 people, from 6,000 AZN. Larch, linden, wood or electric heater.',
+    eyebrow: 'Outdoor saunas',
+    h1: 'Outdoor saunas — <em>six models</em> for open-air living',
+    lede: [
+      'Barrel Sauna is the company that built Azerbaijan’s first outdoor saunas. We offer high-quality, durable saunas designed for places close to nature.',
+      'Outside: water-resistant thermo larch (“ship timber”). Inside: linden, or cedar, abachi and teak on request. Saunas that withstand rain, snow and humid climates — for your own garden or as an extra attraction for your guests.',
+    ],
+    compare: 'Compare models',
+    colModel: 'Model', colCap: 'Capacity', colPrice: 'Approx. price',
+    buildTitle: 'The same quality in every model',
+    layersTitle: 'Multilayer wall structure',
+    layersText: 'A specially engineered multilayer wall guarantees excellent insulation. Mineral stone wool built into the structure retains heat, while a membrane between the boards completely stops moisture and steam from reaching the wooden frame.',
+    roofTitle: 'Tegola + roofing felt: a double shield',
+    roofText: 'Tegola shingles over a strong roofing-felt layer form a double protective shield. Depending on the model and your taste we also offer ondulin or profiled metal — for long-lasting insulation and a premium look in your garden.',
+    faq: [
+      { q: 'Which outdoor sauna should I choose?', a: 'For 2–4 people a barrel or cube sauna; for more space and a changing area an oval or cabin sauna; to combine sauna, hammam, pool and lounge a cottage sauna or spa complex.' },
+      { q: 'What does the price depend on?', a: 'Model and size, interior wood (linden, cedar, abachi), heater type (wood or electric), glass area, roofing and additional rooms.' },
+      { q: 'How long does installation take?', a: 'It depends on the model and project scope. We confirm the exact schedule once the design is approved.' },
+      { q: 'Do you deliver to the regions?', a: 'Yes — we install in Baku, Absheron and every region of Azerbaijan.' },
+    ],
+  },
+  ru: {
+    title: 'Уличные сауны и бани под ключ в Баку | Barrel Sauna',
+    desc: 'Уличные сауны: бочка, овальная, куб, кабина, коттедж и SPA-комплекс. 2–20 человек, от 6 000 AZN. Лиственница, липа, дровяная или электропечь.',
+    eyebrow: 'Уличные сауны',
+    h1: 'Уличные сауны — <em>шесть моделей</em> для жизни на природе',
+    lede: [
+      'Barrel Sauna — компания, построившая первые уличные сауны в Азербайджане. Мы предлагаем качественные и долговечные сауны для мест, где хочется быть ближе к природе.',
+      'Снаружи — влагостойкая термолиственница («корабельная доска»), внутри — липа или, по желанию, кедр, абаши, тик. Сауны, которые выдерживают дождь, снег и влажность, — для вашего двора или как дополнительная услуга для гостей.',
+    ],
+    compare: 'Сравните модели',
+    colModel: 'Модель', colCap: 'Вместимость', colPrice: 'Ориентир. цена',
+    buildTitle: 'Одинаковое качество во всех моделях',
+    layersTitle: 'Многослойная конструкция стен',
+    layersText: 'Специально спроектированная многослойная стена гарантирует отличную теплоизоляцию. Минеральная каменная вата сохраняет тепло, а мембрана между досками полностью защищает деревянный каркас от влаги и пара.',
+    roofTitle: 'Tegola + рубероид: двойной щит',
+    roofText: 'Гибкая черепица Tegola поверх прочного слоя рубероида — двойная защита. Для разных моделей также доступны ондулин и профнастил — долговечная изоляция и премиальный вид участка.',
+    faq: [
+      { q: 'Какую уличную сауну выбрать?', a: 'Для 2–4 человек — бочка или куб; если нужен простор и предбанник — овальная или кабина; чтобы объединить сауну, хамам, бассейн и комнату отдыха — коттедж или SPA-комплекс.' },
+      { q: 'От чего зависит цена?', a: 'От модели и размера, дерева внутри (липа, кедр, абаши), типа печи (дровяная или электрическая), площади остекления, кровли и дополнительных помещений.' },
+      { q: 'Сколько длится монтаж?', a: 'Зависит от модели и объёма проекта. Точный график называем после утверждения проекта.' },
+      { q: 'Доставляете ли вы в регионы?', a: 'Да, устанавливаем в Баку, на Абшероне и во всех регионах Азербайджана.' },
+    ],
+  },
+}[lang];
+const og = await ogImage('oval-1');
+const itemList = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: MODELS.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.name[lang], url: `https://barrelsauna.az${path(m.key, lang)}` })),
+};
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.outdoor} image={og} jsonLd={[itemList, faqLd(c.faq)]}>
+  <PageHero lang={lang} crumbs={[{ label: ui.nav.outdoor }]} eyebrow={c.eyebrow} title={c.h1} lede={c.lede} image="oval-1" />
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="grid grid-3">{MODELS.map((m) => <ModelCard m={m} lang={lang} heading="h2" />)}</div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container container-narrow">
+      <h2 class="h3" style="margin-bottom:18px">{c.compare}</h2>
+      <div class="prose">
+        <table>
+          <thead><tr><th>{c.colModel}</th><th>{c.colCap}</th><th>{c.colPrice}</th></tr></thead>
+          <tbody>
+            {MODELS.map((m) => <tr><td><a href={path(m.key, lang)}>{m.name[lang]}</a></td><td>{m.capacity[0]}–{m.capacity[1]} {ui.labels.people}</td><td>{fmtPrice(m.price, lang)}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:12px">* {ui.labels.priceNote}</p>
+    </div>
+  </section>
+
+  <section class="section bg-forest">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">{ui.labels.specs}</span><h2 class="h2">{c.buildTitle}</h2></div>
+      <div class="grid grid-4">
+        {OUTDOOR_BUILD[lang].map((b, i) => <div class="b-card"><span class="num">0{i + 1}</span><h3>{b.title}</h3><p>{b.text}</p></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container stack" style="gap:clamp(48px,7vw,96px)">
+      <div class="split">
+        <div class="rounded tech-img"><Photo name="build-wall" alt={c.layersTitle} sizes="(max-width: 900px) 100vw, 50vw" /></div>
+        <div class="stack"><h2 class="h2">{c.layersTitle}</h2><p class="lede">{c.layersText}</p></div>
+      </div>
+      <div class="split reverse">
+        <div class="rounded tech-img"><Photo name="build-roof" alt={c.roofTitle} sizes="(max-width: 900px) 100vw, 50vw" /></div>
+        <div class="stack"><h2 class="h2">{c.roofTitle}</h2><p class="lede">{c.roofText}</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
+  </section>
+
+  <CtaBand lang={lang} />
+</Base>
+<style>
+  .b-card { padding: 26px; border-radius: var(--radius); background: rgba(246, 241, 228, 0.05); border: 1px solid rgba(246, 241, 228, 0.12); display: grid; gap: 10px; align-content: start; }
+  .b-card h3 { font-size: 1.1rem; font-weight: 750; }
+  .b-card p { color: rgba(246, 241, 228, 0.75); font-size: 0.95rem; }
+  .num { font-family: var(--font-serif); font-size: 2rem; color: var(--amber); line-height: 1; }
+  .tech-img { background: #1a2312; }
+  .tech-img :global(img) { width: 100%; }
+</style>

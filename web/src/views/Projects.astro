@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Gallery from '../components/Gallery.astro';
+import Icon from '../components/Icon.astro';
+import CtaBand from '../components/CtaBand.astro';
+import SocialVideos from '../components/SocialVideos.astro';
+import { type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { PROJECTS } from '../data/projects';
+import { INDOOR_PROJECTS } from '../data/indoor';
+import { t } from '../i18n/ui';
+import { ogImage } from '../lib/images';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ui = t(lang);
+const c = {
+  az: {
+    title: 'Layihələrimiz – Quraşdırdığımız Saunalar | Barrel Sauna',
+    desc: 'Barrel Sauna layihələri: Qəbələ SPA kompleksi, Qax İlisu kub sauna, İsmayıllı kotec sauna, Sea Breeze kabin sauna və daxili saunalar. Real fotolar.',
+    eyebrow: 'Portfolio',
+    h1: 'Layihələrimiz — <em>real</em> saunalar, real yerlər',
+    lede: 'Qəbələdən İlisuya, İsmayıllıdan Sea Breeze-ə qədər tikdiyimiz çöl və daxili saunalardan seçmələr.',
+    indoor: 'Daxili sauna layihələri',
+    model: 'Model',
+  },
+  en: {
+    title: 'Our Sauna Projects in Azerbaijan | Barrel Sauna',
+    desc: 'Barrel Sauna projects: Gabala spa complex, Ilisu cube sauna, Ismayilli cottage sauna, Sea Breeze cabin sauna and indoor saunas. Real photos.',
+    eyebrow: 'Portfolio',
+    h1: 'Our projects — <em>real</em> saunas, real places',
+    lede: 'A selection of the outdoor and indoor saunas we have built — from Gabala to Ilisu, Ismayilli to Sea Breeze.',
+    indoor: 'Indoor sauna projects',
+    model: 'Model',
+  },
+  ru: {
+    title: 'Наши проекты: бани и сауны в Азербайджане | Barrel Sauna',
+    desc: 'Проекты Barrel Sauna: SPA-комплекс в Габале, сауна-куб в Илису, сауна-коттедж в Исмаиллы, кабина в Sea Breeze и сауны в доме. Реальные фото.',
+    eyebrow: 'Портфолио',
+    h1: 'Наши проекты — <em>реальные</em> сауны, реальные места',
+    lede: 'Подборка уличных саун и саун в доме, которые мы построили: от Габалы до Илису, от Исмаиллы до Sea Breeze.',
+    indoor: 'Проекты саун в доме',
+    model: 'Модель',
+  },
+}[lang];
+const og = await ogImage('proj-qabala-spa-2');
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.projects} image={og}>
+  <PageHero lang={lang} crumbs={[{ label: ui.nav.projects }]} eyebrow={c.eyebrow} title={c.h1} lede={c.lede} />
+
+  <nav class="container chips pnav" aria-label={ui.nav.projects}>
+    {PROJECTS.map((p) => <a class="chip" href={`#${p.id}`}><Icon name="pin" size={14} /> {p.place[lang]}</a>)}
+    <a class="chip" href="#daxili">{c.indoor}</a>
+  </nav>
+
+  {PROJECTS.map((p, i) => (
+    <section class:list={['section-sm', 'project', { 'bg-paper': i % 2 === 1 }]} id={p.id}>
+      <div class="container">
+        <div class="p-head">
+          <div class="stack-sm">
+            <span class="eyebrow"><Icon name="pin" size={14} /> {p.place[lang]}</span>
+            <h2 class="h2">{p.title[lang]}</h2>
+            <p class="lede">{p.text[lang]}</p>
+          </div>
+          <a class="chip mlink" href={path(p.model, lang)}>{c.model}: {p.modelName[lang]} →</a>
+        </div>
+        <Gallery images={p.images} alt={`${p.title[lang]} — ${p.place[lang]}`} group={p.id} />
+      </div>
+    </section>
+  ))}
+
+  <section class="section-sm bg-cream2" id="daxili">
+    <div class="container">
+      <div class="p-head"><h2 class="h2">{c.indoor}</h2><a class="chip mlink" href={path('indoor', lang)}>{ui.nav.indoor} →</a></div>
+      <Gallery images={INDOOR_PROJECTS} alt={c.indoor} group="indoor" />
+    </div>
+  </section>
+
+  <SocialVideos lang={lang} />
+  <CtaBand lang={lang} />
+</Base>
+<style>
+  .pnav { margin-bottom: 12px; }
+  .project, #daxili { scroll-margin-top: var(--header-h); }
+  .p-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin-bottom: 28px; flex-wrap: wrap; }
+  .mlink { text-decoration: none; }
+  .mlink:hover { background: var(--forest); color: var(--cream); }
+</style>

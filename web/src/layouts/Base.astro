@@ -1,0 +1,165 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import Lightbox from '../components/Lightbox.astro';
+import { SITE, LANGS, LOCALE, HTML_LANG, type Lang, type L } from '../data/site';
+import { t } from '../i18n/ui';
+import fManropeLatin from '@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2?url';
+import fManropeExt from '@fontsource-variable/manrope/files/manrope-latin-ext-wght-normal.woff2?url';
+import fCormLatin from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-600-normal.woff2?url';
+import fCormExt from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-ext-600-normal.woff2?url';
+import fManropeCyr from '@fontsource-variable/manrope/files/manrope-cyrillic-wght-normal.woff2?url';
+import fCormCyr from '@fontsource/cormorant-garamond/files/cormorant-garamond-cyrillic-600-normal.woff2?url';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** localised paths of this page (for hreflang + language switcher) */
+  alternates: Partial<L>;
+  image?: string;
+  type?: 'website' | 'article';
+  jsonLd?: object[];
+  noindex?: boolean;
+}
+
+const { lang, title, description, alternates, image, type = 'website', jsonLd = [], noindex = false } = Astro.props;
+const ui = t(lang);
+const self = alternates[lang] ?? Astro.url.pathname;
+const abs = (p: string) => (p.startsWith('http') ? p : SITE.url + (p === '/' ? '/' : p));
+const canonical = abs(self);
+const ogImage = abs(image ?? '/og-default.jpg');
+
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': `${SITE.url}/#business`,
+  name: 'Barrel Sauna',
+  alternateName: 'BarrelSauna.az',
+  url: `${SITE.url}/`,
+  logo: `${SITE.url}/brand/logo-dark.png`,
+  image: `${SITE.url}/og-default.jpg`,
+  telephone: SITE.phone,
+  email: SITE.email,
+  priceRange: '6000-50000 AZN',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.street,
+    addressLocality: 'Bakı',
+    addressRegion: 'Nərimanov',
+    addressCountry: 'AZ',
+  },
+  areaServed: { '@type': 'Country', name: 'Azerbaijan' },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: '10:00', closes: '19:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday', opens: '10:00', closes: '17:00' },
+  ],
+  sameAs: [SITE.instagram, SITE.tiktok],
+};
+const schemas = [org, ...jsonLd];
+---
+<!doctype html>
+<html lang={HTML_LANG[lang]} class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
+  {LANGS.filter((l) => alternates[l]).map((l) => (
+    <link rel="alternate" hreflang={HTML_LANG[l]} href={abs(alternates[l]!)} />
+  ))}
+  {alternates.az && <link rel="alternate" hreflang="x-default" href={abs(alternates.az)} />}
+
+  <meta property="og:type" content={type} />
+  <meta property="og:site_name" content="Barrel Sauna" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:locale" content={LOCALE[lang]} />
+  {LANGS.filter((l) => l !== lang && alternates[l]).map((l) => <meta property="og:locale:alternate" content={LOCALE[l]} />)}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  {(lang === 'ru' ? [fManropeLatin, fManropeCyr, fCormCyr] : [fManropeLatin, fManropeExt, fCormLatin, fCormExt]).map((f) => (
+    <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />
+  ))}
+  <meta name="theme-color" content="#213113" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  {SITE.gscVerification && <meta name="google-site-verification" content={SITE.gscVerification} />}
+
+  {schemas.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+
+  <script is:inline>document.documentElement.classList.remove('no-js');</script>
+
+  {SITE.gaId && (
+    <>
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <script is:inline define:vars={{ id: SITE.gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', id);
+        // load gtag.js after the page has rendered (keeps it off the critical path)
+        addEventListener('load', function () {
+          setTimeout(function () {
+            var s = document.createElement('script'); s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+            document.head.appendChild(s);
+          }, 1200);
+        });
+      </script>
+    </>
+  )}
+  {SITE.pixelId && (
+    <script is:inline define:vars={{ id: SITE.pixelId }}>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', id); fbq('track', 'PageView');
+    </script>
+  )}
+</head>
+<body>
+  <a class="skip-link" href="#main">{ui.skip}</a>
+  <Header lang={lang} alternates={alternates} />
+  <main id="main">
+    <slot />
+  </main>
+  <Footer lang={lang} />
+  <WhatsAppFloat lang={lang} />
+  <Lightbox lang={lang} />
+
+  <script>
+    // Reveal-on-scroll
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }),
+      { rootMargin: '0px 0px -8% 0px' },
+    );
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    // Track WhatsApp / phone clicks as conversions (GA4 + Meta Pixel when configured)
+    document.addEventListener('click', (ev) => {
+      const a = (ev.target as HTMLElement).closest('a');
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+      const w = window as any;
+      if (href.includes('wa.me/')) {
+        w.gtag?.('event', 'whatsapp_click', { link_url: href, page_path: location.pathname });
+        w.fbq?.('track', 'Contact');
+      } else if (href.startsWith('tel:')) {
+        w.gtag?.('event', 'phone_click', { page_path: location.pathname });
+        w.fbq?.('track', 'Contact');
+      }
+    });
+  </script>
+</body>
+</html>
