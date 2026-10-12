@@ -13,7 +13,7 @@ for p in / /barrel-sauna /kub-sauna /konteyner-sauna-jakuzi /jakuzi-vanna /dasin
 done
 check "$BASE/barrel-sauna/" 301 "$BASE/barrel-sauna"
 check "$BASE/barrel-sauna/index.html" 301 "$BASE/barrel-sauna"
-check "${BASE/https:\/\//https://www.}/kub-sauna" 301 "$BASE/kub-sauna"
+[[ "$BASE" == https://* ]] && check "${BASE/https:\/\//https://www.}/kub-sauna" 301 "$BASE/kub-sauna"
 check "$BASE/bu-sehife-yoxdur" 404
 curl -s "$BASE/barrel-sauna" | grep -o '<link rel="canonical"[^>]*>' 
 echo "— $ok ok, $bad problem(s)"
