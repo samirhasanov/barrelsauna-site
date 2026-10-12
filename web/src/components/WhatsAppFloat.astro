@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro';
+import { waLink, type Lang } from '../data/site';
+import { t } from '../i18n/ui';
+const { lang } = Astro.props as { lang: Lang };
+const ui = t(lang);
+---
+<a class="wa-float" href={waLink(ui.wa.default)} target="_blank" rel="noopener" aria-label={ui.cta.whatsapp}>
+  <Icon name="whatsapp" size={30} />
+  <span class="wa-label">{ui.cta.whatsapp}</span>
+</a>
+<style>
+  .wa-float {
+    position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(18px, env(safe-area-inset-bottom)); z-index: 60;
+    display: flex; align-items: center; gap: 10px; height: 60px; padding: 0 15px; border-radius: 999px;
+    background: var(--wa); color: #fff; text-decoration: none; font-weight: 750;
+    box-shadow: 0 12px 28px -8px rgba(37, 211, 102, 0.55), 0 4px 10px rgba(0,0,0,.12);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .wa-float:hover { transform: translateY(-2px) scale(1.02); background: var(--wa-dark); }
+  .wa-float::before { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); animation: pulse 2.6s infinite; }
+  .wa-label { max-width: 0; overflow: hidden; white-space: nowrap; transition: max-width 0.35s ease; }
+  .wa-float:hover .wa-label { max-width: 260px; }
+  @media (min-width: 1100px) { .wa-label { max-width: 260px; } .wa-float { padding-right: 22px; } }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.45); } 70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+</style>

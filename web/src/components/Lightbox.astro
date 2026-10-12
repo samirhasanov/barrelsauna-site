@@ -1,0 +1,63 @@
+---
+import Icon from './Icon.astro';
+import { t } from '../i18n/ui';
+import type { Lang } from '../data/site';
+const { lang } = Astro.props as { lang: Lang };
+const ui = t(lang);
+---
+<dialog class="lightbox" data-lb aria-label={ui.labels.gallery}>
+  <button class="lb-btn lb-close" data-lb-close aria-label={ui.nav.close}><Icon name="close" size={26} /></button>
+  <button class="lb-btn lb-prev" data-lb-prev aria-label={ui.labels.prev}><Icon name="arrow" size={26} /></button>
+  <figure>
+    <img data-lb-img alt="" />
+    <figcaption data-lb-cap></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" data-lb-next aria-label={ui.labels.next}><Icon name="arrow" size={26} /></button>
+</dialog>
+
+<style>
+  .lightbox { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(14, 18, 10, 0.94); color: #fff; }
+  .lightbox[open] { display: grid; grid-template-columns: 64px 1fr 64px; align-items: center; }
+  .lightbox::backdrop { background: transparent; }
+  figure { margin: 0; display: grid; justify-items: center; gap: 12px; padding: 24px 0; }
+  figure img { max-width: 100%; max-height: 82dvh; width: auto; object-fit: contain; border-radius: 10px; }
+  figcaption { font-size: 0.92rem; opacity: 0.8; text-align: center; padding: 0 12px; }
+  .lb-btn { width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.06); color: #fff; display: grid; place-items: center; cursor: pointer; justify-self: center; }
+  .lb-btn:hover { background: rgba(255,255,255,.16); }
+  .lb-prev :global(svg) { transform: rotate(180deg); }
+  .lb-close { position: absolute; top: 16px; right: 16px; }
+  @media (max-width: 640px) {
+    .lightbox[open] { grid-template-columns: 1fr; }
+    .lb-prev, .lb-next { position: absolute; bottom: 20px; }
+    .lb-prev { left: 24px; } .lb-next { right: 24px; }
+  }
+</style>
+
+<script>
+  const dlg = document.querySelector('[data-lb]') as HTMLDialogElement;
+  const im = dlg.querySelector('[data-lb-img]') as HTMLImageElement;
+  const cap = dlg.querySelector('[data-lb-cap]') as HTMLElement;
+  let group: HTMLAnchorElement[] = [];
+  let i = 0;
+  const show = (n: number) => {
+    i = (n + group.length) % group.length;
+    const a = group[i];
+    im.src = a.href; im.alt = a.dataset.caption || ''; cap.textContent = a.dataset.caption || '';
+  };
+  document.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest('a[data-lightbox]') as HTMLAnchorElement | null;
+    if (!a) return;
+    e.preventDefault();
+    group = Array.from(document.querySelectorAll(`a[data-lightbox="${a.dataset.lightbox}"]`));
+    show(group.indexOf(a));
+    dlg.showModal();
+  });
+  dlg.querySelector('[data-lb-close]')!.addEventListener('click', () => dlg.close());
+  dlg.querySelector('[data-lb-prev]')!.addEventListener('click', () => show(i - 1));
+  dlg.querySelector('[data-lb-next]')!.addEventListener('click', () => show(i + 1));
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+  let x0 = 0;
+  dlg.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+  dlg.addEventListener('touchend', (e) => { const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) show(i + (dx < 0 ? 1 : -1)); });
+</script>

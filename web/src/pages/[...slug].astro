@@ -1,0 +1,52 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { LANGS, type Lang } from '../data/site';
+import { ROUTES, type RouteKey } from '../data/routes';
+import { MODELS } from '../data/models';
+import { allPosts, slugOf, type Post } from '../lib/blog';
+
+import Home from '../views/Home.astro';
+import Outdoor from '../views/Outdoor.astro';
+import Model from '../views/Model.astro';
+import Indoor from '../views/Indoor.astro';
+import Construction from '../views/Construction.astro';
+import Portable from '../views/Portable.astro';
+import Jacuzzi from '../views/Jacuzzi.astro';
+import Container from '../views/Container.astro';
+import Catalog from '../views/Catalog.astro';
+import Projects from '../views/Projects.astro';
+import About from '../views/About.astro';
+import Contact from '../views/Contact.astro';
+import BlogIndex from '../views/BlogIndex.astro';
+import BlogPost from '../views/BlogPost.astro';
+
+export const getStaticPaths = (async () => {
+  const toParam = (p: string) => (p === '/' ? undefined : p.replace(/^\//, ''));
+  const pages = (Object.keys(ROUTES) as RouteKey[]).flatMap((key) =>
+    LANGS.map((lang) => ({ params: { slug: toParam(ROUTES[key][lang]) }, props: { key, lang } as { key: RouteKey; lang: Lang; post?: Post } })),
+  );
+  const posts = (await allPosts()).map((post) => ({
+    params: { slug: toParam(`${ROUTES.blog[post.data.lang]}/${slugOf(post)}`) },
+    props: { key: 'post' as const, lang: post.data.lang as Lang, post },
+  }));
+  return [...pages, ...posts];
+}) satisfies GetStaticPaths;
+
+const { key, lang, post } = Astro.props as { key: RouteKey | 'post'; lang: Lang; post?: Post };
+const modelKeys = MODELS.map((m) => m.key) as string[];
+---
+{key === 'home' && <Home lang={lang} />}
+{key === 'outdoor' && <Outdoor lang={lang} />}
+{modelKeys.includes(key) && <Model lang={lang} modelKey={key} />}
+{key === 'indoor' && <Indoor lang={lang} />}
+{key === 'construction' && <Construction lang={lang} />}
+{key === 'portable' && <Portable lang={lang} />}
+{key === 'jacuzzi' && <Jacuzzi lang={lang} />}
+{key === 'container' && <Container lang={lang} />}
+{key === 'stoves' && <Catalog lang={lang} kind="stoves" />}
+{key === 'accessories' && <Catalog lang={lang} kind="accessories" />}
+{key === 'projects' && <Projects lang={lang} />}
+{key === 'about' && <About lang={lang} />}
+{key === 'contact' && <Contact lang={lang} />}
+{key === 'blog' && <BlogIndex lang={lang} />}
+{key === 'post' && post && <BlogPost lang={lang} post={post} />}

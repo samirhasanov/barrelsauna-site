@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import PostCard from '../components/PostCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, type Lang } from '../data/site';
+import { ROUTES } from '../data/routes';
+import { postsFor } from '../lib/blog';
+import { t } from '../i18n/ui';
+import { ogImage } from '../lib/images';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ui = t(lang);
+const posts = await postsFor(lang);
+const c = {
+  az: { title: 'Bloq – Sauna Seçimi, Qiymətlər və Qulluq | Barrel Sauna', desc: 'Sauna haqqında faydalı məqalələr: çöl saunası seçimi, barrel sauna, ağac növləri, soba seçimi, qiymətlər, saunanın faydaları və qulluq qaydaları.', h1: 'Sauna <em>bloqu</em>', lede: 'Sauna seçimi, materiallar, sobalar, qiymətlər və düzgün istifadə barədə praktik bələdçilər.' },
+  en: { title: 'Sauna Guides & Tips – Blog | Barrel Sauna', desc: 'Helpful sauna articles: choosing an outdoor sauna, barrel saunas, wood types, heaters, prices in Azerbaijan, sauna benefits and maintenance.', h1: 'Sauna <em>guides</em>', lede: 'Practical guides on choosing a sauna, materials, heaters, prices and how to use a sauna properly.' },
+  ru: { title: 'Блог о банях и саунах | Barrel Sauna', desc: 'Полезные статьи о саунах: как выбрать уличную сауну, баня-бочка, породы дерева, печи, цены в Баку, польза сауны и уход.', h1: 'Блог о <em>саунах</em>', lede: 'Практичные статьи о выборе сауны, материалах, печах, ценах и правильном парении.' },
+}[lang];
+const og = await ogImage(posts[0]?.data.cover ?? 'barrel-3');
+const ld = { '@context': 'https://schema.org', '@type': 'Blog', name: c.title, url: SITE.url + ROUTES.blog[lang], inLanguage: lang };
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.blog} image={og} jsonLd={[ld]}>
+  <PageHero lang={lang} crumbs={[{ label: ui.nav.blog }]} title={c.h1} lede={c.lede} cta={false} />
+  <section class="section-sm" style="padding-top:0">
+    <div class="container">
+      <div class="grid grid-3">{posts.map((p) => <PostCard post={p} lang={lang} />)}</div>
+    </div>
+  </section>
+  <CtaBand lang={lang} />
+</Base>

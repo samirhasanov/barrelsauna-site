@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from './PageHero.astro';
+import Gallery from './Gallery.astro';
+import Faq from './Faq.astro';
+import CtaBand from './CtaBand.astro';
+import ModelCard from './ModelCard.astro';
+import Icon from './Icon.astro';
+import type { FAQ } from '../data/models';
+import { MODELS } from '../data/models';
+import { type Lang, type L } from '../data/site';
+import { t } from '../i18n/ui';
+import { faqLd, serviceLd } from '../lib/schema';
+import { ogImage } from '../lib/images';
+
+export interface SolutionContent {
+  title: string;
+  desc: string;
+  eyebrow: string;
+  h1: string;
+  lede: string[];
+  featTitle: string;
+  features: { icon: string; t: string; d: string }[];
+  blocks?: { title: string; items: string[] }[];
+  blocksTitle?: string;
+  galleryTitle: string;
+  faq: FAQ[];
+}
+
+interface Props {
+  lang: Lang;
+  c: SolutionContent;
+  alternates: L;
+  url: string;
+  hero: string;
+  gallery: string[];
+  preset?: string;
+  related?: string[]; // model keys
+}
+const { lang, c, alternates, url, hero, gallery, preset, related = [] } = Astro.props;
+const ui = t(lang);
+const og = await ogImage(hero);
+const rel = MODELS.filter((m) => related.includes(m.key));
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={alternates} image={og}
+  jsonLd={[serviceLd({ name: c.eyebrow, description: c.desc, url }), faqLd(c.faq)]}>
+  <PageHero lang={lang} crumbs={[{ label: c.eyebrow }]} eyebrow={c.eyebrow} title={c.h1} lede={c.lede} image={hero} waText={ui.wa.model(c.eyebrow)} />
+
+  <section class="section bg-forest">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">{ui.labels.features}</span><h2 class="h2">{c.featTitle}</h2></div>
+      <div class="grid grid-3">
+        {c.features.map((f) => <div class="sf"><span class="sf-ic"><Icon name={f.icon} size={24} /></span><h3>{f.t}</h3><p>{f.d}</p></div>)}
+      </div>
+    </div>
+  </section>
+
+  {c.blocks && (
+    <section class="section">
+      <div class="container">
+        {c.blocksTitle && <h2 class="h2" style="margin-bottom:28px">{c.blocksTitle}</h2>}
+        <div class="grid grid-2">
+          {c.blocks.map((b) => (
+            <div class="blk"><h3 class="h3">{b.title}</h3><ul class="checklist">{b.items.map((i) => <li>{i}</li>)}</ul></div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section bg-paper">
+    <div class="container">
+      <h2 class="h2" style="margin-bottom:28px">{c.galleryTitle}</h2>
+      <Gallery images={gallery} alt={c.eyebrow} group="solution" />
+    </div>
+  </section>
+
+  {rel.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <h2 class="h2" style="margin-bottom:28px">{ui.labels.models}</h2>
+        <div class="grid grid-3">{rel.map((m) => <ModelCard m={m} lang={lang} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <section class="section bg-cream2">
+    <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
+  </section>
+
+  <CtaBand lang={lang} preset={preset} waText={ui.wa.model(c.eyebrow)} />
+</Base>
+<style>
+  .sf { padding: 26px; border-radius: var(--radius); background: rgba(246, 241, 228, 0.05); border: 1px solid rgba(246, 241, 228, 0.12); display: grid; gap: 10px; align-content: start; }
+  .sf h3 { font-size: 1.12rem; font-weight: 750; }
+  .sf p { color: rgba(246, 241, 228, 0.75); font-size: 0.95rem; }
+  .sf-ic { display: grid; place-items: center; width: 50px; height: 50px; border-radius: 14px; background: rgba(217, 160, 102, 0.15); color: var(--amber); }
+  .blk { padding: clamp(24px, 3vw, 36px); border-radius: var(--radius-lg); background: var(--paper); border: 1px solid var(--line); display: grid; gap: 18px; align-content: start; }
+</style>

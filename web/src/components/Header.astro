@@ -1,0 +1,210 @@
+---
+import Icon from './Icon.astro';
+import { LANGS, SITE, waLink, type Lang, type L } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { MODELS } from '../data/models';
+import { t } from '../i18n/ui';
+
+interface Props { lang: Lang; alternates: Partial<L> }
+const { lang, alternates } = Astro.props;
+const ui = t(lang);
+const cur = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (p: string) => (p === '/' || p === '/en' || p === '/ru' ? cur === p : cur === p || cur.startsWith(p + '/'));
+
+const more = [
+  { key: 'container', label: { az: 'Konteyner sauna və jakuzi', en: 'Container sauna & jacuzzi', ru: 'Сауна-контейнер с джакузи' } },
+  { key: 'jacuzzi', label: { az: 'Jakuzi və isti-soyuq vanna', en: 'Hot tubs & jacuzzi', ru: 'Джакузи и купели' } },
+  { key: 'portable', label: { az: 'Daşınabilən mobil sauna', en: 'Portable mobile sauna', ru: 'Мобильная сауна' } },
+  { key: 'construction', label: { az: 'Sauna tikintisi xidməti', en: 'Sauna construction service', ru: 'Строительство саун' } },
+] as const;
+
+const langLabel: L = { az: 'AZ', en: 'EN', ru: 'RU' };
+const sauneActive = [...MODELS.map((m) => path(m.key, lang)), path('outdoor', lang), path('indoor', lang), ...more.map((m) => path(m.key, lang))].some(isActive);
+---
+<header class="site-header" data-header>
+  <div class="container bar">
+    <a href={path('home', lang)} class="logo" aria-label="Barrel Sauna">
+      <img src="/brand/logo-dark.webp" alt="Barrel Sauna" width="240" height="183" fetchpriority="high" />
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-list">
+        <li class="has-mega">
+          <button class:list={['nav-link', { active: sauneActive }]} aria-expanded="false" aria-haspopup="true" data-mega-btn>
+            {ui.nav.saunas} <Icon name="chevron" size={16} />
+          </button>
+          <div class="mega" data-mega>
+            <div class="mega-inner">
+              <div class="mega-col">
+                <a class="mega-head" href={path('outdoor', lang)}>
+                  <span>{ui.nav.outdoor}</span><small>{ui.nav.outdoorSub}</small>
+                </a>
+                <ul class="mega-models">
+                  {MODELS.map((m) => (
+                    <li><a href={path(m.key, lang)}>{m.name[lang]} <small>{m.capacity[0]}–{m.capacity[1]} {ui.labels.people}</small></a></li>
+                  ))}
+                </ul>
+              </div>
+              <div class="mega-col">
+                <a class="mega-head" href={path('indoor', lang)}>
+                  <span>{ui.nav.indoor}</span><small>{ui.nav.indoorSub}</small>
+                </a>
+                <p class="mega-label">{ui.nav.more}</p>
+                <ul class="mega-models">
+                  {more.map((m) => <li><a href={path(m.key, lang)}>{m.label[lang]}</a></li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a class:list={['nav-link', { active: isActive(path('stoves', lang)) }]} href={path('stoves', lang)}>{ui.nav.stoves}</a></li>
+        <li><a class:list={['nav-link', { active: isActive(path('accessories', lang)) }]} href={path('accessories', lang)}>{ui.nav.accessories}</a></li>
+        <li><a class:list={['nav-link', { active: isActive(path('projects', lang)) }]} href={path('projects', lang)}>{ui.nav.projects}</a></li>
+        <li><a class:list={['nav-link', { active: isActive(path('blog', lang)) }]} href={path('blog', lang)}>{ui.nav.blog}</a></li>
+        <li><a class:list={['nav-link', { active: isActive(path('contact', lang)) }]} href={path('contact', lang)}>{ui.nav.contact}</a></li>
+      </ul>
+    </nav>
+
+    <div class="bar-right">
+      <div class="langs">
+        {LANGS.map((l) => (
+          <a href={alternates[l] ?? ROUTES.home[l]} hreflang={l} lang={l} class:list={['lang', { current: l === lang }]} aria-current={l === lang ? 'true' : undefined}>{langLabel[l]}</a>
+        ))}
+      </div>
+      <a class="btn btn-wa btn-sm hide-sm" href={waLink(ui.wa.default)} target="_blank" rel="noopener">
+        <Icon name="whatsapp" /> {ui.cta.whatsappShort}
+      </a>
+      <button class="burger" aria-label={ui.nav.menu} aria-expanded="false" aria-controls="mobile-nav" data-burger>
+        <Icon name="menu" size={26} class="i-open" />
+        <Icon name="close" size={26} class="i-close" />
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" data-mobile hidden>
+    <div class="mobile-inner">
+      <p class="m-label">{ui.nav.outdoor}</p>
+      <a class="m-link strong" href={path('outdoor', lang)}>{ui.nav.allModels} →</a>
+      <div class="m-grid">
+        {MODELS.map((m) => <a class="m-link" href={path(m.key, lang)}>{m.name[lang]}</a>)}
+      </div>
+      <p class="m-label">{ui.nav.indoor} · {ui.nav.more}</p>
+      <a class="m-link strong" href={path('indoor', lang)}>{ui.nav.indoor}</a>
+      {more.map((m) => <a class="m-link" href={path(m.key, lang)}>{m.label[lang]}</a>)}
+      <hr />
+      <a class="m-link strong" href={path('stoves', lang)}>{ui.nav.stoves}</a>
+      <a class="m-link strong" href={path('accessories', lang)}>{ui.nav.accessories}</a>
+      <a class="m-link strong" href={path('projects', lang)}>{ui.nav.projects}</a>
+      <a class="m-link strong" href={path('blog', lang)}>{ui.nav.blog}</a>
+      <a class="m-link strong" href={path('about', lang)}>{ui.nav.about}</a>
+      <a class="m-link strong" href={path('contact', lang)}>{ui.nav.contact}</a>
+      <div class="m-cta">
+        <a class="btn btn-wa" href={waLink(ui.wa.default)} target="_blank" rel="noopener"><Icon name="whatsapp" /> {ui.cta.whatsapp}</a>
+        <a class="btn btn-ghost" href={`tel:${SITE.phone}`}><Icon name="phone" /> {SITE.phoneDisplay}</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(246, 241, 228, 0.86);
+    backdrop-filter: saturate(1.4) blur(14px);
+    -webkit-backdrop-filter: saturate(1.4) blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .site-header.scrolled { border-bottom-color: var(--line); background: rgba(246, 241, 228, 0.95); }
+  .bar { display: flex; align-items: center; gap: 20px; height: var(--header-h); }
+  .logo img { height: 54px; width: auto; }
+  .nav { margin-left: auto; }
+  .nav-list { display: flex; align-items: center; gap: 2px; list-style: none; }
+  .nav-link {
+    display: inline-flex; align-items: center; gap: 4px; padding: 10px 14px; border-radius: 999px;
+    font-size: 0.95rem; font-weight: 650; text-decoration: none; color: var(--ink);
+    background: none; border: 0; cursor: pointer; transition: background 0.2s, color 0.2s;
+  }
+  .nav-link:hover, .nav-link[aria-expanded='true'] { background: rgba(33, 49, 19, 0.07); }
+  .nav-link.active { color: var(--forest); box-shadow: inset 0 -2px 0 var(--wood); border-radius: 0; }
+  .has-mega { position: relative; }
+  .mega {
+    position: absolute; top: calc(100% + 10px); left: -20px; width: min(640px, 90vw);
+    opacity: 0; visibility: hidden; transform: translateY(6px); transition: all 0.2s ease;
+  }
+  .has-mega:hover .mega, .has-mega:focus-within .mega, .mega.open { opacity: 1; visibility: visible; transform: none; }
+  .mega::before { content: ''; position: absolute; inset: -14px 0 auto; height: 14px; }
+  .mega-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 14px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-lg);
+  }
+  .mega-col { padding: 8px; }
+  .mega-head { display: grid; gap: 2px; padding: 12px 14px; border-radius: 12px; background: var(--cream-2); text-decoration: none; margin-bottom: 8px; }
+  .mega-head span { font-family: var(--font-serif); font-size: 1.35rem; font-weight: 600; color: var(--forest); }
+  .mega-head small { color: var(--muted); font-size: 0.82rem; }
+  .mega-head:hover { background: var(--forest); }
+  .mega-head:hover span, .mega-head:hover small { color: var(--cream); }
+  .mega-label { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); font-weight: 700; padding: 10px 14px 4px; }
+  .mega-models { list-style: none; }
+  .mega-models a { display: flex; justify-content: space-between; gap: 10px; padding: 9px 14px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+  .mega-models a small { color: var(--muted); font-weight: 500; }
+  .mega-models a:hover { background: rgba(33, 49, 19, 0.07); color: var(--forest); }
+
+  .bar-right { display: flex; align-items: center; gap: 12px; }
+  .langs { display: flex; padding: 3px; border-radius: 999px; border: 1px solid var(--line-strong); }
+  .lang { padding: 5px 10px; border-radius: 999px; font-size: 0.78rem; font-weight: 750; text-decoration: none; color: var(--muted); }
+  .lang.current { background: var(--forest); color: var(--cream); }
+  .lang:not(.current):hover { color: var(--forest); }
+  .burger :global(.i-close), .burger[aria-expanded='true'] :global(.i-open) { display: none; }
+  .burger[aria-expanded='true'] :global(.i-close) { display: block; }
+  .burger { display: none; width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--line-strong); background: transparent; align-items: center; justify-content: center; cursor: pointer; }
+
+  .mobile-nav { position: fixed; inset: var(--header-h) 0 0; background: var(--cream); overflow-y: auto; z-index: 49; }
+  .mobile-inner { display: grid; gap: 4px; padding: 20px var(--gutter) 120px; }
+  .m-label { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--moss); font-weight: 700; margin-top: 14px; }
+  .m-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+  .m-link { padding: 11px 0; text-decoration: none; font-size: 1rem; font-weight: 600; border-bottom: 1px solid var(--line); }
+  .m-link.strong { font-family: var(--font-serif); font-size: 1.45rem; }
+  .mobile-inner hr { border: 0; margin: 8px 0; }
+  .m-cta { display: grid; gap: 10px; margin-top: 24px; }
+
+  @media (max-width: 1080px) {
+    .nav { display: none; }
+    .burger { display: inline-flex; }
+    .bar-right { margin-left: auto; }
+  }
+  @media (max-width: 520px) {
+    .hide-sm { display: none; }
+    .logo img { height: 40px; }
+  }
+</style>
+
+<script>
+  const header = document.querySelector('[data-header]') as HTMLElement;
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const burger = document.querySelector('[data-burger]') as HTMLButtonElement;
+  const mobile = document.querySelector('[data-mobile]') as HTMLElement;
+  burger?.addEventListener('click', () => {
+    const open = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!open));
+    mobile.hidden = open;
+    document.body.style.overflow = open ? '' : 'hidden';
+  });
+
+  const megaBtn = document.querySelector('[data-mega-btn]') as HTMLButtonElement;
+  const mega = document.querySelector('[data-mega]') as HTMLElement;
+  megaBtn?.addEventListener('click', () => {
+    const open = megaBtn.getAttribute('aria-expanded') === 'true';
+    megaBtn.setAttribute('aria-expanded', String(!open));
+    mega.classList.toggle('open', !open);
+  });
+  document.addEventListener('click', (e) => {
+    if (!(e.target as HTMLElement).closest('.has-mega')) { megaBtn?.setAttribute('aria-expanded', 'false'); mega?.classList.remove('open'); }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { megaBtn?.setAttribute('aria-expanded', 'false'); mega?.classList.remove('open'); }
+  });
+</script>

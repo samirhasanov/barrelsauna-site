@@ -1,0 +1,138 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Crumbs from '../components/Crumbs.astro';
+import Photo from '../components/Photo.astro';
+import Icon from '../components/Icon.astro';
+import PostCard from '../components/PostCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, waLink, type Lang } from '../data/site';
+import { path, blogPostPath } from '../data/routes';
+import { MODELS } from '../data/models';
+import { alternatesFor, postsFor, slugOf, type Post } from '../lib/blog';
+import { fmtDate, readingTime } from '../lib/format';
+import { ogImage } from '../lib/images';
+import { abs } from '../lib/schema';
+import { t } from '../i18n/ui';
+
+interface Props { lang: Lang; post: Post }
+const { lang, post } = Astro.props;
+const ui = t(lang);
+const { Content, headings } = await render(post);
+const alternates = await alternatesFor(post);
+const og = await ogImage(post.data.cover);
+const url = blogPostPath(lang, slugOf(post));
+const related = (await postsFor(lang)).filter((p) => p.id !== post.id).slice(0, 3);
+const toc = headings.filter((h) => h.depth === 2);
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: abs(og),
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  inLanguage: lang,
+  mainEntityOfPage: abs(url),
+  author: { '@type': 'Organization', name: 'Barrel Sauna', url: `${SITE.url}/` },
+  publisher: { '@id': `${SITE.url}/#business` },
+  keywords: post.data.tags.join(', '),
+};
+
+// FAQ section in the article → FAQPage JSON-LD (questions are the H3s after the FAQ H2)
+const body = post.body ?? '';
+const faqMatch = body.split(/\n## /).find((s) => /^(Tez-tez verilən suallar|Частые вопросы|FAQ|Frequently)/i.test(s));
+const faqItems = faqMatch
+  ? faqMatch.split(/\n### /).slice(1).map((blk) => {
+      const [q, ...rest] = blk.split('\n');
+      return { q: q.trim(), a: rest.join(' ').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*_`>#]/g, '').replace(/\s+/g, ' ').trim() };
+    }).filter((f) => f.q && f.a)
+  : [];
+const faqLdObj = faqItems.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqItems.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }] : [];
+const tocLabel = { az: 'Məzmun', en: 'Contents', ru: 'Содержание' }[lang];
+const asideTitle = { az: 'Sauna sifariş etmək istəyirsiniz?', en: 'Planning a sauna?', ru: 'Планируете сауну?' }[lang];
+const asideText = { az: 'Pulsuz məsləhət alın — modeli, ölçünü və təxmini qiyməti birlikdə müəyyən edək.', en: 'Get free advice — we will help you pick the model, size and give an estimate.', ru: 'Получите бесплатную консультацию — подберём модель, размер и назовём цену.' }[lang];
+---
+<Base lang={lang} title={post.data.title.length <= 50 ? `${post.data.title} | Barrel Sauna` : post.data.title} description={post.data.description} alternates={alternates} image={og} type="article" jsonLd={[articleLd, ...faqLdObj]}>
+  <article>
+    <header class="post-hero">
+      <div class="container container-narrow stack">
+        <Crumbs lang={lang} items={[{ label: ui.nav.blog, href: path('blog', lang) }, { label: post.data.title }]} />
+        <h1 class="h1">{post.data.title}</h1>
+        <p class="lede">{post.data.description}</p>
+        <p class="small muted meta"><time datetime={post.data.pubDate.toISOString()}>{fmtDate(post.data.pubDate, lang)}</time> · {readingTime(body)} {ui.labels.minRead} · Barrel Sauna</p>
+      </div>
+      <div class="container post-cover">
+        <div class="rounded"><Photo name={post.data.cover} alt={post.data.coverAlt} priority widths={[700, 1000, 1400]} sizes="(max-width: 1240px) 100vw, 1180px" class="cover" /></div>
+      </div>
+    </header>
+
+    <div class="container post-layout">
+      <aside class="post-aside">
+        {toc.length > 2 && (
+          <nav class="toc" aria-label={tocLabel}>
+            <p class="toc-h">{tocLabel}</p>
+            <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+          </nav>
+        )}
+        <div class="aside-cta">
+          <p class="aside-h">{asideTitle}</p>
+          <p class="small">{asideText}</p>
+          <a class="btn btn-wa btn-sm" href={waLink(ui.wa.default)} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /> WhatsApp</a>
+        </div>
+      </aside>
+      <div class="prose post-body">
+        <Content />
+        {post.data.tags.length > 0 && <p class="chips tags">{post.data.tags.map((tg) => <span class="chip">#{tg}</span>)}</p>}
+      </div>
+    </div>
+  </article>
+
+  <section class="section-sm bg-paper">
+    <div class="container">
+      <h2 class="h2" style="margin-bottom:24px">{ui.labels.models}</h2>
+      <div class="mini-models">
+        {MODELS.map((m) => <a class="chip" href={path(m.key, lang)}>{m.name[lang]} · {m.capacity[0]}–{m.capacity[1]} {ui.labels.people}</a>)}
+      </div>
+    </div>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-head split"><h2 class="h2">{ui.labels.related}</h2><a class="link-arrow" href={path('blog', lang)}>{ui.cta.backToBlog}</a></div>
+        <div class="grid grid-3">{related.map((p) => <PostCard post={p} lang={lang} />)}</div>
+      </div>
+    </section>
+  )}
+  <CtaBand lang={lang} />
+</Base>
+<style>
+  .post-hero { padding-top: clamp(24px, 4vw, 48px); }
+  .post-hero .h1 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
+  .meta { margin-top: -4px; }
+  .post-cover { margin-top: 36px; }
+  .post-cover .rounded { aspect-ratio: 21 / 9; max-height: 520px; }
+  .post-cover :global(img) { width: 100%; height: 100%; }
+  .post-layout { display: grid; grid-template-columns: 260px minmax(0, 760px); gap: clamp(28px, 5vw, 72px); justify-content: center; padding-block: clamp(40px, 6vw, 72px); }
+  .post-aside { position: sticky; top: calc(var(--header-h) + 24px); align-self: start; display: grid; gap: 20px; }
+  .toc { padding: 20px; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line); }
+  .toc-h, .aside-h { font-weight: 800; color: var(--forest); margin-bottom: 10px; }
+  .toc ol { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: 0.9rem; }
+  .toc a { text-decoration: none; color: var(--muted); }
+  .toc a:hover { color: var(--forest); }
+  .aside-cta { padding: 20px; border-radius: var(--radius); background: var(--forest); color: var(--cream); display: grid; gap: 10px; }
+  .aside-cta .aside-h { color: var(--amber); margin: 0; }
+  .aside-cta .btn { justify-self: start; }
+  .post-body :global(h2) { scroll-margin-top: calc(var(--header-h) + 16px); }
+  .tags { margin-top: 2.4em; }
+  .mini-models { display: flex; flex-wrap: wrap; gap: 10px; }
+  .mini-models a { text-decoration: none; padding: 10px 16px; }
+  .mini-models a:hover { background: var(--forest); color: var(--cream); }
+  @media (max-width: 960px) {
+    .post-layout { grid-template-columns: 1fr; }
+    .post-aside { position: static; order: 2; }
+    .post-cover .rounded { aspect-ratio: 16 / 9; }
+  }
+</style>

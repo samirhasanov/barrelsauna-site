@@ -1,0 +1,24 @@
+---
+import Photo from './Photo.astro';
+import { blogPostPath } from '../data/routes';
+import { slugOf, type Post } from '../lib/blog';
+import { fmtDate, readingTime } from '../lib/format';
+import { t } from '../i18n/ui';
+import type { Lang } from '../data/site';
+interface Props { post: Post; lang: Lang }
+const { post, lang } = Astro.props;
+const ui = t(lang);
+---
+<article class="card post-card">
+  <div class="card-media"><Photo name={post.data.cover} alt={post.data.coverAlt} widths={[400, 700]} sizes="(max-width: 640px) 100vw, 33vw" /></div>
+  <div class="card-body">
+    <p class="small muted">{fmtDate(post.data.pubDate, lang)} · {readingTime(post.body ?? '')} {ui.labels.minRead}</p>
+    <h3 class="post-title"><a class="card-link" href={blogPostPath(lang, slugOf(post))}>{post.data.title}</a></h3>
+    <p class="muted small clamp">{post.data.description}</p>
+  </div>
+</article>
+<style>
+  .post-card .card-media { aspect-ratio: 16 / 10; }
+  .post-title { font-family: var(--font-serif); font-size: 1.45rem; line-height: 1.15; }
+  .clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+</style>

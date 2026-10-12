@@ -1,0 +1,106 @@
+---
+import SolutionPage, { type SolutionContent } from '../components/SolutionPage.astro';
+import { type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+
+const { lang } = Astro.props as { lang: Lang };
+
+const content: Record<Lang, SolutionContent> = {
+  az: {
+    title: 'Konteyner Sauna və Jakuzi – Hazır Spa Modulu | Barrel Sauna',
+    desc: 'Konteyner sauna və jakuzi bir arada: sauna, isti vanna və istirahət zonası vahid modulda. 4 mövsüm istifadə, fərdi ölçü. Bağ evi, otel və istirahət mərkəzləri üçün.',
+    eyebrow: 'Konteyner sauna və jakuzi',
+    h1: 'Konteyner sauna və <em>jakuzi</em> — bir məkanda iki funksiya',
+    lede: [
+      'Sauna və jakuzini bir arada təqdim edən bu kompleks sistem açıq hava şəraitində sauna tikintisinə innovativ və premium yanaşmadır. Saunadan sonra jakuzi mərhələsi əzələləri rahatladır və gərginliyi azaldır.',
+      'Müştərinin istəyinə uyğun olaraq sistem həm barrel, həm kub, həm də kabin sauna modelləri ilə birləşdirilə bilər — konteyner formatında, tam hazır həll kimi.',
+    ],
+    featTitle: 'Niyə konteyner sauna və jakuzi',
+    features: [
+      { icon: 'sparkle', t: 'İki funksiya — bir məkan', d: 'Sauna və jakuzi (və ya isti/soyuq vanna) vahid layihədə: maksimum funksionallıq, minimum yer.' },
+      { icon: 'home', t: 'Məkanın dəyərini artırır', d: 'Bağ evi, villa, otel və istirahət mərkəzi üçün həm estetik, həm də kommersiya dəyəri.' },
+      { icon: 'ruler', t: 'Fərdi layihələndirmə', d: 'Layihə yerin ölçüsünə və ehtiyaclarınıza tam uyğun hazırlanır.' },
+      { icon: 'snow', t: '4 mövsüm istifadə', d: 'Qışda isinmək, yayda sərinləmək — ilboyu rahat istifadə.' },
+      { icon: 'shield', t: 'Dayanıqlı konstruksiya', d: 'Listvenica üzlük, çoxtəbəqəli izolyasiya, keyfiyyətli sauna taxtası, sobası və avadanlığı.' },
+      { icon: 'flame', t: 'Keyfiyyətli soba və qapı', d: 'Harvia / SAWO sobaları, temperli şüşə qapı və estetik interyer.' },
+    ],
+    blocksTitle: 'Kompleksə nələr daxil ola bilər',
+    blocks: [
+      { title: 'Sauna hissəsi', items: ['Lipa, termo lipa, kedr və ya abaşi interyer', 'Odun və ya elektrik soba (Harvia, SAWO)', 'Panoramik şüşə və LED işıqlandırma', '2–8 nəfərlik oturacaq'] },
+      { title: 'Su və istirahət hissəsi', items: ['Jakuzi (hidromassaj) və ya odunla qızan hot tub', 'Soyuq vanna (cold plunge)', 'Terras və istirahət zonası', 'Duş, soyunma və sanuzel (layihəyə görə)'] },
+    ],
+    galleryTitle: 'Konteyner sauna və jakuzi nümunələri',
+    faq: [
+      { q: 'Konteyner sauna nədir?', a: 'Sauna və jakuzi/isti vannanı, istirahət zonasını vahid modulda birləşdirən hazır həlldir. Həyətdə az yer tutur və sürətli quraşdırılır.' },
+      { q: 'Jakuzi əvəzinə odunla qızan hot tub qoymaq olar?', a: 'Bəli. Elektrikli hidromassaj jakuzi, odunla qızan taxta hot tub və ya soyuq vanna — istədiyiniz kombinasiyanı seçə bilərsiniz.' },
+      { q: 'Qiyməti nə qədərdir?', a: 'Qiymət sauna modelindən, ölçüdən və seçilən vanna növündən asılıdır. Layihənizi WhatsApp-da göndərin — təxmini qiyməti hesablayaq.' },
+      { q: 'Qışda istifadə etmək olarmı?', a: 'Bəli, kompleks 4 mövsüm istifadə üçün nəzərdə tutulub: sauna çoxtəbəqəli izolyasiya ilə qurulur.' },
+    ],
+  },
+  en: {
+    title: 'Container Sauna with Jacuzzi – Ready Spa Module | Barrel Sauna',
+    desc: 'Container sauna and jacuzzi in one: sauna, hot tub and relaxation area in a single module. Four-season use, custom size. For villas, hotels and resorts.',
+    eyebrow: 'Container sauna & jacuzzi',
+    h1: 'Container sauna & <em>jacuzzi</em> — two functions, one space',
+    lede: [
+      'Combining a sauna and a jacuzzi in one system is an innovative, premium approach to outdoor wellness. After the sauna, the jacuzzi relaxes your muscles and melts away tension.',
+      'The system can be combined with barrel, cube or cabin sauna models — in container format, as a complete ready solution.',
+    ],
+    featTitle: 'Why a container sauna with jacuzzi',
+    features: [
+      { icon: 'sparkle', t: 'Two functions, one space', d: 'Sauna plus jacuzzi (or hot/cold tub) in one project: maximum function, minimum footprint.' },
+      { icon: 'home', t: 'Adds value', d: 'Aesthetic and commercial value for villas, country houses, hotels and resorts.' },
+      { icon: 'ruler', t: 'Custom design', d: 'Designed to fit your site and needs exactly.' },
+      { icon: 'snow', t: 'Four-season use', d: 'Warm up in winter, cool down in summer — comfortable all year.' },
+      { icon: 'shield', t: 'Durable construction', d: 'Larch cladding, multilayer insulation, quality sauna wood, heater and equipment.' },
+      { icon: 'flame', t: 'Quality heater & door', d: 'Harvia / SAWO heaters, tempered glass door and refined interior.' },
+    ],
+    blocksTitle: 'What the complex can include',
+    blocks: [
+      { title: 'Sauna section', items: ['Linden, thermo linden, cedar or abachi interior', 'Wood-burning or electric heater (Harvia, SAWO)', 'Panoramic glass and LED lighting', 'Benches for 2–8 people'] },
+      { title: 'Water & relaxation section', items: ['Jacuzzi (hydromassage) or wood-fired hot tub', 'Cold plunge tub', 'Terrace and lounge area', 'Shower, changing room and WC (per project)'] },
+    ],
+    galleryTitle: 'Container sauna & jacuzzi examples',
+    faq: [
+      { q: 'What is a container sauna?', a: 'A ready solution combining a sauna, a jacuzzi/hot tub and a relaxation area in one module. It takes little space and installs quickly.' },
+      { q: 'Can I have a wood-fired hot tub instead of a jacuzzi?', a: 'Yes — an electric hydromassage jacuzzi, a wood-fired wooden hot tub or a cold plunge, in any combination.' },
+      { q: 'How much does it cost?', a: 'It depends on the sauna model, size and tub type. Send us your idea on WhatsApp and we’ll prepare an estimate.' },
+      { q: 'Can it be used in winter?', a: 'Yes, it is designed for four-season use with a multilayer-insulated sauna.' },
+    ],
+  },
+  ru: {
+    title: 'Сауна-контейнер с джакузи под ключ | Barrel Sauna',
+    desc: 'Сауна-контейнер с джакузи: сауна, купель и зона отдыха в одном модуле. Круглый год, индивидуальные размеры. Для дач, отелей и баз отдыха.',
+    eyebrow: 'Сауна-контейнер с джакузи',
+    h1: 'Сауна-контейнер с <em>джакузи</em> — две функции в одном',
+    lede: [
+      'Сауна и джакузи в одной системе — инновационный премиальный подход к отдыху на свежем воздухе. После сауны джакузи расслабляет мышцы и снимает напряжение.',
+      'Систему можно объединить с сауной-бочкой, кубом или кабиной — в формате контейнера, как полностью готовое решение.',
+    ],
+    featTitle: 'Почему сауна-контейнер с джакузи',
+    features: [
+      { icon: 'sparkle', t: 'Две функции — одно место', d: 'Сауна и джакузи (или горячая/холодная купель) в одном проекте: максимум функций, минимум места.' },
+      { icon: 'home', t: 'Повышает ценность участка', d: 'Эстетическая и коммерческая ценность для дачи, виллы, отеля и базы отдыха.' },
+      { icon: 'ruler', t: 'Индивидуальный проект', d: 'Проект полностью подстраивается под размеры участка и ваши задачи.' },
+      { icon: 'snow', t: 'Круглый год', d: 'Согреться зимой, освежиться летом — комфорт в любой сезон.' },
+      { icon: 'shield', t: 'Надёжная конструкция', d: 'Обшивка из лиственницы, многослойное утепление, качественная доска, печь и оборудование.' },
+      { icon: 'flame', t: 'Качественная печь и дверь', d: 'Печи Harvia / SAWO, дверь из закалённого стекла и продуманный интерьер.' },
+    ],
+    blocksTitle: 'Что может входить в комплекс',
+    blocks: [
+      { title: 'Сауна', items: ['Интерьер из липы, термолипы, кедра или абаши', 'Дровяная или электрическая печь (Harvia, SAWO)', 'Панорамное стекло и LED-подсветка', 'Полки на 2–8 человек'] },
+      { title: 'Вода и отдых', items: ['Джакузи (гидромассаж) или чан на дровах', 'Холодная купель', 'Терраса и зона отдыха', 'Душ, раздевалка и санузел (по проекту)'] },
+    ],
+    galleryTitle: 'Примеры саун-контейнеров с джакузи',
+    faq: [
+      { q: 'Что такое сауна-контейнер?', a: 'Готовое решение, объединяющее сауну, джакузи/купель и зону отдыха в одном модуле. Занимает мало места и быстро устанавливается.' },
+      { q: 'Можно ли вместо джакузи поставить чан на дровах?', a: 'Да: электрическое джакузи с гидромассажем, деревянный чан на дровах или холодная купель — в любой комбинации.' },
+      { q: 'Сколько стоит?', a: 'Зависит от модели сауны, размера и типа купели. Пришлите идею в WhatsApp — рассчитаем ориентировочную цену.' },
+      { q: 'Можно ли пользоваться зимой?', a: 'Да, комплекс рассчитан на круглогодичное использование, сауна утеплена многослойно.' },
+    ],
+  },
+};
+---
+<SolutionPage lang={lang} c={content[lang]} alternates={ROUTES.container} url={path('container', lang)} hero="spa-1"
+  gallery={['spa-1', 'container-2', 'container-1', 'container-3', 'container-4', 'container-5', 'container-6', 'proj-qabala-barrel-1', 'spa-2']}
+  preset="spa" related={['barrel', 'cube', 'spa']} />

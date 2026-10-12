@@ -1,0 +1,198 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Photo from '../components/Photo.astro';
+import Gallery from '../components/Gallery.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Icon from '../components/Icon.astro';
+import { waLink, type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { WOODS, INDOOR_RENDERS, INDOOR_PROJECTS } from '../data/indoor';
+import { t } from '../i18n/ui';
+import { faqLd, serviceLd } from '../lib/schema';
+import { ogImage } from '../lib/images';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ui = t(lang);
+
+const c = {
+  az: {
+    title: 'Daxili Sauna Tikintisi – Ev, Villa və Otel üçün | Barrel Sauna',
+    desc: 'Evdə, villada, oteldə və SPA-da daxili sauna tikintisi: lipa, termo lipa, abaşi, kedr və vəhşi sauna. Divarları qoruyan çoxtəbəqəli izolyasiya. Pulsuz məsləhət.',
+    eyebrow: 'Daxili saunalar',
+    h1: 'Daxili sauna tikintisi — <em>evinizdə</em> premium sauna',
+    lede: [
+      'Barrel Sauna təkcə açıq hava layihələri ilə deyil, mövcud tikililərin daxilində xüsusi layihələndirilmiş premium saunaların inşası ilə də xidmətinizdədir. Evinizdə, villanızda, otel və ya SPA mərkəzinizdə ayırdığınız istənilən otağı tam funksional, lüks sağlamlıq guşəsinə çeviririk.',
+      'Saunalar mövcud otağın ölçülərinə və dizaynına tam uyğunlaşdırılaraq sıfırdan yığılır.',
+    ],
+    protectTitle: 'Divarlarınız tam qorunur',
+    protectText: 'Otağın içinə yığılan saunalarda ən vacib nüans mövcud divarların qorunmasıdır. Bunun üçün otağın divarları ilə sauna karkası arasında mineral daş yunu və nəmə davamlı membran üzlükdən ibarət çoxtəbəqəli izolyasiya sistemi qururuq. Bu sistem istiliyi daxildə saxlayaraq sürətli isinməni təmin edir, eyni zamanda otağınızın divarlarını buxar və rütubətin mənfi təsirlərindən tam qoruyur.',
+    points: ['Mineral daş yunu — istilik izolyasiyası', 'Nəmə davamlı membran — buxar bariyeri', 'Sürətli və bərabər isinmə', 'Ölçüyə görə sıfırdan yığım'],
+    woodsEyebrow: 'Daxili sauna modelləri',
+    woodsTitle: 'Ağacınızı <em>seçin</em>',
+    woodsLede: 'Kabinənin daxili insan sağlamlığı üçün ən ideal material olan ekoloji təmiz cökə (lipa) ağacından yığılır. Layihənin premium səviyyəsini artırmaq istəyənlər üçün kedr, abaşi və ya tik taxtası seçimləri də var.',
+    decorTitle: 'Dekor və materiallar',
+    decorText: 'Dekorativ daşlar, Himalay duzu panelləri, kötük dekorları və gizli LED işıqlandırma ilə hər sauna fərdi xarakter qazanır.',
+    rendersTitle: 'Müxtəlif dizayn həlləri',
+    projectsTitle: 'Tikdiyimiz daxili saunalar',
+    faq: [
+      { q: 'Daxili sauna üçün hansı otaq uyğundur?', a: 'Evin, villanın, otel və ya SPA-nın istənilən otağı və ya boş sahəsi. Sauna otağın ölçülərinə uyğun sıfırdan yığılır. Ventilyasiya və elektrik təchizatını layihə zamanı birlikdə planlaşdırırıq.' },
+      { q: 'Sauna evin divarlarına zərər verməz?', a: 'Xeyr. Divarlarla sauna karkası arasında mineral daş yunu və nəmə davamlı membrandan ibarət çoxtəbəqəli izolyasiya qurulur — divarlar buxar və rütubətdən tam qorunur.' },
+      { q: 'Hansı ağac daha yaxşıdır?', a: 'Lipa — ənənəvi və sağlam seçimdir. Termo lipa rütubətə daha davamlıdır, abaşi oturacaqlar üçün qızmayan ideal materialdır, kedr isə aromaterapiya effekti verir. Wild sauna bütöv kötüklərlə meşə ab-havası yaradır.' },
+      { q: 'Daxili sauna üçün hansı soba istifadə olunur?', a: 'Adətən otağın həcminə uyğun güclü elektrik sobası (Harvia, SAWO) və idarəetmə paneli seçilir.' },
+      { q: 'Daxili saunanın qiyməti nə qədərdir?', a: 'Qiymət otağın ölçüsündən, seçilən ağacdan, sobadan və dekordan asılıdır. Ölçüləri göndərin — təxmini qiyməti tez hesablayaq.' },
+    ],
+  },
+  en: {
+    title: 'Indoor Sauna Construction – Homes, Villas & Hotels | Barrel Sauna',
+    desc: 'Indoor saunas built in homes, villas, hotels and spas: linden, thermo linden, abachi, cedar and wild sauna. Multilayer insulation protects your walls.',
+    eyebrow: 'Indoor saunas',
+    h1: 'Indoor sauna construction — a premium sauna <em>at home</em>',
+    lede: [
+      'Barrel Sauna doesn’t just build outdoor projects — we also build custom-designed premium saunas inside existing buildings. We turn any room you choose in your home, villa, hotel or spa into a fully functional, luxurious wellness corner.',
+      'Each sauna is built from scratch to fit the room’s dimensions and design.',
+    ],
+    protectTitle: 'Your walls stay fully protected',
+    protectText: 'The most important detail of a sauna built inside a room is protecting the existing walls. Between the room walls and the sauna frame we build a multilayer insulation system of mineral stone wool and a moisture-resistant membrane. It keeps the heat in for fast heat-up and fully protects your walls from steam and humidity.',
+    points: ['Mineral stone wool — thermal insulation', 'Moisture-resistant membrane — vapour barrier', 'Fast, even heat-up', 'Built from scratch to measure'],
+    woodsEyebrow: 'Indoor sauna models',
+    woodsTitle: 'Choose your <em>wood</em>',
+    woodsLede: 'The cabin interior is built from eco-friendly linden — the healthiest material for a sauna. For an even more premium project we offer cedar, abachi or teak.',
+    decorTitle: 'Décor & materials',
+    decorText: 'Decorative stone, Himalayan salt panels, log-cut décor and hidden LED lighting give every sauna its own character.',
+    rendersTitle: 'Design ideas',
+    projectsTitle: 'Indoor saunas we have built',
+    faq: [
+      { q: 'Which room is suitable for an indoor sauna?', a: 'Any room or free space in a home, villa, hotel or spa. The sauna is built from scratch to fit the room; we plan ventilation and electrical supply together during design.' },
+      { q: 'Will the sauna damage my walls?', a: 'No. A multilayer insulation of mineral stone wool and a moisture-resistant membrane is built between the walls and the sauna frame, fully protecting them from steam and humidity.' },
+      { q: 'Which wood is best?', a: 'Linden is the traditional, healthy choice. Thermo linden is more moisture-resistant, abachi stays cool for benches, and cedar adds aromatherapy. The wild sauna uses whole logs for a forest feel.' },
+      { q: 'Which heater is used indoors?', a: 'Usually an electric heater (Harvia, SAWO) sized to the room volume, with a control panel.' },
+      { q: 'How much does an indoor sauna cost?', a: 'It depends on room size, wood, heater and décor. Send us the dimensions and we will quickly prepare an estimate.' },
+    ],
+  },
+  ru: {
+    title: 'Сауна в доме под ключ – для дома, виллы и отеля | Barrel Sauna',
+    desc: 'Строим сауны внутри дома, виллы, отеля и SPA: липа, термолипа, абаши, кедр и «дикая сауна». Многослойное утепление защищает стены. Бесплатная консультация.',
+    eyebrow: 'Сауны в доме',
+    h1: 'Сауна в доме — <em>премиальная</em> сауна под ключ',
+    lede: [
+      'Barrel Sauna строит не только уличные сауны, но и индивидуально спроектированные премиальные сауны внутри существующих зданий. Любая комната в вашем доме, вилле, отеле или SPA превращается в полноценный роскошный уголок здоровья.',
+      'Сауна собирается с нуля точно под размеры и дизайн помещения.',
+    ],
+    protectTitle: 'Ваши стены полностью защищены',
+    protectText: 'Главное в сауне внутри помещения — защита существующих стен. Между стенами комнаты и каркасом сауны мы монтируем многослойную систему из минеральной каменной ваты и влагостойкой мембраны. Она удерживает тепло для быстрого прогрева и полностью защищает стены от пара и влаги.',
+    points: ['Минеральная вата — теплоизоляция', 'Влагостойкая мембрана — пароизоляция', 'Быстрый и равномерный прогрев', 'Сборка с нуля по размерам'],
+    woodsEyebrow: 'Модели саун в доме',
+    woodsTitle: 'Выберите <em>древесину</em>',
+    woodsLede: 'Внутренняя отделка — экологически чистая липа, самый полезный для здоровья материал. Для премиальных проектов — кедр, абаши или тик.',
+    decorTitle: 'Декор и материалы',
+    decorText: 'Декоративный камень, панели из гималайской соли, декор из спилов и скрытая LED-подсветка придают каждой сауне свой характер.',
+    rendersTitle: 'Варианты дизайна',
+    projectsTitle: 'Сауны в доме, которые мы построили',
+    faq: [
+      { q: 'Какое помещение подходит для сауны?', a: 'Любая комната или свободное пространство в доме, вилле, отеле или SPA. Сауна собирается под размеры помещения; вентиляцию и электропитание планируем вместе на этапе проекта.' },
+      { q: 'Не повредит ли сауна стены дома?', a: 'Нет. Между стенами и каркасом сауны монтируется многослойное утепление из минваты и влагостойкой мембраны — стены полностью защищены от пара и влаги.' },
+      { q: 'Какое дерево лучше?', a: 'Липа — традиционный и полезный выбор. Термолипа стойче к влаге, абаши не нагревается — идеально для полков, кедр даёт эффект ароматерапии. «Дикая сауна» из цельных стволов создаёт атмосферу леса.' },
+      { q: 'Какая печь ставится в доме?', a: 'Как правило, электрическая печь Harvia или SAWO, подобранная по объёму помещения, с пультом управления.' },
+      { q: 'Сколько стоит сауна в доме?', a: 'Зависит от размеров помещения, древесины, печи и декора. Пришлите размеры — быстро рассчитаем ориентировочную стоимость.' },
+    ],
+  },
+}[lang];
+const og = await ogImage('render-1');
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.indoor} image={og}
+  jsonLd={[serviceLd({ name: c.eyebrow, description: c.desc, url: path('indoor', lang) }), faqLd(c.faq)]}>
+  <PageHero lang={lang} crumbs={[{ label: ui.nav.indoor }]} eyebrow={c.eyebrow} title={c.h1} lede={c.lede} image="render-1" waText={ui.form.opts.indoor} />
+
+  <section class="section bg-forest">
+    <div class="container split">
+      <div class="stack">
+        <h2 class="h2">{c.protectTitle}</h2>
+        <p class="lede">{c.protectText}</p>
+        <ul class="checklist">{c.points.map((p) => <li>{p}</li>)}</ul>
+      </div>
+      <div class="rounded mat-img"><Photo name="build-wall" alt={c.protectTitle} sizes="(max-width: 900px) 100vw, 45vw" /></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{c.woodsEyebrow}</span>
+        <h2 class="h2" set:html={c.woodsTitle} />
+        <p class="lede">{c.woodsLede}</p>
+        <nav class="chips" aria-label={c.woodsEyebrow}>{WOODS.map((w) => <a class="chip" href={`#${w.id}`}>{w.name[lang]}</a>)}</nav>
+      </div>
+      <div class="woods">
+        {WOODS.map((w, i) => (
+          <article class="wood" id={w.id}>
+            <div class="wood-text">
+              <span class="w-num">0{i + 1}</span>
+              <h3 class="h3">{w.name[lang]}</h3>
+              <p class="muted">{w.text[lang]}</p>
+              <a class="link-arrow" href={waLink(ui.wa.model(`${c.eyebrow}: ${w.name[lang]}`))} target="_blank" rel="noopener">{ui.cta.quote}</a>
+            </div>
+            <div class="wood-imgs">
+              {w.images.slice(0, 3).map((n, k) => (
+                <div class:list={['wi', `wi-${k}`]}><Photo name={n} alt={`${w.name[lang]} — ${k + 1}`} lightbox={w.id} widths={[400, 700, 1000]} sizes="(max-width: 900px) 50vw, 25vw" class="cover" /></div>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container split reverse">
+      <div class="rounded"><Photo name="materials-insulation" alt={c.decorTitle} sizes="(max-width: 900px) 100vw, 50vw" /></div>
+      <div class="stack">
+        <h2 class="h2">{c.decorTitle}</h2>
+        <p class="lede">{c.decorText}</p>
+        <div class="btn-row">
+          <a class="btn" href={path('stoves', lang)}><Icon name="flame" /> {ui.nav.stoves}</a>
+          <a class="btn btn-ghost" href={path('accessories', lang)}>{ui.nav.accessories}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="h2" style="margin-bottom:28px">{c.rendersTitle}</h2>
+      <Gallery images={INDOOR_RENDERS} alt={c.rendersTitle} group="renders" />
+    </div>
+  </section>
+
+  <section class="section bg-cream2">
+    <div class="container">
+      <h2 class="h2" style="margin-bottom:28px">{c.projectsTitle}</h2>
+      <Gallery images={INDOOR_PROJECTS} alt={c.projectsTitle} group="indoor-projects" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
+  </section>
+
+  <CtaBand lang={lang} preset="indoor" waText={ui.form.opts.indoor} />
+</Base>
+<style>
+  .mat-img { background: #1a2312; }
+  .woods { display: grid; gap: clamp(48px, 7vw, 96px); }
+  .wood { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: clamp(28px, 5vw, 64px); align-items: center; scroll-margin-top: calc(var(--header-h) + 24px); }
+  .wood:nth-child(even) .wood-text { order: 2; }
+  .wood-text { display: grid; gap: 14px; align-content: start; }
+  .w-num { font-family: var(--font-serif); font-size: 3rem; line-height: 1; color: var(--wood); }
+  .wood-imgs { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 220px 220px; gap: 12px; }
+  .wi { border-radius: 16px; overflow: hidden; background: var(--cream-2); }
+  .wi :global(a), .wi :global(img) { display: block; width: 100%; height: 100%; }
+  .wi-0 { grid-row: 1 / 3; }
+  @media (max-width: 900px) {
+    .wood { grid-template-columns: 1fr; }
+    .wood:nth-child(even) .wood-text { order: 0; }
+    .wood-imgs { grid-template-rows: 170px 170px; }
+  }
+</style>

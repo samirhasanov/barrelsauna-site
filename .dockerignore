@@ -1,4 +1,10 @@
-raw/
-dist/
+.git
+web/node_modules
+web/dist
+web/.astro
+web/.env
+site
+dist
+raw
+_research
 *.zip
-*.py

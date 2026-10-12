@@ -1,0 +1,634 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import Icon from '../components/Icon.astro';
+import ModelCard from '../components/ModelCard.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import SocialVideos from '../components/SocialVideos.astro';
+import PostCard from '../components/PostCard.astro';
+import { SITE, waLink, type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { MODELS, OUTDOOR_BUILD } from '../data/models';
+import { WOODS } from '../data/indoor';
+import { PROJECTS } from '../data/projects';
+import { t } from '../i18n/ui';
+import { faqLd } from '../lib/schema';
+import { ogImage } from '../lib/images';
+import { postsFor } from '../lib/blog';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ui = t(lang);
+const posts = (await postsFor(lang)).slice(0, 3);
+
+const c = {
+  az: {
+    title: 'Barrel Sauna – Çöl Saunaları və Sauna Tikintisi, Bakı',
+    desc: 'Barrel, kub, kabin, kotec çöl saunaları və daxili sauna tikintisi Azərbaycanda. Listvenica, lipa, Harvia və SAWO sobaları. 6 000 AZN-dən. WhatsApp: 010 101 06 36',
+    eyebrow: 'Azərbaycanın ilk çöl sauna brendi',
+    h1: 'Barrel, kub və daxili <em>saunaların</em> tikintisi',
+    lede: 'Həyətiniz, bağ eviniz, villanız və ya oteliniz üçün ilboyu istifadəyə hazır saunalar. Suya davamlı listvenica, sağlam lipa ağacı və çoxtəbəqəli izolyasiya — Bakıdan bütün bölgələrə.',
+    ctaModels: 'Modellərə baxın',
+    stats: [['6', 'çöl sauna modeli'], ['2–20', 'nəfərlik tutum'], ['6 000', 'AZN-dən başlayaraq'], ['AZ', 'bütün bölgələrdə quraşdırma']],
+    trust: ['Harvia və SAWO sobaları', 'Listvenica xarici üzlük', 'Lipa, kedr, abaşi interyer', 'Bakı və bütün bölgələr'],
+    modelsEyebrow: 'Çöl saunaları',
+    modelsTitle: 'Hər həyətə uyğun <em>model</em>',
+    modelsLede: 'Klassik çəllək formasından tam SPA kompleksinə qədər — hər model fərdi ölçüdə, seçdiyiniz taxta və soba ilə hazırlanır.',
+    indoorEyebrow: 'Daxili saunalar',
+    indoorTitle: 'Evinizin istənilən otağı — <em>lüks sağlamlıq guşəsi</em>',
+    indoorText: 'Ev, villa, otel və ya SPA mərkəzinizdə ayırdığınız otağı tam funksional premium saunaya çeviririk. Sauna otağın ölçüsünə və dizaynına uyğun sıfırdan yığılır, divarlar isə mineral daş yunu və nəmə davamlı membranla buxardan tam qorunur.',
+    indoorCta: 'Daxili saunalara baxın',
+    woodsLabel: 'Taxta seçimləri',
+    buildEyebrow: 'Niyə Barrel Sauna',
+    buildTitle: 'Azərbaycan iqliminə uyğun <em>düşünülmüş</em> konstruksiya',
+    buildLede: 'Saunalarımız yağışlı, qarlı və yüksək rütubətli şəraitdə belə illərlə xidmət etmək üçün qurulur.',
+    processEyebrow: 'Necə işləyirik',
+    processTitle: 'İlk mesajdan <em>ilk buxara</em> qədər',
+    steps: [
+      ['Məsləhət', 'WhatsApp-da yazın və ya zəng edin. Ərazi, istifadəçi sayı, istək və büdcəni müzakirə edirik.'],
+      ['Layihə', 'Model, ölçü, taxta, soba və dekoru birlikdə seçirik; lazım olduqda 3D vizualizasiya hazırlayırıq.'],
+      ['İstehsal', 'Saunanı Bakıdakı istehsalatımızda seçilmiş materiallardan, çoxtəbəqəli izolyasiya ilə yığırıq.'],
+      ['Quraşdırma', 'Bakıda və bütün bölgələrdə quraşdırır, sobanı qoşur və istifadə qaydalarını izah edirik.'],
+    ],
+    projEyebrow: 'Layihələrimizdən',
+    projTitle: 'Qəbələdən İlisuya — <em>real layihələr</em>',
+    shopEyebrow: 'Sobalar və aksesuarlar',
+    shopTitle: 'Harvia, SAWO və Saunabee — <em>hamısı bir yerdə</em>',
+    shopText: 'Saunanın ürəyi sobadır. Odun və elektrik sobalarını, idarəetmə panellərini, vedrə, çömçə, termometr, işıqlandırma və digər aksesuarları dünya brendlərindən təqdim edir və quraşdırırıq.',
+    moreEyebrow: 'Digər həllər',
+    moreTitle: 'Sauna ilə yanaşı <em>daha çoxu</em>',
+    blogEyebrow: 'Bloq',
+    blogTitle: 'Sauna haqqında <em>faydalı</em> yazılar',
+    faq: [
+      { q: 'Çöl saunası neçəyə başa gəlir?', a: 'Təxmini qiymətlər: Barrel və Kub sauna 6 000 – 12 000 AZN, Oval və Kabin sauna 8 000 – 15 000 AZN, Kotec sauna 10 000 – 50 000 AZN, Outdoor SPA kompleks 15 000 – 45 000 AZN. Dəqiq qiymət ölçü, taxta, soba və əlavə seçimlərə görə hesablanır.' },
+      { q: 'Hansı bölgələrdə sauna tikirsiniz?', a: 'Bakı, Abşeron və Azərbaycanın bütün bölgələrində. Qəbələ, Qax (İlisu), İsmayıllı və digər bölgələrdə tamamlanmış layihələrimiz var.' },
+      { q: 'Çöl saunasından qışda istifadə etmək olarmı?', a: 'Bəli. Suya davamlı listvenica üzlük, mineral daş yunu və membrandan ibarət çoxtəbəqəli izolyasiya və ikiqat qorunan dam sayəsində saunalar ilboyu istifadə üçün nəzərdə tutulub.' },
+      { q: 'Evdə daxili sauna tikmək mümkündürmü?', a: 'Bəli. Ev, villa, otel və ya SPA-da ayırdığınız istənilən otaqda, ölçüyə uyğun daxili sauna yığırıq. Divarlar xüsusi izolyasiya sistemi ilə buxar və rütubətdən qorunur.' },
+      { q: 'Soba və aksesuarları da siz təmin edirsiniz?', a: 'Bəli. Harvia, SAWO və Saunabee məhsullarını — odun və elektrik sobalarını, idarəetmə panellərini və aksesuarları təqdim edir və quraşdırırıq.' },
+    ],
+  },
+  en: {
+    title: 'Barrel Sauna – Outdoor Saunas & Sauna Construction in Baku',
+    desc: 'Barrel, cube, cabin and cottage outdoor saunas and indoor sauna construction in Azerbaijan. Larch, linden, Harvia & SAWO heaters. From 6,000 AZN.',
+    eyebrow: 'Azerbaijan’s first outdoor sauna brand',
+    h1: 'Barrel, cube & indoor <em>saunas</em>, built in Azerbaijan',
+    lede: 'Year-round saunas for your garden, country house, villa or hotel. Water-resistant larch, healthy linden wood and multilayer insulation — delivered from Baku to every region.',
+    ctaModels: 'Explore models',
+    stats: [['6', 'outdoor models'], ['2–20', 'people capacity'], ['6,000', 'AZN starting price'], ['AZ', 'installed nationwide']],
+    trust: ['Harvia & SAWO heaters', 'Larch exterior cladding', 'Linden, cedar, abachi interiors', 'Baku and all regions'],
+    modelsEyebrow: 'Outdoor saunas',
+    modelsTitle: 'A <em>model</em> for every garden',
+    modelsLede: 'From the classic barrel to a full spa complex — every model is made to size, with the wood and heater of your choice.',
+    indoorEyebrow: 'Indoor saunas',
+    indoorTitle: 'Turn any room into a <em>luxury wellness corner</em>',
+    indoorText: 'We transform a room in your home, villa, hotel or spa into a fully functional premium sauna. It is built from scratch to fit the room, while mineral stone wool and a moisture-resistant membrane fully protect your walls from steam.',
+    indoorCta: 'Explore indoor saunas',
+    woodsLabel: 'Wood options',
+    buildEyebrow: 'Why Barrel Sauna',
+    buildTitle: 'Construction <em>engineered</em> for Azerbaijan’s climate',
+    buildLede: 'Our saunas are built to serve for years — even in rain, snow and high humidity.',
+    processEyebrow: 'How we work',
+    processTitle: 'From the first message to the <em>first steam</em>',
+    steps: [
+      ['Consultation', 'Message us on WhatsApp or call. We discuss the site, number of users, wishes and budget.'],
+      ['Design', 'We choose model, size, wood, heater and décor together, with a 3D visualisation when needed.'],
+      ['Production', 'We build the sauna in our Baku workshop from selected materials with multilayer insulation.'],
+      ['Installation', 'We install in Baku and all regions, connect the heater and explain how to use it.'],
+    ],
+    projEyebrow: 'Our projects',
+    projTitle: 'From Gabala to Ilisu — <em>real projects</em>',
+    shopEyebrow: 'Heaters & accessories',
+    shopTitle: 'Harvia, SAWO and Saunabee — <em>all in one place</em>',
+    shopText: 'The heater is the heart of a sauna. We supply and install wood-burning and electric heaters, control panels, buckets, ladles, thermometers, lighting and more from world-leading brands.',
+    moreEyebrow: 'More solutions',
+    moreTitle: 'Beyond the <em>sauna</em>',
+    blogEyebrow: 'Blog',
+    blogTitle: 'Helpful <em>sauna</em> guides',
+    faq: [
+      { q: 'How much does an outdoor sauna cost?', a: 'Approximate prices: Barrel and Cube sauna 6,000 – 12,000 AZN, Oval and Cabin sauna 8,000 – 15,000 AZN, Cottage sauna 10,000 – 50,000 AZN, Outdoor spa complex 15,000 – 45,000 AZN. The exact price depends on size, wood, heater and extras.' },
+      { q: 'Which regions do you work in?', a: 'Baku, Absheron and every region of Azerbaijan. We have completed projects in Gabala, Gakh (Ilisu), Ismayilli and more.' },
+      { q: 'Can an outdoor sauna be used in winter?', a: 'Yes. Water-resistant larch cladding, multilayer insulation (mineral stone wool + membrane) and a double-protected roof make our saunas suitable for year-round use.' },
+      { q: 'Can you build a sauna inside my house?', a: 'Yes. We build made-to-measure indoor saunas in any room of a home, villa, hotel or spa, with a dedicated insulation system that protects the walls from steam and humidity.' },
+      { q: 'Do you supply heaters and accessories?', a: 'Yes. We supply and install Harvia, SAWO and Saunabee products — wood-burning and electric heaters, control panels and accessories.' },
+    ],
+  },
+  ru: {
+    title: 'Barrel Sauna – бани-бочки и уличные сауны в Баку',
+    desc: 'Сауны-бочки, кубы, кабины, коттеджи и сауны в доме под ключ в Азербайджане. Лиственница, липа, печи Harvia и SAWO. От 6 000 AZN. WhatsApp.',
+    eyebrow: 'Первый бренд уличных саун в Азербайджане',
+    h1: 'Строительство саун: <em>бочки</em>, кубы и сауны в доме',
+    lede: 'Сауны для двора, дачи, виллы или отеля, готовые к использованию круглый год. Влагостойкая лиственница, здоровая липа и многослойное утепление — от Баку до любого региона.',
+    ctaModels: 'Смотреть модели',
+    stats: [['6', 'моделей уличных саун'], ['2–20', 'человек вместимость'], ['6 000', 'AZN — цены от'], ['AZ', 'монтаж по всей стране']],
+    trust: ['Печи Harvia и SAWO', 'Обшивка из лиственницы', 'Липа, кедр, абаши внутри', 'Баку и все регионы'],
+    modelsEyebrow: 'Уличные сауны',
+    modelsTitle: '<em>Модель</em> для любого участка',
+    modelsLede: 'От классической бочки до полноценного SPA-комплекса — каждая модель изготавливается по размеру, с выбранной вами древесиной и печью.',
+    indoorEyebrow: 'Сауны в доме',
+    indoorTitle: 'Любая комната — <em>роскошный уголок здоровья</em>',
+    indoorText: 'Превращаем комнату в доме, вилле, отеле или SPA в полноценную премиальную сауну. Сауна собирается с нуля под размер помещения, а минеральная вата и влагостойкая мембрана полностью защищают стены от пара.',
+    indoorCta: 'Смотреть сауны в доме',
+    woodsLabel: 'Варианты древесины',
+    buildEyebrow: 'Почему Barrel Sauna',
+    buildTitle: 'Конструкция, <em>продуманная</em> для климата Азербайджана',
+    buildLede: 'Наши сауны служат годами — даже в дождь, снег и при высокой влажности.',
+    processEyebrow: 'Как мы работаем',
+    processTitle: 'От первого сообщения до <em>первого пара</em>',
+    steps: [
+      ['Консультация', 'Напишите в WhatsApp или позвоните. Обсудим участок, число гостей, пожелания и бюджет.'],
+      ['Проект', 'Вместе выбираем модель, размер, дерево, печь и декор; при необходимости делаем 3D-визуализацию.'],
+      ['Производство', 'Собираем сауну на нашем производстве в Баку из отборных материалов с многослойным утеплением.'],
+      ['Монтаж', 'Устанавливаем в Баку и во всех регионах, подключаем печь и объясняем правила пользования.'],
+    ],
+    projEyebrow: 'Наши проекты',
+    projTitle: 'От Габалы до Илису — <em>реальные проекты</em>',
+    shopEyebrow: 'Печи и аксессуары',
+    shopTitle: 'Harvia, SAWO и Saunabee — <em>всё в одном месте</em>',
+    shopText: 'Сердце сауны — печь. Поставляем и устанавливаем дровяные и электрические печи, пульты управления, шайки, ковши, термометры, освещение и другие аксессуары мировых брендов.',
+    moreEyebrow: 'Другие решения',
+    moreTitle: 'Не только <em>сауна</em>',
+    blogEyebrow: 'Блог',
+    blogTitle: 'Полезные статьи <em>о саунах</em>',
+    faq: [
+      { q: 'Сколько стоит уличная сауна?', a: 'Ориентировочные цены: бочка и куб — 6 000 – 12 000 AZN, овальная и кабина — 8 000 – 15 000 AZN, коттедж — 10 000 – 50 000 AZN, уличный SPA-комплекс — 15 000 – 45 000 AZN. Точная цена зависит от размера, дерева, печи и опций.' },
+      { q: 'В каких регионах вы работаете?', a: 'Баку, Абшерон и все регионы Азербайджана. У нас есть готовые проекты в Габале, Гахе (Илису), Исмаиллы и других районах.' },
+      { q: 'Можно ли пользоваться уличной сауной зимой?', a: 'Да. Влагостойкая лиственница, многослойное утепление (минвата + мембрана) и двойная защита крыши позволяют пользоваться сауной круглый год.' },
+      { q: 'Можно ли построить сауну в доме?', a: 'Да. Собираем сауны по размеру в любой комнате дома, виллы, отеля или SPA, с системой утепления, защищающей стены от пара и влаги.' },
+      { q: 'Вы поставляете печи и аксессуары?', a: 'Да. Поставляем и устанавливаем продукцию Harvia, SAWO и Saunabee — дровяные и электрические печи, пульты и аксессуары.' },
+    ],
+  },
+}[lang];
+
+const more = [
+  { key: 'container', img: 'container-2', name: { az: 'Konteyner sauna və jakuzi', en: 'Container sauna & jacuzzi', ru: 'Сауна-контейнер с джакузи' } },
+  { key: 'jacuzzi', img: 'hottub-2', name: { az: 'Jakuzi və isti-soyuq vanna', en: 'Hot tubs & jacuzzi', ru: 'Джакузи и купели' } },
+  { key: 'portable', img: 'portable-1', name: { az: 'Daşınabilən mobil sauna', en: 'Portable mobile sauna', ru: 'Мобильная сауна' } },
+  { key: 'construction', img: 'render-6', name: { az: 'Sauna tikintisi xidməti', en: 'Sauna construction service', ru: 'Строительство саун' } },
+] as const;
+
+const featured = PROJECTS.slice(0, 4);
+const bandText = {
+  az: { title: 'Qarda, yağışda, <em>ilin dörd fəslində</em>', text: 'Suya davamlı listvenica, çoxtəbəqəli izolyasiya və ikiqat qorunan dam — saunanız havadan asılı olmadan hər gün istiyə hazırdır.' },
+  en: { title: 'In snow, in rain, <em>in every season</em>', text: 'Water-resistant larch, multilayer insulation and a double-protected roof — your sauna is ready to heat up every day, whatever the weather.' },
+  ru: { title: 'В снег, в дождь, <em>в любое время года</em>', text: 'Влагостойкая лиственница, многослойное утепление и двойная защита крыши — ваша сауна готова к растопке каждый день, в любую погоду.' },
+}[lang];
+
+// Hero slideshow — real projects
+const heroSlides = PROJECTS.slice(0, 4).map((p) => ({ img: p.images[0], place: p.place[lang], model: p.modelName[lang], href: `${path('projects', lang)}#${p.id}` }));
+
+// Split the headline into words for the staggered reveal; the <em> word gets a hand-drawn swash
+let wi = 0;
+const animatedH1 = c.h1
+  .split(/(<em>.*?<\/em>)/)
+  .flatMap((chunk) => {
+    const em = chunk.match(/^<em>(.*)<\/em>$/);
+    if (em) return [`<span class="w"><em><span style="--i:${wi++}">${em[1]}</span><svg class="swash" viewBox="0 0 220 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 10 C 55 2, 150 2, 217 8" /></svg></em></span>`];
+    return chunk.split(/\s+/).filter(Boolean).map((w) => `<span class="w"><span style="--i:${wi++}">${w}</span></span>`);
+  })
+  .join(' ');
+const og = await ogImage('proj-ilisu-cube-3');
+const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Barrel Sauna', url: `${SITE.url}/`, inLanguage: lang };
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.home} image={og} jsonLd={[websiteLd, faqLd(c.faq)]}>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow enter" style="--d:0">{c.eyebrow}</span>
+        <h1 class="display headline" set:html={animatedH1} />
+        <p class="lede enter" style="--d:5">{c.lede}</p>
+        <div class="btn-row enter" style="--d:6">
+          <a class="btn btn-wa" href={waLink(ui.wa.default)} target="_blank" rel="noopener"><Icon name="whatsapp" /> {ui.cta.whatsapp}</a>
+          <a class="btn btn-ghost" href="#modeller">{c.ctaModels} <Icon name="arrow" /></a>
+        </div>
+        <dl class="stats enter" style="--d:7">
+          {c.stats.map(([n, l]) => <div><dt data-count>{n}</dt><dd>{l}</dd></div>)}
+        </dl>
+      </div>
+      <div class="hero-media" data-parallax>
+        <div class="hm hm-1 rounded" data-slides>
+          {heroSlides.map((sl, i) => (
+            <div class:list={['slide', { active: i === 0 }]} data-place={sl.place} data-model={sl.model} data-href={sl.href}>
+              <Photo name={sl.img} alt={`${sl.model} — ${sl.place}`} priority={i === 0} loading={i === 0 ? 'eager' : 'lazy'} widths={[500, 800, 1000]} sizes="(max-width: 900px) 60vw, 30vw" class="cover" />
+            </div>
+          ))}
+          <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="slide-dots" aria-hidden="true">{heroSlides.map((_, i) => <span class:list={{ on: i === 0 }}><b></b></span>)}</div>
+        </div>
+        <div class="hm hm-2 rounded" data-depth="14"><Photo name="barrel-3" alt={MODELS[0].name[lang]} priority widths={[400, 700]} sizes="(max-width: 900px) 40vw, 20vw" class="cover" /></div>
+        <div class="hm hm-3 rounded" data-depth="-10" data-slides data-interval="4200">
+          {['wood-termo-lipa-2', 'render-1', 'wood-kedr-1'].map((n, i) => (
+            <div class:list={['slide', { active: i === 0 }]}><Photo name={n} alt={c.indoorEyebrow} widths={[400, 700]} sizes="(max-width: 900px) 40vw, 20vw" class="cover" /></div>
+          ))}
+        </div>
+        <a class="hm-badge" href={heroSlides[0].href} data-badge>
+          <img src="/brand/mark-dark.webp" alt="" width="40" height="40" />
+          <span><span data-badge-place>{heroSlides[0].place}</span><br /><b data-badge-model>{heroSlides[0].model}</b></span>
+        </a>
+      </div>
+    </div>
+    <div class="trust" aria-label={c.eyebrow}>
+      <div class="marquee">
+        {[0, 1].map((k) => (
+          <div class="marquee-track" aria-hidden={k === 1 ? 'true' : undefined}>
+            {[...c.trust, ...c.trust].map((x) => <span><Icon name="check" size={16} /> {x}<i class="sep">✦</i></span>)}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MODELS -->
+  <section class="section" id="modeller">
+    <div class="container">
+      <div class="section-head split reveal">
+        <div class="stack-sm">
+          <span class="eyebrow">{c.modelsEyebrow}</span>
+          <h2 class="h2" set:html={c.modelsTitle} />
+          <p class="lede">{c.modelsLede}</p>
+        </div>
+        <a class="link-arrow" href={path('outdoor', lang)}>{ui.nav.allModels}</a>
+      </div>
+      <div class="grid grid-3">
+        {MODELS.map((m) => <div class="reveal"><ModelCard m={m} lang={lang} /></div>)}
+      </div>
+      <p class="small muted price-note">* {ui.labels.priceNote}</p>
+    </div>
+  </section>
+
+  <!-- CINEMATIC BAND -->
+  <section class="band" aria-label={bandText.title}>
+    <div class="band-img"><Photo name="proj-qabala-barrel-1" alt={`${PROJECTS[4].title[lang]} — ${PROJECTS[4].place[lang]}`} widths={[800, 1080]} sizes="100vw" class="cover" /></div>
+    <div class="container band-inner">
+      <p class="band-kicker reveal"><Icon name="snow" size={16} /> {PROJECTS[4].place[lang]} · {PROJECTS[4].modelName[lang]}</p>
+      <h2 class="display band-title reveal" set:html={bandText.title} />
+      <p class="band-text reveal">{bandText.text}</p>
+      <div class="btn-row reveal" style="justify-content:center"><a class="btn btn-wood" href={path('projects', lang)}>{ui.nav.projects} <Icon name="arrow" /></a></div>
+    </div>
+  </section>
+
+  <!-- INDOOR -->
+  <section class="section bg-paper">
+    <div class="container split">
+      <div class="indoor-media reveal">
+        <div class="rounded ratio-4-5"><Photo name="render-1" alt={c.indoorEyebrow} class="cover" sizes="(max-width: 900px) 100vw, 45vw" /></div>
+        <div class="indoor-float rounded"><Photo name="wood-kedr-1" alt={WOODS[3].name[lang]} class="cover" widths={[400, 600]} sizes="240px" /></div>
+      </div>
+      <div class="stack reveal">
+        <span class="eyebrow">{c.indoorEyebrow}</span>
+        <h2 class="h2" set:html={c.indoorTitle} />
+        <p class="lede">{c.indoorText}</p>
+        <div>
+          <p class="small muted" style="margin-bottom:10px;font-weight:700">{c.woodsLabel}</p>
+          <div class="chips">{WOODS.map((w) => <a class="chip" href={`${path('indoor', lang)}#${w.id}`}>{w.name[lang]}</a>)}</div>
+        </div>
+        <div><a class="btn" href={path('indoor', lang)}>{c.indoorCta} <Icon name="arrow" /></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD QUALITY -->
+  <section class="section bg-forest">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{c.buildEyebrow}</span>
+        <h2 class="h2" set:html={c.buildTitle} />
+        <p class="lede">{c.buildLede}</p>
+      </div>
+      <div class="build-grid">
+        <div class="build-list">
+          {OUTDOOR_BUILD[lang].map((b, i) => (
+            <div class="build-item reveal">
+              <span class="num">0{i + 1}</span>
+              <div><h3>{b.title}</h3><p>{b.text}</p></div>
+            </div>
+          ))}
+        </div>
+        <div class="build-media reveal">
+          <div class="rounded build-img"><Photo name="build-details" alt={c.buildTitle.replace(/<[^>]+>/g, '')} class="cover" sizes="(max-width: 900px) 100vw, 45vw" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-self:center">{c.processEyebrow}</span>
+        <h2 class="h2" set:html={c.processTitle} />
+      </div>
+      <ol class="steps">
+        {c.steps.map(([h, p], i) => (
+          <li class="step reveal">
+            <span class="step-n">{i + 1}</span>
+            <h3>{h}</h3>
+            <p>{p}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section bg-cream2">
+    <div class="container">
+      <div class="section-head split reveal">
+        <div class="stack-sm">
+          <span class="eyebrow">{c.projEyebrow}</span>
+          <h2 class="h2" set:html={c.projTitle} />
+        </div>
+        <a class="link-arrow" href={path('projects', lang)}>{ui.cta.viewAll}</a>
+      </div>
+      <div class="proj-grid">
+        {featured.map((p, i) => (
+          <a class={`proj proj-${i + 1} reveal`} href={`${path('projects', lang)}#${p.id}`}>
+            <Photo name={p.images[0]} alt={`${p.title[lang]} — ${p.place[lang]}`} class="cover" sizes={i === 0 ? '(max-width: 900px) 100vw, 55vw' : '(max-width: 900px) 100vw, 40vw'} />
+            <span class="proj-cap"><small><Icon name="pin" size={14} /> {p.place[lang]}</small>{p.title[lang]}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <SocialVideos lang={lang} />
+
+  <!-- SHOP -->
+  <section class="section bg-paper">
+    <div class="container split reverse">
+      <div class="shop-media reveal">
+        <div class="rounded shop-img"><Photo name="accessories-set" alt={c.shopEyebrow} sizes="(max-width: 900px) 100vw, 45vw" /></div>
+      </div>
+      <div class="stack reveal">
+        <span class="eyebrow">{c.shopEyebrow}</span>
+        <h2 class="h2" set:html={c.shopTitle} />
+        <p class="lede">{c.shopText}</p>
+        <div class="brands"><span>HARVIA</span><span>SAWO</span><span>saunabee</span></div>
+        <div class="btn-row">
+          <a class="btn" href={path('stoves', lang)}><Icon name="flame" /> {ui.nav.stoves}</a>
+          <a class="btn btn-ghost" href={path('accessories', lang)}>{ui.nav.accessories} <Icon name="arrow" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">{c.moreEyebrow}</span>
+        <h2 class="h2" set:html={c.moreTitle} />
+      </div>
+      <div class="grid grid-4">
+        {more.map((m) => (
+          <article class="card more-card reveal">
+            <div class="card-media"><Photo name={m.img} alt={m.name[lang]} widths={[400, 600]} sizes="(max-width: 640px) 100vw, 25vw" /></div>
+            <div class="card-body"><h3 class="card-title"><a class="card-link" href={path(m.key, lang)}>{m.name[lang]}</a></h3></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  {posts.length > 0 && (
+    <section class="section bg-cream2">
+      <div class="container">
+        <div class="section-head split reveal">
+          <div class="stack-sm">
+            <span class="eyebrow">{c.blogEyebrow}</span>
+            <h2 class="h2" set:html={c.blogTitle} />
+          </div>
+          <a class="link-arrow" href={path('blog', lang)}>{ui.cta.viewAll}</a>
+        </div>
+        <div class="grid grid-3">{posts.map((p) => <div class="reveal"><PostCard post={p} lang={lang} /></div>)}</div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container container-narrow">
+      <Faq items={c.faq} title={ui.labels.faq} />
+    </div>
+  </section>
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  .hero { position: relative; padding-top: clamp(24px, 4vw, 56px); overflow: hidden; }
+  .hero-glow { position: absolute; right: -10%; top: -20%; width: 70vw; height: 70vw; max-width: 980px; max-height: 980px; background: radial-gradient(closest-side, rgba(217, 160, 102, 0.28), rgba(217, 160, 102, 0) 70%); filter: blur(10px); animation: glow 9s ease-in-out infinite alternate; pointer-events: none; }
+  @keyframes glow { from { transform: translate(0, 0) scale(1); opacity: 0.8; } to { transform: translate(-4%, 6%) scale(1.08); opacity: 1; } }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .hero-copy { display: grid; gap: 24px; align-content: center; }
+  .hero-copy .lede { font-size: clamp(1.08rem, 1.5vw, 1.25rem); }
+
+  /* staggered entrance */
+  .enter { opacity: 0; transform: translateY(16px); animation: enter 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; animation-delay: calc(var(--d) * 110ms + 120ms); }
+  @keyframes enter { to { opacity: 1; transform: none; } }
+  .headline :global(.w) { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 0.04em 0.12em 0; margin-bottom: -0.12em; }
+  .headline :global(.w > span), .headline :global(.w em > span) { display: inline-block; transform: translateY(108%); animation: rise 1s cubic-bezier(0.2, 0.75, 0.15, 1) forwards; animation-delay: calc(var(--i) * 75ms + 200ms); }
+  .headline :global(em) { position: relative; display: inline-block; }
+  .headline :global(.swash) { position: absolute; left: -2%; bottom: -0.02em; width: 104%; height: 0.24em; overflow: visible; }
+  .headline :global(.swash path) { fill: none; stroke: var(--wood); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 240; stroke-dashoffset: 240; animation: draw 1.1s 1.1s cubic-bezier(0.6, 0, 0.2, 1) forwards; opacity: 0.85; }
+  @keyframes rise { to { transform: none; } }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  .stats { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 28px; margin: 12px 0 0; padding-top: 24px; border-top: 1px solid var(--line); }
+  .stats dt { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 600; color: var(--forest); line-height: 1; font-variant-numeric: tabular-nums; }
+  .stats dd { margin: 6px 0 0; font-size: 0.82rem; color: var(--muted); max-width: 13ch; line-height: 1.35; }
+
+  .hero-media { position: relative; display: grid; grid-template-columns: 1.25fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; height: clamp(440px, 46vw, 620px); }
+  .hm { position: relative; box-shadow: var(--shadow); opacity: 0; animation: pop 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; transition: translate 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .hm-1 { grid-row: 1 / 3; animation-delay: 0.25s; }
+  .hm-2 { animation-delay: 0.45s; }
+  .hm-3 { animation-delay: 0.6s; }
+  @keyframes pop { from { opacity: 0; transform: translateY(28px) scale(0.96); } to { opacity: 1; transform: none; } }
+  .hm :global(picture), .hm :global(img) { width: 100%; height: 100%; }
+  .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
+  .slide.active { opacity: 1; z-index: 1; }
+  .slide :global(img) { transform: scale(1.12); transition: transform 7s cubic-bezier(0.2, 0.6, 0.3, 1); }
+  .slide.active :global(img) { transform: scale(1); }
+  .hm-1::after { content: ''; position: absolute; inset: 0; z-index: 2; background: linear-gradient(to top, rgba(18, 24, 12, 0.35), transparent 40%); pointer-events: none; }
+
+  /* rising steam */
+  .steam { position: absolute; left: 0; right: 0; bottom: 0; height: 70%; z-index: 3; pointer-events: none; overflow: hidden; }
+  .steam i { position: absolute; bottom: -30%; width: 46%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 65%); filter: blur(14px); opacity: 0; animation: steam 9s linear infinite; }
+  .steam i:nth-child(1) { left: 2%; animation-delay: 0s; }
+  .steam i:nth-child(2) { left: 30%; animation-delay: 1.8s; animation-duration: 10s; }
+  .steam i:nth-child(3) { left: 55%; animation-delay: 3.6s; }
+  .steam i:nth-child(4) { left: 15%; animation-delay: 5.4s; animation-duration: 11s; }
+  .steam i:nth-child(5) { left: 45%; animation-delay: 7.2s; }
+  @keyframes steam {
+    0% { transform: translate(0, 0) scale(0.6); opacity: 0; }
+    20% { opacity: 0.55; }
+    60% { opacity: 0.3; }
+    100% { transform: translate(18%, -160%) scale(1.5); opacity: 0; }
+  }
+  .slide-dots { position: absolute; z-index: 4; left: 18px; right: 18px; top: 16px; display: flex; gap: 6px; }
+  .slide-dots span { flex: 1; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, 0.35); overflow: hidden; }
+  .slide-dots b { display: block; height: 100%; width: 0; background: #fff; }
+  .slide-dots span.done b { width: 100%; }
+  .slide-dots span.on b { animation: bar var(--dur, 5.5s) linear forwards; }
+  @keyframes bar { to { width: 100%; } }
+
+  .hm-badge { position: absolute; z-index: 5; left: -26px; bottom: 34px; display: flex; gap: 12px; align-items: center; padding: 12px 18px 12px 12px; background: var(--paper); border-radius: 16px; box-shadow: var(--shadow); font-size: 0.85rem; line-height: 1.3; color: var(--muted); text-decoration: none; opacity: 0; animation: pop 0.9s 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; transition: transform 0.2s; }
+  .hm-badge:hover { transform: translateY(-2px); }
+  .hm-badge b { color: var(--forest); font-size: 0.95rem; }
+  .hm-badge img { width: 40px; height: 40px; }
+  .hm-badge.swap span { animation: swap 0.6s ease; }
+  @keyframes swap { 0% { opacity: 0; transform: translateY(6px); } 100% { opacity: 1; transform: none; } }
+
+  .trust { margin-top: clamp(40px, 6vw, 72px); border-block: 1px solid var(--line); background: var(--paper); overflow: hidden; }
+  .marquee { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+  .trust:hover .marquee { animation-play-state: paused; }
+  .marquee-track { display: flex; flex: none; }
+  .marquee-track span { display: inline-flex; gap: 10px; align-items: center; padding: 18px 0 18px 28px; font-weight: 650; font-size: 0.98rem; color: var(--forest); white-space: nowrap; }
+  .marquee-track :global(svg) { color: var(--wood); }
+  .marquee-track .sep { font-style: normal; color: var(--amber); margin-left: 18px; font-size: 0.8rem; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-media { height: 420px; }
+    .hm-badge { left: 12px; bottom: 12px; }
+    .stats { grid-template-columns: repeat(2, auto); gap: 18px 36px; }
+  }
+  @media (max-width: 520px) { .hero-media { height: 360px; gap: 10px; } }
+  @media (prefers-reduced-motion: reduce) {
+    .enter, .hm, .hm-badge, .headline :global(.w > span), .headline :global(.w em > span) { opacity: 1 !important; transform: none !important; animation: none !important; }
+    .headline :global(.swash path) { stroke-dashoffset: 0; animation: none; }
+    .steam, .hero-glow { display: none; }
+    .marquee { animation: none; }
+  }
+
+  .band { position: relative; min-height: clamp(460px, 70vh, 680px); display: grid; place-items: center; overflow: hidden; color: #fff; text-align: center; isolation: isolate; }
+  .band-img { position: absolute; inset: -12% 0; z-index: -2; }
+  .band-img :global(img) { width: 100%; height: 100%; }
+  @supports (animation-timeline: view()) {
+    .band-img { animation: bandpar linear both; animation-timeline: view(); }
+    @keyframes bandpar { from { transform: translateY(-8%) scale(1.05); } to { transform: translateY(8%) scale(1.05); } }
+  }
+  .band::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at center, rgba(15, 22, 10, 0.45), rgba(15, 22, 10, 0.78)); }
+  .band-inner { display: grid; gap: 22px; justify-items: center; padding-block: 80px; }
+  .band-kicker { display: inline-flex; gap: 8px; align-items: center; padding: 8px 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(6px); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .band-title { max-width: 16ch; color: #fff; text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); }
+  .band-title :global(em) { color: var(--amber); }
+  .band-text { max-width: 56ch; font-size: clamp(1.02rem, 1.4vw, 1.18rem); color: rgba(255, 255, 255, 0.88); }
+
+  .price-note { margin-top: 22px; }
+
+  .indoor-media { position: relative; padding-right: 60px; padding-bottom: 60px; }
+  .indoor-float { position: absolute; right: 0; bottom: 0; width: 42%; aspect-ratio: 1; border: 6px solid var(--paper); box-shadow: var(--shadow); }
+  .indoor-media :global(picture) { height: 100%; }
+
+  .build-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .build-list { display: grid; gap: 4px; }
+  .build-item { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding: 22px 0; border-bottom: 1px solid rgba(246, 241, 228, 0.14); }
+  .build-item h3 { font-size: 1.15rem; font-weight: 750; margin-bottom: 6px; color: var(--cream); }
+  .build-item p { color: rgba(246, 241, 228, 0.75); }
+  .num { font-family: var(--font-serif); font-size: 2rem; color: var(--amber); line-height: 1; }
+  .build-img { background: #0f160a; }
+  @media (max-width: 900px) { .build-grid { grid-template-columns: 1fr; } }
+
+  .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: s; }
+  .step { position: relative; padding: 28px 24px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); display: grid; gap: 10px; align-content: start; }
+  .step-n { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: var(--forest); color: var(--cream); font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600; }
+  .step h3 { font-family: var(--font-serif); font-size: 1.55rem; }
+  .step p { color: var(--muted); font-size: 0.95rem; }
+  @media (max-width: 1000px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+  .proj-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 300px 300px; gap: 16px; }
+  .proj { position: relative; display: block; border-radius: var(--radius); overflow: hidden; color: #fff; text-decoration: none; }
+  .proj :global(picture), .proj :global(img) { width: 100%; height: 100%; }
+  .proj :global(img) { transition: transform 0.7s ease; }
+  .proj:hover :global(img) { transform: scale(1.04); }
+  .proj::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 14, 6, 0.75), transparent 55%); }
+  .proj-1 { grid-row: 1 / 3; }
+  .proj-4 { grid-column: 2 / 4; }
+  .proj-cap { position: absolute; left: 20px; right: 20px; bottom: 18px; z-index: 1; font-family: var(--font-serif); font-size: 1.6rem; font-weight: 600; line-height: 1.1; }
+  .proj-cap small { display: flex; align-items: center; gap: 6px; font-family: var(--font-sans); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9; margin-bottom: 6px; }
+  @media (max-width: 900px) {
+    .proj-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 340px 240px 240px; }
+    .proj-1 { grid-column: 1 / 3; grid-row: auto; }
+    .proj-4 { grid-column: auto; }
+  }
+  @media (max-width: 560px) { .proj-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: 260px; } .proj-1 { grid-column: auto; } }
+
+  .shop-img { background: #fff; padding: 24px; }
+  .brands { display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: center; font-weight: 800; letter-spacing: 0.14em; color: var(--forest); opacity: 0.8; font-size: 1.05rem; }
+  .brands span:last-child { letter-spacing: 0.02em; font-style: italic; text-transform: none; }
+  .more-card .card-media { aspect-ratio: 1; }
+  .more-card .card-title { font-size: 1.35rem; }
+</style>
+
+<script>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Cross-fading slideshows (hero project tile + interior tile)
+  document.querySelectorAll<HTMLElement>('[data-slides]').forEach((box) => {
+    const slides = [...box.querySelectorAll<HTMLElement>('.slide')];
+    if (slides.length < 2 || reduce) return;
+    const dots = [...box.querySelectorAll<HTMLElement>('.slide-dots span')];
+    const interval = Number(box.dataset.interval || 5500);
+    box.style.setProperty('--dur', `${interval}ms`);
+    const badge = box.closest('.hero-media')?.querySelector<HTMLAnchorElement>('[data-badge]');
+    let i = 0;
+    const go = () => {
+      slides[i].classList.remove('active');
+      dots[i]?.classList.replace('on', 'done');
+      i = (i + 1) % slides.length;
+      if (i === 0) dots.forEach((d) => d.classList.remove('done'));
+      slides[i].classList.add('active');
+      if (dots[i]) { dots[i].classList.remove('on'); void dots[i].offsetWidth; dots[i].classList.add('on'); }
+      const s = slides[i];
+      if (badge && s.dataset.place) {
+        badge.href = s.dataset.href!;
+        badge.querySelector('[data-badge-place]')!.textContent = s.dataset.place;
+        badge.querySelector('[data-badge-model]')!.textContent = s.dataset.model!;
+        badge.classList.remove('swap'); void badge.offsetWidth; badge.classList.add('swap');
+      }
+    };
+    let timer = window.setInterval(go, interval);
+    document.addEventListener('visibilitychange', () => { clearInterval(timer); if (!document.hidden) timer = window.setInterval(go, interval); });
+  });
+
+  // Count-up stats
+  const fmt = (v: number, sample: string) => {
+    const sep = sample.match(/\d([ \u00a0,.])\d{3}/)?.[1];
+    const s = String(v);
+    return sep ? s.replace(/\B(?=(\d{3})+(?!\d))/g, sep) : s;
+  };
+  document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
+    const orig = el.textContent || '';
+    if (!/\d/.test(orig) || reduce) return;
+    const re = /\d+(?:[ \u00a0,.]\d{3})*/g;
+    const t0 = performance.now() + 900;
+    const dur = 1400;
+    const tick = (now: number) => {
+      const p = Math.min(1, Math.max(0, (now - t0) / dur));
+      const e = 1 - Math.pow(1 - p, 3);
+      el.textContent = orig.replace(re, (m) => fmt(Math.round(Number(m.replace(/\D/g, '')) * e), m));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    el.textContent = orig.replace(re, (m) => fmt(0, m));
+    requestAnimationFrame(tick);
+  });
+
+  // Subtle parallax on the photo mosaic (pointer devices only)
+  const media = document.querySelector<HTMLElement>('[data-parallax]');
+  if (media && !reduce && matchMedia('(pointer: fine)').matches) {
+    const tiles = [...media.querySelectorAll<HTMLElement>('[data-depth]')];
+    media.closest('.hero')!.addEventListener('pointermove', (e) => {
+      const r = media.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      tiles.forEach((t) => { const d = Number(t.dataset.depth); t.style.translate = `${x * d}px ${y * d}px`; });
+    });
+  }
+</script>

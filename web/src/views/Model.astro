@@ -1,0 +1,168 @@
+---
+import Base from '../layouts/Base.astro';
+import Photo from '../components/Photo.astro';
+import Icon from '../components/Icon.astro';
+import Crumbs from '../components/Crumbs.astro';
+import Gallery from '../components/Gallery.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ModelCard from '../components/ModelCard.astro';
+import SocialVideos from '../components/SocialVideos.astro';
+import { waLink, type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { MODELS, OUTDOOR_BUILD, modelByKey } from '../data/models';
+import { PROJECTS } from '../data/projects';
+import { t } from '../i18n/ui';
+import { faqLd, productLd } from '../lib/schema';
+import { ogImage } from '../lib/images';
+import { fmtPrice } from '../lib/format';
+
+interface Props { lang: Lang; modelKey: string }
+const { lang, modelKey } = Astro.props;
+const ui = t(lang);
+const m = modelByKey(modelKey);
+const og = await ogImage(m.cover);
+const others = MODELS.filter((x) => x.key !== m.key).slice(0, 3);
+const project = PROJECTS.find((p) => p.model === m.key);
+const L = {
+  az: { build: 'Necə qurulur', buildSub: 'Bütün çöl saunalarımızda istifadə olunan konstruksiya', others: 'Digər modellər', project: 'Bu modeldən layihəmiz', interior: 'Daxili taxta seçimi', interiorText: 'Standart olaraq lipa (cökə); istəyə görə termo lipa, kedr, abaşi və ya tik.', stove: 'Soba', stoveText: 'Harvia və ya SAWO — odun və ya elektrik.', orderTitle: `${m.name.az} sifarişi` },
+  en: { build: 'How it is built', buildSub: 'The construction used in all our outdoor saunas', others: 'Other models', project: 'Our project with this model', interior: 'Interior wood', interiorText: 'Linden by default; thermo linden, cedar, abachi or teak on request.', stove: 'Heater', stoveText: 'Harvia or SAWO — wood-burning or electric.', orderTitle: `Order a ${m.name.en}` },
+  ru: { build: 'Как устроена', buildSub: 'Конструкция, которую мы используем во всех уличных саунах', others: 'Другие модели', project: 'Наш проект с этой моделью', interior: 'Дерево внутри', interiorText: 'По умолчанию липа; по желанию — термолипа, кедр, абаши или тик.', stove: 'Печь', stoveText: 'Harvia или SAWO — дровяная или электрическая.', orderTitle: `Заказать: ${m.name.ru}` },
+}[lang];
+const waText = ui.wa.model(m.name[lang]);
+---
+<Base
+  lang={lang}
+  title={m.seo.title[lang]}
+  description={m.seo.description[lang]}
+  alternates={ROUTES[m.key]}
+  image={og}
+  jsonLd={[
+    productLd({ name: m.name[lang], description: m.seo.description[lang], url: path(m.key, lang), image: og, low: m.price[0], high: m.price[1] }),
+    faqLd(m.faq[lang]),
+  ]}
+>
+  <section class="page-hero">
+    <div class="container">
+      <Crumbs lang={lang} items={[{ label: ui.nav.outdoor, href: path('outdoor', lang) }, { label: m.name[lang] }]} />
+      <div class="model-hero">
+        <div class="stack">
+          <span class="eyebrow">{m.tagline[lang]}</span>
+          <h1 class="h1">{m.seo.h1[lang]}</h1>
+          {m.intro[lang].map((p) => <p class="lede">{p}</p>)}
+          <div class="facts">
+            <div class="fact"><Icon name="users" size={22} /><span><small>{ui.labels.capacity}</small>{m.capacity[0]}–{m.capacity[1]} {ui.labels.people}</span></div>
+            <div class="fact"><Icon name="tag" size={22} /><span><small>{ui.labels.priceRange}</small>{fmtPrice(m.price, lang)}</span></div>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-wa" href={waLink(waText)} target="_blank" rel="noopener"><Icon name="whatsapp" /> {ui.cta.quote}</a>
+            <a class="btn btn-ghost" href="#sifaris">{ui.cta.order}</a>
+          </div>
+          <p class="small muted">* {ui.labels.priceNote}</p>
+        </div>
+        <div class="hero-photo rounded">
+          <Photo name={m.cover} alt={m.name[lang]} priority lightbox="hero" sizes="(max-width: 900px) 100vw, 50vw" class="cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="feat-grid">
+        <div class="stack">
+          <h2 class="h3">{ui.labels.features}</h2>
+          <ul class="checklist">{m.features[lang].map((f) => <li>{f}</li>)}</ul>
+        </div>
+        <div class="spec-cards">
+          <div class="spec"><Icon name="leaf" size={24} /><h3>{L.interior}</h3><p>{L.interiorText}</p></div>
+          <div class="spec"><Icon name="flame" size={24} /><h3>{L.stove}</h3><p>{L.stoveText} <a href={path('stoves', lang)}>{ui.nav.stoves} →</a></p></div>
+          <div class="spec"><Icon name="users" size={24} /><h3>{ui.labels.capacity}</h3><p>{m.capacity[0]}–{m.capacity[1]} {ui.labels.people}</p></div>
+          <div class="spec"><Icon name="ruler" size={24} /><h3>{ui.labels.specs}</h3><p>{{ az: 'Ölçü, pəncərə, qapı və dekor fərdi seçilir.', en: 'Size, windows, door and décor are customised.', ru: 'Размер, окна, дверь и декор — индивидуально.' }[lang]}</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <h2 class="h2 g-title">{ui.labels.gallery}</h2>
+      <Gallery images={m.images} alt={m.name[lang]} group={m.key} />
+    </div>
+  </section>
+
+  <section class="section bg-forest">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{L.build}</span>
+        <h2 class="h2">{L.buildSub}</h2>
+      </div>
+      <div class="grid grid-4">
+        {OUTDOOR_BUILD[lang].map((b, i) => (
+          <div class="b-card"><span class="num">0{i + 1}</span><h3>{b.title}</h3><p>{b.text}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {project && (
+    <section class="section">
+      <div class="container split">
+        <div class="rounded ratio-4-5"><Photo name={project.images[0]} alt={`${project.title[lang]} — ${project.place[lang]}`} class="cover" sizes="(max-width: 900px) 100vw, 45vw" /></div>
+        <div class="stack">
+          <span class="eyebrow">{L.project}</span>
+          <h2 class="h2">{project.title[lang]}</h2>
+          <p class="chip" style="justify-self:start"><Icon name="pin" size={15} /> {project.place[lang]}</p>
+          <p class="lede">{project.text[lang]}</p>
+          <a class="link-arrow" href={`${path('projects', lang)}#${project.id}`}>{ui.nav.projects}</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <SocialVideos lang={lang} section={m.key} limit={6} />
+
+  <section class="section bg-paper">
+    <div class="container container-narrow">
+      <Faq items={m.faq[lang]} title={ui.labels.faq} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head split">
+        <h2 class="h2">{L.others}</h2>
+        <a class="link-arrow" href={path('outdoor', lang)}>{ui.nav.allModels}</a>
+      </div>
+      <div class="grid grid-3">{others.map((o) => <ModelCard m={o} lang={lang} />)}</div>
+    </div>
+  </section>
+
+  <CtaBand lang={lang} preset={m.key} title={L.orderTitle} waText={waText} />
+</Base>
+
+<style>
+  .model-hero { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+  .hero-photo { aspect-ratio: 4 / 5; box-shadow: var(--shadow-lg); position: sticky; top: calc(var(--header-h) + 20px); }
+  .hero-photo :global(a), .hero-photo :global(picture), .hero-photo :global(img) { display: block; width: 100%; height: 100%; }
+  .facts { display: flex; flex-wrap: wrap; gap: 14px; }
+  .fact { display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 14px; background: var(--paper); border: 1px solid var(--line); font-weight: 800; color: var(--forest); font-size: 1.05rem; }
+  .fact small { display: block; font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+  .fact :global(svg) { color: var(--wood); }
+  @media (max-width: 900px) { .model-hero { grid-template-columns: 1fr; } .hero-photo { position: static; order: -1; aspect-ratio: 4 / 3; } }
+
+  .feat-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(28px, 5vw, 64px); }
+  .spec-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .spec { padding: 22px; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line); display: grid; gap: 8px; align-content: start; }
+  .spec :global(svg) { color: var(--wood); }
+  .spec h3 { font-size: 1.02rem; font-weight: 750; }
+  .spec p { color: var(--muted); font-size: 0.95rem; }
+  .spec a { color: var(--forest); font-weight: 700; }
+  @media (max-width: 900px) { .feat-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .spec-cards { grid-template-columns: 1fr; } }
+  .g-title { margin-bottom: 28px; }
+  .b-card { padding: 26px; border-radius: var(--radius); background: rgba(246, 241, 228, 0.05); border: 1px solid rgba(246, 241, 228, 0.12); display: grid; gap: 10px; align-content: start; }
+  .b-card h3 { font-size: 1.1rem; font-weight: 750; }
+  .b-card p { color: rgba(246, 241, 228, 0.75); font-size: 0.95rem; }
+  .num { font-family: var(--font-serif); font-size: 2rem; color: var(--amber); line-height: 1; }
+</style>

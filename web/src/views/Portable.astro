@@ -1,0 +1,106 @@
+---
+import SolutionPage, { type SolutionContent } from '../components/SolutionPage.astro';
+import { type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+
+const { lang } = Astro.props as { lang: Lang };
+
+const content: Record<Lang, SolutionContent> = {
+  az: {
+    title: 'Daşınabilən Mobil Sauna – Hazır Çöl Saunaları | Barrel Sauna',
+    desc: 'Daşınabilən mobil saunalar: hazır formada çatdırılan barrel, kub və xüsusi dizaynlı saunalar. Bağ, otel, glempinq üçün. İstədiyiniz ölçü və formada istehsal.',
+    eyebrow: 'Daşınabilən mobil saunalar',
+    h1: 'Daşınabilən mobil sauna — <em>istədiyiniz yerdə</em> isti və rahatlıq',
+    lede: [
+      'Mobil saunalarımız atelyedə yığılır və hazır şəkildə yerinə çatdırılır. Bağ evi, villa həyəti, otel, glempinq və ya istirahət mərkəzi — sauna sizinlə birlikdə yerini dəyişə bilər.',
+      'Ölçü, forma və daxili düzülüş tam olaraq məkanınıza və istəyinizə uyğun hazırlanır: oval, kvadrat və ya tamamilə sizə məxsus dizayn.',
+    ],
+    featTitle: 'Xüsusi dizaynda sauna',
+    features: [
+      { icon: 'ruler', t: 'Sizə uyğun ölçüdə', d: 'Məkana uyğun, tam istədiyiniz ölçüdə istehsal edirik.' },
+      { icon: 'sparkle', t: 'İstədiyiniz formada', d: 'Oval, kvadrat, çəllək və ya tamamilə fərdi dizayn.' },
+      { icon: 'pencil', t: 'Tam fərdi yanaşma', d: 'Dizayn, yerləşim, aksesuarlar və texniki həllər — hamısı bizdən.' },
+      { icon: 'truck', t: 'Hazır çatdırılma', d: 'Sauna hazır şəkildə gətirilir — yerində iş minimal olur.' },
+      { icon: 'snow', t: 'Hər mövsüm üçün', d: 'Listvenica üzlük və çoxtəbəqəli izolyasiya ilə ilboyu istifadə.' },
+      { icon: 'flame', t: 'Odun və ya elektrik', d: 'Harvia və SAWO sobaları ilə — elektrik xətti olmayan yerlər üçün odun sobası.' },
+    ],
+    blocksTitle: 'Kimlər üçün idealdır',
+    blocks: [
+      { title: 'Şəxsi istifadə', items: ['Bağ evi və villa həyəti', 'Kirayə və ya müvəqqəti ərazilər', 'Sonradan yerini dəyişmək istəyənlər', 'Tez quraşdırma istəyənlər'] },
+      { title: 'Biznes', items: ['Otel və qonaq evləri', 'Glempinq və kempinqlər', 'İstirahət mərkəzləri və dağ kurortları', 'Mövsümi tədbir və məkanlar'] },
+    ],
+    galleryTitle: 'Mobil sauna nümunələri',
+    faq: [
+      { q: 'Mobil sauna necə daşınır?', a: 'Sauna atelyedə yığılır və hazır şəkildə yerinə çatdırılır. Daşınma üsulunu ölçü və əraziyə görə planlaşdırırıq.' },
+      { q: 'Elektrik olmayan yerdə istifadə etmək olar?', a: 'Bəli, odun sobası seçilərsə sauna elektrik xəttindən asılı olmur.' },
+      { q: 'Hansı modellər daşınabiləndir?', a: 'Barrel, kub və kompakt kabin saunalar mobil formatda hazırlana bilər. Fərdi ölçü və forma da mümkündür.' },
+      { q: 'Qiyməti nə qədərdir?', a: 'Barrel və kub saunalar üçün təxmini qiymət 6 000 – 12 000 AZN-dir; ölçü və seçimlərə görə dəqiqləşir.' },
+    ],
+  },
+  en: {
+    title: 'Portable Mobile Saunas – Delivered Ready | Barrel Sauna',
+    desc: 'Portable mobile saunas: barrel, cube and custom saunas delivered ready-built. For gardens, hotels and glamping. Made in the size and shape you need.',
+    eyebrow: 'Portable mobile saunas',
+    h1: 'Portable sauna — warmth and comfort <em>wherever you want</em>',
+    lede: [
+      'Our mobile saunas are assembled in the workshop and delivered ready to your site. Country house, villa garden, hotel, glamping or resort — the sauna can move with you.',
+      'Size, shape and interior layout are made to fit your space and wishes: oval, square or a fully custom design.',
+    ],
+    featTitle: 'Custom-designed saunas',
+    features: [
+      { icon: 'ruler', t: 'Your size', d: 'Made to the exact size your space needs.' },
+      { icon: 'sparkle', t: 'Your shape', d: 'Oval, square, barrel or a fully custom design.' },
+      { icon: 'pencil', t: 'Fully personal', d: 'Design, placement, accessories and technical solutions — all from us.' },
+      { icon: 'truck', t: 'Delivered ready', d: 'The sauna arrives ready-built, with minimal on-site work.' },
+      { icon: 'snow', t: 'Every season', d: 'Larch cladding and multilayer insulation for year-round use.' },
+      { icon: 'flame', t: 'Wood or electric', d: 'Harvia and SAWO heaters — wood-burning for off-grid sites.' },
+    ],
+    blocksTitle: 'Who it’s for',
+    blocks: [
+      { title: 'Private use', items: ['Country houses and villa gardens', 'Rented or temporary sites', 'Owners who may relocate later', 'Anyone wanting fast installation'] },
+      { title: 'Business', items: ['Hotels and guest houses', 'Glamping and campsites', 'Resorts and mountain retreats', 'Seasonal venues and events'] },
+    ],
+    galleryTitle: 'Mobile sauna examples',
+    faq: [
+      { q: 'How is a mobile sauna transported?', a: 'It is assembled in our workshop and delivered ready-built. We plan transport based on size and site access.' },
+      { q: 'Can it work without electricity?', a: 'Yes — with a wood-burning heater the sauna needs no power line.' },
+      { q: 'Which models can be portable?', a: 'Barrel, cube and compact cabin saunas can be made in mobile format; custom sizes and shapes are possible too.' },
+      { q: 'How much does it cost?', a: 'Barrel and cube saunas are approximately 6,000 – 12,000 AZN, depending on size and options.' },
+    ],
+  },
+  ru: {
+    title: 'Мобильная баня с доставкой по Азербайджану | Barrel Sauna',
+    desc: 'Мобильные сауны: бочки, кубы и сауны индивидуального дизайна с доставкой в готовом виде. Для дачи, отеля и глэмпинга. Любой размер и форма.',
+    eyebrow: 'Мобильные сауны',
+    h1: 'Мобильная сауна — тепло и уют <em>где угодно</em>',
+    lede: [
+      'Мобильные сауны собираются в цеху и доставляются на место в готовом виде. Дача, двор виллы, отель, глэмпинг или база отдыха — сауна может «переезжать» вместе с вами.',
+      'Размер, форма и планировка изготавливаются под ваше пространство и пожелания: овальная, квадратная или полностью индивидуальная.',
+    ],
+    featTitle: 'Сауна индивидуального дизайна',
+    features: [
+      { icon: 'ruler', t: 'Ваш размер', d: 'Изготавливаем точно под нужный размер.' },
+      { icon: 'sparkle', t: 'Ваша форма', d: 'Овальная, квадратная, бочка или полностью индивидуальный дизайн.' },
+      { icon: 'pencil', t: 'Индивидуальный подход', d: 'Дизайн, размещение, аксессуары и технические решения — всё от нас.' },
+      { icon: 'truck', t: 'Доставка в готовом виде', d: 'Сауна приезжает собранной — минимум работ на месте.' },
+      { icon: 'snow', t: 'Любой сезон', d: 'Лиственница и многослойное утепление — круглый год.' },
+      { icon: 'flame', t: 'Дрова или электричество', d: 'Печи Harvia и SAWO; дровяная — для мест без электричества.' },
+    ],
+    blocksTitle: 'Кому подходит',
+    blocks: [
+      { title: 'Для себя', items: ['Дача и двор виллы', 'Арендованные или временные участки', 'Если планируете переезд', 'Если важен быстрый монтаж'] },
+      { title: 'Для бизнеса', items: ['Отели и гостевые дома', 'Глэмпинги и кемпинги', 'Базы отдыха и горные курорты', 'Сезонные площадки и мероприятия'] },
+    ],
+    galleryTitle: 'Примеры мобильных саун',
+    faq: [
+      { q: 'Как перевозится мобильная сауна?', a: 'Она собирается в цеху и доставляется в готовом виде. Способ перевозки планируем с учётом размера и подъезда к участку.' },
+      { q: 'Можно ли без электричества?', a: 'Да, с дровяной печью сауне не нужна электролиния.' },
+      { q: 'Какие модели бывают мобильными?', a: 'Бочки, кубы и компактные кабины; возможны индивидуальные размеры и формы.' },
+      { q: 'Сколько стоит?', a: 'Бочка и куб — ориентировочно 6 000 – 12 000 AZN, в зависимости от размера и опций.' },
+    ],
+  },
+};
+---
+<SolutionPage lang={lang} c={content[lang]} alternates={ROUTES.portable} url={path('portable', lang)} hero="barrel-2"
+  gallery={['barrel-2', 'barrel-6', 'cube-3', 'oval-5', 'barrel-1', 'cube-1', 'barrel-5', 'oval-6']}
+  preset="barrel" related={['barrel', 'cube', 'oval']} />

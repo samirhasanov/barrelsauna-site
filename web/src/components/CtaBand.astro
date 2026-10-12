@@ -1,0 +1,48 @@
+---
+import Icon from './Icon.astro';
+import LeadForm from './LeadForm.astro';
+import { SITE, waLink, type Lang } from '../data/site';
+import { t } from '../i18n/ui';
+interface Props { lang: Lang; preset?: string; title?: string; text?: string; waText?: string }
+const { lang, preset, title, text, waText } = Astro.props;
+const ui = t(lang);
+const heading = {
+  az: 'Saunanızı <em>birlikdə</em> planlaşdıraq',
+  en: "Let's plan your sauna <em>together</em>",
+  ru: 'Спланируем вашу сауну <em>вместе</em>',
+}[lang];
+const sub = {
+  az: 'Ölçü, model, taxta və soba seçimində pulsuz məsləhət veririk. Yazın — layihənizi müzakirə edək və təxmini qiyməti bildirək.',
+  en: 'Free advice on size, model, wood and heater. Message us — we will discuss your project and give you an estimate.',
+  ru: 'Бесплатно консультируем по размеру, модели, дереву и печи. Напишите — обсудим проект и назовём ориентировочную цену.',
+}[lang];
+---
+<section class="section bg-forest cta-band" id="sifaris">
+  <div class="container split">
+    <div class="stack">
+      <span class="eyebrow">{ui.form.title}</span>
+      <h2 class="h2" set:html={title ?? heading} />
+      <p class="lede">{text ?? sub}</p>
+      <div class="contacts">
+        <a class="ci" href={waLink(waText ?? ui.wa.default)} target="_blank" rel="noopener"><span class="ic wa"><Icon name="whatsapp" size={22} /></span><span><small>WhatsApp</small>{SITE.phoneDisplay}</span></a>
+        <a class="ci" href={`tel:${SITE.phone}`}><span class="ic"><Icon name="phone" size={20} /></span><span><small>{ui.labels.phone}</small>{SITE.phoneDisplay}</span></a>
+        <div class="ci"><span class="ic"><Icon name="clock" size={20} /></span><span><small>{ui.labels.hours}</small>{SITE.hours[lang].join(' · ')}</span></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <p class="small muted-dark">{ui.form.subtitle}</p>
+      <LeadForm lang={lang} preset={preset} id="lead-cta" />
+    </div>
+  </div>
+</section>
+<style>
+  .cta-band { position: relative; overflow: hidden; }
+  .cta-band::after { content: ''; position: absolute; right: -120px; bottom: -160px; width: 520px; height: 520px; background: url('/brand/logo-light.webp') left center / auto 100% no-repeat; opacity: 0.04; pointer-events: none; }
+  .contacts { display: grid; gap: 14px; margin-top: 8px; }
+  .ci { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--cream); font-weight: 700; }
+  .ci small { display: block; font-weight: 500; font-size: 0.8rem; opacity: 0.7; }
+  .ic { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: rgba(246, 241, 228, 0.1); flex: none; }
+  .ic.wa { background: var(--wa); color: #fff; }
+  .form-card { background: var(--paper); color: var(--ink); padding: clamp(22px, 3vw, 36px); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); display: grid; gap: 18px; position: relative; z-index: 1; }
+  .muted-dark { color: var(--muted); }
+</style>

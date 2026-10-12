@@ -1,0 +1,246 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Photo from '../components/Photo.astro';
+import Icon from '../components/Icon.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { waLink, type Lang, type L } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { PRODUCTS, STOVE_CATS, ACC_CATS, CAT_LABEL } from '../data/products';
+import { t } from '../i18n/ui';
+import { faqLd } from '../lib/schema';
+import { ogImage, hasImg } from '../lib/images';
+
+interface Props { lang: Lang; kind: 'stoves' | 'accessories' }
+const { lang, kind } = Astro.props;
+const ui = t(lang);
+const cats = kind === 'stoves' ? STOVE_CATS : ACC_CATS;
+const items = PRODUCTS.filter((p) => (cats as readonly string[]).includes(p.category) && hasImg(p.id));
+const brands = [...new Set(items.map((p) => p.brand))];
+const presentCats = cats.filter((c) => items.some((p) => p.category === c));
+
+const C: Record<'stoves' | 'accessories', L<any>> = {
+  stoves: {
+    az: {
+      title: 'Sauna Sobaları – Odun və Elektrik, Harvia, SAWO | Barrel Sauna',
+      desc: 'Harvia və SAWO sauna sobaları: odun sobaları, elektrik sobaları, idarəetmə panelləri və buxar generatorları. Satış, seçim məsləhəti və quraşdırma Bakıda.',
+      eyebrow: 'Sauna sobaları',
+      h1: 'Sauna sobaları — <em>Harvia</em> və <em>SAWO</em>',
+      lede: ['Saunanın əsas elementi sobadır: düzgün seçildikdə istilik, buxar və ümumi təcrübə tam fərqli səviyyəyə qalxır. Fin brendləri Harvia və SAWO-nun odun və elektrik sobalarını, idarəetmə panellərini və buxar generatorlarını təqdim edir, saunanıza uyğun seçib quraşdırırıq.', 'Bütün məhsullar satışda mövcuddur. Qiymət və mövcudluğu öyrənmək üçün məhsulun altındakı düymə ilə WhatsApp-da yazın.'],
+      guideTitle: 'Soba necə seçilir',
+      guide: [
+        ['flame', 'Odun, yoxsa elektrik?', 'Odun sobası klassik atmosfer və elektrikdən asılı olmayan istifadə üçün idealdır. Elektrik sobası daha rahat idarə olunur və daxili saunalar üçün standart seçimdir.'],
+        ['ruler', 'Gücü həcmə görə seçin', 'Hər məhsulda tövsiyə olunan sauna həcmi (m³) göstərilib. Şüşə divar və daş səthlər əlavə güc tələb edir — hesablamada kömək edirik.'],
+        ['sparkle', 'İdarəetmə paneli', 'Elektrik sobaları üçün panel temperaturu, vaxtı və işıqlandırmanı idarə edir; bəzi modellər telefondan idarə olunur.'],
+      ],
+      faq: [
+        { q: 'Sauna sobasının qiyməti nə qədərdir?', a: 'Qiymət model, güc və növə görə dəyişir. Məhsulun altındakı “WhatsApp-da soruşun” düyməsi ilə yazın — aktual qiymət və mövcudluğu bildirək.' },
+        { q: 'Sobanı siz quraşdırırsınız?', a: 'Bəli. Sobanı saunanın həcminə uyğun seçir, quraşdırır və təhlükəsizlik qaydalarına uyğun qoşuruq.' },
+        { q: 'Daxili sauna üçün hansı soba uyğundur?', a: 'Adətən elektrik sobası və idarəetmə paneli. Gücü otağın həcminə görə seçilir.' },
+        { q: 'Çöl saunası üçün odun sobası yaxşıdır?', a: 'Odun sobası çöl saunalarında çox populyardır: elektrik xəttindən asılı olmur və klassik sauna atmosferi yaradır. Elektrik sobası da quraşdırmaq mümkündür.' },
+      ],
+    },
+    en: {
+      title: 'Sauna Heaters – Wood & Electric, Harvia, SAWO | Barrel Sauna',
+      desc: 'Harvia and SAWO sauna heaters: wood-burning and electric heaters, control panels and steam generators. Sales, expert advice and installation in Baku.',
+      eyebrow: 'Sauna heaters',
+      h1: 'Sauna heaters — <em>Harvia</em> & <em>SAWO</em>',
+      lede: ['The heater is the heart of every sauna: choose it right and heat, steam and the whole experience reach another level. We supply Finnish Harvia and SAWO wood-burning and electric heaters, control panels and steam generators, and install the right one for your sauna.', 'All products are available for sale. Use the button under each product to ask about price and availability on WhatsApp.'],
+      guideTitle: 'How to choose a heater',
+      guide: [
+        ['flame', 'Wood or electric?', 'Wood-burning heaters give a classic atmosphere and work off-grid. Electric heaters are easier to control and standard for indoor saunas.'],
+        ['ruler', 'Match power to volume', 'Each product lists the recommended sauna volume (m³). Glass walls and stone surfaces need extra power — we help you calculate.'],
+        ['sparkle', 'Control panel', 'For electric heaters a panel manages temperature, timing and lighting; some models can be controlled from your phone.'],
+      ],
+      faq: [
+        { q: 'How much does a sauna heater cost?', a: 'It depends on the model, power and type. Tap “Ask on WhatsApp” under a product and we will send the current price and availability.' },
+        { q: 'Do you install the heater?', a: 'Yes. We size the heater to your sauna, install it and connect it according to safety requirements.' },
+        { q: 'Which heater suits an indoor sauna?', a: 'Usually an electric heater with a control panel, sized to the room volume.' },
+        { q: 'Is a wood-burning heater good for an outdoor sauna?', a: 'Very popular outdoors: it needs no power line and creates the classic sauna atmosphere. Electric heaters are possible too.' },
+      ],
+    },
+    ru: {
+      title: 'Печи для сауны в Баку – дровяные и электрические, Harvia, SAWO',
+      desc: 'Печи для сауны Harvia и SAWO: дровяные и электрические печи, пульты управления и парогенераторы. Продажа, подбор и установка в Баку.',
+      eyebrow: 'Печи для сауны',
+      h1: 'Печи для сауны — <em>Harvia</em> и <em>SAWO</em>',
+      lede: ['Печь — сердце сауны: правильный выбор выводит тепло, пар и впечатления на совсем другой уровень. Поставляем финские дровяные и электрические печи Harvia и SAWO, пульты управления и парогенераторы и устанавливаем подходящую модель.', 'Все товары в продаже. Узнать цену и наличие можно в WhatsApp — кнопка под каждым товаром.'],
+      guideTitle: 'Как выбрать печь',
+      guide: [
+        ['flame', 'Дрова или электричество?', 'Дровяная печь — классическая атмосфера и независимость от электросети. Электрическая удобнее в управлении и стандартна для саун в доме.'],
+        ['ruler', 'Мощность по объёму', 'Для каждой модели указан рекомендуемый объём парной (м³). Стеклянные и каменные стены требуют запаса мощности — поможем рассчитать.'],
+        ['sparkle', 'Пульт управления', 'Для электропечи пульт управляет температурой, временем и подсветкой; некоторые модели управляются со смартфона.'],
+      ],
+      faq: [
+        { q: 'Сколько стоит печь для сауны?', a: 'Зависит от модели, мощности и типа. Нажмите «Спросить в WhatsApp» под товаром — пришлём актуальную цену и наличие.' },
+        { q: 'Вы устанавливаете печь?', a: 'Да. Подбираем печь по объёму сауны, устанавливаем и подключаем с соблюдением требований безопасности.' },
+        { q: 'Какая печь подходит для сауны в доме?', a: 'Обычно электрическая печь с пультом, подобранная по объёму помещения.' },
+        { q: 'Подходит ли дровяная печь для уличной сауны?', a: 'Очень популярный вариант: не нужна электролиния, классическая атмосфера. Электропечь тоже возможна.' },
+      ],
+    },
+  },
+  accessories: {
+    az: {
+      title: 'Sauna Aksesuarları – Vedrə, Termometr, LED, Daş | Barrel Sauna',
+      desc: 'Sauna aksesuarları: vedrə və çömçə, termometr və hiqrometr, LED işıqlandırma, baş dayaqları, aromalar, sauna daşları, qapılar. Harvia, SAWO, Saunabee.',
+      eyebrow: 'Sauna aksesuarları',
+      h1: 'Sauna <em>aksesuarları</em>',
+      lede: ['Düzgün aksesuarlar sauna təcrübəsini tamamlayır: vedrə və çömçə, termometr və hiqrometr, qum saatı, baş dayaqları, LED işıqlandırma, aromalar, sauna daşları və qapılar — Harvia, SAWO və Saunabee məhsulları.', 'Bütün məhsullar satışda mövcuddur. Qiymət və mövcudluq üçün WhatsApp-da yazın.'],
+      guideTitle: 'Saunanı tamamlayın',
+      guide: [
+        ['droplet', 'Buxar üçün', 'Vedrə, çömçə və aromalar — sobaya su ataraq yumşaq, ətirli buxar.'],
+        ['clock', 'Nəzarət üçün', 'Termometr, hiqrometr və qum saatı — temperatur, rütubət və seans vaxtı.'],
+        ['sparkle', 'Rahatlıq və atmosfer', 'Baş və bel dayaqları, LED işıqlandırma, papaq və tekstil.'],
+      ],
+      faq: [
+        { q: 'Aksesuarların qiyməti nə qədərdir?', a: 'Məhsulun altındakı düymə ilə WhatsApp-da yazın — aktual qiyməti və mövcudluğu bildirək.' },
+        { q: 'Sauna daşlarını nə vaxt dəyişmək lazımdır?', a: 'İstifadə intensivliyindən asılıdır; daşlar çatlayıb xırdalandıqda dəyişilməlidir. Bloqumuzda saunaya qulluq barədə ətraflı yazmışıq.' },
+        { q: 'Aksesuarları sauna ilə birlikdə sifariş etmək olar?', a: 'Bəli, sauna layihəsi ilə birlikdə aksesuar dəstini də seçib quraşdırırıq.' },
+      ],
+    },
+    en: {
+      title: 'Sauna Accessories – Buckets, Thermometers, LED, Stones | Barrel Sauna',
+      desc: 'Sauna accessories: buckets and ladles, thermometers and hygrometers, LED lighting, headrests, aromas, sauna stones and doors. Harvia, SAWO and Saunabee.',
+      eyebrow: 'Sauna accessories',
+      h1: 'Sauna <em>accessories</em>',
+      lede: ['The right accessories complete the sauna experience: buckets and ladles, thermometers and hygrometers, sand timers, headrests, LED lighting, aromas, sauna stones and doors — from Harvia, SAWO and Saunabee.', 'All products are available for sale. Ask about price and availability on WhatsApp.'],
+      guideTitle: 'Complete your sauna',
+      guide: [
+        ['droplet', 'For steam', 'Bucket, ladle and aromas — throw water on the stones for soft, fragrant steam.'],
+        ['clock', 'For control', 'Thermometer, hygrometer and sand timer — temperature, humidity and session time.'],
+        ['sparkle', 'Comfort & mood', 'Head and back rests, LED lighting, hats and textiles.'],
+      ],
+      faq: [
+        { q: 'How much do accessories cost?', a: 'Tap the button under a product to ask on WhatsApp — we’ll send current price and availability.' },
+        { q: 'When should sauna stones be replaced?', a: 'It depends on use; replace stones when they crack and crumble. See our blog for a full sauna-care guide.' },
+        { q: 'Can I order accessories with my sauna?', a: 'Yes, we select and install an accessory set together with your sauna project.' },
+      ],
+    },
+    ru: {
+      title: 'Аксессуары для сауны в Баку – шайки, термометры, LED | Barrel Sauna',
+      desc: 'Аксессуары для сауны: шайки и ковши, термометры и гигрометры, LED-подсветка, подголовники, ароматы, камни и двери. Harvia, SAWO и Saunabee.',
+      eyebrow: 'Аксессуары для сауны',
+      h1: '<em>Аксессуары</em> для сауны',
+      lede: ['Правильные аксессуары завершают образ сауны: шайки и ковши, термометры и гигрометры, песочные часы, подголовники, LED-подсветка, ароматы, камни и двери — Harvia, SAWO и Saunabee.', 'Все товары в продаже. Цену и наличие уточняйте в WhatsApp.'],
+      guideTitle: 'Дополните сауну',
+      guide: [
+        ['droplet', 'Для пара', 'Шайка, ковш и ароматы — мягкий ароматный пар.'],
+        ['clock', 'Для контроля', 'Термометр, гигрометр и песочные часы — температура, влажность и время сеанса.'],
+        ['sparkle', 'Комфорт и атмосфера', 'Подголовники и спинки, LED-подсветка, шапки и текстиль.'],
+      ],
+      faq: [
+        { q: 'Сколько стоят аксессуары?', a: 'Нажмите кнопку под товаром и спросите в WhatsApp — пришлём цену и наличие.' },
+        { q: 'Когда менять камни для сауны?', a: 'Зависит от интенсивности использования; камни меняют, когда они трескаются и крошатся. Подробнее — в нашем блоге об уходе за сауной.' },
+        { q: 'Можно ли заказать аксессуары вместе с сауной?', a: 'Да, подберём и установим комплект аксессуаров вместе с проектом сауны.' },
+      ],
+    },
+  },
+};
+const c = C[kind][lang];
+const og = await ogImage(items[0]?.id ?? 'accessories-set');
+const specLabel = {
+  az: { power_kw: 'Güc', room_m3: 'Həcm', stones_kg: 'Daş' },
+  en: { power_kw: 'Power', room_m3: 'Room', stones_kg: 'Stones' },
+  ru: { power_kw: 'Мощность', room_m3: 'Объём', stones_kg: 'Камни' },
+}[lang];
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES[kind]} image={og} jsonLd={[faqLd(c.faq)]}>
+  <PageHero lang={lang} crumbs={[{ label: c.eyebrow }]} eyebrow={c.eyebrow} title={c.h1} lede={c.lede} cta={false} />
+
+  <section class="section-sm guide-sec">
+    <div class="container">
+      <div class="grid grid-3">
+        {c.guide.map(([ic, h, p]: string[]) => <div class="g"><span class="g-ic"><Icon name={ic} size={22} /></span><div><h2>{h}</h2><p>{p}</p></div></div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" id="katalog">
+    <div class="container">
+      <div class="filters" data-filters>
+        <div class="chips">
+          <button class="fchip on" data-cat="all">{ui.labels.all} <span>{items.length}</span></button>
+          {presentCats.map((cat) => <button class="fchip" data-cat={cat}>{CAT_LABEL[cat][lang]} <span>{items.filter((p) => p.category === cat).length}</span></button>)}
+        </div>
+        <div class="chips">
+          {brands.map((b) => <button class="fchip brand" data-brand={b}>{b}</button>)}
+        </div>
+      </div>
+      <div class="pgrid">
+        {items.map((p) => (
+          <article class="pcard" data-cat={p.category} data-brand={p.brand}>
+            <div class="pimg"><Photo name={p.id} alt={p.name} widths={[300, 500]} sizes="(max-width: 640px) 50vw, 25vw" /></div>
+            <div class="pbody">
+              <p class="pbrand">{p.specs.manufacturer && p.brand === 'Saunabee' ? p.specs.manufacturer : p.brand} · {CAT_LABEL[p.category][lang]}</p>
+              <h3 class="pname">{p.name}</h3>
+              {(p.specs.power_kw || p.specs.room_m3 || p.specs.stones_kg) && (
+                <dl class="pspecs">
+                  {p.specs.power_kw && <div><dt>{specLabel.power_kw}</dt><dd>{p.specs.power_kw} kW</dd></div>}
+                  {p.specs.room_m3 && <div><dt>{specLabel.room_m3}</dt><dd>{p.specs.room_m3} m³</dd></div>}
+                  {p.specs.stones_kg && <div><dt>{specLabel.stones_kg}</dt><dd>{p.specs.stones_kg} kg</dd></div>}
+                </dl>
+              )}
+              <p class="pdesc">{p.description[lang]}</p>
+              <a class="btn btn-wa btn-sm pbtn" href={waLink(ui.wa.product(`${p.name}`))} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /> {ui.cta.askProduct}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p class="small muted brands-note">{{ az: 'Məhsul adları, şəkillər və texniki göstəricilər istehsalçılara (Harvia, SAWO, Saunabee) məxsusdur. Qiymət və mövcudluq sorğu ilə.', en: 'Product names, images and specifications belong to their manufacturers (Harvia, SAWO, Saunabee). Price and availability on request.', ru: 'Названия, изображения и характеристики принадлежат производителям (Harvia, SAWO, Saunabee). Цена и наличие — по запросу.' }[lang]}</p>
+    </div>
+  </section>
+
+  <section class="section bg-paper">
+    <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
+  </section>
+
+  <CtaBand lang={lang} preset="stove" />
+</Base>
+
+<style>
+  .guide-sec { padding-top: 0; }
+  .g { display: flex; gap: 16px; padding: 22px; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line); }
+  .g h2 { font-size: 1.05rem; font-weight: 750; margin-bottom: 6px; }
+  .g p { color: var(--muted); font-size: 0.93rem; }
+  .g-ic { flex: none; display: grid; place-items: center; width: 46px; height: 46px; border-radius: 12px; background: var(--forest); color: var(--cream); }
+  .filters { display: grid; gap: 12px; margin-bottom: 28px; position: sticky; top: var(--header-h); z-index: 5; padding: 12px 0; background: var(--cream); }
+  .fchip { display: inline-flex; gap: 8px; align-items: center; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; font-weight: 650; font-size: 0.9rem; cursor: pointer; transition: all 0.15s; }
+  .fchip span { font-size: 0.75rem; opacity: 0.8; }
+  .fchip:hover { border-color: var(--forest); }
+  .fchip.on { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+  .fchip.brand { font-weight: 800; letter-spacing: 0.04em; }
+  .pgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+  .pcard { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: box-shadow 0.2s, transform 0.2s; }
+  .pcard:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+  .pcard[hidden] { display: none; }
+  .pimg { aspect-ratio: 1; background: #fff; padding: 18px; overflow: hidden; }
+  .pimg :global(img) { width: 100%; height: 100%; object-fit: contain; }
+  .pbody { display: flex; flex-direction: column; gap: 10px; padding: 18px; flex: 1; }
+  .pbrand { font-size: 0.74rem; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); }
+  .pname { font-size: 1.08rem; font-weight: 750; line-height: 1.3; }
+  .pspecs { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+  .pspecs div { padding: 4px 10px; border-radius: 8px; background: var(--cream-2); font-size: 0.8rem; display: flex; gap: 4px; }
+  .pspecs dt { color: var(--muted); }
+  .pspecs dd { margin: 0; font-weight: 750; }
+  .pdesc { font-size: 0.9rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+  .pbtn { margin-top: auto; align-self: stretch; }
+  .brands-note { margin-top: 24px; }
+  @media (max-width: 520px) { .pgrid { grid-template-columns: 1fr 1fr; gap: 10px; } .pbody { padding: 12px; } .pdesc { display: none; } .pname { font-size: 0.95rem; } .pbtn { font-size: 0.8rem; padding: 0 10px; } .filters { position: static; } }
+</style>
+
+<script>
+  const root = document.querySelector('[data-filters]');
+  if (root) {
+    let cat = 'all';
+    let brand = '';
+    const cards = document.querySelectorAll<HTMLElement>('.pcard');
+    const apply = () => cards.forEach((c) => { c.hidden = !((cat === 'all' || c.dataset.cat === cat) && (!brand || c.dataset.brand === brand)); });
+    root.querySelectorAll<HTMLButtonElement>('[data-cat]').forEach((b) => b.addEventListener('click', () => {
+      cat = b.dataset.cat!; root.querySelectorAll('[data-cat]').forEach((x) => x.classList.toggle('on', x === b)); apply();
+    }));
+    root.querySelectorAll<HTMLButtonElement>('[data-brand]').forEach((b) => b.addEventListener('click', () => {
+      brand = brand === b.dataset.brand ? '' : b.dataset.brand!; root.querySelectorAll('[data-brand]').forEach((x) => x.classList.toggle('on', (x as HTMLElement).dataset.brand === brand)); apply();
+    }));
+  }
+</script>
