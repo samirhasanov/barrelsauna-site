@@ -30,7 +30,7 @@ const c = {
     plusNote: 'Seçdiyiniz premium taxta və əlavələr bu qiymətin üzərinə gəlir (fərdi hesablanır).',
     exactTitle: 'Daha dəqiq hesablama üçün müraciət edin', exactText: 'Ölçüləri, yerin və ya otağın şəkillərini WhatsApp-a göndərin, ya da zəng edin — pulsuz və dəqiq hesablayaq.',
     modeOut: 'Çöl saunası', modeIn: 'Daxili sauna (otaqda)',
-    area: 'Otağın sahəsi', areaHint: 'Təxminən hər nəfər üçün 1–1.5 m² oturacaq sahəsi tövsiyə olunur.', peopleIn: 'Neçə nəfər?',
+    area: 'Otağın sahəsi', areaHint: '≈ {min}–{max} nəfər üçün uyğundur · 1-ci nəfər üçün min. 2 m², hər əlavə nəfər üçün 0.8–1 m²', peopleIn: 'Neçə nəfər?',
     extrasIn: [['led', 'LED işıqlandırma'], ['salt', 'Himalay duzu paneli'], ['stone', 'Dekorativ daş'], ['logs', 'Kötük dekoru'], ['glass', 'Şüşə qapı / şüşə divar'], ['wifi', 'Wi-Fi idarəetmə paneli'], ['acc', 'Aksesuar dəsti (vedrə, çömçə, termometr)']],
     inRequest: 'Daxili saunanın qiyməti otağın ölçüsü, nəfər sayı, taxta və aksesuarlara görə fərdi hesablanır. Seçimlərinizi göndərin — təxmini qiyməti tez hesablayaq.',
     inPriced: 'Seçimlərinizə görə təxmini qiymət. Dəqiq məbləğ otağa baxış və layihədən sonra təsdiqlənir.',
@@ -63,7 +63,7 @@ const c = {
     plusNote: 'Premium wood and extras you selected are added on top of this price (quoted individually).',
     exactTitle: 'Contact us for an exact calculation', exactText: 'Send dimensions and photos of the site or room on WhatsApp, or call us — we will calculate it precisely, free of charge.',
     modeOut: 'Outdoor sauna', modeIn: 'Indoor sauna (in a room)',
-    area: 'Room floor area', areaHint: 'As a rule of thumb, allow about 1–1.5 m² of bench area per person.', peopleIn: 'How many people?',
+    area: 'Room floor area', areaHint: 'Fits ≈ {min}–{max} people · min. 2 m² for the first person, 0.8–1 m² for each additional person', peopleIn: 'How many people?',
     extrasIn: [['led', 'LED lighting'], ['salt', 'Himalayan salt panel'], ['stone', 'Decorative stone'], ['logs', 'Log-cut décor'], ['glass', 'Glass door / glass wall'], ['wifi', 'Wi-Fi control panel'], ['acc', 'Accessory set (bucket, ladle, thermometer)']],
     inRequest: 'Indoor saunas are priced individually by room size, number of people, wood and accessories. Send your choices — we will quickly prepare an estimate.',
     inPriced: 'Estimated price for your choices. The exact amount is confirmed after seeing the room and finalising the design.',
@@ -96,7 +96,7 @@ const c = {
     plusNote: 'Выбранные премиальное дерево и опции добавляются к этой цене (рассчитываются индивидуально).',
     exactTitle: 'Для точного расчёта обратитесь к нам', exactText: 'Пришлите размеры и фото участка или помещения в WhatsApp или позвоните — бесплатно рассчитаем точно.',
     modeOut: 'Уличная сауна', modeIn: 'Сауна в доме (в комнате)',
-    area: 'Площадь помещения', areaHint: 'Ориентир — около 1–1,5 м² площади полков на человека.', peopleIn: 'На сколько человек?',
+    area: 'Площадь помещения', areaHint: 'Подходит для ≈ {min}–{max} чел. · мин. 2 м² на первого человека и 0,8–1 м² на каждого следующего', peopleIn: 'На сколько человек?',
     extrasIn: [['led', 'LED-подсветка'], ['salt', 'Панель из гималайской соли'], ['stone', 'Декоративный камень'], ['logs', 'Декор из спилов'], ['glass', 'Стеклянная дверь / стена'], ['wifi', 'Wi-Fi пульт управления'], ['acc', 'Набор аксессуаров (шайка, ковш, термометр)']],
     inRequest: 'Сауна в доме рассчитывается индивидуально: площадь, число людей, дерево и аксессуары. Отправьте выбор — быстро подготовим расчёт.',
     inPriced: 'Ориентировочная цена по вашему выбору. Точная сумма — после осмотра помещения и согласования проекта.',
@@ -140,13 +140,13 @@ const offerLd = {
           <label class="opt mode-opt"><input type="radio" name="mode" value="indoor" /><span><Icon name="flame" size={18} /> {c.modeIn}</span></label>
         </div>
         <fieldset data-show="indoor" hidden>
-          <legend>{c.area} <output data-area-out>6</output> m²</legend>
-          <input type="range" name="area" min="2" max="50" value="6" step="0.5" data-area />
-          <p class="small muted">{c.areaHint}</p>
+          <legend>{c.area} <output data-area-out>5</output> m²</legend>
+          <input type="range" name="area" min="2" max="50" value="5" step="0.5" data-area />
+          <p class="small muted" data-area-hint data-tpl={c.areaHint}></p>
         </fieldset>
         <fieldset data-show="indoor" hidden>
           <legend>{c.peopleIn} <output data-people-in-out>4</output></legend>
-          <input type="range" name="peopleIn" min="1" max="25" value="4" step="1" data-people-in />
+          <input type="range" name="peopleIn" min="1" max="55" value="4" step="1" data-people-in />
         </fieldset>
         <fieldset data-show="outdoor">
           <legend>{c.step1}</legend>
@@ -285,9 +285,22 @@ const offerLd = {
     const bar = document.querySelector<HTMLElement>(".meter")!;
     const area = f.querySelector<HTMLInputElement>('[data-area]')!;
     const peopleIn = f.querySelector<HTMLInputElement>('[data-people-in]')!;
-    const fmt = (n: number) => new Intl.NumberFormat({ en: 'en-US', ru: 'ru-RU' }[document.documentElement.lang] ?? 'az-AZ').format(Math.round(n / 50) * 50).replace(/\u202f|\u00a0/g, ' ');
+    const SEP: Record<string, string> = { en: ',', ru: '\u00a0' };
+    const fmt = (n: number) => String(Math.round(n / 50) * 50).replace(/\B(?=(\d{3})+(?!\d))/g, SEP[document.documentElement.lang] ?? '.');
+    // Indoor sizing rule: 2 m² for the first person + 0.8–1 m² per additional person
+    const FIRST = 2, PER_MIN = 0.8, PER_MAX = 1, PER_REC = 0.9;
+    const recArea = (n: number) => Math.min(50, Math.max(2, Math.round((FIRST + (n - 1) * PER_REC) * 2) / 2));
+    const capacity = (a: number) => [1 + Math.floor((a - FIRST) / PER_MAX + 1e-9), 1 + Math.floor((a - FIRST) / PER_MIN + 1e-9)];
+    const areaHint = f.querySelector<HTMLElement>('[data-area-hint]')!;
+    peopleIn.addEventListener('input', () => { area.value = String(recArea(Number(peopleIn.value))); });
+    area.addEventListener('input', () => {
+      const [lo, hi] = capacity(Number(area.value));
+      const n = Number(peopleIn.value);
+      if (n < lo || n > hi) peopleIn.value = String(Math.max(1, Math.round(1 + (Number(area.value) - FIRST) / PER_REC)));
+    });
     const update = () => {
       const mode = f.querySelector<HTMLInputElement>('input[name=mode]:checked')!.value;
+      { const [lo, hi] = capacity(Number(area.value)); areaHint.textContent = areaHint.dataset.tpl!.replace('{min}–{max}', lo === hi ? String(lo) : `${lo}–${hi}`); }
       f.querySelectorAll<HTMLElement>('[data-show]').forEach((el) => { el.hidden = el.dataset.show !== mode; });
       if (mode === 'indoor') {
         f.querySelector<HTMLElement>('[data-area-out]')!.textContent = area.value;
