@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: process.env.PUBLIC_SITE_URL || 'https://barrelsauna.az',
   trailingSlash: 'never',
-  build: { format: 'directory', inlineStylesheets: 'auto' },
+  build: { format: 'directory', inlineStylesheets: 'always' },
   compressHTML: true,
   image: { responsiveStyles: false },
   prefetch: { prefetchAll: false, defaultStrategy: 'hover' },

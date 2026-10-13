@@ -104,8 +104,35 @@ for k, fs in names.items():
 families = [f for f in families if f['id'] not in drop]
 
 order = {'wood-stove': 0, 'electric-stove': 1, 'combi-stove': 2, 'steam-generator': 3, 'control-panel': 4, 'infrared': 5}
-brand_order = {'Harvia': 0, 'SAWO': 1}
-families.sort(key=lambda f: (order[f['category']], brand_order.get(f['brand'], 2), f['name']))
+brand_order = {'Harvia': 0, 'SAWO': 1, 'Teplodar': 2, 'TMF': 3}
+# well-known series first inside each brand
+BOOST = ['legend', 'cilindro', 'vega', 'kip', ' m3', 'pro 20', 'virta', 'the wall', 'spirit', 'linear',
+         'tower', 'nordex', 'scandia', 'krios', 'cumulus', 'savonia', 'mini x', 'heaterking', 'aries',
+         'bylina', 'cascade', 'kuzbass', 'russkaya', 'barrel', 'angara', 'compact', 'gardarika', 'arabesk', 'tunguska', 'sahalin', 'saga', 'oasis', 'skif']
+def pop(f):
+    n = ' ' + f['name'].lower()
+    hit = next((i for i, k in enumerate(BOOST) if k in n), len(BOOST))
+    return (hit, -len(f['variants']), f['name'])
+families.sort(key=lambda f: (order[f['category']], brand_order.get(f['brand'], 9), pop(f)))
+
+# Default "All" view: round-robin the most popular brands' wood + electric heaters,
+# then everything else in category order.
+POPULAR = ['Harvia', 'SAWO', 'Teplodar', 'TMF']
+buckets = [[f for f in families if f['brand'] == b and f['category'] == c] for c in ('wood-stove', 'electric-stove') for b in POPULAR]
+def spread(bucket):
+    # one family per series first (e.g. Legend, Cilindro, Vega…), then the rest
+    seen, first, rest = set(), [], []
+    for f in bucket:
+        key = (f.get('series') or ' '.join(f['name'].split()[1:2])).lower()
+        (rest if key in seen else first).append(f); seen.add(key)
+    return first + rest
+buckets = [spread(b) for b in buckets if b]
+head, picked = [], set()
+while any(buckets):
+    for b in buckets:
+        if b:
+            f = b.pop(0); head.append(f); picked.add(f['id'])
+families = head + [f for f in families if f['id'] not in picked]
 json.dump(families, open(os.path.join(ROOT, 'src', 'data', 'stoves.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
 print('models', len(uniq), 'families', len(families))
 from collections import Counter

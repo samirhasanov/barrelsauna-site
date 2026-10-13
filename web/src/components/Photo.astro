@@ -12,8 +12,10 @@ interface Props {
   priority?: boolean;
   /** group name → clicking opens the image in the lightbox */
   lightbox?: string;
+  /** de-prioritise (e.g. hidden slideshow slides) */
+  low?: boolean;
 }
-const { name, alt, widths = [400, 700, 1000, 1400], sizes = '(max-width: 760px) 100vw, 50vw', class: cls, loading = 'lazy', priority = false, lightbox } = Astro.props;
+const { name, alt, widths = [400, 700, 1000, 1400], sizes = '(max-width: 760px) 100vw, 50vw', class: cls, loading = 'lazy', priority = false, lightbox, low = false } = Astro.props;
 const src = img(name);
 const w = widths.filter((x) => x <= src.width);
 if (!w.length) w.push(src.width);
@@ -21,8 +23,8 @@ const full = lightbox ? (await getImage({ src, width: Math.min(1600, src.width),
 ---
 {full ? (
   <a href={full} class="lb-link" data-lightbox={lightbox} data-caption={alt}>
-    <Image src={src} alt={alt} widths={w} sizes={sizes} format="webp" quality={78} class={cls} loading={priority ? 'eager' : loading} fetchpriority={priority ? 'high' : undefined} decoding="async" />
+    <Image src={src} alt={alt} widths={w} sizes={sizes} format="webp" quality={78} class={cls} loading={priority ? 'eager' : loading} fetchpriority={priority ? 'high' : low ? 'low' : undefined} decoding="async" />
   </a>
 ) : (
-  <Image src={src} alt={alt} widths={w} sizes={sizes} format="webp" quality={78} class={cls} loading={priority ? 'eager' : loading} fetchpriority={priority ? 'high' : undefined} decoding="async" />
+  <Image src={src} alt={alt} widths={w} sizes={sizes} format="webp" quality={78} class={cls} loading={priority ? 'eager' : loading} fetchpriority={priority ? 'high' : low ? 'low' : undefined} decoding="async" />
 )}

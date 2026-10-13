@@ -211,7 +211,7 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
         <div class="hm hm-1 rounded" data-slides>
           {heroSlides.map((sl, i) => (
             <div class:list={['slide', { active: i === 0 }]} data-place={sl.place} data-model={sl.model} data-href={sl.href}>
-              <Photo name={sl.img} alt={`${sl.model} — ${sl.place}`} priority={i === 0} loading={i === 0 ? 'eager' : 'lazy'} widths={[500, 800, 1000]} sizes="(max-width: 900px) 60vw, 30vw" class="cover" />
+              <Photo name={sl.img} alt={`${sl.model} — ${sl.place}`} priority={i === 0} low={i > 0} loading={i === 0 ? 'eager' : 'lazy'} widths={[500, 800, 1000]} sizes="(max-width: 900px) 60vw, 30vw" class="cover" />
             </div>
           ))}
           <div class="steam" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
@@ -220,7 +220,7 @@ const websiteLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 
         <div class="hm hm-2 rounded" data-depth="14"><Photo name="barrel-3" alt={MODELS[0].name[lang]} priority widths={[400, 700]} sizes="(max-width: 900px) 40vw, 20vw" class="cover" /></div>
         <div class="hm hm-3 rounded" data-depth="-10" data-slides data-interval="4200">
           {['wood-termo-lipa-2', 'render-1', 'wood-kedr-1'].map((n, i) => (
-            <div class:list={['slide', { active: i === 0 }]}><Photo name={n} alt={c.indoorEyebrow} widths={[400, 700]} sizes="(max-width: 900px) 40vw, 20vw" class="cover" /></div>
+            <div class:list={['slide', { active: i === 0 }]}><Photo name={n} alt={c.indoorEyebrow} low={i > 0} widths={[400, 700]} sizes="(max-width: 900px) 40vw, 20vw" class="cover" /></div>
           ))}
         </div>
         <a class="hm-badge" href={heroSlides[0].href} data-badge>
