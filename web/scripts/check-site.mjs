@@ -5,7 +5,7 @@ import { join } from 'node:path';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
 const files = [];
-const walk = (d) => readdirSync(d).forEach((f) => { const p = join(d, f); statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') && files.push(p); });
+const walk = (d) => readdirSync(d).forEach((f) => { const p = join(d, f); statSync(p).isDirectory() ? walk(p) : p.endsWith('.html') && !/google[0-9a-f]+\.html$/.test(p) && files.push(p); });
 walk(DIST);
 
 const exists = (url) => {

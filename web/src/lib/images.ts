@@ -2,11 +2,12 @@ import type { ImageMetadata } from 'astro';
 
 const photos = import.meta.glob<{ default: ImageMetadata }>('../assets/photos/*.{webp,jpg,jpeg,png}', { eager: true });
 const products = import.meta.glob<{ default: ImageMetadata }>('../assets/products/*.{webp,jpg,jpeg,png}', { eager: true });
+const stoves = import.meta.glob<{ default: ImageMetadata }>('../assets/stoves/*.{webp,jpg,jpeg,png}', { eager: true });
 const social = import.meta.glob<{ default: ImageMetadata }>('../assets/social/*.{webp,jpg,jpeg,png}', { eager: true });
 const blog = import.meta.glob<{ default: ImageMetadata }>('../assets/blog/*.{webp,jpg,jpeg,png}', { eager: true });
 
 const index = new Map<string, ImageMetadata>();
-for (const [p, mod] of Object.entries({ ...photos, ...products, ...blog, ...social })) {
+for (const [p, mod] of Object.entries({ ...photos, ...products, ...blog, ...social, ...stoves })) {
   const name = p.split('/').pop()!.replace(/\.[a-z]+$/, '');
   index.set(name, mod.default);
 }

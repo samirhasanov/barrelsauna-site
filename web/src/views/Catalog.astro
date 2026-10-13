@@ -5,9 +5,9 @@ import Photo from '../components/Photo.astro';
 import Icon from '../components/Icon.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
-import { waLink, type Lang, type L } from '../data/site';
+import { SITE, waLink, type Lang, type L } from '../data/site';
 import { ROUTES, path } from '../data/routes';
-import { PRODUCTS, STOVE_CATS, ACC_CATS, CAT_LABEL } from '../data/products';
+import { PRODUCTS, STOVE_CATS, ACC_CATS, CAT_LABEL, STOVES, STOVE_MODEL_COUNT, type StoveVariant } from '../data/products';
 import { t } from '../i18n/ui';
 import { faqLd } from '../lib/schema';
 import { ogImage, hasImg } from '../lib/images';
@@ -17,17 +17,42 @@ const { lang, kind } = Astro.props;
 const ui = t(lang);
 const cats = kind === 'stoves' ? STOVE_CATS : ACC_CATS;
 const items = PRODUCTS.filter((p) => (cats as readonly string[]).includes(p.category) && hasImg(p.id));
-const brands = [...new Set(items.map((p) => p.brand))];
-const presentCats = cats.filter((c) => items.some((p) => p.category === c));
+type Card = { img: string; brand: string; maker: string; cat: string; name: string; desc: string; q: string; power: [number, number] | null; variants: StoveVariant[]; specs: { kw?: string; m3?: string; stones?: string } };
+const cards: Card[] = kind === 'stoves'
+  ? STOVES.filter((f) => hasImg(f.image)).map((f) => ({
+      img: f.image, brand: f.brand, maker: f.manufacturer || f.brand, cat: f.category, name: f.name, desc: f.description[lang], power: f.power, variants: f.variants,
+      specs: { kw: f.variants[0]?.kw, m3: f.variants[0]?.m3, stones: f.variants[0]?.stones },
+      q: [f.name, f.series, f.brand, ...f.variants.map((v) => `${v.name} ${v.code}`)].join(' ').toLowerCase(),
+    }))
+  : items.map((p) => ({
+      img: p.id, brand: p.brand, maker: p.specs.manufacturer && p.brand === 'Saunabee' ? p.specs.manufacturer : p.brand, cat: p.category, name: p.name, desc: p.description[lang], power: null, variants: [],
+      specs: { kw: p.specs.power_kw, m3: p.specs.room_m3, stones: p.specs.stones_kg },
+      q: `${p.name} ${p.brand} ${p.specs.manufacturer ?? ''}`.toLowerCase(),
+    }));
+const brandCount = new Map<string, number>();
+cards.forEach((c) => brandCount.set(c.brand, (brandCount.get(c.brand) ?? 0) + 1));
+const brands = [...brandCount.keys()].sort((a, b) => (brandCount.get(b)! - brandCount.get(a)!));
+const presentCats = cats.filter((c) => cards.some((p) => p.cat === c));
+const catCount = (c: string) => cards.filter((p) => p.cat === c).length;
+const PAGE = 36;
+const ssrCards = kind === 'stoves' ? cards.slice(0, PAGE) : cards;
+const brandSelect = brands.length > 6;
+const waTpl = ui.wa.product('%s');
+const dataUrl = kind === 'stoves' ? `/stoves-${lang}.json` : '';
+const T = {
+  az: { brands: 'brend', models: 'model', series: 'seriya', search: 'Model, seriya və ya kod axtar…', showModels: 'Bütün modelləri göstər', more: 'Daha çox göstər', empty: 'Heç nə tapılmadı. WhatsApp-da yazın — istənilən modeli gətirə bilərik.' },
+  en: { brands: 'brands', models: 'models', series: 'series', search: 'Search model, series or code…', showModels: 'Show all models', more: 'Show more', empty: 'Nothing found. Message us on WhatsApp — we can source any model.' },
+  ru: { brands: 'брендов', models: 'моделей', series: 'серий', search: 'Поиск по модели, серии или коду…', showModels: 'Показать все модели', more: 'Показать ещё', empty: 'Ничего не найдено. Напишите в WhatsApp — привезём любую модель.' },
+}[lang];
 
 const C: Record<'stoves' | 'accessories', L<any>> = {
   stoves: {
     az: {
-      title: 'Sauna Sobaları – Odun və Elektrik, Harvia, SAWO | Barrel Sauna',
-      desc: 'Harvia və SAWO sauna sobaları: odun sobaları, elektrik sobaları, idarəetmə panelləri və buxar generatorları. Satış, seçim məsləhəti və quraşdırma Bakıda.',
+      title: 'Sauna Sobaları – Odun və Elektrik, Harvia, SAWO, HUUM',
+      desc: `${STOVE_MODEL_COUNT}+ sauna sobası: Harvia, SAWO, EOS, HUUM, Narvi, Tulikivi və s. Odun, elektrik, kombi sobalar, idarəetmə panelləri. Satış və quraşdırma Bakıda.`,
       eyebrow: 'Sauna sobaları',
-      h1: 'Sauna sobaları — <em>Harvia</em> və <em>SAWO</em>',
-      lede: ['Saunanın əsas elementi sobadır: düzgün seçildikdə istilik, buxar və ümumi təcrübə tam fərqli səviyyəyə qalxır. Fin brendləri Harvia və SAWO-nun odun və elektrik sobalarını, idarəetmə panellərini və buxar generatorlarını təqdim edir, saunanıza uyğun seçib quraşdırırıq.', 'Bütün məhsullar satışda mövcuddur. Qiymət və mövcudluğu öyrənmək üçün məhsulun altındakı düymə ilə WhatsApp-da yazın.'],
+      h1: `Sauna sobaları — <em>${STOVE_MODEL_COUNT}+ model</em>`,
+      lede: ['Saunanın əsas elementi sobadır: düzgün seçildikdə istilik, buxar və ümumi təcrübə tam fərqli səviyyəyə qalxır. Harvia, SAWO, EOS, HUUM, Narvi, Tulikivi, IKI, Saunum və digər brendlərin odun, elektrik və kombi sobalarını, idarəetmə panellərini və buxar generatorlarını təqdim edir, saunanıza uyğun seçib quraşdırırıq.', 'Bütün məhsullar satışda mövcuddur. Qiymət və mövcudluğu öyrənmək üçün məhsulun altındakı düymə ilə WhatsApp-da yazın.'],
       guideTitle: 'Soba necə seçilir',
       guide: [
         ['flame', 'Odun, yoxsa elektrik?', 'Odun sobası klassik atmosfer və elektrikdən asılı olmayan istifadə üçün idealdır. Elektrik sobası daha rahat idarə olunur və daxili saunalar üçün standart seçimdir.'],
@@ -45,8 +70,8 @@ const C: Record<'stoves' | 'accessories', L<any>> = {
       title: 'Sauna Heaters – Wood & Electric, Harvia, SAWO | Barrel Sauna',
       desc: 'Harvia and SAWO sauna heaters: wood-burning and electric heaters, control panels and steam generators. Sales, expert advice and installation in Baku.',
       eyebrow: 'Sauna heaters',
-      h1: 'Sauna heaters — <em>Harvia</em> & <em>SAWO</em>',
-      lede: ['The heater is the heart of every sauna: choose it right and heat, steam and the whole experience reach another level. We supply Finnish Harvia and SAWO wood-burning and electric heaters, control panels and steam generators, and install the right one for your sauna.', 'All products are available for sale. Use the button under each product to ask about price and availability on WhatsApp.'],
+      h1: `Sauna heaters — <em>${STOVE_MODEL_COUNT}+ models</em>`,
+      lede: ['The heater is the heart of every sauna: choose it right and heat, steam and the whole experience reach another level. We supply wood-burning, electric and combi heaters, control panels and steam generators from Harvia, SAWO, EOS, HUUM, Narvi, Tulikivi, IKI, Saunum and more — and install the right one for your sauna.', 'All products are available for sale. Use the button under each product to ask about price and availability on WhatsApp.'],
       guideTitle: 'How to choose a heater',
       guide: [
         ['flame', 'Wood or electric?', 'Wood-burning heaters give a classic atmosphere and work off-grid. Electric heaters are easier to control and standard for indoor saunas.'],
@@ -64,8 +89,8 @@ const C: Record<'stoves' | 'accessories', L<any>> = {
       title: 'Печи для сауны в Баку – дровяные и электрические, Harvia, SAWO',
       desc: 'Печи для сауны Harvia и SAWO: дровяные и электрические печи, пульты управления и парогенераторы. Продажа, подбор и установка в Баку.',
       eyebrow: 'Печи для сауны',
-      h1: 'Печи для сауны — <em>Harvia</em> и <em>SAWO</em>',
-      lede: ['Печь — сердце сауны: правильный выбор выводит тепло, пар и впечатления на совсем другой уровень. Поставляем финские дровяные и электрические печи Harvia и SAWO, пульты управления и парогенераторы и устанавливаем подходящую модель.', 'Все товары в продаже. Узнать цену и наличие можно в WhatsApp — кнопка под каждым товаром.'],
+      h1: `Печи для сауны — <em>${STOVE_MODEL_COUNT}+ моделей</em>`,
+      lede: ['Печь — сердце сауны: правильный выбор выводит тепло, пар и впечатления на совсем другой уровень. Поставляем дровяные, электрические и комби-печи, пульты и парогенераторы Harvia, SAWO, EOS, HUUM, Narvi, Tulikivi, IKI, Saunum и других брендов и устанавливаем подходящую модель.', 'Все товары в продаже. Узнать цену и наличие можно в WhatsApp — кнопка под каждым товаром.'],
       guideTitle: 'Как выбрать печь',
       guide: [
         ['flame', 'Дрова или электричество?', 'Дровяная печь — классическая атмосфера и независимость от электросети. Электрическая удобнее в управлении и стандартна для саун в доме.'],
@@ -138,7 +163,7 @@ const C: Record<'stoves' | 'accessories', L<any>> = {
   },
 };
 const c = C[kind][lang];
-const og = await ogImage(items[0]?.id ?? 'accessories-set');
+const og = await ogImage(cards[0]?.img ?? 'accessories-set');
 const specLabel = {
   az: { power_kw: 'Güc', room_m3: 'Həcm', stones_kg: 'Daş' },
   en: { power_kw: 'Power', room_m3: 'Room', stones_kg: 'Stones' },
@@ -158,36 +183,68 @@ const specLabel = {
 
   <section class="section-sm" id="katalog">
     <div class="container">
-      <div class="filters" data-filters>
-        <div class="chips">
-          <button class="fchip on" data-cat="all">{ui.labels.all} <span>{items.length}</span></button>
-          {presentCats.map((cat) => <button class="fchip" data-cat={cat}>{CAT_LABEL[cat][lang]} <span>{items.filter((p) => p.category === cat).length}</span></button>)}
+      {kind === 'stoves' && (
+        <p class="count-line"><b>{STOVE_MODEL_COUNT}</b> {T.models} · <b>{cards.length}</b> {T.series} · <b>{brands.length}</b> {T.brands}</p>
+      )}
+      <div class="filters" data-filters data-page={PAGE} data-src={dataUrl} data-total={cards.length} data-wa={SITE.whatsapp} data-watpl={waTpl} data-tmodels={T.models} data-tshow={T.showModels} data-tcat={JSON.stringify(Object.fromEntries(presentCats.map((c) => [c, CAT_LABEL[c][lang]])))}>
+        <div class="frow">
+          <label class="search">
+            <Icon name="sparkle" size={16} />
+            <input type="search" placeholder={T.search} data-search aria-label={T.search} />
+          </label>
+          {brandSelect ? (
+            <select class="bselect" data-brand-select aria-label={ui.labels.brand}>
+              <option value="">{ui.labels.brand}: {ui.labels.all}</option>
+              {brands.map((b) => <option value={b}>{b} ({brandCount.get(b)})</option>)}
+            </select>
+          ) : (
+            <div class="chips">{brands.map((b) => <button class="fchip brand" data-brand={b}>{b}</button>)}</div>
+          )}
         </div>
         <div class="chips">
-          {brands.map((b) => <button class="fchip brand" data-brand={b}>{b}</button>)}
+          <button class="fchip on" data-cat="all">{ui.labels.all} <span>{cards.length}</span></button>
+          {presentCats.map((cat) => <button class="fchip" data-cat={cat}>{CAT_LABEL[cat][lang]} <span>{catCount(cat)}</span></button>)}
         </div>
       </div>
-      <div class="pgrid">
-        {items.map((p) => (
-          <article class="pcard" data-cat={p.category} data-brand={p.brand}>
-            <div class="pimg"><Photo name={p.id} alt={p.name} widths={[300, 500]} sizes="(max-width: 640px) 50vw, 25vw" /></div>
+      <div class="pgrid" data-grid>
+        {ssrCards.map((p) => (
+          <article class="pcard" data-cat={p.cat} data-brand={p.brand} data-q={p.q}>
+            <div class="pimg"><Photo name={p.img} alt={p.name} widths={[300, 500]} sizes="(max-width: 640px) 50vw, 25vw" /></div>
             <div class="pbody">
-              <p class="pbrand">{p.specs.manufacturer && p.brand === 'Saunabee' ? p.specs.manufacturer : p.brand} · {CAT_LABEL[p.category][lang]}</p>
+              <p class="pbrand">{p.maker} · {CAT_LABEL[p.cat][lang]}</p>
               <h3 class="pname">{p.name}</h3>
-              {(p.specs.power_kw || p.specs.room_m3 || p.specs.stones_kg) && (
+              {p.variants.length > 1 ? (
+                <>
+                  <p class="vsum"><b>{p.variants.length}</b> {T.models}{p.power && p.power[0] > 0 && <> · {p.power[0] === p.power[1] ? p.power[0] : `${p.power[0]}–${p.power[1]}`} kW</>}</p>
+                  <details class="vlist">
+                    <summary>{T.showModels}</summary>
+                    <ul>
+                      {p.variants.map((v) => (
+                        <li><a href={waLink(ui.wa.product(v.name))} target="_blank" rel="noopener" title={v.name}>
+                          <span>{[v.kw && `${v.kw} kW`, v.m3 && `${v.m3} m³`].filter(Boolean).join(' · ') || v.name}</span>
+                          {v.code && <small>{v.code}</small>}
+                          <Icon name="whatsapp" size={14} />
+                        </a></li>
+                      ))}
+                    </ul>
+                  </details>
+                </>
+              ) : (p.specs.kw || p.specs.m3 || p.specs.stones) && (
                 <dl class="pspecs">
-                  {p.specs.power_kw && <div><dt>{specLabel.power_kw}</dt><dd>{p.specs.power_kw} kW</dd></div>}
-                  {p.specs.room_m3 && <div><dt>{specLabel.room_m3}</dt><dd>{p.specs.room_m3} m³</dd></div>}
-                  {p.specs.stones_kg && <div><dt>{specLabel.stones_kg}</dt><dd>{p.specs.stones_kg} kg</dd></div>}
+                  {p.specs.kw && <div><dt>{specLabel.power_kw}</dt><dd>{p.specs.kw} kW</dd></div>}
+                  {p.specs.m3 && <div><dt>{specLabel.room_m3}</dt><dd>{p.specs.m3} m³</dd></div>}
+                  {p.specs.stones && <div><dt>{specLabel.stones_kg}</dt><dd>{p.specs.stones} kg</dd></div>}
                 </dl>
               )}
-              <p class="pdesc">{p.description[lang]}</p>
-              <a class="btn btn-wa btn-sm pbtn" href={waLink(ui.wa.product(`${p.name}`))} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /> {ui.cta.askProduct}</a>
+              <p class="pdesc">{p.desc}</p>
+              <a class="btn btn-wa btn-sm pbtn" href={waLink(ui.wa.product(p.name))} target="_blank" rel="noopener"><Icon name="whatsapp" size={18} /> {ui.cta.askProduct}</a>
             </div>
           </article>
         ))}
       </div>
-      <p class="small muted brands-note">{{ az: 'Məhsul adları, şəkillər və texniki göstəricilər istehsalçılara (Harvia, SAWO, Saunabee) məxsusdur. Qiymət və mövcudluq sorğu ilə.', en: 'Product names, images and specifications belong to their manufacturers (Harvia, SAWO, Saunabee). Price and availability on request.', ru: 'Названия, изображения и характеристики принадлежат производителям (Harvia, SAWO, Saunabee). Цена и наличие — по запросу.' }[lang]}</p>
+      <p class="empty" data-empty hidden>{T.empty}</p>
+      <div class="more-wrap"><button class="btn btn-ghost" data-more data-ask={ui.cta.askProduct}>{T.more}</button></div>
+      <p class="small muted brands-note">{{ az: 'Məhsul adları, şəkillər və texniki göstəricilər istehsalçılara (Harvia, SAWO və s.) məxsusdur. Bütün modellər sifarişlə gətirilir; qiymət və mövcudluq sorğu ilə.', en: 'Product names, images and specifications belong to their manufacturers (Harvia, SAWO and others). All models available to order; price and availability on request.', ru: 'Названия, изображения и характеристики принадлежат производителям (Harvia, SAWO и др.). Все модели — под заказ; цена и наличие по запросу.' }[lang]}</p>
     </div>
   </section>
 
@@ -198,7 +255,7 @@ const specLabel = {
   <CtaBand lang={lang} preset="stove" />
 </Base>
 
-<style>
+<style is:global>
   .guide-sec { padding-top: 0; }
   .g { display: flex; gap: 16px; padding: 22px; border-radius: var(--radius); background: var(--paper); border: 1px solid var(--line); }
   .g h2 { font-size: 1.05rem; font-weight: 750; margin-bottom: 6px; }
@@ -215,7 +272,7 @@ const specLabel = {
   .pcard:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
   .pcard[hidden] { display: none; }
   .pimg { aspect-ratio: 1; background: #fff; padding: 18px; overflow: hidden; }
-  .pimg :global(img) { width: 100%; height: 100%; object-fit: contain; }
+  .pimg img { width: 100%; height: 100%; object-fit: contain; }
   .pbody { display: flex; flex-direction: column; gap: 10px; padding: 18px; flex: 1; }
   .pbrand { font-size: 0.74rem; font-weight: 750; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); }
   .pname { font-size: 1.08rem; font-weight: 750; line-height: 1.3; }
@@ -226,21 +283,108 @@ const specLabel = {
   .pdesc { font-size: 0.9rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
   .pbtn { margin-top: auto; align-self: stretch; }
   .brands-note { margin-top: 24px; }
-  @media (max-width: 520px) { .pgrid { grid-template-columns: 1fr 1fr; gap: 10px; } .pbody { padding: 12px; } .pdesc { display: none; } .pname { font-size: 0.95rem; } .pbtn { font-size: 0.8rem; padding: 0 10px; } .filters { position: static; } }
+  .count-line { margin-bottom: 14px; color: var(--muted); }
+  .count-line b { color: var(--forest); font-size: 1.15rem; }
+  .frow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; }
+  .search { display: flex; align-items: center; gap: 10px; flex: 1 1 320px; max-width: 520px; padding: 0 16px; min-height: 46px; border-radius: 999px; border: 1px solid var(--line-strong); background: #fff; }
+  .search svg { color: var(--wood); flex: none; }
+  .search input { flex: 1; border: 0; outline: 0; background: transparent; font-size: 0.95rem; min-width: 0; }
+  .bselect { min-height: 46px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: #fff; font-weight: 650; }
+  .search:focus-within { border-color: var(--forest); box-shadow: 0 0 0 4px rgba(33, 49, 19, 0.1); }
+  .vsum { font-size: 0.86rem; color: var(--muted); }
+  .vsum b { color: var(--forest); }
+  .vlist summary { cursor: pointer; font-size: 0.85rem; font-weight: 700; color: var(--wood-2); }
+  .vlist ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 4px; max-height: 260px; overflow-y: auto; }
+  .vlist a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 8px; padding: 7px 10px; border-radius: 8px; background: var(--cream-2); text-decoration: none; font-size: 0.82rem; font-weight: 650; }
+  .vlist a small { grid-column: 1; font-weight: 500; color: var(--muted); font-size: 0.72rem; }
+  .vlist a svg { grid-row: 1 / 3; grid-column: 2; color: var(--wa); }
+  .vlist a:hover { background: var(--forest); color: var(--cream); }
+  .vlist a:hover small { color: rgba(246,241,228,.75); }
+  .more-wrap { display: flex; justify-content: center; margin-top: 28px; }
+  .more-wrap[hidden] { display: none; }
+  .empty { text-align: center; padding: 40px 0; color: var(--muted); }
+  @media (max-width: 520px) { .pgrid { grid-template-columns: 1fr 1fr; gap: 10px; } .pbody { padding: 12px; } .pdesc { display: none; } .pname { font-size: 0.95rem; } .pbtn { font-size: 0.8rem; padding: 0 10px; } .filters { position: static; } .vlist a small { display: none; } }
 </style>
 
 <script>
-  const root = document.querySelector('[data-filters]');
+  type Row = [string, string, string, string, string, string, [number, number] | null, [string, string, string, string][]];
+  const root = document.querySelector<HTMLElement>('[data-filters]');
   if (root) {
-    let cat = 'all';
-    let brand = '';
-    const cards = document.querySelectorAll<HTMLElement>('.pcard');
-    const apply = () => cards.forEach((c) => { c.hidden = !((cat === 'all' || c.dataset.cat === cat) && (!brand || c.dataset.brand === brand)); });
+    const PAGE = Number(root.dataset.page || 36);
+    const grid = document.querySelector<HTMLElement>('[data-grid]')!;
+    const more = document.querySelector<HTMLButtonElement>('[data-more]')!;
+    const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+    const catLabel = JSON.parse(root.dataset.tcat || '{}');
+    const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+    const wa = (name: string) => `https://wa.me/${root.dataset.wa}?text=${encodeURIComponent(root.dataset.watpl!.replace('%s', name))}`;
+    const waIcon = document.querySelector('.pbtn svg')?.outerHTML ?? '';
+    const waIconSm = waIcon.replace(/width="\d+"/, 'width="14"').replace(/height="\d+"/, 'height="14"');
+    let cat = 'all', brand = '', q = '', limit = PAGE;
+    let rows: Row[] | null = null;
+    let dataMode = false;
+
+    // ── DOM mode (server-rendered cards: accessories, or stoves before first interaction)
+    const domCards = () => [...grid.querySelectorAll<HTMLElement>('.pcard')];
+    const matchEl = (c: HTMLElement) => (cat === 'all' || c.dataset.cat === cat) && (!brand || c.dataset.brand === brand) && (!q || q.split(/\s+/).every((w) => c.dataset.q!.includes(w)));
+
+    // ── Data mode (full stove catalog from JSON)
+    const matchRow = (r: Row) => (cat === 'all' || r[3] === cat) && (!brand || r[1] === brand) &&
+      (!q || q.split(/\s+/).every((w) => (r[4] + ' ' + r[1] + ' ' + r[7].map((v) => v[0] + ' ' + v[1]).join(' ')).toLowerCase().includes(w)));
+    const card = (r: Row) => {
+      const [src, b, maker, c, name, desc, power, vs] = r;
+      let mid = '';
+      if (vs.length > 1) {
+        const pw = power && power[0] > 0 ? ` · ${power[0] === power[1] ? power[0] : power[0] + '–' + power[1]} kW` : '';
+        mid = `<p class="vsum"><b>${vs.length}</b> ${esc(root.dataset.tmodels!)}${pw}</p><details class="vlist"><summary>${esc(root.dataset.tshow!)}</summary><ul>${vs.map((v) => `<li><a href="${wa(v[0])}" target="_blank" rel="noopener" title="${esc(v[0])}"><span>${esc([v[2] && v[2] + ' kW', v[3] && v[3] + ' m³'].filter(Boolean).join(' · ') || v[0])}</span>${v[1] ? `<small>${esc(v[1])}</small>` : ''}${waIconSm}</a></li>`).join('')}</ul></details>`;
+      } else if (vs[0] && (vs[0][2] || vs[0][3])) {
+        mid = `<dl class="pspecs">${vs[0][2] ? `<div><dt>kW</dt><dd>${esc(vs[0][2])}</dd></div>` : ''}${vs[0][3] ? `<div><dt>m³</dt><dd>${esc(vs[0][3])}</dd></div>` : ''}</dl>`;
+      }
+      return `<article class="pcard"><div class="pimg"><img src="${src}" alt="${esc(name)}" loading="lazy" decoding="async" width="480" height="480"></div><div class="pbody"><p class="pbrand">${esc(maker)} · ${esc(catLabel[c] || c)}</p><h3 class="pname">${esc(name)}</h3>${mid}<p class="pdesc">${esc(desc)}</p><a class="btn btn-wa btn-sm pbtn" href="${wa(name)}" target="_blank" rel="noopener">${waIcon} ${esc(more.dataset.ask || '')}</a></div></article>`;
+    };
+
+    const apply = () => {
+      if (dataMode && rows) {
+        const m = rows.filter(matchRow);
+        grid.innerHTML = m.slice(0, limit).map(card).join('');
+        more.parentElement!.hidden = m.length <= limit;
+        empty.hidden = m.length > 0;
+        return;
+      }
+      let shown = 0, matched = 0;
+      for (const c of domCards()) {
+        const ok = matchEl(c);
+        if (ok) matched++;
+        const show = ok && shown < limit;
+        if (show) shown++;
+        c.hidden = !show;
+      }
+      more.parentElement!.hidden = matched <= shown && !(root.dataset.src && Number(root.dataset.total) > shown && cat === 'all' && !brand && !q);
+      empty.hidden = matched > 0;
+    };
+
+    let loading: Promise<void> | null = null;
+    const ensureData = () => {
+      if (!root.dataset.src) return Promise.resolve();
+      loading ??= fetch(root.dataset.src).then((r) => r.json()).then((d: Row[]) => { rows = d; dataMode = true; }).catch(() => {});
+      return loading;
+    };
+    const update = async () => { await ensureData(); apply(); };
+
     root.querySelectorAll<HTMLButtonElement>('[data-cat]').forEach((b) => b.addEventListener('click', () => {
-      cat = b.dataset.cat!; root.querySelectorAll('[data-cat]').forEach((x) => x.classList.toggle('on', x === b)); apply();
+      cat = b.dataset.cat!; limit = PAGE; root.querySelectorAll('[data-cat]').forEach((x) => x.classList.toggle('on', x === b)); update();
     }));
     root.querySelectorAll<HTMLButtonElement>('[data-brand]').forEach((b) => b.addEventListener('click', () => {
-      brand = brand === b.dataset.brand ? '' : b.dataset.brand!; root.querySelectorAll('[data-brand]').forEach((x) => x.classList.toggle('on', (x as HTMLElement).dataset.brand === brand)); apply();
+      brand = brand === b.dataset.brand ? '' : b.dataset.brand!; limit = PAGE;
+      root.querySelectorAll('[data-brand]').forEach((x) => x.classList.toggle('on', (x as HTMLElement).dataset.brand === brand)); update();
     }));
+    root.querySelector<HTMLSelectElement>('[data-brand-select]')?.addEventListener('change', (e) => { brand = (e.target as HTMLSelectElement).value; limit = PAGE; update(); });
+    let t: number | undefined;
+    root.querySelector<HTMLInputElement>('[data-search]')!.addEventListener('input', (e) => {
+      clearTimeout(t); t = window.setTimeout(() => { q = (e.target as HTMLInputElement).value.trim().toLowerCase(); limit = PAGE; update(); }, 180);
+    });
+    more.addEventListener('click', () => { limit += PAGE; update(); });
+    // warm the data in the background once the page is idle
+    if (root.dataset.src) (window.requestIdleCallback || setTimeout)(() => ensureData());
+    apply();
   }
 </script>
