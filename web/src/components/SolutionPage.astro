@@ -6,6 +6,7 @@ import Faq from './Faq.astro';
 import CtaBand from './CtaBand.astro';
 import ModelCard from './ModelCard.astro';
 import Icon from './Icon.astro';
+import RelatedPosts from './RelatedPosts.astro';
 import type { FAQ } from '../data/models';
 import { MODELS } from '../data/models';
 import { type Lang, type L } from '../data/site';
@@ -36,8 +37,9 @@ interface Props {
   gallery: string[];
   preset?: string;
   related?: string[]; // model keys
+  relatedKeys?: string[]; // blog relation keys
 }
-const { lang, c, alternates, url, hero, gallery, preset, related = [] } = Astro.props;
+const { lang, c, alternates, url, hero, gallery, preset, related = [], relatedKeys = related } = Astro.props;
 const ui = t(lang);
 const og = await ogImage(hero);
 const rel = MODELS.filter((m) => related.includes(m.key));
@@ -88,6 +90,7 @@ const rel = MODELS.filter((m) => related.includes(m.key));
     <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
   </section>
 
+  <RelatedPosts lang={lang} keys={relatedKeys} />
   <CtaBand lang={lang} preset={preset} waText={ui.wa.model(c.eyebrow)} />
 </Base>
 <style>

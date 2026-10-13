@@ -19,14 +19,42 @@ const c = {
   ru: { title: 'Блог о банях и саунах | Barrel Sauna', desc: 'Полезные статьи о саунах: как выбрать уличную сауну, баня-бочка, породы дерева, печи, цены в Баку, польза сауны и уход.', h1: 'Блог о <em>саунах</em>', lede: 'Практичные статьи о выборе сауны, материалах, печах, ценах и правильном парении.' },
 }[lang];
 const og = await ogImage(posts[0]?.data.cover ?? 'barrel-3');
+const GROUPS: { id: string; keys: string[]; label: Record<Lang, string> }[] = [
+  { id: 'outdoor', keys: ['barrel', 'oval', 'cube', 'cabin', 'cottage', 'portable'], label: { az: 'Çöl saunaları', en: 'Outdoor saunas', ru: 'Уличные сауны' } },
+  { id: 'indoor', keys: ['indoor', 'construction'], label: { az: 'Daxili sauna və tikinti', en: 'Indoor & construction', ru: 'Сауна в доме и стройка' } },
+  { id: 'stoves', keys: ['stoves', 'accessories'], label: { az: 'Sobalar və aksesuarlar', en: 'Heaters & accessories', ru: 'Печи и аксессуары' } },
+  { id: 'spa', keys: ['spa', 'jacuzzi', 'container'], label: { az: 'SPA, jakuzi, vanna', en: 'Spa, hot tubs, plunge', ru: 'SPA, джакузи, купели' } },
+];
+const groupsOf = (rel: string[]) => GROUPS.filter((g) => g.keys.some((k) => rel.includes(k))).map((g) => g.id).join(' ');
+const allLabel = { az: 'Hamısı', en: 'All', ru: 'Все' }[lang];
 const ld = { '@context': 'https://schema.org', '@type': 'Blog', name: c.title, url: SITE.url + ROUTES.blog[lang], inLanguage: lang };
 ---
 <Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.blog} image={og} jsonLd={[ld]}>
   <PageHero lang={lang} crumbs={[{ label: ui.nav.blog }]} title={c.h1} lede={c.lede} cta={false} />
   <section class="section-sm" style="padding-top:0">
     <div class="container">
-      <div class="grid grid-3">{posts.map((p) => <PostCard post={p} lang={lang} />)}</div>
+      <div class="chips bfilters" data-bfilters>
+        <button class="fchip on" data-g="all">{allLabel} <span>{posts.length}</span></button>
+        {GROUPS.map((g) => <button class="fchip" data-g={g.id}>{g.label[lang]} <span>{posts.filter((p) => groupsOf(p.data.related).includes(g.id)).length}</span></button>)}
+      </div>
+      <div class="grid grid-3">{posts.map((p) => <div class="bpost" data-groups={groupsOf(p.data.related)}><PostCard post={p} lang={lang} /></div>)}</div>
     </div>
   </section>
   <CtaBand lang={lang} />
 </Base>
+<style>
+  .bfilters { margin-bottom: 28px; }
+  .fchip { display: inline-flex; gap: 8px; align-items: center; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line-strong); background: transparent; font-weight: 650; font-size: 0.9rem; cursor: pointer; }
+  .fchip span { font-size: 0.75rem; opacity: 0.8; }
+  .fchip.on { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+  .bpost[hidden] { display: none; }
+  .bpost { display: grid; }
+</style>
+<script>
+  const bf = document.querySelector('[data-bfilters]');
+  bf?.querySelectorAll<HTMLButtonElement>('[data-g]').forEach((b) => b.addEventListener('click', () => {
+    const g = b.dataset.g!;
+    bf.querySelectorAll('[data-g]').forEach((x) => x.classList.toggle('on', x === b));
+    document.querySelectorAll<HTMLElement>('.bpost').forEach((p) => { p.hidden = g !== 'all' && !(p.dataset.groups || '').split(' ').includes(g); });
+  }));
+</script>

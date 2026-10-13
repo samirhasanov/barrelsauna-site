@@ -23,6 +23,7 @@ export const ROUTES = {
   construction: { az: '/sauna-tikintisi', en: '/en/sauna-construction', ru: '/ru/stroitelstvo-saun' },
   stoves: { az: '/sobalar', en: '/en/sauna-heaters', ru: '/ru/pechi-dlya-sauny' },
   accessories: { az: '/aksesuarlar', en: '/en/sauna-accessories', ru: '/ru/aksessuary-dlya-sauny' },
+  prices: { az: '/sauna-qiymetleri', en: '/en/sauna-prices', ru: '/ru/ceny-na-sauny' },
   projects: { az: '/layiheler', en: '/en/projects', ru: '/ru/proekty' },
   about: { az: '/haqqimizda', en: '/en/about', ru: '/ru/o-nas' },
   contact: { az: '/elaqe', en: '/en/contact', ru: '/ru/kontakty' },

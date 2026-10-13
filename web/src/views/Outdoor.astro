@@ -12,6 +12,7 @@ import { t } from '../i18n/ui';
 import { faqLd } from '../lib/schema';
 import { ogImage } from '../lib/images';
 import { fmtPrice } from '../lib/format';
+import RelatedPosts from '../components/RelatedPosts.astro';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -145,6 +146,7 @@ const itemList = {
     <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
   </section>
 
+  <RelatedPosts lang={lang} keys={['barrel', 'cube', 'cabin', 'oval']} />
   <CtaBand lang={lang} />
 </Base>
 <style>

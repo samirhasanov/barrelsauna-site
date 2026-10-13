@@ -1,0 +1,263 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Photo from '../components/Photo.astro';
+import Icon from '../components/Icon.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import { SITE, type Lang } from '../data/site';
+import { ROUTES, path } from '../data/routes';
+import { MODELS } from '../data/models';
+import { t } from '../i18n/ui';
+import { faqLd } from '../lib/schema';
+import { ogImage } from '../lib/images';
+import { fmtPrice } from '../lib/format';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ui = t(lang);
+
+const c = {
+  az: {
+    title: 'Sauna Qiymətləri 2026 – Kalkulyator və Cədvəl | Barrel Sauna',
+    desc: 'Sauna qiymətləri 2026: barrel və kub sauna 6 000 AZN-dən, kabin, oval, kotec sauna və SPA kompleks. Onlayn kalkulyatorla təxmini qiyməti öyrənin, WhatsApp-a göndərin.',
+    eyebrow: 'Qiymətlər',
+    h1: 'Sauna qiymətləri və <em>onlayn kalkulyator</em>',
+    lede: 'Modeli, tutumu, daxili taxtanı və sobanı seçin — saunanızın təxmini qiymət aralığını dərhal görün və seçimi bir kliklə WhatsApp-a göndərin. Dəqiq qiyməti layihəyə baxdıqdan sonra bildiririk.',
+    calcTitle: 'Qiymət kalkulyatoru',
+    step1: 'Model', step2: 'Neçə nəfər üçün?', step3: 'Daxili taxta', step4: 'Soba', step5: 'Əlavələr',
+    woods: [['lipa', 'Lipa (standart)'], ['termo', 'Termo lipa'], ['abachi', 'Abaşi'], ['kedr', 'Kedr'], ['teak', 'Tik']],
+    stoves: [['wood', 'Odun sobası'], ['electric', 'Elektrik sobası'], ['unsure', 'Məsləhət lazımdır']],
+    extras: [['glass', 'Panoramik şüşə'], ['terrace', 'Terras / soyunma bölməsi'], ['tub', 'İsti / soyuq vanna'], ['led', 'LED işıqlandırma və dekor']],
+    result: 'Təxmini qiymət aralığı', position: ['aralığın aşağı hissəsi', 'aralığın orta hissəsi', 'aralığın yuxarı hissəsi'],
+    resultNote: 'Bu, şirkətin rəsmi model qiymət aralığıdır. Seçimləriniz qiymətin aralığın hansı hissəsinə düşəcəyini göstərir. Dəqiq məbləğ ölçü, yer və detallara görə hesablanır.',
+    send: 'Seçimi WhatsApp-a göndər', waIntro: 'Salam! Saytdakı kalkulyatordan yazıram:',
+    tableTitle: 'Model üzrə qiymət cədvəli', colModel: 'Model', colCap: 'Tutum', colPrice: 'Təxmini qiymət',
+    factorsTitle: 'Qiymətə nə təsir edir?',
+    factors: [['ruler', 'Ölçü və tutum', 'Uzunluq, hündürlük və oturacaq sayı material və iş həcmini müəyyən edir.'], ['leaf', 'Daxili taxta', 'Lipa standartdır; termo lipa, abaşi, kedr və tik premium seçimlərdir.'], ['flame', 'Soba', 'Odun və ya elektrik, güc və brend (Harvia, SAWO və s.).'], ['sparkle', 'Əlavələr', 'Panoramik şüşə, terras, soyunma bölməsi, isti/soyuq vanna, LED və dekor.']],
+    indoorNote: 'Daxili saunaların qiyməti otağın ölçüsünə görə fərdi hesablanır — ölçüləri WhatsApp-a göndərin.',
+    faq: [
+      { q: 'Ən ucuz sauna hansıdır?', a: 'Barrel və kub saunalar ən sərfəli modellərdir: təxminən 6 000 – 12 000 AZN (2–6 nəfər).' },
+      { q: 'Qiymətə quraşdırma daxildirmi?', a: 'Qiymət layihəyə görə razılaşdırılır. Quraşdırma, çatdırılma və bölgə məsafəsi barədə dəqiq məlumatı təklifdə yazırıq.' },
+      { q: 'Kalkulyatorun göstərdiyi qiymət dəqiqdirmi?', a: 'Kalkulyator rəsmi model qiymət aralığını və seçimlərinizin aralığın hansı hissəsinə uyğun olduğunu göstərir. Dəqiq qiymət ölçü və detallar təsdiqləndikdən sonra verilir.' },
+      { q: 'Soba qiymətə daxildirmi?', a: 'Soba seçimi layihənin bir hissəsidir və qiymətə təsir edir. Harvia, SAWO və digər brendlərin odun və elektrik sobaları arasından seçə bilərsiniz.' },
+    ],
+  },
+  en: {
+    title: 'Sauna Prices 2026 – Price Calculator | Barrel Sauna Azerbaijan',
+    desc: 'Sauna prices in Azerbaijan 2026: barrel and cube saunas from 6,000 AZN, cabin, oval, cottage saunas and spa complexes. Get an instant estimate and send it on WhatsApp.',
+    eyebrow: 'Prices',
+    h1: 'Sauna prices & <em>online calculator</em>',
+    lede: 'Choose the model, capacity, interior wood and heater — see your sauna’s estimated price range instantly and send your choice to WhatsApp in one click. We confirm the exact price after reviewing your project.',
+    calcTitle: 'Price calculator',
+    step1: 'Model', step2: 'For how many people?', step3: 'Interior wood', step4: 'Heater', step5: 'Extras',
+    woods: [['lipa', 'Linden (standard)'], ['termo', 'Thermo linden'], ['abachi', 'Abachi'], ['kedr', 'Cedar'], ['teak', 'Teak']],
+    stoves: [['wood', 'Wood-burning'], ['electric', 'Electric'], ['unsure', 'Need advice']],
+    extras: [['glass', 'Panoramic glass'], ['terrace', 'Terrace / changing room'], ['tub', 'Hot / cold tub'], ['led', 'LED lighting & décor']],
+    result: 'Estimated price range', position: ['lower part of the range', 'middle of the range', 'upper part of the range'],
+    resultNote: 'This is the company’s official price range for the model. Your choices show which part of the range your sauna is likely to fall into. The exact price depends on size, site and details.',
+    send: 'Send my choice on WhatsApp', waIntro: 'Hello! I am writing from the price calculator on your website:',
+    tableTitle: 'Price list by model', colModel: 'Model', colCap: 'Capacity', colPrice: 'Approx. price',
+    factorsTitle: 'What affects the price?',
+    factors: [['ruler', 'Size & capacity', 'Length, height and number of seats define materials and labour.'], ['leaf', 'Interior wood', 'Linden is standard; thermo linden, abachi, cedar and teak are premium.'], ['flame', 'Heater', 'Wood-burning or electric, power and brand (Harvia, SAWO and more).'], ['sparkle', 'Extras', 'Panoramic glass, terrace, changing room, hot/cold tub, LED and décor.']],
+    indoorNote: 'Indoor saunas are priced individually by room size — send us the dimensions on WhatsApp.',
+    faq: [
+      { q: 'What is the most affordable sauna?', a: 'Barrel and cube saunas are the most affordable models: about 6,000 – 12,000 AZN (2–6 people).' },
+      { q: 'Is installation included?', a: 'Pricing is agreed per project. We state installation, delivery and regional distance clearly in the quote.' },
+      { q: 'Is the calculator price exact?', a: 'It shows the official model price range and which part of it fits your choices. The exact price is given once size and details are confirmed.' },
+      { q: 'Is the heater included?', a: 'The heater is part of the project and affects the price. You can choose wood-burning or electric heaters from Harvia, SAWO and other brands.' },
+    ],
+  },
+  ru: {
+    title: 'Цены на сауны 2026 – калькулятор стоимости | Barrel Sauna',
+    desc: 'Цены на сауны в Азербайджане 2026: бочка и куб от 6 000 AZN, кабина, овальная, коттедж и SPA-комплекс. Рассчитайте ориентировочную цену онлайн и отправьте в WhatsApp.',
+    eyebrow: 'Цены',
+    h1: 'Цены на сауны и <em>онлайн-калькулятор</em>',
+    lede: 'Выберите модель, вместимость, дерево и печь — сразу увидите ориентировочный диапазон цены и отправите выбор в WhatsApp в один клик. Точную стоимость назовём после просмотра проекта.',
+    calcTitle: 'Калькулятор стоимости',
+    step1: 'Модель', step2: 'На сколько человек?', step3: 'Дерево внутри', step4: 'Печь', step5: 'Дополнительно',
+    woods: [['lipa', 'Липа (стандарт)'], ['termo', 'Термолипа'], ['abachi', 'Абаши'], ['kedr', 'Кедр'], ['teak', 'Тик']],
+    stoves: [['wood', 'Дровяная'], ['electric', 'Электрическая'], ['unsure', 'Нужна консультация']],
+    extras: [['glass', 'Панорамное стекло'], ['terrace', 'Терраса / предбанник'], ['tub', 'Горячая / холодная купель'], ['led', 'LED-подсветка и декор']],
+    result: 'Ориентировочный диапазон цены', position: ['нижняя часть диапазона', 'середина диапазона', 'верхняя часть диапазона'],
+    resultNote: 'Это официальный диапазон цен компании на модель. Ваши опции показывают, в какую часть диапазона попадёт сауна. Точная сумма зависит от размеров, участка и деталей.',
+    send: 'Отправить выбор в WhatsApp', waIntro: 'Здравствуйте! Пишу из калькулятора на сайте:',
+    tableTitle: 'Цены по моделям', colModel: 'Модель', colCap: 'Вместимость', colPrice: 'Ориентир. цена',
+    factorsTitle: 'Что влияет на цену?',
+    factors: [['ruler', 'Размер и вместимость', 'Длина, высота и число мест определяют материалы и объём работ.'], ['leaf', 'Дерево внутри', 'Липа — стандарт; термолипа, абаши, кедр и тик — премиум.'], ['flame', 'Печь', 'Дровяная или электрическая, мощность и бренд (Harvia, SAWO и др.).'], ['sparkle', 'Опции', 'Панорамное стекло, терраса, предбанник, купель, LED и декор.']],
+    indoorNote: 'Сауна в доме рассчитывается индивидуально по размерам помещения — пришлите размеры в WhatsApp.',
+    faq: [
+      { q: 'Какая сауна самая доступная?', a: 'Бочка и куб — самые доступные модели: около 6 000 – 12 000 AZN (2–6 человек).' },
+      { q: 'Входит ли монтаж в цену?', a: 'Стоимость согласуется под проект. Монтаж, доставку и удалённость региона прописываем в предложении.' },
+      { q: 'Точна ли цена калькулятора?', a: 'Калькулятор показывает официальный диапазон цены модели и в какую часть диапазона попадают ваши опции. Точную цену называем после согласования размеров и деталей.' },
+      { q: 'Входит ли печь в стоимость?', a: 'Печь — часть проекта и влияет на цену. Можно выбрать дровяную или электрическую печь Harvia, SAWO и других брендов.' },
+    ],
+  },
+}[lang];
+
+const og = await ogImage('cabin-2');
+const models = MODELS.map((m) => ({ key: m.key, name: m.name[lang], min: m.capacity[0], max: m.capacity[1], lo: m.price[0], hi: m.price[1], range: fmtPrice(m.price, lang) }));
+const offerLd = {
+  '@context': 'https://schema.org', '@type': 'OfferCatalog', name: c.tableTitle, url: SITE.url + ROUTES.prices[lang],
+  itemListElement: MODELS.map((m) => ({ '@type': 'Offer', itemOffered: { '@type': 'Product', name: m.name[lang], url: SITE.url + path(m.key, lang) }, priceSpecification: { '@type': 'PriceSpecification', minPrice: m.price[0], maxPrice: m.price[1], priceCurrency: 'AZN' } })),
+};
+---
+<Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.prices} image={og} jsonLd={[offerLd, faqLd(c.faq)]}>
+  <PageHero lang={lang} crumbs={[{ label: c.eyebrow }]} eyebrow={c.eyebrow} title={c.h1} lede={c.lede} cta={false} />
+
+  <section class="section-sm" style="padding-top:0">
+    <div class="container calc-wrap">
+      <form class="calc" data-calc data-wa={SITE.whatsapp} data-intro={c.waIntro} data-pos={JSON.stringify(c.position)} data-people={ui.labels.people} onsubmit="return false">
+        <h2 class="h3">{c.calcTitle}</h2>
+        <fieldset>
+          <legend>1. {c.step1}</legend>
+          <div class="opts models">
+            {models.map((m, i) => (
+              <label class="opt"><input type="radio" name="model" value={m.key} checked={i === 0} data-name={m.name} data-min={m.min} data-max={m.max} data-lo={m.lo} data-hi={m.hi} data-range={m.range} /><span><b>{m.name}</b><small>{m.min}–{m.max} {ui.labels.people}</small></span></label>
+            ))}
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>2. {c.step2} <output data-people-out>4</output></legend>
+          <input type="range" name="people" min="2" max="6" value="4" step="1" data-people-range />
+        </fieldset>
+        <fieldset>
+          <legend>3. {c.step3}</legend>
+          <div class="opts">{c.woods.map(([v, l], i) => <label class="opt sm"><input type="radio" name="wood" value={v} data-label={l} checked={i === 0} /><span>{l}</span></label>)}</div>
+        </fieldset>
+        <fieldset>
+          <legend>4. {c.step4}</legend>
+          <div class="opts">{c.stoves.map(([v, l], i) => <label class="opt sm"><input type="radio" name="stove" value={v} data-label={l} checked={i === 0} /><span>{l}</span></label>)}</div>
+        </fieldset>
+        <fieldset>
+          <legend>5. {c.step5}</legend>
+          <div class="opts">{c.extras.map(([v, l]) => <label class="opt sm"><input type="checkbox" name="extra" value={v} data-label={l} /><span>{l}</span></label>)}</div>
+        </fieldset>
+      </form>
+      <aside class="result" aria-live="polite">
+        <p class="r-label">{c.result}</p>
+        <p class="r-range" data-range-out>—</p>
+        <div class="bar"><span data-bar></span><i data-dot></i></div>
+        <p class="r-pos" data-pos-out></p>
+        <p class="small r-note">{c.resultNote}</p>
+        <button class="btn btn-wa" type="button" data-send><Icon name="whatsapp" /> {c.send}</button>
+        <p class="small r-note">{c.indoorNote}</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container container-narrow stack">
+      <h2 class="h2">{c.tableTitle}</h2>
+      <div class="prose">
+        <table>
+          <thead><tr><th>{c.colModel}</th><th>{c.colCap}</th><th>{c.colPrice}</th></tr></thead>
+          <tbody>{MODELS.map((m) => <tr><td><a href={path(m.key, lang)}>{m.name[lang]}</a></td><td>{m.capacity[0]}–{m.capacity[1]} {ui.labels.people}</td><td>{fmtPrice(m.price, lang)}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <p class="small muted">* {ui.labels.priceNote}</p>
+    </div>
+  </section>
+
+  <section class="section bg-forest">
+    <div class="container">
+      <h2 class="h2" style="margin-bottom:28px">{c.factorsTitle}</h2>
+      <div class="grid grid-4">
+        {c.factors.map(([ic, h, p]) => <div class="fx"><Icon name={ic} size={24} /><h3>{h}</h3><p>{p}</p></div>)}
+      </div>
+    </div>
+  </section>
+
+  <RelatedPosts lang={lang} keys={['barrel', 'cube', 'construction']} />
+
+  <section class="section bg-paper">
+    <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
+  </section>
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  .calc-wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(20px, 3vw, 40px); align-items: start; }
+  .calc { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(20px, 3vw, 36px); display: grid; gap: 22px; }
+  fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 12px; }
+  legend { font-weight: 800; color: var(--forest); margin-bottom: 10px; display: flex; gap: 10px; align-items: center; }
+  legend output { display: inline-grid; place-items: center; min-width: 34px; height: 30px; padding: 0 8px; border-radius: 999px; background: var(--forest); color: var(--cream); font-size: 0.9rem; }
+  .opts { display: flex; flex-wrap: wrap; gap: 10px; }
+  .opts.models { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .opt { position: relative; cursor: pointer; }
+  .opt input { position: absolute; opacity: 0; pointer-events: none; }
+  .opt span { display: grid; gap: 2px; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--line-strong); background: #fff; transition: all 0.15s; height: 100%; }
+  .opt.sm span { padding: 9px 14px; border-radius: 999px; font-weight: 650; font-size: 0.92rem; }
+  .opt span b { font-size: 0.95rem; }
+  .opt span small { color: var(--muted); font-size: 0.8rem; }
+  .opt input:checked + span { border-color: var(--forest); background: var(--forest); color: var(--cream); }
+  .opt input:checked + span small { color: rgba(246, 241, 228, 0.75); }
+  .opt input:focus-visible + span { outline: 2px solid var(--wood); outline-offset: 2px; }
+  input[type='range'] { width: 100%; accent-color: var(--forest); }
+  .result { position: sticky; top: calc(var(--header-h) + 20px); background: var(--forest); color: var(--cream); border-radius: var(--radius-lg); padding: clamp(22px, 3vw, 36px); display: grid; gap: 14px; box-shadow: var(--shadow-lg); }
+  .r-label { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); font-weight: 750; }
+  .r-range { font-family: var(--font-serif); font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 600; line-height: 1.05; }
+  .bar { position: relative; height: 10px; border-radius: 99px; background: rgba(246, 241, 228, 0.15); overflow: visible; }
+  .bar span { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(90deg, rgba(217,160,102,.35), var(--amber)); }
+  .bar i { position: absolute; top: 50%; width: 22px; height: 22px; margin-left: -11px; border-radius: 50%; background: #fff; border: 4px solid var(--amber); transform: translateY(-50%); transition: left 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .r-pos { font-weight: 700; }
+  .r-note { color: rgba(246, 241, 228, 0.72); }
+  .result .btn { justify-self: stretch; }
+  .fx { padding: 24px; border-radius: var(--radius); background: rgba(246,241,228,.05); border: 1px solid rgba(246,241,228,.12); display: grid; gap: 10px; align-content: start; }
+  .fx :global(svg) { color: var(--amber); }
+  .fx h3 { font-size: 1.1rem; font-weight: 750; }
+  .fx p { color: rgba(246,241,228,.75); font-size: .95rem; }
+  @media (max-width: 960px) { .calc-wrap { grid-template-columns: 1fr; } .result { position: static; } .opts.models { grid-template-columns: repeat(2, 1fr); } }
+</style>
+
+<script>
+  const f = document.querySelector<HTMLFormElement>('[data-calc]');
+  if (f) {
+    const pos: string[] = JSON.parse(f.dataset.pos || '[]');
+    const rangeOut = document.querySelector<HTMLElement>("[data-range-out]")!;
+    const dot = document.querySelector<HTMLElement>('[data-dot]')!;
+    const posOut = document.querySelector<HTMLElement>('[data-pos-out]')!;
+    const people = f.querySelector<HTMLInputElement>('[data-people-range]')!;
+    const peopleOut = f.querySelector<HTMLElement>('[data-people-out]')!;
+    const WOOD: Record<string, number> = { lipa: 0, termo: 0.15, abachi: 0.2, kedr: 0.25, teak: 0.3 };
+    const EXTRA: Record<string, number> = { glass: 0.12, terrace: 0.12, tub: 0.15, led: 0.06 };
+    let summary = '';
+    const update = () => {
+      const m = f.querySelector<HTMLInputElement>('input[name=model]:checked')!;
+      const min = Number(m.dataset.min), max = Number(m.dataset.max);
+      people.min = String(min); people.max = String(max);
+      if (Number(people.value) < min) people.value = String(min);
+      if (Number(people.value) > max) people.value = String(max);
+      peopleOut.textContent = people.value;
+      const wood = f.querySelector<HTMLInputElement>('input[name=wood]:checked')!;
+      const stove = f.querySelector<HTMLInputElement>('input[name=stove]:checked')!;
+      const extras = [...f.querySelectorAll<HTMLInputElement>('input[name=extra]:checked')];
+      // qualitative position inside the official model range (0..1) — no invented prices
+      const size = max > min ? (Number(people.value) - min) / (max - min) : 0.5;
+      let p = 0.08 + size * 0.45 + (WOOD[wood.value] ?? 0) + extras.reduce((s, e) => s + (EXTRA[e.value] ?? 0), 0);
+      p = Math.max(0.05, Math.min(0.95, p));
+      rangeOut.textContent = m.dataset.range!;
+      dot.style.left = `${p * 100}%`;
+      posOut.textContent = '→ ' + pos[p < 0.38 ? 0 : p < 0.68 ? 1 : 2];
+      summary = [
+        `🛖 ${m.dataset.name} — ${people.value} ${f.dataset.people}`,
+        `🌲 ${wood.dataset.label}`,
+        `🔥 ${stove.dataset.label}`,
+        extras.length ? `➕ ${extras.map((e) => e.dataset.label).join(', ')}` : '',
+        `💬 ${m.dataset.range} (${pos[p < 0.38 ? 0 : p < 0.68 ? 1 : 2]})`,
+      ].filter(Boolean).join('\n');
+    };
+    f.addEventListener('input', update);
+    f.addEventListener('change', update);
+    update();
+    document.querySelector('[data-send]')!.addEventListener('click', () => {
+      const text = `${f.dataset.intro}\n\n${summary}`;
+      const w = window as any;
+      w.gtag?.('event', 'generate_lead', { method: 'price_calculator' });
+      w.fbq?.('track', 'Lead');
+      window.open(`https://wa.me/${f.dataset.wa}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+    });
+  }
+</script>

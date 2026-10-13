@@ -6,6 +6,7 @@ import Gallery from '../components/Gallery.astro';
 import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
 import Icon from '../components/Icon.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
 import { waLink, type Lang } from '../data/site';
 import { ROUTES, path } from '../data/routes';
 import { WOODS, INDOOR_RENDERS, INDOOR_PROJECTS } from '../data/indoor';
@@ -177,6 +178,7 @@ const og = await ogImage('render-1');
     <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
   </section>
 
+  <RelatedPosts lang={lang} keys={['indoor', 'construction']} />
   <CtaBand lang={lang} preset="indoor" waText={ui.form.opts.indoor} />
 </Base>
 <style>

@@ -95,6 +95,7 @@ const schemas = [org, ...jsonLd];
   <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
+  <link rel="alternate" type="application/rss+xml" title="Barrel Sauna" href={lang === 'az' ? '/rss.xml' : `/${lang}/rss.xml`} />
   {SITE.gscVerification && <meta name="google-site-verification" content={SITE.gscVerification} />}
 
   {schemas.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}

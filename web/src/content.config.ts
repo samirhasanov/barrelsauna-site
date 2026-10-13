@@ -15,6 +15,7 @@ const blog = defineCollection({
     cover: z.string(),
     coverAlt: z.string(),
     draft: z.boolean().default(false),
+    related: z.array(z.string()).default([]),
   }),
 });
 

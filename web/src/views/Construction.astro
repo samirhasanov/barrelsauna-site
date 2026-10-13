@@ -13,6 +13,7 @@ import { t } from '../i18n/ui';
 import { faqLd, serviceLd } from '../lib/schema';
 import { ogImage } from '../lib/images';
 import { fmtPrice } from '../lib/format';
+import RelatedPosts from '../components/RelatedPosts.astro';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -208,6 +209,7 @@ const steps = {
     <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
   </section>
 
+  <RelatedPosts lang={lang} keys={['construction', 'indoor', 'barrel']} />
   <CtaBand lang={lang} />
 </Base>
 <style>

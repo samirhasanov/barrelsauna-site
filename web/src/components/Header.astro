@@ -59,6 +59,7 @@ const sauneActive = [...MODELS.map((m) => path(m.key, lang)), path('outdoor', la
         </li>
         <li><a class:list={['nav-link', { active: isActive(path('stoves', lang)) }]} href={path('stoves', lang)}>{ui.nav.stoves}</a></li>
         <li><a class:list={['nav-link', { active: isActive(path('accessories', lang)) }]} href={path('accessories', lang)}>{ui.nav.accessories}</a></li>
+        <li><a class:list={['nav-link', { active: isActive(path('prices', lang)) }]} href={path('prices', lang)}>{ui.nav.prices}</a></li>
         <li><a class:list={['nav-link', { active: isActive(path('projects', lang)) }]} href={path('projects', lang)}>{ui.nav.projects}</a></li>
         <li><a class:list={['nav-link', { active: isActive(path('blog', lang)) }]} href={path('blog', lang)}>{ui.nav.blog}</a></li>
         <li><a class:list={['nav-link', { active: isActive(path('contact', lang)) }]} href={path('contact', lang)}>{ui.nav.contact}</a></li>
@@ -94,6 +95,7 @@ const sauneActive = [...MODELS.map((m) => path(m.key, lang)), path('outdoor', la
       <hr />
       <a class="m-link strong" href={path('stoves', lang)}>{ui.nav.stoves}</a>
       <a class="m-link strong" href={path('accessories', lang)}>{ui.nav.accessories}</a>
+      <a class="m-link strong" href={path('prices', lang)}>{ui.nav.prices}</a>
       <a class="m-link strong" href={path('projects', lang)}>{ui.nav.projects}</a>
       <a class="m-link strong" href={path('blog', lang)}>{ui.nav.blog}</a>
       <a class="m-link strong" href={path('about', lang)}>{ui.nav.about}</a>

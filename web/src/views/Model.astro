@@ -8,6 +8,7 @@ import Faq from '../components/Faq.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ModelCard from '../components/ModelCard.astro';
 import SocialVideos from '../components/SocialVideos.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
 import { waLink, type Lang } from '../data/site';
 import { ROUTES, path } from '../data/routes';
 import { MODELS, OUTDOOR_BUILD, modelByKey } from '../data/models';
@@ -58,7 +59,7 @@ const waText = ui.wa.model(m.name[lang]);
             <a class="btn btn-wa" href={waLink(waText)} target="_blank" rel="noopener"><Icon name="whatsapp" /> {ui.cta.quote}</a>
             <a class="btn btn-ghost" href="#sifaris">{ui.cta.order}</a>
           </div>
-          <p class="small muted">* {ui.labels.priceNote}</p>
+          <p class="small muted">* {ui.labels.priceNote} <a href={path('prices', lang)}>{{ az: 'Qiymət kalkulyatoru →', en: 'Price calculator →', ru: 'Калькулятор цены →' }[lang]}</a></p>
         </div>
         <div class="hero-photo rounded">
           <Photo name={m.cover} alt={m.name[lang]} priority lightbox="hero" sizes="(max-width: 900px) 100vw, 50vw" class="cover" />
@@ -138,6 +139,7 @@ const waText = ui.wa.model(m.name[lang]);
     </div>
   </section>
 
+  <RelatedPosts lang={lang} keys={[m.key]} />
   <CtaBand lang={lang} preset={m.key} title={L.orderTitle} waText={waText} />
 </Base>
 
