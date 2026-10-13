@@ -6,6 +6,7 @@ lang: az
 translationKey: "b5"
 tags: ["sauna növləri", "kub sauna", "barrel sauna", "kabin sauna", "çöl saunası"]
 cover: "cube-2"
+related: ["barrel", "cube", "cabin", "oval"]
 coverAlt: "Yaşıl həyətdə yan-yana duran taxta barrel sauna, kub sauna və panorama şüşəli kabin sauna"
 ---
 

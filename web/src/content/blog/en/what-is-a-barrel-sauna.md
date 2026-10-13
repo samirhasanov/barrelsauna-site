@@ -6,6 +6,7 @@ lang: en
 translationKey: "a2"
 tags: ["barrel sauna", "outdoor sauna", "Azerbaijan", "sauna construction"]
 cover: "barrel-3"
+related: ["barrel"]
 coverAlt: "Wooden barrel sauna with metal bands and a glass door standing in a garden"
 ---
 

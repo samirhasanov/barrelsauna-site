@@ -6,6 +6,7 @@ lang: az
 translationKey: "b3"
 tags: ["otel üçün sauna", "istirahət mərkəzi", "qlempinq", "SPA kompleks", "regionlar"]
 cover: "proj-qabala-spa-2"
+related: ["spa", "cottage", "cabin"]
 coverAlt: "Dağ meşəsinin kənarında, qonaq evinin həyətində qurulmuş taxta barrel sauna və yanında soyuq su çəlləyi"
 ---
 

@@ -13,6 +13,7 @@ import { t } from '../i18n/ui';
 import { faqLd } from '../lib/schema';
 import { ogImage } from '../lib/images';
 import { fmtPrice } from '../lib/format';
+import { INDOOR_PRICING } from '../data/pricing';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -26,6 +27,14 @@ const c = {
     h1: 'Sauna qiymətləri və <em>onlayn kalkulyator</em>',
     lede: 'Modeli, tutumu, daxili taxtanı və sobanı seçin — saunanızın təxmini qiymət aralığını dərhal görün və seçimi bir kliklə WhatsApp-a göndərin. Dəqiq qiyməti layihəyə baxdıqdan sonra bildiririk.',
     calcTitle: 'Qiymət kalkulyatoru',
+    plusNote: 'Seçdiyiniz premium taxta və əlavələr bu qiymətin üzərinə gəlir (fərdi hesablanır).',
+    exactTitle: 'Daha dəqiq hesablama üçün müraciət edin', exactText: 'Ölçüləri, yerin və ya otağın şəkillərini WhatsApp-a göndərin, ya da zəng edin — pulsuz və dəqiq hesablayaq.',
+    modeOut: 'Çöl saunası', modeIn: 'Daxili sauna (otaqda)',
+    area: 'Otağın sahəsi', areaHint: 'Təxminən hər nəfər üçün 1–1.5 m² oturacaq sahəsi tövsiyə olunur.', peopleIn: 'Neçə nəfər?',
+    extrasIn: [['led', 'LED işıqlandırma'], ['salt', 'Himalay duzu paneli'], ['stone', 'Dekorativ daş'], ['logs', 'Kötük dekoru'], ['glass', 'Şüşə qapı / şüşə divar'], ['wifi', 'Wi-Fi idarəetmə paneli'], ['acc', 'Aksesuar dəsti (vedrə, çömçə, termometr)']],
+    inRequest: 'Daxili saunanın qiyməti otağın ölçüsü, nəfər sayı, taxta və aksesuarlara görə fərdi hesablanır. Seçimlərinizi göndərin — təxmini qiyməti tez hesablayaq.',
+    inPriced: 'Seçimlərinizə görə təxmini qiymət. Dəqiq məbləğ otağa baxış və layihədən sonra təsdiqlənir.',
+    sendIn: 'Hesablama üçün WhatsApp-a göndər', onRequest: 'Fərdi hesablama',
     step1: 'Model', step2: 'Neçə nəfər üçün?', step3: 'Daxili taxta', step4: 'Soba', step5: 'Əlavələr',
     woods: [['lipa', 'Lipa (standart)'], ['termo', 'Termo lipa'], ['abachi', 'Abaşi'], ['kedr', 'Kedr'], ['teak', 'Tik']],
     stoves: [['wood', 'Odun sobası'], ['electric', 'Elektrik sobası'], ['unsure', 'Məsləhət lazımdır']],
@@ -51,6 +60,14 @@ const c = {
     h1: 'Sauna prices & <em>online calculator</em>',
     lede: 'Choose the model, capacity, interior wood and heater — see your sauna’s estimated price range instantly and send your choice to WhatsApp in one click. We confirm the exact price after reviewing your project.',
     calcTitle: 'Price calculator',
+    plusNote: 'Premium wood and extras you selected are added on top of this price (quoted individually).',
+    exactTitle: 'Contact us for an exact calculation', exactText: 'Send dimensions and photos of the site or room on WhatsApp, or call us — we will calculate it precisely, free of charge.',
+    modeOut: 'Outdoor sauna', modeIn: 'Indoor sauna (in a room)',
+    area: 'Room floor area', areaHint: 'As a rule of thumb, allow about 1–1.5 m² of bench area per person.', peopleIn: 'How many people?',
+    extrasIn: [['led', 'LED lighting'], ['salt', 'Himalayan salt panel'], ['stone', 'Decorative stone'], ['logs', 'Log-cut décor'], ['glass', 'Glass door / glass wall'], ['wifi', 'Wi-Fi control panel'], ['acc', 'Accessory set (bucket, ladle, thermometer)']],
+    inRequest: 'Indoor saunas are priced individually by room size, number of people, wood and accessories. Send your choices — we will quickly prepare an estimate.',
+    inPriced: 'Estimated price for your choices. The exact amount is confirmed after seeing the room and finalising the design.',
+    sendIn: 'Send for a quote on WhatsApp', onRequest: 'Individual quote',
     step1: 'Model', step2: 'For how many people?', step3: 'Interior wood', step4: 'Heater', step5: 'Extras',
     woods: [['lipa', 'Linden (standard)'], ['termo', 'Thermo linden'], ['abachi', 'Abachi'], ['kedr', 'Cedar'], ['teak', 'Teak']],
     stoves: [['wood', 'Wood-burning'], ['electric', 'Electric'], ['unsure', 'Need advice']],
@@ -76,6 +93,14 @@ const c = {
     h1: 'Цены на сауны и <em>онлайн-калькулятор</em>',
     lede: 'Выберите модель, вместимость, дерево и печь — сразу увидите ориентировочный диапазон цены и отправите выбор в WhatsApp в один клик. Точную стоимость назовём после просмотра проекта.',
     calcTitle: 'Калькулятор стоимости',
+    plusNote: 'Выбранные премиальное дерево и опции добавляются к этой цене (рассчитываются индивидуально).',
+    exactTitle: 'Для точного расчёта обратитесь к нам', exactText: 'Пришлите размеры и фото участка или помещения в WhatsApp или позвоните — бесплатно рассчитаем точно.',
+    modeOut: 'Уличная сауна', modeIn: 'Сауна в доме (в комнате)',
+    area: 'Площадь помещения', areaHint: 'Ориентир — около 1–1,5 м² площади полков на человека.', peopleIn: 'На сколько человек?',
+    extrasIn: [['led', 'LED-подсветка'], ['salt', 'Панель из гималайской соли'], ['stone', 'Декоративный камень'], ['logs', 'Декор из спилов'], ['glass', 'Стеклянная дверь / стена'], ['wifi', 'Wi-Fi пульт управления'], ['acc', 'Набор аксессуаров (шайка, ковш, термометр)']],
+    inRequest: 'Сауна в доме рассчитывается индивидуально: площадь, число людей, дерево и аксессуары. Отправьте выбор — быстро подготовим расчёт.',
+    inPriced: 'Ориентировочная цена по вашему выбору. Точная сумма — после осмотра помещения и согласования проекта.',
+    sendIn: 'Отправить на расчёт в WhatsApp', onRequest: 'Индивидуальный расчёт',
     step1: 'Модель', step2: 'На сколько человек?', step3: 'Дерево внутри', step4: 'Печь', step5: 'Дополнительно',
     woods: [['lipa', 'Липа (стандарт)'], ['termo', 'Термолипа'], ['abachi', 'Абаши'], ['kedr', 'Кедр'], ['teak', 'Тик']],
     stoves: [['wood', 'Дровяная'], ['electric', 'Электрическая'], ['unsure', 'Нужна консультация']],
@@ -108,41 +133,62 @@ const offerLd = {
 
   <section class="section-sm" style="padding-top:0">
     <div class="container calc-wrap">
-      <form class="calc" data-calc data-wa={SITE.whatsapp} data-intro={c.waIntro} data-pos={JSON.stringify(c.position)} data-people={ui.labels.people} onsubmit="return false">
+      <form class="calc" data-calc data-indoor={JSON.stringify(INDOOR_PRICING)} data-t-in-request={c.inRequest} data-t-in-priced={c.inPriced} data-t-send-in={c.sendIn} data-t-send={c.send} data-t-on-request={c.onRequest} data-t-area={c.area} data-t-out-note={c.resultNote} data-t-plus={c.plusNote} data-wa={SITE.whatsapp} data-intro={c.waIntro} data-pos={JSON.stringify(c.position)} data-people={ui.labels.people} onsubmit="return false">
         <h2 class="h3">{c.calcTitle}</h2>
-        <fieldset>
-          <legend>1. {c.step1}</legend>
+        <div class="mode" role="radiogroup">
+          <label class="opt mode-opt"><input type="radio" name="mode" value="outdoor" checked /><span><Icon name="home" size={18} /> {c.modeOut}</span></label>
+          <label class="opt mode-opt"><input type="radio" name="mode" value="indoor" /><span><Icon name="flame" size={18} /> {c.modeIn}</span></label>
+        </div>
+        <fieldset data-show="indoor" hidden>
+          <legend>{c.area} <output data-area-out>6</output> m²</legend>
+          <input type="range" name="area" min="2" max="25" value="6" step="0.5" data-area />
+          <p class="small muted">{c.areaHint}</p>
+        </fieldset>
+        <fieldset data-show="indoor" hidden>
+          <legend>{c.peopleIn} <output data-people-in-out>4</output></legend>
+          <input type="range" name="peopleIn" min="1" max="12" value="4" step="1" data-people-in />
+        </fieldset>
+        <fieldset data-show="outdoor">
+          <legend>{c.step1}</legend>
           <div class="opts models">
             {models.map((m, i) => (
               <label class="opt"><input type="radio" name="model" value={m.key} checked={i === 0} data-name={m.name} data-min={m.min} data-max={m.max} data-lo={m.lo} data-hi={m.hi} data-range={m.range} /><span><b>{m.name}</b><small>{m.min}–{m.max} {ui.labels.people}</small></span></label>
             ))}
           </div>
         </fieldset>
-        <fieldset>
-          <legend>2. {c.step2} <output data-people-out>4</output></legend>
+        <fieldset data-show="outdoor">
+          <legend>{c.step2} <output data-people-out>4</output></legend>
           <input type="range" name="people" min="2" max="6" value="4" step="1" data-people-range />
         </fieldset>
         <fieldset>
-          <legend>3. {c.step3}</legend>
+          <legend>{c.step3}</legend>
           <div class="opts">{c.woods.map(([v, l], i) => <label class="opt sm"><input type="radio" name="wood" value={v} data-label={l} checked={i === 0} /><span>{l}</span></label>)}</div>
         </fieldset>
         <fieldset>
-          <legend>4. {c.step4}</legend>
+          <legend>{c.step4}</legend>
           <div class="opts">{c.stoves.map(([v, l], i) => <label class="opt sm"><input type="radio" name="stove" value={v} data-label={l} checked={i === 0} /><span>{l}</span></label>)}</div>
         </fieldset>
-        <fieldset>
-          <legend>5. {c.step5}</legend>
+        <fieldset data-show="outdoor">
+          <legend>{c.step5}</legend>
           <div class="opts">{c.extras.map(([v, l]) => <label class="opt sm"><input type="checkbox" name="extra" value={v} data-label={l} /><span>{l}</span></label>)}</div>
+        </fieldset>
+        <fieldset data-show="indoor" hidden>
+          <legend>{c.step5}</legend>
+          <div class="opts">{c.extrasIn.map(([v, l]) => <label class="opt sm"><input type="checkbox" name="extraIn" value={v} data-label={l} /><span>{l}</span></label>)}</div>
         </fieldset>
       </form>
       <aside class="result" aria-live="polite">
         <p class="r-label">{c.result}</p>
         <p class="r-range" data-range-out>—</p>
-        <div class="bar"><span data-bar></span><i data-dot></i></div>
+        <div class="meter"><span data-bar></span><i data-dot></i></div>
         <p class="r-pos" data-pos-out></p>
-        <p class="small r-note">{c.resultNote}</p>
-        <button class="btn btn-wa" type="button" data-send><Icon name="whatsapp" /> {c.send}</button>
-        <p class="small r-note">{c.indoorNote}</p>
+        <p class="small r-note" data-note>{c.resultNote}</p>
+        <div class="exact">
+          <p class="exact-h"><Icon name="ruler" size={18} /> {c.exactTitle}</p>
+          <p class="small">{c.exactText}</p>
+        </div>
+        <button class="btn btn-wa" type="button" data-send><Icon name="whatsapp" /> <span data-send-label>{c.send}</span></button>
+        <a class="btn btn-ghost" href={`tel:${SITE.phone}`}><Icon name="phone" /> {SITE.phoneDisplay}</a>
       </aside>
     </div>
   </section>
@@ -186,6 +232,9 @@ const offerLd = {
   legend output { display: inline-grid; place-items: center; min-width: 34px; height: 30px; padding: 0 8px; border-radius: 999px; background: var(--forest); color: var(--cream); font-size: 0.9rem; }
   .opts { display: flex; flex-wrap: wrap; gap: 10px; }
   .opts.models { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .mode { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mode-opt span { flex-direction: row; display: flex; align-items: center; gap: 8px; justify-content: center; font-weight: 750; padding: 14px; }
+  fieldset[hidden] { display: none; }
   .opt { position: relative; cursor: pointer; }
   .opt input { position: absolute; opacity: 0; pointer-events: none; }
   .opt span { display: grid; gap: 2px; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--line-strong); background: #fff; transition: all 0.15s; height: 100%; }
@@ -199,12 +248,18 @@ const offerLd = {
   .result { position: sticky; top: calc(var(--header-h) + 20px); background: var(--forest); color: var(--cream); border-radius: var(--radius-lg); padding: clamp(22px, 3vw, 36px); display: grid; gap: 14px; box-shadow: var(--shadow-lg); }
   .r-label { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); font-weight: 750; }
   .r-range { font-family: var(--font-serif); font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 600; line-height: 1.05; }
-  .bar { position: relative; height: 10px; border-radius: 99px; background: rgba(246, 241, 228, 0.15); overflow: visible; }
-  .bar span { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(90deg, rgba(217,160,102,.35), var(--amber)); }
-  .bar i { position: absolute; top: 50%; width: 22px; height: 22px; margin-left: -11px; border-radius: 50%; background: #fff; border: 4px solid var(--amber); transform: translateY(-50%); transition: left 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .meter { position: relative; height: 10px; border-radius: 99px; background: rgba(246, 241, 228, 0.15); overflow: visible; }
+  .meter[hidden] { display: none; }
+  .meter span { position: absolute; inset: 0; border-radius: inherit; background: linear-gradient(90deg, rgba(217,160,102,.35), var(--amber)); }
+  .meter i { position: absolute; top: 50%; width: 22px; height: 22px; margin-left: -11px; border-radius: 50%; background: #fff; border: 4px solid var(--amber); transform: translateY(-50%); transition: left 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
   .r-pos { font-weight: 700; }
   .r-note { color: rgba(246, 241, 228, 0.72); }
   .result .btn { justify-self: stretch; }
+  .result .btn-ghost { --fg: var(--cream); border-color: rgba(246, 241, 228, 0.35); }
+  .result .btn-ghost:hover { --bg: var(--cream); --fg: var(--forest); }
+  .exact { padding: 14px 16px; border-radius: 14px; background: rgba(217, 160, 102, 0.16); border: 1px solid rgba(217, 160, 102, 0.45); display: grid; gap: 4px; }
+  .exact-h { display: flex; gap: 8px; align-items: center; font-weight: 800; color: var(--amber); }
+  .exact .small { color: rgba(246, 241, 228, 0.85); }
   .fx { padding: 24px; border-radius: var(--radius); background: rgba(246,241,228,.05); border: 1px solid rgba(246,241,228,.12); display: grid; gap: 10px; align-content: start; }
   .fx :global(svg) { color: var(--amber); }
   .fx h3 { font-size: 1.1rem; font-weight: 750; }
@@ -224,7 +279,48 @@ const offerLd = {
     const WOOD: Record<string, number> = { lipa: 0, termo: 0.15, abachi: 0.2, kedr: 0.25, teak: 0.3 };
     const EXTRA: Record<string, number> = { glass: 0.12, terrace: 0.12, tub: 0.15, led: 0.06 };
     let summary = '';
+    const indoorP = JSON.parse(f.dataset.indoor || 'null');
+    const note = document.querySelector<HTMLElement>('[data-note]')!;
+    const sendLabel = document.querySelector<HTMLElement>('[data-send-label]')!;
+    const bar = document.querySelector<HTMLElement>(".meter")!;
+    const area = f.querySelector<HTMLInputElement>('[data-area]')!;
+    const peopleIn = f.querySelector<HTMLInputElement>('[data-people-in]')!;
+    const fmt = (n: number) => new Intl.NumberFormat({ en: 'en-US', ru: 'ru-RU' }[document.documentElement.lang] ?? 'az-AZ').format(Math.round(n / 50) * 50).replace(/\u202f|\u00a0/g, ' ');
     const update = () => {
+      const mode = f.querySelector<HTMLInputElement>('input[name=mode]:checked')!.value;
+      f.querySelectorAll<HTMLElement>('[data-show]').forEach((el) => { el.hidden = el.dataset.show !== mode; });
+      if (mode === 'indoor') {
+        f.querySelector<HTMLElement>('[data-area-out]')!.textContent = area.value;
+        f.querySelector<HTMLElement>('[data-people-in-out]')!.textContent = peopleIn.value;
+        const wood = f.querySelector<HTMLInputElement>('input[name=wood]:checked')!;
+        const stove = f.querySelector<HTMLInputElement>('input[name=stove]:checked')!;
+        const ex = [...f.querySelectorAll<HTMLInputElement>('input[name=extraIn]:checked')];
+        let priceLine = f.dataset.tOnRequest!;
+        if (indoorP) {
+          const a = Number(area.value), w = indoorP.wood?.[wood.value] ?? 0;
+          let lo = a * indoorP.perM2[0] * (1 + w), hi = a * indoorP.perM2[1] * (1 + w);
+          ex.forEach((e) => { const r = indoorP.extras?.[e.value]; if (r) { lo += r[0]; hi += r[1]; } });
+          const extraPriced = ex.every((e) => indoorP.extras?.[e.value]) && (wood.value === 'lipa' || indoorP.wood?.[wood.value] !== undefined);
+          priceLine = `${fmt(lo)} – ${fmt(hi)} AZN${extraPriced ? '' : ' +'}`;
+          note.dataset.plus = extraPriced ? '' : '1';
+        }
+        rangeOut.textContent = priceLine;
+        bar.hidden = true; posOut.textContent = '';
+        note.textContent = indoorP ? f.dataset.tInPriced! + (note.dataset.plus ? ' ' + f.dataset.tPlus : '') : f.dataset.tInRequest!;
+        sendLabel.textContent = f.dataset.tSendIn!;
+        summary = [
+          `🏠 ${document.querySelector('.mode-opt:nth-child(2) span')!.textContent!.trim()}`,
+          `📐 ${area.value} m² · 👥 ${peopleIn.value} ${f.dataset.people}`,
+          `🌲 ${wood.dataset.label}`,
+          `🔥 ${stove.dataset.label}`,
+          ex.length ? `➕ ${ex.map((e) => e.dataset.label).join(', ')}` : '',
+          indoorP ? `💬 ${priceLine}` : '',
+        ].filter(Boolean).join('\n');
+        return;
+      }
+      bar.hidden = false;
+      note.textContent = f.dataset.tOutNote!;
+      sendLabel.textContent = f.dataset.tSend!;
       const m = f.querySelector<HTMLInputElement>('input[name=model]:checked')!;
       const min = Number(m.dataset.min), max = Number(m.dataset.max);
       people.min = String(min); people.max = String(max);

@@ -6,6 +6,7 @@ lang: en
 translationKey: "b5"
 tags: ["barrel vs cube sauna", "barrel sauna", "cube sauna", "cabin sauna", "outdoor sauna"]
 cover: "cube-2"
+related: ["barrel", "cube", "cabin", "oval"]
 coverAlt: "A wooden barrel sauna, a cube sauna and a cabin sauna with a panoramic glass front standing side by side in a green garden"
 ---
 

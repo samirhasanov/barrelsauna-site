@@ -6,6 +6,7 @@ lang: az
 translationKey: "b2"
 tags: ["saunanın faydaları", "fin saunası", "sağlamlıq", "soyuq su", "sauna qaydaları"]
 cover: "wood-termo-lipa-2"
+related: ["barrel", "indoor"]
 coverAlt: "Taxta rəflərdə dəsmal üzərində oturub istirahət edən insan, arxa fonda isti sauna sobası və pəncərədən görünən yaşıl bağ"
 ---
 

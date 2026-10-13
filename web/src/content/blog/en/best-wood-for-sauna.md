@@ -6,6 +6,7 @@ lang: en
 translationKey: "a3"
 tags: ["best wood for sauna", "linden", "abachi", "cedar", "larch"]
 cover: "materials-wood-samples"
+related: ["indoor", "construction"]
 coverAlt: "Sample boards of sauna wood side by side: pale linden, caramel thermo linden and cedar"
 ---
 

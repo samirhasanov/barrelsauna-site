@@ -6,6 +6,7 @@ lang: en
 translationKey: "a5"
 tags: ["sauna price Azerbaijan", "outdoor sauna", "barrel sauna", "sauna cost", "2026"]
 cover: "cabin-2"
+related: ["barrel", "cube", "construction"]
 coverAlt: "Outdoor saunas of different shapes — barrel, cube and cabin — side by side for a price comparison"
 ---
 

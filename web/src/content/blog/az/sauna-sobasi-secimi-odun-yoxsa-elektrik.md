@@ -6,6 +6,7 @@ lang: az
 translationKey: "b1"
 tags: ["sauna sobası", "elektrik sobası", "odun sobası", "Harvia", "SAWO"]
 cover: "proj-ilisu-cube-1"
+related: ["stoves"]
 coverAlt: "Taxta sauna otağında daşları qızarmış metal sauna sobası və yanında taxta vedrə ilə çömçə"
 ---
 

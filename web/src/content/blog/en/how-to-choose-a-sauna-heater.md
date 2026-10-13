@@ -6,6 +6,7 @@ lang: en
 translationKey: "b1"
 tags: ["sauna heater", "electric sauna heater", "wood-burning sauna stove", "Harvia", "SAWO"]
 cover: "proj-ilisu-cube-1"
+related: ["stoves"]
 coverAlt: "Metal sauna heater with hot stones inside a wooden sauna room, next to a wooden bucket and ladle"
 ---
 

@@ -6,6 +6,7 @@ lang: az
 translationKey: "a4"
 tags: ["evdə sauna tikintisi", "daxili sauna", "villa", "mənzildə sauna"]
 cover: "render-2"
+related: ["indoor", "construction"]
 coverAlt: "Evin içində qurulmuş cökə ağacından sauna, oturacaq arxasında LED işıqlandırma və Himalay duz paneli"
 ---
 

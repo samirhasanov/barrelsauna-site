@@ -6,6 +6,7 @@ lang: en
 translationKey: "b3"
 tags: ["sauna for hotels", "guest house sauna", "glamping", "outdoor spa", "Azerbaijan"]
 cover: "proj-qabala-spa-2"
+related: ["spa", "cottage", "cabin"]
 coverAlt: "Wooden barrel sauna in the garden of a guest house at the edge of a mountain forest, with a cold plunge tub beside it"
 ---
 

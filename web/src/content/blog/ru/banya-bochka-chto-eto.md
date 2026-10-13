@@ -6,6 +6,7 @@ lang: ru
 translationKey: "a2"
 tags: ["баня-бочка", "сауна-бочка", "уличная сауна", "barrel sauna"]
 cover: "barrel-3"
+related: ["barrel"]
 coverAlt: "Деревянная баня-бочка с металлическими стяжными лентами и стеклянной дверью во дворе"
 ---
 

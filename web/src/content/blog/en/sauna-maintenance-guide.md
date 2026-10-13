@@ -6,6 +6,7 @@ lang: en
 translationKey: "b4"
 tags: ["sauna maintenance", "sauna cleaning", "barrel sauna", "sauna stones", "winter sauna"]
 cover: "proj-ilisu-cube-6"
+related: ["barrel", "accessories"]
 coverAlt: "Wooden sauna with its door open, clean linden benches inside, a soft brush and a bucket with cleaner by the entrance"
 ---
 

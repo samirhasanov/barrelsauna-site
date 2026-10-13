@@ -6,6 +6,7 @@ lang: en
 translationKey: "a4"
 tags: ["home sauna installation", "indoor sauna", "villa", "apartment sauna"]
 cover: "render-2"
+related: ["indoor", "construction"]
 coverAlt: "Indoor linden sauna in a private home with LED strip lighting behind the backrests and a Himalayan salt panel"
 ---
 

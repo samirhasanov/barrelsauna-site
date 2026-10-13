@@ -6,6 +6,7 @@ lang: az
 translationKey: "a5"
 tags: ["sauna qiymətləri", "çöl saunası", "barrel sauna", "kub sauna", "2026"]
 cover: "cabin-2"
+related: ["barrel", "cube", "construction"]
 coverAlt: "Müxtəlif formalı çöl saunaları — çəllək, kub və kabin — yan-yana, qiymət müqayisəsi üçün"
 ---
 

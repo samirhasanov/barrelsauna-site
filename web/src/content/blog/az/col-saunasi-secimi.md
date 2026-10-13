@@ -6,6 +6,7 @@ lang: az
 translationKey: "a1"
 tags: ["çöl saunası", "barrel sauna", "kub sauna", "sauna seçimi", "villa"]
 cover: "oval-2"
+related: ["barrel", "cube", "cabin"]
 coverAlt: "Villanın yaşıl həyətində quraşdırılmış taxta çöl saunası, axşam işıqlandırması ilə"
 ---
 

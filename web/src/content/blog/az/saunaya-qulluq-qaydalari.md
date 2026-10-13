@@ -6,6 +6,7 @@ lang: az
 translationKey: "b4"
 tags: ["saunaya qulluq", "sauna təmizliyi", "barrel sauna", "sauna daşları", "qışda sauna"]
 cover: "proj-ilisu-cube-6"
+related: ["barrel", "accessories"]
 coverAlt: "Açıq qapılı taxta sauna, içində təmiz cökə rəflər, qapının yanında yumşaq fırça və təmizləyici ilə vedrə"
 ---
 

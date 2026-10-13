@@ -6,6 +6,7 @@ lang: en
 translationKey: "a1"
 tags: ["outdoor sauna", "Azerbaijan", "barrel sauna", "villa", "buying guide"]
 cover: "oval-2"
+related: ["barrel", "cube", "cabin"]
 coverAlt: "Wooden outdoor sauna in the garden of a villa, softly lit at dusk"
 ---
 

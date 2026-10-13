@@ -6,6 +6,7 @@ lang: ru
 translationKey: "a3"
 tags: ["дерево для сауны", "липа", "абаши", "кедр", "лиственница"]
 cover: "materials-wood-samples"
+related: ["indoor", "construction"]
 coverAlt: "Образцы вагонки для сауны: светлая липа, карамельная термолипа и кедр"
 ---
 

@@ -6,6 +6,7 @@ lang: az
 translationKey: "a3"
 tags: ["sauna üçün ağac", "cökə", "abaşi", "sidr", "listvenitsa"]
 cover: "materials-wood-samples"
+related: ["indoor", "construction"]
 coverAlt: "Sauna üçün müxtəlif ağac növlərindən nümunə lövhələr: açıq rəngli cökə, karamel rəngli termo cökə və sidr"
 ---
 

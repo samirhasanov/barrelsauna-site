@@ -6,6 +6,7 @@ lang: az
 translationKey: "a2"
 tags: ["barrel sauna", "çəllək sauna", "çöl saunası", "sauna quruluşu"]
 cover: "barrel-3"
+related: ["barrel"]
 coverAlt: "Həyətdə taxta çəllək formalı barrel sauna, ön tərəfində şüşə qapı və metal kəmərlər"
 ---
 

@@ -6,6 +6,7 @@ lang: en
 translationKey: "b2"
 tags: ["sauna benefits", "Finnish sauna", "how to use a sauna", "cold plunge", "wellness"]
 cover: "wood-termo-lipa-2"
+related: ["barrel", "indoor"]
 coverAlt: "Person relaxing on a wooden sauna bench with a towel, a sauna heater in the background and a window onto a green garden"
 ---
 
