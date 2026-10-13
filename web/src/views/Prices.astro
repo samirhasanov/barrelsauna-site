@@ -124,8 +124,8 @@ const c = {
 const og = await ogImage('cabin-2');
 const models = MODELS.map((m) => ({ key: m.key, name: m.name[lang], min: m.capacity[0], max: m.capacity[1], lo: m.price[0], hi: m.price[1], range: fmtPrice(m.price, lang) }));
 const offerLd = {
-  '@context': 'https://schema.org', '@type': 'OfferCatalog', name: c.tableTitle, url: SITE.url + ROUTES.prices[lang],
-  itemListElement: MODELS.map((m) => ({ '@type': 'Offer', itemOffered: { '@type': 'Product', name: m.name[lang], url: SITE.url + path(m.key, lang) }, priceSpecification: { '@type': 'PriceSpecification', minPrice: m.price[0], maxPrice: m.price[1], priceCurrency: 'AZN' } })),
+  '@context': 'https://schema.org', '@type': 'ItemList', name: c.tableTitle, url: SITE.url + ROUTES.prices[lang],
+  itemListElement: MODELS.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: `${m.name[lang]} — ${fmtPrice(m.price, lang)}`, url: SITE.url + path(m.key, lang) })),
 };
 ---
 <Base lang={lang} title={c.title} description={c.desc} alternates={ROUTES.prices} image={og} jsonLd={[offerLd, faqLd(c.faq)]}>
