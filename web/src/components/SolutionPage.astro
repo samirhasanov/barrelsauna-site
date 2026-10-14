@@ -7,6 +7,7 @@ import CtaBand from './CtaBand.astro';
 import ModelCard from './ModelCard.astro';
 import Icon from './Icon.astro';
 import RelatedPosts from './RelatedPosts.astro';
+import SocialVideos from './SocialVideos.astro';
 import type { FAQ } from '../data/models';
 import { MODELS } from '../data/models';
 import { type Lang, type L } from '../data/site';
@@ -90,6 +91,7 @@ const rel = MODELS.filter((m) => related.includes(m.key));
     <div class="container container-narrow"><Faq items={c.faq} title={ui.labels.faq} /></div>
   </section>
 
+  <SocialVideos lang={lang} section={relatedKeys[0]} limit={6} />
   <RelatedPosts lang={lang} keys={relatedKeys} />
   <CtaBand lang={lang} preset={preset} waText={ui.wa.model(c.eyebrow)} />
 </Base>

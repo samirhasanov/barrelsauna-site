@@ -19,7 +19,10 @@ const label: Record<string, Record<Lang, string>> = {
   jacuzzi: { az: 'Odunla qızan jakuzi', en: 'Wood-fired hot tub', ru: 'Чан на дровах' },
   process: { az: 'Tikinti prosesi', en: 'Construction process', ru: 'Процесс строительства' },
   general: { az: 'Sauna atmosferi', en: 'Sauna atmosphere', ru: 'Атмосфера сауны' },
+  portable: { az: 'Mobil sauna', en: 'Mobile sauna', ru: 'Мобильная сауна' },
 };
+const viewsLabel = { az: 'baxış', en: 'views', ru: 'просмотров' }[lang];
+const fmtViews = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)}M` : `${Math.round(n / 1000)}K`);
 const c = {
   az: { eyebrow: 'Videolar', title: 'Instagram və TikTok-da <em>bizi izləyin</em>', text: 'Tikinti prosesi, hazır saunalar və sauna atmosferi — qısa videolarda.', follow: 'Bizi izləyin' },
   en: { eyebrow: 'Videos', title: 'Follow us on <em>Instagram & TikTok</em>', text: 'Construction, finished saunas and the sauna atmosphere — in short videos.', follow: 'Follow us' },
@@ -45,6 +48,7 @@ const c = {
           <a class="reel reveal" href={v.url} target="_blank" rel="noopener" aria-label={`${v.platform === 'tiktok' ? 'TikTok' : 'Instagram'}: ${label[v.section]?.[lang] ?? ''} — ${v.caption}`}>
             {v.thumb && hasImg(v.thumb) ? <Photo name={v.thumb} alt={`${label[v.section]?.[lang] ?? ''} — ${v.caption}`} widths={[300, 500]} sizes="240px" class="cover" /> : <span class="reel-ph" />}
             <span class="reel-play"><Icon name="play" size={22} /></span>
+            {v.views >= 10000 && <span class="reel-views"><Icon name="play" size={11} /> {fmtViews(v.views)} {viewsLabel}</span>}
             <span class="reel-cap"><Icon name={v.platform} size={16} /> <span>{label[v.section]?.[lang] ?? v.caption}</span></span>
           </a>
         ))}
@@ -61,6 +65,7 @@ const c = {
   .reel::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.7), transparent 50%); }
   .reel-ph { position: absolute; inset: 0; background: linear-gradient(135deg, var(--forest-2), var(--wood-2)); }
   .reel-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.2); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,.4); }
+  .reel-views { position: absolute; top: 12px; left: 12px; z-index: 1; display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 999px; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(4px); font-size: 0.76rem; font-weight: 750; }
   .reel-cap { position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 1; display: flex; gap: 6px; align-items: flex-start; font-size: 0.82rem; font-weight: 600; line-height: 1.35; }
   .reel-cap :global(svg) { flex: none; margin-top: 2px; }
   .reel-cap span { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
