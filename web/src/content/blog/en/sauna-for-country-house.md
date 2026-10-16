@@ -63,7 +63,7 @@ What matters is that the surface is level, doesn't flood and can carry the sauna
 | Everyday use | You prepare firewood and tend the fire | Push-button, easy temperature control |
 | For a country house | Weak power supply or occasional visits | Frequent use and convenience |
 
-Country houses often have a weak power supply, which makes a wood stove the more practical choice. Barrel Sauna offers Harvia, SAWO and Saunabee stoves — see them on the [sauna heaters](/en/sauna-heaters) page.
+Country houses often have a weak power supply, which makes a wood stove the more practical choice. Barrel Sauna offers Harvia, SAWO, Teplodar, TMF and Fanlan stoves — see them on the [sauna heaters](/en/sauna-heaters) page.
 
 ## Step 5. Add a hot tub or plunge pool
 

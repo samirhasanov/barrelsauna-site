@@ -3,7 +3,7 @@ import raw from './products.json';
 
 export interface Product {
   id: string;
-  brand: 'Harvia' | 'SAWO' | 'Saunabee' | string;
+  brand: 'Harvia' | 'SAWO' | 'Teplodar' | 'TMF' | 'Fanlan' | string;
   category: string;
   name: string;
   specs: Record<string, string | undefined>;

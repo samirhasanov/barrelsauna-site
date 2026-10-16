@@ -46,7 +46,7 @@ Mənzildə və əksər evlərin içində sauna **elektrik soba** ilə işləyir.
 - Sobanın gücü saunanın həcminə görə seçilir; güclü sobalar üçün xəttin uyğunluğunu elektrik mütəxəssisi yoxlamalıdır.
 - İdarəetmə paneli sauna xaricində, rahat yerdə quraşdırıla bilər.
 
-Barrel Sauna Harvia, SAWO və Saunabee sobalarını satır və quraşdırır — modellərə [sobalar](/sobalar) səhifəsində baxın.
+Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını satır və quraşdırır — modellərə [sobalar](/sobalar) səhifəsində baxın.
 
 ## Divarların qorunması: izolyasiya və membran
 

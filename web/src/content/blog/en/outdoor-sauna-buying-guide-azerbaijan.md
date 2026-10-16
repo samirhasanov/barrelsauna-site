@@ -98,7 +98,7 @@ Even a well-built sauna will struggle on a poorly prepared site. Plan for:
 | Requirements | Adequate electrical supply | Chimney and fire-safety measures |
 | Best for | Frequent, shorter sessions | Country and mountain homes, purists |
 
-We supply and install heaters from Harvia, SAWO and Saunabee, sized to the volume of your sauna room. Browse the range on our [sauna stoves](/en/sauna-heaters) page.
+We supply and install heaters from Harvia, SAWO, Teplodar, TMF and Fanlan, sized to the volume of your sauna room. Browse the range on our [sauna stoves](/en/sauna-heaters) page.
 
 ## Planning your budget
 

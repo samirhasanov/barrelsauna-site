@@ -71,7 +71,7 @@ You can put a sauna on a timber deck, but first check that the deck can take the
 
 ## Choosing a heater for a small sauna
 
-A small room doesn't need a powerful heater — in fact, an oversized heater makes the heat harsh. Small saunas usually do well with a low-output electric heater (roughly 3–4.5 kW); the exact rating is calculated from the room volume, and the circuit should be confirmed by a qualified electrician. Compact wood-fired heaters are available too. Barrel Sauna sells and installs Harvia, SAWO and Saunabee heaters — see the options on our [sauna heaters](/en/sauna-heaters) page.
+A small room doesn't need a powerful heater — in fact, an oversized heater makes the heat harsh. Small saunas usually do well with a low-output electric heater (roughly 3–4.5 kW); the exact rating is calculated from the room volume, and the circuit should be confirmed by a qualified electrician. Compact wood-fired heaters are available too. Barrel Sauna sells and installs Harvia, SAWO, Teplodar, TMF and Fanlan heaters — see the options on our [sauna heaters](/en/sauna-heaters) page.
 
 ## Small, but built the same way
 

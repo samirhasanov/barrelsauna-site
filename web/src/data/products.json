@@ -1043,250 +1043,8 @@
   "source_url": "https://www.sawo.com/accessory-products/#section-accessory-sets"
  },
  {
-  "id": "saunabee-sauna-hat-wool-grey-white",
-  "brand": "Saunabee",
-  "category": "textile",
-  "name": "Sauna Hat – Grey and White, 100% Wool",
-  "specs": {
-   "material": "100% natural wool felt",
-   "size": "One size (unisex)",
-   "care": "Hand wash, cold water"
-  },
-  "description": {
-   "az": "Boz-ağ rəngdə, 100% təbii yundan hazırlanmış klassik keçə sauna papağı. Saçı və başı yüksək istidən qoruyur, artıq nəmi çəkir; uniseks, universal ölçü, soyuq suda əllə yuyulur.",
-   "ru": "Классическая войлочная шапка для сауны из 100% натуральной шерсти, серо-белая. Защищает волосы и голову от сильного жара и впитывает лишнюю влагу; унисекс, один размер, ручная стирка в холодной воде.",
-   "en": "A classic felted sauna hat made of 100% natural wool in grey and white. It protects hair and head from high heat and absorbs excess moisture; unisex, one size, hand wash cold."
-  },
-  "image": "img/saunabee-sauna-hat-wool-grey-white.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-hats/sauna-hat-grey-and-white-100-wool"
- },
- {
-  "id": "saunabee-rento-bamboo-duo-bucket",
-  "brand": "Saunabee",
-  "category": "bucket-ladle",
-  "name": "Rento Bamboo Duo Sauna Bucket, Dark",
-  "specs": {
-   "manufacturer": "Rento",
-   "material": "Bamboo with plastic inner bucket",
-   "dimensions": "23.5 × 35 cm",
-   "color": "Dark"
-  },
-  "description": {
-   "az": "İstənilən oturacaq ağacı ilə uyğunlaşan tünd bambuk örtüklü Rento Bamboo Duo sauna vedrəsi. Daxili plastik qab təmizliyi asanlaşdırır və xidmət müddətini uzadır; ölçülər 23,5 × 35 sm.",
-   "ru": "Ведро для сауны Rento Bamboo Duo из тёмного бамбука, которое сочетается с любой древесиной полков. Внутренняя пластиковая ёмкость облегчает уход и продлевает срок службы; размеры 23,5 × 35 см.",
-   "en": "The Rento Bamboo Duo sauna bucket in dark bamboo goes well with any bench wood. A plastic inner bucket makes cleaning easy and extends its service life; dimensions 23.5 × 35 cm."
-  },
-  "image": "img/saunabee-rento-bamboo-duo-bucket.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/sauna-bucket-rento-bamboo-duo-dark"
- },
- {
-  "id": "saunabee-black-steel-bucket-ladle-set",
-  "brand": "Saunabee",
-  "category": "bucket-ladle",
-  "name": "Black Steel Bucket 4.5 L and Ladle 42 cm",
-  "specs": {
-   "capacity": "4.5 L",
-   "length": "42 cm (ladle)",
-   "material": "Stainless steel, matte black"
-  },
-  "description": {
-   "az": "4,5 litrlik vedrə və 42 sm-lik çömçədən ibarət uyğun sauna dəsti – hər ikisi mat qara örtüklü paslanmayan poladdan. Müasir saunalar üçün davamlı və zərif seçimdir.",
-   "ru": "Комплект для сауны из ведра 4,5 л и черпака 42 см — оба из нержавеющей стали с матовым чёрным покрытием. Долговечный и стильный вариант для современной сауны.",
-   "en": "A matching sauna set of a 4.5-litre bucket and a 42 cm ladle, both in stainless steel with a matte black finish. A durable, stylish option for contemporary saunas."
-  },
-  "image": "img/saunabee-black-steel-bucket-ladle-set.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/black-steel-bucket-4-5-l-and-ladle-42-cm"
- },
- {
-  "id": "saunabee-leilivihmuti-shower-ladle",
-  "brand": "Saunabee",
-  "category": "bucket-ladle",
-  "name": "Leilivihmuti Ladle with Shower Effect",
-  "specs": {
-   "length": "90 cm",
-   "capacity": "approx. 300 ml",
-   "features": "Shower-head effect spreads water evenly over the stones"
-  },
-  "description": {
-   "az": "Suyu sauna daşlarının üzərinə bərabər səpən duş effektli uzun Leilivihmuti çömçəsi (90 sm, təxminən 300 ml). Bərabər səpələnmə sabit buxar axını yaradır və daşlar adi çömçə ilə müqayisədə daha yavaş soyuyur.",
-   "ru": "Длинный черпак Leilivihmuti (90 см, около 300 мл) с эффектом душа, равномерно распределяющий воду по камням. Равномерное разбрызгивание даёт ровный поток пара, а камни остывают медленнее, чем при обычном черпаке.",
-   "en": "A long Leilivihmuti ladle (90 cm, approx. 300 ml) with a shower-head effect that spreads water evenly over the sauna stones. The even sprinkle produces a steady flow of steam, and the stones cool more slowly than with a regular ladle."
-  },
-  "image": "img/saunabee-leilivihmuti-shower-ladle.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-ladles/leilivihmuti-ladle-with-shower-effect"
- },
- {
-  "id": "saunabee-sauflex-thermotimer-3in1-black",
-  "brand": "Saunabee",
-  "category": "thermometer-hygrometer",
-  "name": "SAUFLEX ThermoTimer 3-in-1, Black",
-  "specs": {
-   "manufacturer": "SAUFLEX",
-   "functions": "Timer 1–99 min, thermometer (°C), hygrometer (%RH)",
-   "protection": "IP54",
-   "color": "Black"
-  },
-  "description": {
-   "az": "SAUFLEX ThermoTimer sauna, buxar hamamı və SPA zonaları üçün 1–99 dəqiqəlik taymeri, termometri və hiqrometri bir qara rəqəmsal cihazda birləşdirir. Böyük rəqəmli ekran, sadə düymə idarəsi və IP54 nəm qoruması var.",
-   "ru": "SAUFLEX ThermoTimer 3-в-1 объединяет таймер на 1–99 минут, термометр и гигрометр в одном чёрном цифровом устройстве для саун, паровых и спа-зон. Крупные цифры на дисплее, простое кнопочное управление и влагозащита IP54.",
-   "en": "The SAUFLEX ThermoTimer 3-in-1 combines a 1–99 minute timer, thermometer and hygrometer in one black digital unit for saunas, steam baths and spa areas. Large-digit display, simple button operation and IP54 moisture protection."
-  },
-  "image": "img/saunabee-sauflex-thermotimer-3in1-black.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-sand-timers/sauflex-3-in-1-multifunctional-timer-thermometer-and-hygrometer-black"
- },
- {
-  "id": "saunabee-taive-headrest",
-  "brand": "Saunabee",
-  "category": "headrest-backrest",
-  "name": "TAIVE® Sauna Headrest",
-  "specs": {
-   "manufacturer": "TAIVE",
-   "dimensions_mm": "300 × 300 × 70",
-   "material": "Finnish birch plywood with European oak veneer; D4 glue"
-  },
-  "description": {
-   "az": "TAIVE® arxa dayağı ilə eyni hamar əyri profilə malik TAIVE® sauna baş dayağı (300 × 300 × 70 mm). Fin tozağacı kontrplakından, üstü Avropa palıdı şponu ilə və deformasiyanı azaldan suya davamlı D4 yapışqanı ilə hazırlanıb.",
-   "ru": "Подголовник для сауны TAIVE® (300 × 300 × 70 мм) с тем же плавным изогнутым профилем, что и спинка TAIVE. Изготовлен из финской берёзовой фанеры с верхним шпоном европейского дуба на влагостойком клее D4 и мало деформируется.",
-   "en": "The TAIVE® sauna headrest (300 × 300 × 70 mm) shares the smooth curved profile of the TAIVE backrest. It is made of Finnish birch plywood with a European oak top veneer and weatherproof D4 glue for low deformation."
-  },
-  "image": "img/saunabee-taive-headrest.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-headrests/taive-headrest-hemlock"
- },
- {
-  "id": "saunabee-sauflex-backrest-aspen",
-  "brand": "Saunabee",
-  "category": "headrest-backrest",
-  "name": "SAUFLEX Foldable Sauna Backrest, Aspen",
-  "specs": {
-   "manufacturer": "SAUFLEX",
-   "material": "Natural aspen",
-   "features": "Foldable; adjustable angle; anatomically curved slatted surface"
-  },
-  "description": {
-   "az": "Təbii titrək qovaqdan hazırlanmış, sauna oturacağında beli dəstəkləyən anatomik əyri, lamelli səthə malik qatlanan SAUFLEX arxa dayağı. Bucağı tənzimlənir və saxlamaq üçün qatlanır; titrək qovaq yüksək temperaturda da bədənə xoş olaraq qalır.",
-   "ru": "Складная спинка SAUFLEX из натуральной осины с анатомически изогнутой реечной поверхностью для поддержки спины на полке. Угол наклона регулируется, в сложенном виде удобно хранится; осина остаётся приятной на ощупь даже при высокой температуре.",
-   "en": "A SAUFLEX foldable backrest made of natural aspen, with an anatomically curved, slatted surface that supports the back on the sauna bench. The angle is adjustable and it folds for storage; aspen stays pleasant to the touch at high temperatures."
-  },
-  "image": "img/saunabee-sauflex-backrest-aspen.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-headrests/sauna-backrest-sauflex-aspen"
- },
- {
-  "id": "saunabee-rento-natural-scent-aurora",
-  "brand": "Saunabee",
-  "category": "aroma",
-  "name": "Rento Natural Sauna Scent Aurora 100 ml",
-  "specs": {
-   "manufacturer": "Rento",
-   "volume": "100 ml",
-   "scent": "Lemongrass & bergamot",
-   "composition": "100% essential oils; vegan",
-   "dosage": "About 3 capfuls per 1 L of water"
-  },
-  "description": {
-   "az": "Təravətli limon otu və berqamot notlu Rento təbii sauna ətri \"Aurora\". 100% efir yağları ilə hazırlanıb və veqan məhsuldur; vedrədəki hər litr suya təxminən üç qapaq əlavə edin. Həcmi 100 ml.",
-   "ru": "Натуральный аромат для сауны Rento «Aurora» со свежими нотами лемонграсса и бергамота. Создан на 100% эфирных маслах, подходит веганам; добавляйте около трёх колпачков на литр воды в ведре. Флакон 100 мл.",
-   "en": "Rento natural sauna scent \"Aurora\" with crisp lemongrass and bergamot notes. Made with 100% essential oils and vegan; add about three capfuls per litre of water in the sauna bucket. 100 ml bottle."
-  },
-  "image": "img/saunabee-rento-natural-scent-aurora.jpg",
-  "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/sauna-essence/rento-natural-sauna-scent-100-ml-aurora"
- },
- {
-  "id": "saunabee-jadeite-stones-polished",
-  "brand": "Saunabee",
-  "category": "stones",
-  "name": "Jadeite Sauna Stones 10–15 cm, 10 kg, Polished",
-  "specs": {
-   "stone_type": "Jadeite, polished",
-   "stone_size": "10–15 cm",
-   "weight_kg": "10"
-  },
-  "description": {
-   "az": "Cilalanmış jadeit sauna daşları, 10–15 sm, 10 kq-lıq qablaşdırmada. Jadeit davamlılığı və istiliyi saxlama qabiliyyəti ilə qiymətləndirilən sıx yarımqiymətli daşdır və sobada adətən adi daşlardan daha uzun xidmət edir.",
-   "ru": "Полированные камни жадеит для сауны, 10–15 см, упаковка 10 кг. Жадеит — плотный полудрагоценный камень, ценимый за прочность и теплоёмкость; на каменке он обычно служит дольше обычных камней.",
-   "en": "Polished jadeite sauna stones, 10–15 cm, in a 10 kg pack. Jadeite is a dense semi-precious stone valued for its durability and heat retention, and it typically lasts longer on the heater than ordinary stones."
-  },
-  "image": "img/saunabee-jadeite-stones-polished.png",
-  "source_url": "https://saunabee.com/sauna-stones/jadeite-sauna-stones-10-15-cm-10kg-polished"
- },
- {
-  "id": "saunabee-horizontal-shower-bucket-15l",
-  "brand": "Saunabee",
-  "category": "other-accessory",
-  "name": "Horizontal Cold Shower Bucket 15 L",
-  "specs": {
-   "capacity": "approx. 15 L",
-   "color": "Black (painted)",
-   "weight_kg": "approx. 7 (with wall holders)",
-   "mounting": "Wall; water connection on either side",
-   "note": "Wall screws not included; wall must carry 42 kg or more"
-  },
-  "description": {
-   "az": "Divara bərkidilən, təxminən 15 litrlik üfüqi soyuq duş vedrəsi (aşırılan rus duşu). Qara rənglənmiş, divar tutacaqları ilə birlikdə çəkisi ~7 kq-dır və su xəttinə hər iki tərəfdən qoşula bilər; divar vintləri dəstə daxil deyil.",
-   "ru": "Настенное горизонтальное обливное ведро (русский холодный душ) объёмом около 15 л. Окрашено в чёрный цвет, весит около 7 кг вместе с кронштейнами, подключение воды возможно с любой стороны; шурупы для крепления не входят в комплект.",
-   "en": "A wall-mounted horizontal cold-shower bucket (Russian-style tipping shower) holding about 15 litres. Painted black, it weighs about 7 kg with the wall holders and can be connected to the water supply from either side; wall screws are not included."
-  },
-  "image": "img/saunabee-horizontal-shower-bucket-15l.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/shower-bucket/horizontal-shower-bucket-cold-shower-russian-shower-15l"
- },
- {
-  "id": "saunabee-birch-sauna-whisk",
-  "brand": "Saunabee",
-  "category": "other-accessory",
-  "name": "Sauna Whisk – Birch",
-  "specs": {
-   "material": "Natural birch branches"
-  },
-  "description": {
-   "az": "Təbii tozağacı budaqlarından hazırlanmış ənənəvi sauna süpürgəsi (venik). Sauna seansı zamanı yüngül masaj və ətirli buxar üçün istifadə olunur; ən çox sevilən süpürgə növüdür.",
-   "ru": "Традиционный берёзовый веник для сауны из натуральных берёзовых веток. Используется для мягкого массажа и ароматного пара во время парения; это самый популярный вид веника.",
-   "en": "A traditional birch sauna whisk made from natural birch branches. It is used for a gentle massage and aromatic steam during the sauna session and is the most popular whisk type."
-  },
-  "image": "img/saunabee-birch-sauna-whisk.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-whisks/sauna-whisk-birch"
- },
- {
-  "id": "saunabee-sauflex-himalayan-salt-lamp",
-  "brand": "Saunabee",
-  "category": "lighting",
-  "name": "SAUFLEX Himalayan Salt Lamp, Natural Shape, 5–7 kg",
-  "specs": {
-   "manufacturer": "SAUFLEX",
-   "material": "Natural Himalayan rock salt",
-   "weight_kg": "5–7"
-  },
-  "description": {
-   "az": "5–7 kq çəkili, təbii formalı SAUFLEX Himalay duz lampası. Sauna yanındakı istirahət otağı və ya lounge zonası üçün isti kəhrəba rəngli işıq yayır.",
-   "ru": "Гималайская солевая лампа SAUFLEX натуральной формы весом 5–7 кг. Даёт тёплое янтарное свечение для комнаты отдыха или лаунж-зоны рядом с сауной.",
-   "en": "A SAUFLEX Himalayan salt lamp in a natural, rough-cut shape weighing 5–7 kg. It gives a warm amber glow for the relaxation room or lounge next to the sauna."
-  },
-  "image": "img/saunabee-sauflex-himalayan-salt-lamp.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/himalayan-salt-lamps/sauflex-himalaya-salt-lamp-natural-shape-5-7-kg"
- },
- {
-  "id": "saunabee-led-strip-warm-white-ip67",
-  "brand": "Saunabee",
-  "category": "lighting",
-  "name": "Sauna LED Strip Warm White IP67, 5 m",
-  "specs": {
-   "length": "5 m",
-   "voltage": "12 V DC (constant voltage)",
-   "power": "8 W/m",
-   "leds_per_m": "120",
-   "color_temperature": "3500 K",
-   "protection": "IP67",
-   "note": "Constant-voltage driver required (not included); 20 mounting clips included"
-  },
-  "description": {
-   "az": "Sauna və SPA işıqlandırması üçün isti ağ (3500 K) LED lent: 5 m-lik çarx, 12 V DC, metrə 8 Vt və metrə 120 LED. IP67 qoruma dərəcəlidir, 20 bərkidici klipslə gəlir; uyğun sabit gərginlikli qida bloku tələb olunur.",
-   "ru": "Светодиодная лента тёплого белого света (3500 K) для сауны и спа: катушка 5 м, 12 В DC, 8 Вт/м, 120 светодиодов на метр. Степень защиты IP67, в комплекте 20 клипс; нужен подходящий блок питания постоянного напряжения.",
-   "en": "A warm white (3500 K) LED strip for sauna and spa lighting: 5 m reel, 12 V DC, 8 W per metre and 120 LEDs per metre. IP67-rated and supplied with 20 mounting clips; a suitable constant-voltage driver is required."
-  },
-  "image": "img/saunabee-led-strip-warm-white-ip67.jpg",
-  "source_url": "https://saunabee.com/sauna-and-hammam-lighting/sauna-led-lights/sauna-led-warm-white-ip67-5m-3500k-12v-8w-1m"
- },
- {
   "id": "saunabee-harvia-illuminated-led-bucket-7l",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "bucket-ladle",
   "name": "Harvia Illuminated LED Bucket 7 L",
   "specs": {
@@ -1303,28 +1061,8 @@
   "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/harvia-illuminated-led-bucket-7-0-l"
  },
  {
-  "id": "saunabee-huum-tasa-pail-black",
-  "brand": "Saunabee",
-  "category": "bucket-ladle",
-  "name": "HUUM TASA Sauna Pail, Black",
-  "specs": {
-   "manufacturer": "HUUM",
-   "material": "Black-painted wood, removable plastic liner",
-   "size": "273 × 273 × 192 mm",
-   "weight": "1 kg",
-   "model_code": "HM009011"
-  },
-  "description": {
-   "az": "Qara rənglənmiş ağacdan hazırlanmış HUUM TASA vedrəsi daşlara su atmaq üçün rahat və möhkəmdir. Çıxarıla bilən plastik daxili qab ağacı nəmdən qoruyur və təmizliyi asanlaşdırır; ölçüsü 273 × 273 × 192 mm-dir.",
-   "ru": "Ведро HUUM TASA из окрашенной в чёрный цвет древесины — удобное и прочное для подачи воды на камни. Съёмный пластиковый вкладыш защищает дерево от влаги и упрощает уход; размер 273 × 273 × 192 мм.",
-   "en": "The HUUM TASA pail in black-painted wood is a sturdy, easy way to hold water for the stones. A removable plastic liner protects the wood and makes cleaning simple; it measures 273 × 273 × 192 mm."
-  },
-  "image": "img/saunabee-huum-tasa-pail-black.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/sauna-pail-huum-tasa-black"
- },
- {
   "id": "saunabee-harvia-click-pail-ladle-set",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "bucket-ladle",
   "name": "Harvia Click Pail and Ladle Set, Black",
   "specs": {
@@ -1342,26 +1080,8 @@
   "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/harvia-click-pail-and-ladle-set"
  },
  {
-  "id": "saunabee-rento-bamboo-ladle-dark-43cm",
-  "brand": "Saunabee",
-  "category": "bucket-ladle",
-  "name": "Rento Bamboo Ladle, Dark, 43 cm",
-  "specs": {
-   "manufacturer": "Rento",
-   "material": "Dark bamboo",
-   "size": "43 cm"
-  },
-  "description": {
-   "az": "Tünd bambukdan hazırlanmış 43 sm-lik Rento sauna çömçəsi – təbii material oturacaqların ağacı ilə gözəl uyğunlaşır. Yumşaq sabunlu su ilə təmizləyin, onu suda və ya isti saunada qoyub getməyin.",
-   "ru": "Черпак Rento длиной 43 см из тёмного бамбука — натуральный материал красиво сочетается с древесиной полков. Мойте мягким мыльным раствором и не оставляйте черпак в воде или в горячей сауне.",
-   "en": "A 43 cm Rento sauna ladle in dark bamboo, a natural material that goes well with sauna bench wood. Clean it with mild soapy water and do not leave it soaking or in a hot sauna."
-  },
-  "image": "img/saunabee-rento-bamboo-ladle-dark-43cm.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-ladles/bamboo-ladle-rento-bamboo-dark-43-cm"
- },
- {
   "id": "saunabee-harvia-helmi-pail-ladle-terracotta",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "bucket-ladle",
   "name": "Harvia Helmi Pail and Ladle, Terracotta",
   "specs": {
@@ -1377,64 +1097,6 @@
   },
   "image": "img/saunabee-harvia-helmi-pail-ladle-terracotta.jpg",
   "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/sauna-accessories-harvia-helmi-pail-and-ladle-terracotta"
- },
- {
-  "id": "saunabee-saunia-copper-bucket-ladle-set",
-  "brand": "Saunabee",
-  "category": "bucket-ladle",
-  "name": "Saunia Copper Bucket and Ladle Set",
-  "specs": {
-   "manufacturer": "Saunia",
-   "material": "Copper",
-   "size": "Bucket 4 L; ladle 40 cm"
-  },
-  "description": {
-   "az": "Saunia-dan klassik mis dəst: 4 litrlik vedrə və 40 sm-lik çömçə. Misin isti parıltısı saunaya ənənəvi və bayram əhval-ruhiyyəli görünüş qatır.",
-   "ru": "Классический медный набор Saunia: ведро на 4 л и черпак длиной 40 см. Тёплый блеск меди придаёт сауне традиционный, праздничный вид.",
-   "en": "A classic copper sauna set by Saunia: a 4-litre bucket and a 40 cm ladle. The warm shine of copper gives the sauna a traditional, festive look."
-  },
-  "image": "img/saunabee-saunia-copper-bucket-ladle-set.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/saunia-set-of-copper-bucket-and-ladle"
- },
- {
-  "id": "saunabee-cariitti-led-illuminated-bowl-5l",
-  "brand": "Saunabee",
-  "category": "bucket-ladle",
-  "name": "Cariitti LED Illuminated Bowl 5 L",
-  "specs": {
-   "manufacturer": "Cariitti",
-   "material": "Frosted glacier-green acrylic (satin)",
-   "size": "Ø 320 mm, height 180 mm",
-   "power": "1 W / 350 mA",
-   "protection": "IP67",
-   "note": "Power supply and 5 m cable included; install max. 1 m above the floor"
-  },
-  "description": {
-   "az": "Buzlu-yaşıl matlaşdırılmış akrildən hazırlanmış işıqlı sauna qabı, ayrıca işıq mənbəyi kimi də istifadə oluna bilər. IP67 qida bloku və 5 m kabel ilə gəlir; qabın diametri 320 mm, hündürlüyü 180 mm, gücü 1 Vt-dır.",
-   "ru": "Светящаяся чаша для сауны из матового акрила цвета ледниковой зелени, которую можно использовать и как самостоятельный светильник. В комплекте блок питания IP67 и кабель 5 м; диаметр чаши 320 мм, высота 180 мм, мощность 1 Вт.",
-   "en": "An illuminated sauna bowl of frosted glacier-green acrylic that also works as a stand-alone light. It comes with an IP67 power supply and a 5 m cable; the bowl is 320 mm across, 180 mm high and draws 1 W."
-  },
-  "image": "img/saunabee-cariitti-led-illuminated-bowl-5l.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/cariitti-led-illuminated-bowl-5-0-l"
- },
- {
-  "id": "saunabee-tesli-thermal-steamer-20l",
-  "brand": "Saunabee",
-  "category": "bucket-ladle",
-  "name": "Tesli Thermal Steamer 20 L with Stainless Steel Insert and Lid",
-  "specs": {
-   "manufacturer": "Tesli",
-   "material": "Thermowood, stainless steel insert and hoops",
-   "size": "Ø 345 mm, height 360 mm (445 mm wide with handles)",
-   "capacity": "20 L"
-  },
-  "description": {
-   "az": "Sauna süpürgələrini islatmaq üçün 20 litrlik termoağac qab: paslanmayan polad daxili qab, polad halqalar və süpürgə sapı üçün dəlikli qapaqla. Suyu uzun müddət isti saxlayır və iki tutacağı sayəsində rahat daşınır.",
-   "ru": "Запарник объёмом 20 л из термодерева для веников: со вкладышем из нержавеющей стали, стальными обручами и крышкой с отверстием для ручки веника. Долго сохраняет воду горячей, а две ручки делают его удобным в переноске.",
-   "en": "A 20-litre thermowood steamer for soaking sauna whisks, with a stainless steel insert, steel hoops and a lid with a hole for the whisk handle. It keeps water hot for a long time and has two carrying handles."
-  },
-  "image": "img/saunabee-tesli-thermal-steamer-20l.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-buckets-pails-basins/steamer-thermal-20-l-with-stainless-steel-insert-with-a-lid-bucket"
  },
  {
   "id": "sawo-dragon-pail-4l",
@@ -1532,65 +1194,8 @@
   "source_url": "https://www.sawo.com/accessory-products/#section-ladles"
  },
  {
-  "id": "saunabee-cariitti-light-thermo-hygrometer-black",
-  "brand": "Saunabee",
-  "category": "thermometer-hygrometer",
-  "name": "Cariitti Light Sauna Thermometer-Hygrometer, Black",
-  "specs": {
-   "manufacturer": "Cariitti",
-   "material": "Satin glass and stainless steel",
-   "size": "220 × 205 mm, recess 40 mm",
-   "note": "Can be lit with two 2–4 mm glass fibres"
-  },
-  "description": {
-   "az": "Dəniz sahili daşını xatırladan təbii formalı, birləşmiş termometr-hiqrometr. Mat şüşədən və paslanmayan poladdan hazırlanıb, iki optik lif ilə işıqlandırıla bilər; ölçüsü 220 × 205 mm.",
-   "ru": "Комбинированный термометр-гигрометр природной формы, напоминающей прибрежный камень. Выполнен из матового стекла и нержавеющей стали, может подсвечиваться двумя оптическими волокнами; размер 220 × 205 мм.",
-   "en": "A combined thermometer and hygrometer with a natural shape like a seaside stone. It is made of satin glass and stainless steel, can be lit with two glass fibres and measures 220 × 205 mm."
-  },
-  "image": "img/saunabee-cariitti-light-thermo-hygrometer-black.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-thermometers-and-hygrometers/cariitti-light-sauna-thermometer-hygrometer-black"
- },
- {
-  "id": "saunabee-tfa-thermo-hygrometer-oak",
-  "brand": "Saunabee",
-  "category": "thermometer-hygrometer",
-  "name": "TFA Dostmann Analogue Sauna Thermo-Hygrometer, Oak Frame",
-  "specs": {
-   "manufacturer": "TFA Dostmann (Germany)",
-   "material": "Oiled oak frame, heat-resistant materials",
-   "model_code": "40.1052.01"
-  },
-  "description": {
-   "az": "Almaniyada istehsal olunan, saunada temperaturu və rütubəti ölçən analoq termo-hiqrometr. Yağlanmış palıd çərçivəsi və rənglə işarələnmiş optimal zona ilə iqlimi bir baxışda yoxlamağa imkan verir.",
-   "ru": "Аналоговый термогигрометр немецкого производства для измерения температуры и влажности в сауне. Рамка из промасленного дуба и цветная отметка оптимальной зоны позволяют оценить климат с одного взгляда.",
-   "en": "An analogue thermo-hygrometer made in Germany that measures sauna temperature and humidity. The oiled oak frame and a colour-marked comfort zone let you check the climate at a glance."
-  },
-  "image": "img/saunabee-tfa-thermo-hygrometer-oak.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-thermometers-and-hygrometers/analogue-sauna-thermo-hygrometer-with-oak-frame-dostmann-tfa-40-1052-01"
- },
- {
-  "id": "saunabee-huum-tasa-sand-timer-black",
-  "brand": "Saunabee",
-  "category": "thermometer-hygrometer",
-  "name": "HUUM TASA Sand Timer 15 min, Black",
-  "specs": {
-   "manufacturer": "HUUM",
-   "material": "Black-painted wood, heat-resistant glass",
-   "size": "365 × 57 × 36 mm",
-   "time": "15 min",
-   "model_code": "HM012011"
-  },
-  "description": {
-   "az": "Sauna seanslarının vaxtını izləmək üçün möhkəm taxta çərçivəli klassik HUUM TASA qum saatı. İstiyə davamlı şüşədəki narın qum 15 dəqiqəni dəqiq ölçür – sadəcə çevirmək kifayətdir.",
-   "ru": "Классические песочные часы HUUM TASA в прочной деревянной рамке для контроля времени в сауне. Мелкий песок в термостойком стекле точно отмеряет 15 минут — достаточно просто перевернуть.",
-   "en": "The HUUM TASA sand timer is a classic hourglass in a sturdy wooden frame for timing sauna sessions. Fine sand in heat-resistant glass measures 15 minutes; just flip it to start."
-  },
-  "image": "img/saunabee-huum-tasa-sand-timer-black.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-sand-timers/sand-timer-for-sauna-huum-tasa-15-min-black"
- },
- {
   "id": "saunabee-harvia-helmi-sand-timer-ivory",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "thermometer-hygrometer",
   "name": "Harvia Helmi Sand Timer, Ivory",
   "specs": {
@@ -1605,26 +1210,6 @@
   },
   "image": "img/saunabee-harvia-helmi-sand-timer-ivory.jpg",
   "source_url": "https://saunabee.com/sauna-accessories/sauna-sand-timers/sand-timer-for-sauna-harvia-helmi-ivory"
- },
- {
-  "id": "saunabee-eos-excellent-climate-station-100dl",
-  "brand": "Saunabee",
-  "category": "thermometer-hygrometer",
-  "name": "EOS Excellent Climate Station 100DL",
-  "specs": {
-   "manufacturer": "EOS",
-   "material": "Solid walnut and maple frame, anthracite pearl-effect metal plate",
-   "size": "Ø 100 mm instruments",
-   "range": "0–120 °C / 0–100 % RH",
-   "model_code": "94.6025"
-  },
-  "description": {
-   "az": "Antrasit metal lövhəyə yerləşdirilmiş Ø 100 mm termometr və hiqrometrdən ibarət dizayner sauna iqlim stansiyası. Çərçivəsi masif qoz və ağcaqayın ağacının birləşməsindən hazırlanıb, divara asılır.",
-   "ru": "Дизайнерская климатическая станция для сауны: термометр и гигрометр Ø 100 мм на антрацитовой металлической пластине. Рамка из массива ореха в сочетании с клёном, настенный монтаж.",
-   "en": "A designer sauna climate station with a Ø 100 mm thermometer and hygrometer on an anthracite metal plate. The wall-hung frame combines solid walnut and maple."
-  },
-  "image": "img/saunabee-eos-excellent-climate-station-100dl.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-thermometers-and-hygrometers/eos-excellent-climate-station-100dl"
  },
  {
   "id": "sawo-kanto-thermometer",
@@ -1681,79 +1266,6 @@
   },
   "image": "img/sawo-wooden-pail-clock.webp",
   "source_url": "https://www.sawo.com/accessory-products/#section-clock-timer"
- },
- {
-  "id": "saunabee-huum-tasa-headrest-black",
-  "brand": "Saunabee",
-  "category": "headrest-backrest",
-  "name": "HUUM TASA Sauna Headrest, Black",
-  "specs": {
-   "manufacturer": "HUUM",
-   "material": "Black-painted wood",
-   "size": "177 × 177 × 59 mm",
-   "model_code": "HM013011"
-  },
-  "description": {
-   "az": "Dörd elastik hissədən ibarət HUUM TASA baş dayağı ənənəvi dayaqlardan fərqli görünür və başa xüsusilə rahat dəstək verir. Qara rənglənmiş ağacdan hazırlanıb, ölçüsü 177 × 177 × 59 mm-dir.",
-   "ru": "Подголовник HUUM TASA из четырёх гибких секций выглядит иначе, чем традиционные модели, и особенно удобно поддерживает голову и шею. Окрашенное в чёрный цвет дерево, размер 177 × 177 × 59 мм.",
-   "en": "The HUUM TASA headrest has four flexible sections, so it looks different from traditional headrests and supports the head and neck especially comfortably. Black-painted wood, 177 × 177 × 59 mm."
-  },
-  "image": "img/saunabee-huum-tasa-headrest-black.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-headrests/headrest-for-sauna-huum-tasa-black"
- },
- {
-  "id": "saunabee-harvia-luhta-sauna-pillow",
-  "brand": "Saunabee",
-  "category": "headrest-backrest",
-  "name": "Harvia by Luhta Sauna Pillow",
-  "specs": {
-   "manufacturer": "Harvia × Luhta",
-   "material": "Waffle-weave linen-cotton",
-   "model_code": "SAC80300"
-  },
-  "description": {
-   "az": "Dəriyə xoş gələn keyfiyyətli vafli kətan-pambıq parçadan Harvia by Luhta sauna yastığı. Yumşaq yastığı oturacaqda istədiyiniz yerə qoyun – istilik və rütubətdən asılı olmayaraq rahat qalır.",
-   "ru": "Подушка для сауны Harvia by Luhta из качественного вафельного льна с хлопком, приятного для кожи. Мягкую подушку можно положить на полок в любом удобном месте — она комфортна при любой температуре и влажности.",
-   "en": "A Harvia by Luhta sauna pillow in high-quality waffle linen-cotton that feels pleasant on the skin. Place the soft pillow anywhere on the bench; it stays comfortable at any heat and humidity."
-  },
-  "image": "img/saunabee-harvia-luhta-sauna-pillow.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-headrests/harvia-by-luhta-sauna-pillow"
- },
- {
-  "id": "saunabee-rento-kenno-sauna-cushion",
-  "brand": "Saunabee",
-  "category": "headrest-backrest",
-  "name": "Rento Kenno Sauna Cushion",
-  "specs": {
-   "manufacturer": "Rento",
-   "material": "75 % recycled cotton, 25 % polyester; polyester filling",
-   "size": "50 × 22 cm"
-  },
-  "description": {
-   "az": "Sauna oturacağında baş və boyuna dəstək verən, bir tərəfi şambre haşiyəli rahat Rento Kenno yastığı (50 × 22 sm). Təkrar emal olunmuş pambıqdan hazırlanıb, 40 °C-də maşında yuyula bilər.",
-   "ru": "Удобная подушка Rento Kenno (50 × 22 см) с окантовкой из шамбре с одной стороны — для поддержки головы и шеи на полке. Сделана из переработанного хлопка, допускает машинную стирку при 40 °C.",
-   "en": "A comfy Rento Kenno cushion (50 × 22 cm) with a chambray border on one side, for head and neck support on the bench. Made with recycled cotton and machine washable at 40 °C."
-  },
-  "image": "img/saunabee-rento-kenno-sauna-cushion.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-headrests/rento-kenno-sauna-cushion"
- },
- {
-  "id": "saunabee-tesli-delta-thermo-headrest",
-  "brand": "Saunabee",
-  "category": "headrest-backrest",
-  "name": "Tesli Delta Thermowood Headrest",
-  "specs": {
-   "manufacturer": "Tesli",
-   "material": "Thermowood",
-   "size": "approx. 360 × 280 mm"
-  },
-  "description": {
-   "az": "Hamar, axıcı formalı zərif Delta baş dayağı saunada və istirahət otağında başı və boyun nahiyəsini rahat saxlayır. Termoağacdan hazırlandığı üçün nəmə və yüksək temperatura davamlıdır, formasını itirmir.",
-   "ru": "Элегантный подголовник Delta с плавными обтекаемыми формами удобно поддерживает голову и шею в парной и комнате отдыха. Изготовлен из термодерева, устойчив к влаге и высоким температурам и не деформируется.",
-   "en": "The elegant Delta headrest has smooth, flowing lines that support the head and neck in the sauna or relaxation room. Made of thermowood, it resists moisture and heat and keeps its shape."
-  },
-  "image": "img/saunabee-tesli-delta-thermo-headrest.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-headrests/delta-thermo-headrest-350x280mm"
  },
  {
   "id": "sawo-wave-wooden-backrest",
@@ -1831,28 +1343,8 @@
   "source_url": "https://www.sawo.com/accessory-products/#section-benches"
  },
  {
-  "id": "saunabee-huum-ovo-sauna-light-black",
-  "brand": "Saunabee",
-  "category": "lighting",
-  "name": "HUUM OVO Sauna Light, Black",
-  "specs": {
-   "manufacturer": "HUUM",
-   "material": "Black wooden front panel with oak trim",
-   "size": "185 × 275 × 70 mm",
-   "light": "2 W, 216 lm, 3000 K (LED included)",
-   "model_code": "OVO02"
-  },
-  "description": {
-   "az": "Taxta ön panelin arxasından yayılan yumşaq işığı ilə ənənəvi tüstülü sauna atmosferi yaradan qara HUUM OVO LED lampası. Ölçüsü 185 × 275 × 70 mm; 2 Vt, 216 lm, 3000 K, LED dəstə daxildir.",
-   "ru": "Чёрный LED-светильник HUUM OVO: мягкий свет из-за деревянной передней панели создаёт атмосферу традиционной «чёрной» бани. Размер 185 × 275 × 70 мм; 2 Вт, 216 лм, 3000 K, светодиод в комплекте.",
-   "en": "The black HUUM OVO LED light casts a soft glow from behind its wooden front panel, evoking a traditional smoke sauna. 185 × 275 × 70 mm; 2 W, 216 lm, 3000 K, LED included."
-  },
-  "image": "img/saunabee-huum-ovo-sauna-light-black.png",
-  "source_url": "https://saunabee.com/sauna-and-hammam-lighting/sauna-lamps/sauna-light-huum-ovo-black"
- },
- {
   "id": "saunabee-harvia-led-strip-5m-wx441",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "lighting",
   "name": "Harvia LED Strip 5 m",
   "specs": {
@@ -1870,49 +1362,8 @@
   "source_url": "https://saunabee.com/sauna-and-hammam-lighting/sauna-led-lights/harvia-led-strip-5m-wx441"
  },
  {
-  "id": "saunabee-airam-saunaled-260trl-8w",
-  "brand": "Saunabee",
-  "category": "lighting",
-  "name": "Airam Saunaled LED Light 260TRL 8 W",
-  "specs": {
-   "manufacturer": "Airam",
-   "material": "Aluminium body, Finnish alder frame",
-   "power": "8 W",
-   "colour_temperature": "2700 K",
-   "control": "Triac dimmable",
-   "mounting": "Surface or recessed, max. 1 m above floor"
-  },
-  "description": {
-   "az": "Fin qızılağacından çərçivəsi və alüminium korpusu olan Airam Saunaled LED sauna işığı (8 Vt, 2700 K). Triak dimmerlə işıq səviyyəsi tənzimlənir; səthə və ya gömmə quraşdırılır.",
-   "ru": "Светодиодный светильник для сауны Airam Saunaled с алюминиевым корпусом и рамкой из финской ольхи (8 Вт, 2700 K). Яркость регулируется симисторным диммером; накладной или встраиваемый монтаж.",
-   "en": "An Airam Saunaled LED sauna light with an aluminium body and a Finnish alder frame (8 W, 2700 K). The brightness is adjustable with a triac dimmer, and it can be surface or recess mounted."
-  },
-  "image": "img/saunabee-airam-saunaled-260trl-8w.jpg",
-  "source_url": "https://saunabee.com/sauna-and-hammam-lighting/sauna-lamps/saunaled-led-light-260trl-8w"
- },
- {
-  "id": "saunabee-cariitti-crystal-star-led-set",
-  "brand": "Saunabee",
-  "category": "lighting",
-  "name": "Cariitti Crystal Star LED Sauna Lighting Set",
-  "specs": {
-   "manufacturer": "Cariitti",
-   "material": "Chrome-finish LED crystals, plastic optical fibres",
-   "size": "75 fibres × 4.0 m (Ø 0.75 mm)",
-   "contents": "6 crystals (2 × CR-12, 2 × CR-16, 2 × CR-31), LED driver, cables",
-   "colour_temperature": "4000 K"
-  },
-  "description": {
-   "az": "Sauna tavanında ulduzlu səma effekti yaradan Cariitti işıqlandırma dəsti: 75 incə optik lif və 6 xrom LED kristal. LED drayveri və lazımi kabellər dəstə daxildir; işıq tonu 4000 K.",
-   "ru": "Комплект Cariitti для эффекта звёздного неба на потолке сауны: 75 тонких оптических волокон и 6 хромированных LED-кристаллов. LED-драйвер и необходимые кабели в комплекте; цветовая температура 4000 K.",
-   "en": "A Cariitti lighting set that creates a starry-sky effect on the sauna ceiling, with 75 thin optical fibres and 6 chrome LED crystals. The LED driver and cables are included; light colour 4000 K."
-  },
-  "image": "img/saunabee-cariitti-crystal-star-led-set.jpg",
-  "source_url": "https://saunabee.com/sauna-and-hammam-lighting/sauna-lamps/cariitti-crystal-star-led-sauna-lighting"
- },
- {
   "id": "saunabee-harvia-fiber-2-optic-lighting",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "lighting",
   "name": "Harvia Fiber 2 Fibre-Optic Sauna Lighting",
   "specs": {
@@ -1933,7 +1384,7 @@
  },
  {
   "id": "saunabee-harvia-corner-lamp-shade",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "lighting",
   "name": "Harvia Sauna Corner Lamp Shade",
   "specs": {
@@ -2028,7 +1479,7 @@
  },
  {
   "id": "saunabee-harvia-bath-towel-90x170-black",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "textile",
   "name": "Harvia Bath Towel 90 × 170 cm, Black",
   "specs": {
@@ -2046,137 +1497,8 @@
   "source_url": "https://saunabee.com/sauna-accessories/sauna-clothes/bath-towel-harvia-sac80401-90x170-cm-black"
  },
  {
-  "id": "saunabee-huum-ovo-bath-robe",
-  "brand": "Saunabee",
-  "category": "textile",
-  "name": "HUUM OVO Bath Robe, L/XL",
-  "specs": {
-   "manufacturer": "HUUM",
-   "material": "100 % OEKO-TEX cotton, 230 g/m²",
-   "size": "L/XL",
-   "model_code": "OVO05"
-  },
-  "description": {
-   "az": "Sauna üçün 100% OEKO-TEX sertifikatlı pambıqdan (230 q/m²) üslublu və rahat HUUM OVO xalatı. Saunadan sonra istirahət üçün yüngül və nəfəs alan seçimdir; ölçü L/XL.",
-   "ru": "Стильный и удобный халат HUUM OVO для сауны из 100 % хлопка с сертификатом OEKO-TEX (230 г/м²). Лёгкий и дышащий — для отдыха после парной; размер L/XL.",
-   "en": "A stylish, comfortable HUUM OVO sauna robe in 100 % OEKO-TEX cotton (230 g/m²). Light and breathable for relaxing after the sauna; size L/XL."
-  },
-  "image": "img/saunabee-huum-ovo-bath-robe.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-clothes/bath-robe-huum-ovo-l-xl"
- },
- {
-  "id": "saunabee-huum-ovo-towel-set",
-  "brand": "Saunabee",
-  "category": "textile",
-  "name": "HUUM OVO Bath Towel Set",
-  "specs": {
-   "manufacturer": "HUUM",
-   "material": "100 % OEKO-TEX cotton, 230 g/m²",
-   "size": "100 × 200 cm + 45 × 85 cm"
-  },
-  "description": {
-   "az": "İki dəsmaldan ibarət üslublu HUUM OVO sauna dəsti: 100 × 200 sm böyük və 45 × 85 sm kiçik dəsmal. 100% OEKO-TEX sertifikatlı pambıqdan (230 q/m²) hazırlanıb.",
-   "ru": "Стильный набор полотенец HUUM OVO для сауны: большое 100 × 200 см и малое 45 × 85 см. Изготовлены из 100 % хлопка с сертификатом OEKO-TEX (230 г/м²).",
-   "en": "A stylish HUUM OVO sauna towel set with one large 100 × 200 cm towel and one small 45 × 85 cm towel. Made of 100 % OEKO-TEX cotton (230 g/m²)."
-  },
-  "image": "img/saunabee-huum-ovo-towel-set.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-clothes/bath-towel-set-huum-ovo"
- },
- {
-  "id": "saunabee-rento-pino-seat-cover-grey",
-  "brand": "Saunabee",
-  "category": "textile",
-  "name": "Rento Pino Sauna Seat Cover, Grey, 50 × 150 cm",
-  "specs": {
-   "manufacturer": "Rento",
-   "material": "100 % organic cotton, jacquard weave",
-   "size": "50 × 150 cm",
-   "design": "Anna Säteri"
-  },
-  "description": {
-   "az": "Jakkard toxunuşlu uzun Rento Pino sauna oturacaq örtüyü (50 × 150 sm) yuyulduqdan sonra da formasını və naxışını qoruyur. Orqanik pambıq dəriyə sərin gəlir, nəmi yaxşı çəkir və tez quruyur.",
-   "ru": "Длинная жаккардовая подстилка Rento Pino для полка (50 × 150 см) сохраняет форму и узор после стирок. Органический хлопок ощущается прохладным, хорошо впитывает влагу и быстро сохнет.",
-   "en": "A long jacquard-woven Rento Pino sauna seat cover (50 × 150 cm) that keeps its shape and pattern wash after wash. The organic cotton feels cool, absorbs moisture well and dries quickly."
-  },
-  "image": "img/saunabee-rento-pino-seat-cover-grey.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-seats/rento-pino-sauna-seat-cover-grey-50x150-cm"
- },
- {
-  "id": "saunabee-rento-kenno-sauna-hat-dark-blue",
-  "brand": "Saunabee",
-  "category": "textile",
-  "name": "Rento Kenno Sauna Hat, Dark Blue",
-  "specs": {
-   "manufacturer": "Rento",
-   "material": "75 % recycled cotton, 25 % polyester",
-   "size": "32 × 36 cm"
-  },
-  "description": {
-   "az": "Saçı və baş dərisini saunanın istisindən qoruyan tünd göy Rento Kenno papağı; qışda isti hovuzda başı isti saxlayır. Ölçüsü və forması həm qadınlara, həm kişilərə uyğundur.",
-   "ru": "Тёмно-синяя шапка Rento Kenno защищает волосы и кожу головы от жара сауны, а зимой согревает голову в горячей купели. Размер и форма подходят и женщинам, и мужчинам.",
-   "en": "The dark blue Rento Kenno sauna hat protects hair and scalp from the heat, and in winter keeps your head warm in the hot tub. Its size and shape suit both women and men."
-  },
-  "image": "img/saunabee-rento-kenno-sauna-hat-dark-blue.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-hats/rento-kenno-sauna-hat-dark-blue"
- },
- {
-  "id": "saunabee-sauna-hat-viking-wool",
-  "brand": "Saunabee",
-  "category": "textile",
-  "name": "Sauna Hat \"Viking\", 100 % Wool",
-  "specs": {
-   "manufacturer": "Not stated by retailer",
-   "material": "100 % natural wool felt",
-   "size": "One size, unisex"
-  },
-  "description": {
-   "az": "Vikinq dəbilqəsi formasında, 100% təbii yun keçədən sauna papağı. Keçə başı həddindən artıq qızmaqdan qoruyur və artıq nəmi çəkir; ölçüsü universal, soyuq suda əllə yuyulur.",
-   "ru": "Банная шапка в виде шлема викинга из 100 % натурального шерстяного войлока. Войлок защищает голову от перегрева и впитывает лишнюю влагу; универсальный размер, ручная стирка в холодной воде.",
-   "en": "A sauna hat shaped like a Viking helmet, made of 100 % natural wool felt. The felt protects the head from overheating and absorbs excess moisture; one size, hand wash in cold water."
-  },
-  "image": "img/saunabee-sauna-hat-viking-wool.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-hats/sauna-hat-viking-100-wool"
- },
- {
-  "id": "saunabee-sauna-hat-flowers-wool-grey",
-  "brand": "Saunabee",
-  "category": "textile",
-  "name": "Sauna Hat \"Flowers\", 100 % Wool, Grey",
-  "specs": {
-   "manufacturer": "Not stated by retailer",
-   "material": "100 % natural wool felt",
-   "size": "One size, unisex"
-  },
-  "description": {
-   "az": "Boz rəngli, 100% təbii yun keçədən klassik sauna papağı. Yüksək istilik izolyasiyası sayəsində saçı istidən qoruyur və bədənin istilik tənzimini pozmamağa kömək edir.",
-   "ru": "Классическая серая банная шапка из 100 % натурального шерстяного войлока. Благодаря высокой теплоизоляции защищает волосы от жара и помогает избежать перегрева.",
-   "en": "A classic grey sauna hat made of 100 % natural wool felt. Its high thermal insulation protects the hair from the heat and helps prevent overheating."
-  },
-  "image": "img/saunabee-sauna-hat-flowers-wool-grey.png",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-hats/sauna-hat-flowers-100-wool-grey"
- },
- {
-  "id": "saunabee-waffle-sauna-kilt-75x150-white",
-  "brand": "Saunabee",
-  "category": "textile",
-  "name": "Unisex Waffle Sauna Kilt 75 × 150 cm, White",
-  "specs": {
-   "manufacturer": "Not stated by retailer",
-   "material": "Cotton waffle fabric",
-   "size": "75 × 150 cm",
-   "fastening": "Elastic and Velcro"
-  },
-  "description": {
-   "az": "Həm qadınlar, həm də kişilər üçün vafli pambıqdan ağ sauna kilti (75 × 150 sm). Nəmi yaxşı çəkir, rezin və velkro ilə beldə və ya sinədə etibarlı bərkidilir.",
-   "ru": "Белый вафельный килт для сауны из хлопка (75 × 150 см), подходит и женщинам, и мужчинам. Хорошо впитывает влагу и надёжно фиксируется на талии или груди резинкой и липучкой.",
-   "en": "A white cotton waffle sauna kilt (75 × 150 cm) for both women and men. It absorbs moisture well and fastens securely at the waist or chest with elastic and Velcro."
-  },
-  "image": "img/saunabee-waffle-sauna-kilt-75x150-white.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-clothes/sauna-men-women-unisex-waffle-towel-kilt-75x150cm-white"
- },
- {
   "id": "saunabee-harvia-scent-royal-eucament-100ml",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "aroma",
   "name": "Harvia Sauna Scent Royal Eucament 100 ml",
   "specs": {
@@ -2195,7 +1517,7 @@
  },
  {
   "id": "saunabee-harvia-scent-mountain-pine-100ml",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "aroma",
   "name": "Harvia Sauna Scent Mountain Pine 100 ml",
   "specs": {
@@ -2213,45 +1535,8 @@
   "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/sauna-essence/sauna-scent-harvia-mountain-pine-100-ml"
  },
  {
-  "id": "saunabee-rento-natural-scent-wilderness-forest",
-  "brand": "Saunabee",
-  "category": "aroma",
-  "name": "Rento Natural Sauna Scent Wilderness Forest 100 ml",
-  "specs": {
-   "manufacturer": "Rento",
-   "volume": "100 ml",
-   "composition": "100 % essential oils, bio-based denatured alcohol, water; vegan"
-  },
-  "description": {
-   "az": "Şam və küknar iynələrinin, yüngül vanil çalarlı yumşaq odun ətri ilə Rento təbii sauna aroması. Tərkibi 100% efir yağlarından ibarətdir və veqandır.",
-   "ru": "Натуральный аромат для сауны Rento Wilderness Forest: хвоя сосны и ели, мягкая древесная нота с оттенком ванили. Состав на основе 100 % эфирных масел, веганский.",
-   "en": "Rento Wilderness Forest is a natural sauna scent of pine and spruce needles with a soft, woody note and a hint of vanilla. It is made with 100 % essential oils and is vegan."
-  },
-  "image": "img/saunabee-rento-natural-scent-wilderness-forest.jpg",
-  "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/sauna-essence/rento-natural-sauna-scent-100-ml-wilderness-forest"
- },
- {
-  "id": "saunabee-sauflex-essential-oils-forest-5x15ml",
-  "brand": "Saunabee",
-  "category": "aroma",
-  "name": "Sauflex Sauna Essential Oil Collection Forest, 5 × 15 ml",
-  "specs": {
-   "manufacturer": "Sauflex",
-   "volume": "5 × 15 ml",
-   "scents": "Juniper, spruce, cypress, cedar, eucalyptus",
-   "composition": "100 % essential oils"
-  },
-  "description": {
-   "az": "Beş meşə ətrindən ibarət Sauflex efir yağı kolleksiyası: ardıc, küknar, sərv, sidr və evkalipt. Bir çömçə suya 2–6 damcı əlavə edib isti daşlara atın.",
-   "ru": "Коллекция эфирных масел Sauflex Forest из пяти лесных ароматов: можжевельник, ель, кипарис, кедр и эвкалипт. Добавьте 2–6 капель в черпак воды и плесните на горячие камни.",
-   "en": "A Sauflex collection of five forest essential oils: juniper, spruce, cypress, cedar and eucalyptus. Add 2–6 drops to a ladle of water and throw it on the hot stones."
-  },
-  "image": "img/saunabee-sauflex-essential-oils-forest-5x15ml.jpg",
-  "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/essential-oils/sauflex-sauna-essential-oil-collection-5x15ml-forest"
- },
- {
   "id": "saunabee-harvia-infrared-scent-gel-lemongrass",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "aroma",
   "name": "Harvia Infrared Sauna Scent Gel Tin, Lemon Grass, 80 g",
   "specs": {
@@ -2269,64 +1554,8 @@
   "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/sauna-essence/infrared-sauna-scent-perfumed-gel-tin-harvia-lemon-grass-80-g"
  },
  {
-  "id": "saunabee-aab-sauna-aroma-pine-oil-250ml",
-  "brand": "Saunabee",
-  "category": "aroma",
-  "name": "AAB Sauna Aroma Pine Oil 250 ml",
-  "specs": {
-   "manufacturer": "AAB",
-   "volume": "250 ml",
-   "composition": "Natural essential oils, alcohol, water",
-   "dosage": "Half a capful per ladle of water"
-  },
-  "description": {
-   "az": "Yorğun bədəni canlandıran və təravətləndirən şam ətirli AAB sauna aroması (250 ml). Bir çömçə suya yarım qapaq əlavə edin; birbaşa qızdırıcının üzərinə tökməyin.",
-   "ru": "Аромат для сауны AAB с запахом сосны (250 мл) бодрит и освежает уставшее тело. Добавьте половину колпачка в черпак воды; не лейте концентрат прямо на каменку.",
-   "en": "An AAB pine sauna aroma (250 ml) that revives and refreshes a tired body. Add half a capful to a ladle of water; never pour it directly onto the heater."
-  },
-  "image": "img/saunabee-aab-sauna-aroma-pine-oil-250ml.jpg",
-  "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/sauna-essence/aab-sauna-aroma-pine-oil-250ml"
- },
- {
-  "id": "saunabee-clay-aroma-diffuser-pine-oil",
-  "brand": "Saunabee",
-  "category": "aroma",
-  "name": "Clay Aromatherapy Diffuser with Pine Essential Oil",
-  "specs": {
-   "manufacturer": "Meta (Lithuania)",
-   "material": "Handmade Lithuanian clay",
-   "contents": "Clay diffuser + 5 ml organic pine essential oil"
-  },
-  "description": {
-   "az": "Litva gilindən əl ilə hazırlanmış aromaterapiya diffuzoru və 5 ml orqanik şam efir yağı dəsti. Gil səthə 10–14 damcı yağ damızdırın – ətir yavaş-yavaş yayılacaq.",
-   "ru": "Набор из ручного глиняного аромадиффузора из литовской глины и 5 мл органического эфирного масла сосны. Нанесите 10–14 капель на глиняную поверхность — аромат будет раскрываться постепенно.",
-   "en": "A set of a handmade Lithuanian clay aromatherapy diffuser and 5 ml of organic pine essential oil. Apply 10–14 drops to the clay surface and the scent spreads gradually."
-  },
-  "image": "img/saunabee-clay-aroma-diffuser-pine-oil.jpg",
-  "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/essential-oils/clay-aromatherapy-diffuser-and-pine-essential-oil"
- },
- {
-  "id": "saunabee-emendo-aroma-set-4x10ml",
-  "brand": "Saunabee",
-  "category": "aroma",
-  "name": "Emendo Sauna Aroma Set 4 × 10 ml",
-  "specs": {
-   "manufacturer": "Emendo",
-   "volume": "4 × 10 ml",
-   "scents": "Eucalyptus, tar, forest, mint",
-   "composition": "100 % essential oils and natural tar"
-  },
-  "description": {
-   "az": "Evkalipt, qatran, meşə və nanə ətirlərindən ibarət Emendo sauna aroması dəsti (4 × 10 ml). Bir çömçə suya 2–6 damcı əlavə edib isti daşlara atın.",
-   "ru": "Набор ароматов для сауны Emendo (4 × 10 мл): эвкалипт, дёготь, лес и мята. Добавьте 2–6 капель в черпак воды и плесните на горячие камни.",
-   "en": "An Emendo sauna aroma set (4 × 10 ml) with eucalyptus, tar, forest and mint scents. Add 2–6 drops to a ladle of water and throw it on the hot stones."
-  },
-  "image": "img/saunabee-emendo-aroma-set-4x10ml.jpg",
-  "source_url": "https://saunabee.com/sauna-aromas-and-body-care/sauna-aromas-scent/essential-oils/emendo-aroma-set-for-sauna-4x10ml"
- },
- {
   "id": "saunabee-harvia-stones-black-vulcanite-10-15cm",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "stones",
   "name": "Harvia Sauna Stones Black Vulcanite 10–15 cm, 20 kg",
   "specs": {
@@ -2345,7 +1574,7 @@
  },
  {
   "id": "saunabee-harvia-stones-olivine-diabase-5-10cm",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "stones",
   "name": "Harvia Sauna Stones Olivine Diabase 5–10 cm, 20 kg",
   "specs": {
@@ -2361,99 +1590,6 @@
   },
   "image": "img/saunabee-harvia-stones-olivine-diabase-5-10cm.jpg",
   "source_url": "https://saunabee.com/sauna-stones/harvia-sauna-stones-olivine-diabase-5-10-cm-ac3050"
- },
- {
-  "id": "saunabee-sauflex-red-jasper-stones-10-15cm",
-  "brand": "Saunabee",
-  "category": "stones",
-  "name": "Sauflex Red Jasper Sauna Stones, Rounded, 10–15 cm, 15 kg",
-  "specs": {
-   "manufacturer": "Sauflex",
-   "material": "Red jasper, rounded",
-   "size": "10–15 cm, 15 kg box",
-   "density": "2.6–2.9 g/cm³"
-  },
-  "description": {
-   "az": "Saunaya isti, doymuş rəng qatan, yumrulanmış qırmızı yaşma daşları (10–15 sm, 15 kq). Əsas daşların üzərində dekorativ üst qat kimi istifadə olunur; elektrik və odun sobaları üçün uyğundur.",
-   "ru": "Окатанные камни красной яшмы (10–15 см, 15 кг) придают сауне тёплый насыщенный цвет. Используются как декоративный верхний слой поверх основных камней; для электрических и дровяных каменок.",
-   "en": "Rounded red jasper stones (10–15 cm, 15 kg) that give the sauna a warm, rich colour. Use them as a decorative top layer over the base stones in electric or wood-burning heaters."
-  },
-  "image": "img/saunabee-sauflex-red-jasper-stones-10-15cm.jpg",
-  "source_url": "https://saunabee.com/sauna-stones/sauna-stones-sauflex-red-jasper-10-15-cm-15-kg-rounded"
- },
- {
-  "id": "saunabee-kerkes-round-ceramic-stones-80mm",
-  "brand": "Saunabee",
-  "category": "stones",
-  "name": "Kerkes Round Ceramic Sauna Stones 80 mm, 20 kg",
-  "specs": {
-   "manufacturer": "Kerkes",
-   "material": "Special ceramic fired above 1300 °C",
-   "size": "Ø approx. 80 mm, 20 kg"
-  },
-  "description": {
-   "az": "1300 °C-dən yuxarı temperaturda bişirilmiş, termik şoka davamlı və ovulmayan Kerkes keramik sauna daşları (Ø 80 mm, 20 kq). Kürə formasında olduğu üçün sobada hava dövranını yaxşılaşdırır və praktiki olaraq dəyişdirilməyə ehtiyac yaranmır.",
-   "ru": "Керамические камни Kerkes (Ø 80 мм, 20 кг), обожжённые при температуре выше 1300 °C, устойчивы к термоудару и не крошатся. Шарообразная форма улучшает циркуляцию воздуха в каменке, а замена практически не требуется.",
-   "en": "Kerkes ceramic sauna stones (Ø 80 mm, 20 kg) fired above 1300 °C, so they resist thermal shock and do not crumble. The ball shape improves air flow in the heater, and they practically never need replacing."
-  },
-  "image": "img/saunabee-kerkes-round-ceramic-stones-80mm.jpg",
-  "source_url": "https://saunabee.com/sauna-stones/round-ceramic-stones-kerkes-20kg-80mm"
- },
- {
-  "id": "saunabee-raspberry-quartzite-stones-10-15cm",
-  "brand": "Saunabee",
-  "category": "stones",
-  "name": "Raspberry Quartzite Sauna Stones 10–15 cm, 20 kg",
-  "specs": {
-   "manufacturer": "Not stated by retailer",
-   "material": "Raspberry quartzite",
-   "size": "10–15 cm, 20 kg"
-  },
-  "description": {
-   "az": "Moruq rəngli kvarsit daşları (10–15 sm, 20 kq) elektrik sobaları və odun sobaları üçün idealdır. Tez qızır, istini uzun müddət saxlayır; istifadədən əvvəl yuyulmalıdır.",
-   "ru": "Камни малинового кварцита (10–15 см, 20 кг) идеально подходят для электрокаменок и дровяных печей. Быстро нагреваются и долго держат тепло; перед использованием их нужно промыть.",
-   "en": "Raspberry quartzite stones (10–15 cm, 20 kg) that are ideal for electric heaters and wood-burning stoves. They heat up quickly and hold the heat for a long time; rinse them before use."
-  },
-  "image": "img/saunabee-raspberry-quartzite-stones-10-15cm.jpg",
-  "source_url": "https://saunabee.com/sauna-stones/sauna-stones-raspberry-quartzite-20-kg-10-15cm"
- },
- {
-  "id": "saunabee-andres-etna-door-bronze-70x190",
-  "brand": "Saunabee",
-  "category": "door-window",
-  "name": "Andres Etna Sauna Door, Thermo Aspen, Bronze Glass, 70 × 190 cm",
-  "specs": {
-   "manufacturer": "Andres Glass Solutions",
-   "material": "Thermo-aspen frame, double-glazed bronze glass (8 mm)",
-   "size": "Frame 690 × 1890 mm",
-   "weight": "35 kg",
-   "features": "Universal – left or right opening"
-  },
-  "description": {
-   "az": "Termik işlənmiş titrək qovaq çərçivəli və ikiqat bürünc şüşəli izolyasiyalı Etna sauna qapısı. İstilik itkisini azaldır, şüşədə tərləmə yaranmır; çərçivə 690 × 1890 mm, sağa və ya sola açılır.",
-   "ru": "Утеплённая дверь для сауны Etna с коробкой из термоосины и двойным бронзовым стеклопакетом. Снижает теплопотери, стекло не запотевает; коробка 690 × 1890 мм, универсальное открывание.",
-   "en": "The insulated Etna sauna door has a thermo-aspen frame and double-glazed bronze glass. It reduces heat loss and the glass does not fog; frame 690 × 1890 mm, left or right opening."
-  },
-  "image": "img/saunabee-andres-etna-door-bronze-70x190.jpg",
-  "source_url": "https://saunabee.com/sauna-doors/sauna-glass-doors/sauna-door-ad-etna-thermo-aspen-bronze-70x190cm"
- },
- {
-  "id": "saunabee-sauna-window-475x475-alder",
-  "brand": "Saunabee",
-  "category": "door-window",
-  "name": "Sauna Window 475 × 475 mm, Insulated Glass, Alder",
-  "specs": {
-   "manufacturer": "Not stated by retailer",
-   "material": "Alder frame, insulated glass unit",
-   "size": "475 × 475 mm"
-  },
-  "description": {
-   "az": "Qızılağac çərçivəli, şüşə paketli 475 × 475 mm ölçülü sauna pəncərəsi. Saunaya təbii işıq və mənzərə gətirir, şüşə paket isə istiliyi içəridə saxlamağa kömək edir.",
-   "ru": "Окно для сауны 475 × 475 мм с рамой из ольхи и стеклопакетом. Пропускает в сауну естественный свет и открывает вид, а стеклопакет помогает сохранять тепло.",
-   "en": "A 475 × 475 mm sauna window with an alder frame and an insulated glass unit. It brings daylight and a view into the sauna while the double glazing helps keep the heat in."
-  },
-  "image": "img/saunabee-sauna-window-475x475-alder.jpg",
-  "source_url": "https://saunabee.com/sauna-building/sauna-windows/sauna-window-475-x-475-glass-packet-alder"
  },
  {
   "id": "sawo-bronze-glass-door-arc-handle",
@@ -2533,25 +1669,8 @@
   "source_url": "https://www.sawo.com/accessory-products/#section-doors-handles"
  },
  {
-  "id": "saunabee-sauna-whisk-canadian-oak",
-  "brand": "Saunabee",
-  "category": "other-accessory",
-  "name": "Sauna Whisk, Canadian Oak",
-  "specs": {
-   "manufacturer": "Not stated by retailer",
-   "material": "Oak branches and leaves"
-  },
-  "description": {
-   "az": "Enli və möhkəm yarpaqlı palıd süpürgəsi – yüksək istini sevənlər üçün idealdır. Yarpaqlarında aşı maddələri zəngindir, palıdın ətri isə əhval-ruhiyyəni yüksəldir.",
-   "ru": "Дубовый веник с широкими прочными листьями — идеален для любителей сильного жара. Листья богаты дубильными веществами, а аромат дуба поднимает настроение.",
-   "en": "An oak sauna whisk with broad, strong leaves, ideal for those who love intense heat. The leaves are rich in tannins and the scent of oak lifts the mood."
-  },
-  "image": "img/saunabee-sauna-whisk-canadian-oak.jpg",
-  "source_url": "https://saunabee.com/sauna-accessories/sauna-whisks/sauna-whisk-canadian-oak"
- },
- {
   "id": "saunabee-harvia-sauna-care-set",
-  "brand": "Saunabee",
+  "brand": "Harvia",
   "category": "other-accessory",
   "name": "Harvia Sauna Care Set",
   "specs": {

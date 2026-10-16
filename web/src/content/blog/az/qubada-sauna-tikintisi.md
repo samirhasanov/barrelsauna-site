@@ -58,7 +58,7 @@ Qonaq evi üçün praktik məsləhət: əgər sauna gün ərzində bir neçə d�
 
 ## Odun, yoxsa elektrik soba
 
-Quba və Qusarın kənd yerlərində odun asan tapılır və odun sobası klassik hamam ab-havası verir. Lənkəranda və ya elektrik xətti güclü olan villalarda elektrik soba daha rahatdır — temperatura nəzarət sadədir, saunanı tez-tez qızdırmaq asandır. Barrel Sauna Harvia, SAWO və Saunabee sobalarını satır və quraşdırır, sobanın gücünü saunanın həcminə görə seçir. Ətraflı müqayisə üçün sobalar bölməsinə baxa bilərsiniz.
+Quba və Qusarın kənd yerlərində odun asan tapılır və odun sobası klassik hamam ab-havası verir. Lənkəranda və ya elektrik xətti güclü olan villalarda elektrik soba daha rahatdır — temperatura nəzarət sadədir, saunanı tez-tez qızdırmaq asandır. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını satır və quraşdırır, sobanın gücünü saunanın həcminə görə seçir. Ətraflı müqayisə üçün sobalar bölməsinə baxa bilərsiniz.
 
 ## Yerləşdirmə və bünövrə
 

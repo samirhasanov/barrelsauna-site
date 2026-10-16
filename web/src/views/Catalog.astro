@@ -26,7 +26,7 @@ const cards: Card[] = kind === 'stoves'
       q: [f.name, f.series, f.brand, ...f.variants.map((v) => `${v.name} ${v.code}`)].join(' ').toLowerCase(),
     }))
   : items.map((p) => ({
-      img: p.id, brand: p.brand, maker: p.specs.manufacturer && p.brand === 'Saunabee' ? p.specs.manufacturer : p.brand, cat: p.category, name: p.name, desc: p.description[lang], power: null, variants: [],
+      img: p.id, brand: p.brand, maker: p.brand, cat: p.category, name: p.name, desc: p.description[lang], power: null, variants: [],
       specs: { kw: p.specs.power_kw, m3: p.specs.room_m3, stones: p.specs.stones_kg },
       q: `${p.name} ${p.brand} ${p.specs.manufacturer ?? ''}`.toLowerCase(),
     }));
@@ -49,11 +49,11 @@ const T = {
 const C: Record<'stoves' | 'accessories', L<any>> = {
   stoves: {
     az: {
-      title: 'Sauna Sobaları – Odun və Elektrik, Harvia, SAWO, HUUM',
-      desc: `${STOVE_MODEL_COUNT}+ sauna sobası: Harvia, SAWO, EOS, HUUM, Narvi, Tulikivi və s. Odun, elektrik, kombi sobalar, idarəetmə panelləri. Satış və quraşdırma Bakıda.`,
+      title: 'Sauna Sobaları – Harvia, SAWO, Teplodar, TMF, Fanlan',
+      desc: `${STOVE_MODEL_COUNT}+ sauna sobası: Harvia, SAWO, Teplodar, TMF və Fanlan. Odun, elektrik, kombi sobalar, idarəetmə panelləri. Satış və quraşdırma Bakıda.`,
       eyebrow: 'Sauna sobaları',
       h1: `Sauna sobaları — <em>${STOVE_MODEL_COUNT}+ model</em>`,
-      lede: ['Saunanın əsas elementi sobadır: düzgün seçildikdə istilik, buxar və ümumi təcrübə tam fərqli səviyyəyə qalxır. Harvia, SAWO, EOS, HUUM, Narvi, Tulikivi, IKI, Saunum və digər brendlərin odun, elektrik və kombi sobalarını, idarəetmə panellərini və buxar generatorlarını təqdim edir, saunanıza uyğun seçib quraşdırırıq.', 'Bütün məhsullar satışda mövcuddur. Qiymət və mövcudluğu öyrənmək üçün məhsulun altındakı düymə ilə WhatsApp-da yazın.'],
+      lede: ['Saunanın əsas elementi sobadır: düzgün seçildikdə istilik, buxar və ümumi təcrübə tam fərqli səviyyəyə qalxır. Harvia, SAWO, Teplodar, TMF və Fanlan brendlərinin odun, elektrik və kombi sobalarını, idarəetmə panellərini və buxar generatorlarını təqdim edir, saunanıza uyğun seçib quraşdırırıq.', 'Bütün məhsullar satışda mövcuddur. Qiymət və mövcudluğu öyrənmək üçün məhsulun altındakı düymə ilə WhatsApp-da yazın.'],
       guideTitle: 'Soba necə seçilir',
       guide: [
         ['flame', 'Odun, yoxsa elektrik?', 'Odun sobası klassik atmosfer və elektrikdən asılı olmayan istifadə üçün idealdır. Elektrik sobası daha rahat idarə olunur və daxili saunalar üçün standart seçimdir.'],
@@ -68,11 +68,11 @@ const C: Record<'stoves' | 'accessories', L<any>> = {
       ],
     },
     en: {
-      title: 'Sauna Heaters – Wood & Electric, Harvia, SAWO | Barrel Sauna',
-      desc: 'Harvia and SAWO sauna heaters: wood-burning and electric heaters, control panels and steam generators. Sales, expert advice and installation in Baku.',
+      title: 'Sauna Heaters – Harvia, SAWO, Teplodar, TMF, Fanlan',
+      desc: 'Harvia, SAWO, Teplodar, TMF and Fanlan sauna heaters: wood-burning and electric heaters, control panels and steam generators. Sales and installation in Baku.',
       eyebrow: 'Sauna heaters',
       h1: `Sauna heaters — <em>${STOVE_MODEL_COUNT}+ models</em>`,
-      lede: ['The heater is the heart of every sauna: choose it right and heat, steam and the whole experience reach another level. We supply wood-burning, electric and combi heaters, control panels and steam generators from Harvia, SAWO, EOS, HUUM, Narvi, Tulikivi, IKI, Saunum and more — and install the right one for your sauna.', 'All products are available for sale. Use the button under each product to ask about price and availability on WhatsApp.'],
+      lede: ['The heater is the heart of every sauna: choose it right and heat, steam and the whole experience reach another level. We supply wood-burning, electric and combi heaters, control panels and steam generators from Harvia, SAWO, Teplodar, TMF and Fanlan — and install the right one for your sauna.', 'All products are available for sale. Use the button under each product to ask about price and availability on WhatsApp.'],
       guideTitle: 'How to choose a heater',
       guide: [
         ['flame', 'Wood or electric?', 'Wood-burning heaters give a classic atmosphere and work off-grid. Electric heaters are easier to control and standard for indoor saunas.'],
@@ -87,11 +87,11 @@ const C: Record<'stoves' | 'accessories', L<any>> = {
       ],
     },
     ru: {
-      title: 'Печи для сауны в Баку – дровяные и электрические, Harvia, SAWO',
-      desc: 'Печи для сауны Harvia и SAWO: дровяные и электрические печи, пульты управления и парогенераторы. Продажа, подбор и установка в Баку.',
+      title: 'Печи для сауны в Баку – Harvia, SAWO, Teplodar, TMF, Fanlan',
+      desc: 'Печи для сауны Harvia, SAWO, Teplodar, TMF и Fanlan: дровяные и электрические печи, пульты и парогенераторы. Продажа, подбор и установка в Баку.',
       eyebrow: 'Печи для сауны',
       h1: `Печи для сауны — <em>${STOVE_MODEL_COUNT}+ моделей</em>`,
-      lede: ['Печь — сердце сауны: правильный выбор выводит тепло, пар и впечатления на совсем другой уровень. Поставляем дровяные, электрические и комби-печи, пульты и парогенераторы Harvia, SAWO, EOS, HUUM, Narvi, Tulikivi, IKI, Saunum и других брендов и устанавливаем подходящую модель.', 'Все товары в продаже. Узнать цену и наличие можно в WhatsApp — кнопка под каждым товаром.'],
+      lede: ['Печь — сердце сауны: правильный выбор выводит тепло, пар и впечатления на совсем другой уровень. Поставляем дровяные, электрические и комби-печи, пульты и парогенераторы Harvia, SAWO, Teplodar, TMF и Fanlan и устанавливаем подходящую модель.', 'Все товары в продаже. Узнать цену и наличие можно в WhatsApp — кнопка под каждым товаром.'],
       guideTitle: 'Как выбрать печь',
       guide: [
         ['flame', 'Дрова или электричество?', 'Дровяная печь — классическая атмосфера и независимость от электросети. Электрическая удобнее в управлении и стандартна для саун в доме.'],
@@ -109,10 +109,10 @@ const C: Record<'stoves' | 'accessories', L<any>> = {
   accessories: {
     az: {
       title: 'Sauna Aksesuarları – Vedrə, Termometr, LED, Daş | Barrel Sauna',
-      desc: 'Sauna aksesuarları: vedrə və çömçə, termometr və hiqrometr, LED işıqlandırma, baş dayaqları, aromalar, sauna daşları, qapılar. Harvia, SAWO, Saunabee.',
+      desc: 'Sauna aksesuarları: vedrə və çömçə, termometr və hiqrometr, LED işıqlandırma, baş dayaqları, aromalar, sauna daşları, qapılar. Harvia, SAWO, Teplodar, TMF, Fanlan.',
       eyebrow: 'Sauna aksesuarları',
       h1: 'Sauna <em>aksesuarları</em>',
-      lede: ['Düzgün aksesuarlar sauna təcrübəsini tamamlayır: vedrə və çömçə, termometr və hiqrometr, qum saatı, baş dayaqları, LED işıqlandırma, aromalar, sauna daşları və qapılar — Harvia, SAWO və Saunabee məhsulları.', 'Bütün məhsullar satışda mövcuddur. Qiymət və mövcudluq üçün WhatsApp-da yazın.'],
+      lede: ['Düzgün aksesuarlar sauna təcrübəsini tamamlayır: vedrə və çömçə, termometr və hiqrometr, qum saatı, baş dayaqları, LED işıqlandırma, aromalar, sauna daşları və qapılar — Harvia, SAWO, Teplodar, TMF və Fanlan məhsulları.', 'Bütün məhsullar satışda mövcuddur. Qiymət və mövcudluq üçün WhatsApp-da yazın.'],
       guideTitle: 'Saunanı tamamlayın',
       guide: [
         ['droplet', 'Buxar üçün', 'Vedrə, çömçə və aromalar — sobaya su ataraq yumşaq, ətirli buxar.'],
@@ -127,10 +127,10 @@ const C: Record<'stoves' | 'accessories', L<any>> = {
     },
     en: {
       title: 'Sauna Accessories – Buckets, Thermometers, LED, Stones | Barrel Sauna',
-      desc: 'Sauna accessories: buckets and ladles, thermometers and hygrometers, LED lighting, headrests, aromas, sauna stones and doors. Harvia, SAWO and Saunabee.',
+      desc: 'Sauna accessories: buckets and ladles, thermometers and hygrometers, LED lighting, headrests, aromas, sauna stones and doors. Harvia, SAWO, Teplodar, TMF and Fanlan.',
       eyebrow: 'Sauna accessories',
       h1: 'Sauna <em>accessories</em>',
-      lede: ['The right accessories complete the sauna experience: buckets and ladles, thermometers and hygrometers, sand timers, headrests, LED lighting, aromas, sauna stones and doors — from Harvia, SAWO and Saunabee.', 'All products are available for sale. Ask about price and availability on WhatsApp.'],
+      lede: ['The right accessories complete the sauna experience: buckets and ladles, thermometers and hygrometers, sand timers, headrests, LED lighting, aromas, sauna stones and doors — from Harvia, SAWO, Teplodar, TMF and Fanlan.', 'All products are available for sale. Ask about price and availability on WhatsApp.'],
       guideTitle: 'Complete your sauna',
       guide: [
         ['droplet', 'For steam', 'Bucket, ladle and aromas — throw water on the stones for soft, fragrant steam.'],
@@ -145,10 +145,10 @@ const C: Record<'stoves' | 'accessories', L<any>> = {
     },
     ru: {
       title: 'Аксессуары для сауны в Баку – шайки, термометры, LED | Barrel Sauna',
-      desc: 'Аксессуары для сауны: шайки и ковши, термометры и гигрометры, LED-подсветка, подголовники, ароматы, камни и двери. Harvia, SAWO и Saunabee.',
+      desc: 'Аксессуары для сауны: шайки и ковши, термометры и гигрометры, LED-подсветка, подголовники, ароматы, камни и двери. Harvia, SAWO, Teplodar, TMF и Fanlan.',
       eyebrow: 'Аксессуары для сауны',
       h1: '<em>Аксессуары</em> для сауны',
-      lede: ['Правильные аксессуары завершают образ сауны: шайки и ковши, термометры и гигрометры, песочные часы, подголовники, LED-подсветка, ароматы, камни и двери — Harvia, SAWO и Saunabee.', 'Все товары в продаже. Цену и наличие уточняйте в WhatsApp.'],
+      lede: ['Правильные аксессуары завершают образ сауны: шайки и ковши, термометры и гигрометры, песочные часы, подголовники, LED-подсветка, ароматы, камни и двери — Harvia, SAWO, Teplodar, TMF и Fanlan.', 'Все товары в продаже. Цену и наличие уточняйте в WhatsApp.'],
       guideTitle: 'Дополните сауну',
       guide: [
         ['droplet', 'Для пара', 'Шайка, ковш и ароматы — мягкий ароматный пар.'],

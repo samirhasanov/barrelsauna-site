@@ -63,7 +63,7 @@ Yer seçimi saunanın rahatlığına qiymətdən az təsir etmir. Diqqət edin:
 | İstifadə | Odun hazırlamaq və alovu izləmək lazımdır | Düymə ilə, temperatur nəzarəti asandır |
 | Bağ evi üçün | Elektrik zəif olan və ya nadir gəldiyiniz yerdə | Tez-tez istifadə və rahatlıq üçün |
 
-Bağ evlərində elektrik xətti çox vaxt zəif olur — bu halda odun sobası daha praktik ola bilər. Barrel Sauna Harvia, SAWO və Saunabee sobalarını təklif edir; modellərə [sobalar](/sobalar) səhifəsində baxın.
+Bağ evlərində elektrik xətti çox vaxt zəif olur — bu halda odun sobası daha praktik ola bilər. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını təklif edir; modellərə [sobalar](/sobalar) səhifəsində baxın.
 
 ## 5. Saunanı jakuzi və ya kupel ilə birləşdirin
 

@@ -86,9 +86,9 @@ Electric heaters come with two types of control:
 5. **Ventilation** with fresh-air intake and exhaust matters for comfort and safety.
 6. **Never dry towels or clothes on the heater.**
 
-## Harvia, SAWO and Saunabee: the brands we install
+## Harvia, SAWO, Teplodar, TMF and Fanlan: the brands we install
 
-We sell and install heaters and accessories from **Harvia, SAWO and Saunabee**. Harvia and SAWO are well-known Finnish sauna heater brands offering both wood-burning and electric models.
+We sell and install heaters and accessories from **Harvia, SAWO, Teplodar, TMF and Fanlan**. Harvia and SAWO are well-known Finnish sauna heater brands offering both wood-burning and electric models.
 
 We don't pick a heater off a shelf — we match it **to your specific sauna**: its volume, wall materials, glass area and the way you plan to use it. Browse models in our [heaters](/en/sauna-heaters) section, and stones, buckets, ladles and thermometers under [accessories](/en/sauna-accessories).
 

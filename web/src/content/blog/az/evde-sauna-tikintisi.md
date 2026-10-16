@@ -67,7 +67,7 @@ Daxili saunalarda adətən elektrik soba istifadə olunur. Ona görə:
 - güclü sobalar üçün bəzən üçfazalı qoşulma lazım olur;
 - bütün işlər ixtisaslı elektrikçi tərəfindən görülməlidir.
 
-Mənzildə sauna planlaşdırırsınızsa, binaya ayrılmış elektrik gücünü əvvəlcədən yoxlayın. Barrel Sauna Harvia, SAWO və Saunabee sobalarını satır və quraşdırır; seçimlərə [sobalar](/sobalar) səhifəsində baxa bilərsiniz.
+Mənzildə sauna planlaşdırırsınızsa, binaya ayrılmış elektrik gücünü əvvəlcədən yoxlayın. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını satır və quraşdırır; seçimlərə [sobalar](/sobalar) səhifəsində baxa bilərsiniz.
 
 ## 5. Ağac seçimi
 

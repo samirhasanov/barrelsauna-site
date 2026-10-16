@@ -69,7 +69,7 @@ Nəticə: güclü, “hər tərəfi bürüyən” istilik, rütubəti özünüz 
 
 ## Kombinə variant: fin saunasında infraqırmızı radiator
 
-Seçim etmək məcburi deyil. Kataloqumuzda Harvia və EOS kimi brendlərin infraqırmızı radiatorları var və onları fin saunasına — məsələn, oturacaq arxasına — əlavə etmək olar. Belə saunada:
+Seçim etmək məcburi deyil. Kataloqumuzda Harvia infraqırmızı radiatorları var və onları fin saunasına — məsələn, oturacaq arxasına — əlavə etmək olar. Belə saunada:
 
 - soba ilə klassik fin seansı keçirirsiniz;
 - istəsəniz yalnız radiatorları yandırıb yumşaq, aşağı temperaturlu seans edirsiniz;
@@ -112,7 +112,7 @@ Bir növün digərindən “daha faydalı” olduğunu birmənalı demək olmaz.
 
 ### Fin saunasına infraqırmızı radiator əlavə etmək olarmı?
 
-Bəli. Kataloqda Harvia və EOS kimi brendlərin radiatorları var; onları saunanın ölçüsünə uyğun güc və yerdə quraşdırırıq.
+Bəli. Kataloqda Harvia radiatorları var; onları saunanın ölçüsünə uyğun güc və yerdə quraşdırırıq.
 
 ### Çöl saunası infraqırmızı ola bilərmi?
 

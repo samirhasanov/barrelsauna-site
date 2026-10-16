@@ -77,7 +77,7 @@ An outdoor spa complex costs roughly **15,000–45,000 AZN**. The main factors a
 - number and size of hot rooms;
 - whether you add a pool or tub — [hot tubs and jacuzzis](/en/hot-tubs-jacuzzi) can be chosen separately;
 - interior timber (linden, cedar, abachi, teak) and décor (Himalayan salt panels, decorative stone, LED lighting);
-- heaters — Harvia, SAWO or Saunabee, wood-fired or electric;
+- heaters — Harvia, SAWO, Teplodar, TMF or Fanlan, wood-fired or electric;
 - terrace, canopy and landscaping;
 - length of utility runs and the terrain.
 

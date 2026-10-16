@@ -69,7 +69,7 @@ The result: strong, enveloping heat, humidity you control yourself, and a tradit
 
 ## The hybrid option: infrared panels in a Finnish sauna
 
-You don't have to pick one. Our catalog includes infrared panels from brands such as Harvia and EOS, which can be added to a Finnish sauna — behind the backrest, for example. In a hybrid sauna you can:
+You don't have to pick one. Our catalog includes Harvia infrared panels, which can be added to a Finnish sauna — behind the backrest, for example. In a hybrid sauna you can:
 
 - enjoy a classic Finnish session with the heater;
 - switch on only the panels for a gentle, lower-temperature session;
@@ -112,7 +112,7 @@ There's no clear-cut answer. They deliver different kinds of heat; the right cho
 
 ### Can I add infrared panels to a Finnish sauna?
 
-Yes. Our catalog includes panels from Harvia and EOS, and we choose the output and position to suit your sauna.
+Yes. Our catalog includes Harvia infrared panels, and we choose the output and position to suit your sauna.
 
 ### Can an outdoor sauna be infrared?
 

@@ -75,7 +75,7 @@ Vannanı saunadan bir-iki addım məsafədə yerləşdirmək idealdır: seans ar
 5. **Kommunikasiya.** Elektrik soba üçün güclü xətt, vanna üçün su və drenaj imkanı.
 6. **Soba təhlükəsizliyi.** Odun sobası seçilərsə, baca və ətraf tikililərə məsafə nəzərə alınır.
 
-Soba məsələsində Abşeron villalarında elektrik soba daha çox seçilir — rahat idarə olunur və tez-tez istifadəyə uyğundur. Barrel Sauna Harvia, SAWO və Saunabee sobalarını satır və quraşdırır.
+Soba məsələsində Abşeron villalarında elektrik soba daha çox seçilir — rahat idarə olunur və tez-tez istifadəyə uyğundur. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını satır və quraşdırır.
 
 ## Daxili ağac və istifadə rejimi
 

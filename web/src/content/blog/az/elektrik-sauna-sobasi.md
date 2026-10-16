@@ -1,10 +1,10 @@
 ---
 title: "Elektrik sauna sobası: kVt hesabı, 230V/400V, panel"
-description: "Elektrik sauna sobası necə seçilir: kVt və m³ hesabı, şüşə və daş divar düzəlişi, 230V və 400V qoşulma, idarəetmə paneli və Wi-Fi. Harvia, SAWO, EOS, HUUM."
+description: "Elektrik sauna sobası necə seçilir: kVt və m³ hesabı, şüşə və daş divar düzəlişi, 230V və 400V qoşulma, idarəetmə paneli və Wi-Fi. Harvia, SAWO, Fanlan."
 pubDate: 2026-10-04
 lang: az
 translationKey: "c7"
-tags: ["elektrik sauna sobası", "elektrik soba", "sauna sobası gücü", "Harvia", "SAWO", "EOS", "HUUM"]
+tags: ["elektrik sauna sobası", "elektrik soba", "sauna sobası gücü", "Harvia", "SAWO", "Fanlan"]
 cover: "indoor-proj-10"
 coverAlt: "Cökə ağacından daxili saunanın küncündə daşlı elektrik sobası, taxta oturacaqlar və divar lampası"
 related: ["stoves", "indoor", "cabin"]
@@ -71,7 +71,7 @@ Panel saunanın xaricində, soyunma otağında və ya divarda yerləşir. Üstü
 - displey və toxunma ekranı;
 - bəzi panellərdə **Wi-Fi** və telefon tətbiqi ilə uzaqdan idarə.
 
-Nümunələr: Harvia Xenio və Xenio WiFi, SAWO Saunova və Innova, EOS EmoTouch, HUUM UKU (tətbiqlə idarə). Panel almadan əvvəl onun seçdiyiniz soba modeli ilə uyğun olduğunu mütləq yoxlayın — bəzi sobalar yalnız ayrıca panel ilə işləyir.
+Nümunələr: Harvia Xenio və Xenio WiFi, SAWO Saunova və Innova. Panel almadan əvvəl onun seçdiyiniz soba modeli ilə uyğun olduğunu mütləq yoxlayın — bəzi sobalar yalnız ayrıca panel ilə işləyir.
 
 ## Brendlər və nümunə seriyalar
 
@@ -79,14 +79,13 @@ Nümunələr: Harvia Xenio və Xenio WiFi, SAWO Saunova və Innova, EOS EmoTouch
 |---|---|---|
 | Harvia (Finlandiya) | Vega, KIP, Cilindro, Legend, Virta, Spirit | Ən geniş çeşid; kompakt divar sobalarından böyük daş qüllələrinə qədər |
 | SAWO (Finlandiya) | Tower, Nordex, Scandia, Krios, Cumulus | Qüllə sobaları, oturacağa quraşdırılan modellər, böyük daş tutumu |
-| EOS (Almaniya) | Cubo, Thermat, Invisio | Premium dizayn, gizli quraşdırma variantları |
-| HUUM (Estoniya) | Drop, Hive, Cliff | Daşla dolu "açıq" dizayn, tətbiqlə idarə |
+| Fanlan | SA, SAV, SCA, DM, FT | Ev və kommersiya saunaları üçün geniş elektrik soba seçimi, 30 kW-a qədər güc |
 
 Bütün bu brendlər saytımızdakı [sobalar kataloqunda](/sobalar) var; hər modelin gücü, uyğun həcmi və daş tutumu göstərilib. Barrel Sauna Harvia və SAWO sobalarını satır və quraşdırır, digər brendlər üzrə də məsləhət veririk.
 
 ## Daşlar və buxar
 
-Elektrik sobada daş tutumu buxarın xarakterini müəyyən edir. Kompakt divar sobalarında 20 kq ətrafında daş olur — tez qızır, amma buxar daha kəskindir. Böyük daş kütləli modellər (məsələn, SAWO Krios, Harvia Legend, HUUM Hive) istiliyi uzun saxlayır və yumşaq buxar verir. Daşları ildə bir dəfə yoxlayıb ovulanları dəyişin.
+Elektrik sobada daş tutumu buxarın xarakterini müəyyən edir. Kompakt divar sobalarında 20 kq ətrafında daş olur — tez qızır, amma buxar daha kəskindir. Böyük daş kütləli modellər (məsələn, SAWO Krios, Harvia Legend) istiliyi uzun saxlayır və yumşaq buxar verir. Daşları ildə bir dəfə yoxlayıb ovulanları dəyişin.
 
 ## Quraşdırma zamanı diqqət
 

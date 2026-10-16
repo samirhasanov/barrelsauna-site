@@ -41,7 +41,7 @@ Linden is the standard interior. Choosing thermo linden, cedar, abachi, African 
 
 ### 4. Stove
 
-Electric or wood-burning, the heater's output and the brand all affect the total. We supply and install Harvia, SAWO and Saunabee stoves and size them to the sauna's volume. See the options on our [sauna stoves](/en/sauna-heaters) page.
+Electric or wood-burning, the heater's output and the brand all affect the total. We supply and install Harvia, SAWO, Teplodar, TMF and Fanlan stoves and size them to the sauna's volume. See the options on our [sauna stoves](/en/sauna-heaters) page.
 
 ### 5. Extra rooms and features
 

@@ -41,7 +41,7 @@ Dəqiq ölçülər sahəyə və oturacaq planına görə hazırlanır — kub sa
 1. **Tutum.** Daha böyük kub — daha çox taxta, izolyasiya və daha güclü soba.
 2. **Daxili ağac.** Cökə standartdır; sidr, abaşi və ya tik qiyməti artırır. Kompromis: divarlar cökə, oturacaqlar abaşi.
 3. **Şüşə fasad.** Kub saunanın ən gözəl tərəfi — ön divarı tam şüşə etmək imkanıdır. Mənzərəli yerdə bu, əsas seçimdir.
-4. **Soba.** Elektrik və ya odun — Harvia, SAWO, Saunabee. Güc həcmə görə seçilir.
+4. **Soba.** Elektrik və ya odun — Harvia, SAWO, Teplodar, TMF, Fanlan. Güc həcmə görə seçilir.
 5. **Əlavələr.** LED işıqlandırma, dekorativ daşlar, Himalay duzu panelləri, aksesuarlar.
 
 Bütün modellərin qiymətlərini [sauna qiymətləri](/sauna-qiymetleri) səhifəsində müqayisə edə bilərsiniz.

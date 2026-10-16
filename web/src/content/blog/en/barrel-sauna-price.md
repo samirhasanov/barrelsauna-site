@@ -44,7 +44,7 @@ Premium wood raises the price, but you don't have to upgrade everything. A smart
 
 ### 3. Stove type
 
-A barrel sauna can run on an **electric** or a **wood-burning** stove. Electric is the most convenient for frequent use; wood gives a classic bathhouse atmosphere and doesn't need a heavy-duty power line. Barrel Sauna supplies and installs Harvia, SAWO and Saunabee stoves, with output matched to the sauna's volume. Browse them on the [sauna heaters](/en/sauna-heaters) page.
+A barrel sauna can run on an **electric** or a **wood-burning** stove. Electric is the most convenient for frequent use; wood gives a classic bathhouse atmosphere and doesn't need a heavy-duty power line. Barrel Sauna supplies and installs Harvia, SAWO, Teplodar, TMF and Fanlan stoves, with output matched to the sauna's volume. Browse them on the [sauna heaters](/en/sauna-heaters) page.
 
 ### 4. Glass
 

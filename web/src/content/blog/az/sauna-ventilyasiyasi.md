@@ -45,7 +45,7 @@ Bundan əlavə, çox vaxt tavana yaxın **qurutma deşiyi** qoyulur: seans zaman
 
 ### Elektrik sobalı saunada
 
-Elektrik soba havanı yandırmır, ona görə ventilyasiya yalnız rahatlıq və nəm balansı üçündür. Hava girişi sobanın yaxınlığında olur ki, təzə hava dərhal qızsın. Sobanın gücü və giriş-çıxışın yeri istehsalçının təlimatına əsasən seçilir — Harvia, SAWO və Saunabee sobaları üçün bu tələblər ayrıca göstərilir.
+Elektrik soba havanı yandırmır, ona görə ventilyasiya yalnız rahatlıq və nəm balansı üçündür. Hava girişi sobanın yaxınlığında olur ki, təzə hava dərhal qızsın. Sobanın gücü və giriş-çıxışın yeri istehsalçının təlimatına əsasən seçilir — Harvia, SAWO, Teplodar, TMF və Fanlan sobaları üçün bu tələblər ayrıca göstərilir.
 
 ### Odun sobalı saunada
 

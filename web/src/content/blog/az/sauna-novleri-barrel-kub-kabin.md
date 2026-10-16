@@ -92,7 +92,7 @@ Formasından asılı olmayaraq, çöl saunalarımız eyni keyfiyyət standartı 
 - **Daxili üzlük:** standart olaraq lipa; istəyə görə kedr, abaşi, Afrika abaşisi, tik.
 - **Divar:** mineral daş yunu və nəmdən qoruyan xüsusi membrandan ibarət çoxqatlı quruluş.
 - **Dam:** tol qatı üzərində teqola; bəzi modellərdə ondulin və ya profnastil.
-- **Soba:** Harvia, SAWO və Saunabee — odun və ya elektrik.
+- **Soba:** Harvia, SAWO, Teplodar, TMF və Fanlan — odun və ya elektrik.
 
 ## Seçimdən əvvəl: ərazi və quraşdırma
 

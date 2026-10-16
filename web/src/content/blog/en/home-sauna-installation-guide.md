@@ -67,7 +67,7 @@ Indoor saunas almost always use an electric heater, which means:
 - larger heaters sometimes needing a three-phase supply;
 - all work carried out by a qualified electrician.
 
-In an apartment, check your available electrical capacity early. We supply and install Harvia, SAWO and Saunabee heaters — see the options on our [sauna stoves](/en/sauna-heaters) page.
+In an apartment, check your available electrical capacity early. We supply and install Harvia, SAWO, Teplodar, TMF and Fanlan heaters — see the options on our [sauna stoves](/en/sauna-heaters) page.
 
 ## 5. Choosing the wood
 

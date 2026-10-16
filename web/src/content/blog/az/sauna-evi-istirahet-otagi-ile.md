@@ -61,7 +61,7 @@ Kotec saunanın təxmini qiyməti **10,000–50,000 AZN**-dir. Bu aralıq geniş
 - ümumi sahə və otaqların sayı;
 - hamam, buxar otağı və hovuz kimi “yaş” zonalar (əlavə su izolyasiyası və mühəndislik tələb edir);
 - daxili ağac: standart cökə və ya sidr, abaşi, tik;
-- soba növü və gücü (Harvia, SAWO, Saunabee);
+- soba növü və gücü (Harvia, SAWO, Teplodar, TMF, Fanlan);
 - dam örtüyü, pəncərələr, işıqlandırma və dekor (duz panelləri, dekorativ daşlar, kötük dekoru, LED).
 
 Konkret məbləği öyrənmək üçün [sauna qiymətləri](/sauna-qiymetleri) səhifəsindəki hesablayıcıdan istifadə edə və ya bizə yaza bilərsiniz.

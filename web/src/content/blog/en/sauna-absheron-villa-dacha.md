@@ -75,7 +75,7 @@ Ideally, place the tub just a step or two from the sauna door so you don't have 
 5. **Utilities.** A strong power line for an electric heater; water and drainage for a tub.
 6. **Heater safety.** With a wood heater, the chimney and distances to other structures are taken into account.
 
-Absheron villas usually go electric: easy to control and convenient for frequent use. Barrel Sauna sells and installs Harvia, SAWO and Saunabee heaters.
+Absheron villas usually go electric: easy to control and convenient for frequent use. Barrel Sauna sells and installs Harvia, SAWO, Teplodar, TMF and Fanlan heaters.
 
 ## Interior wood and year-round use
 

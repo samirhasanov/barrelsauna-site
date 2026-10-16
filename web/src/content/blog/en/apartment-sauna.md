@@ -46,7 +46,7 @@ In apartments and inside most houses, saunas run on an **electric heater**. Keep
 - Heater output is matched to the room volume; for more powerful models, an electrician should confirm your supply can handle it.
 - The control panel can be mounted outside the sauna in a convenient spot.
 
-Barrel Sauna supplies and installs Harvia, SAWO and Saunabee heaters — browse them on the [sauna heaters](/en/sauna-heaters) page.
+Barrel Sauna supplies and installs Harvia, SAWO, Teplodar, TMF and Fanlan heaters — browse them on the [sauna heaters](/en/sauna-heaters) page.
 
 ## Protecting the walls: insulation and membrane
 

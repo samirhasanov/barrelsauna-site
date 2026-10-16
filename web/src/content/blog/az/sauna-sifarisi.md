@@ -34,7 +34,7 @@ Burada əsas qərarlar verilir:
 
 - **Tutum** — adətən neçə nəfər birlikdə istifadə edəcək.
 - **Daxili ağac** — cökə (standart), sidr, abaşi, Afrika abaşisi və ya tik.
-- **Soba** — elektrik və ya odun; Harvia, SAWO, Saunabee.
+- **Soba** — elektrik və ya odun; Harvia, SAWO, Teplodar, TMF, Fanlan.
 - **Şüşə** — klassik pəncərə, panoramik divar və ya tam şüşə fasad.
 - **Əlavələr** — terras, LED işıqlandırma, dekor (dekorativ daşlar, Himalay duzu panelləri, kötük dekoru), aksesuarlar.
 - **Kotec və SPA üçün otaqlar** — sauna, buxar otağı, duz otağı, türk hamamı, süpürgə (venik) otağı, masaj otağı, isti və ya soyuq çən, hovuz, duş/WC, istirahət otağı.

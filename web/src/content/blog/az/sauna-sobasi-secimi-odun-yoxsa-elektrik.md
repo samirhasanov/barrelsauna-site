@@ -86,9 +86,9 @@ Elektrik sobaları iki cür idarə olunur:
 5. **Ventilyasiya** düzgün qurulmalıdır: təmiz hava girişi və çıxışı həm rahatlıq, həm də təhlükəsizlik üçün vacibdir.
 6. **Sobanın üstündə dəsmal, paltar qurutmayın.**
 
-## Harvia, SAWO və Saunabee: hansı brendlərlə işləyirik?
+## Harvia, SAWO, Teplodar, TMF və Fanlan: hansı brendlərlə işləyirik?
 
-Biz **Harvia, SAWO və Saunabee** brendlərinin sobalarını və aksesuarlarını satır və quraşdırırıq. Harvia və SAWO sauna sobaları sahəsində tanınmış Fin brendləridir və həm odun, həm də elektrik modelləri təklif edir.
+Biz **Harvia, SAWO, Teplodar, TMF və Fanlan** brendlərinin sobalarını və aksesuarlarını satır və quraşdırırıq. Harvia və SAWO sauna sobaları sahəsində tanınmış Fin brendləridir və həm odun, həm də elektrik modelləri təklif edir.
 
 Biz sobanı ayrıca məhsul kimi deyil, **konkret saunanın həcminə, divar materialına, şüşə sahəsinə və sizin istifadə vərdişlərinizə görə** seçirik. Mövcud modelləri [sobalar](/sobalar) bölməsində, daşları, vedrə və çömçələri, termometrləri isə [aksesuarlar](/aksesuarlar) səhifəsində görə bilərsiniz.
 

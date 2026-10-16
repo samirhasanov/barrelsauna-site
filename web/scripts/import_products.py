@@ -11,6 +11,18 @@ for extra in ('accessories2.json', 'fanlan-accessories.json'):
     if os.path.exists(extra):
         names = {p['name'] for p in items}
         items += [p for p in json.load(open(extra)) if p['name'] not in names]
+ALLOWED = {'Harvia', 'SAWO', 'Teplodar', 'TMF', 'Fanlan'}  # owner 2026-10-16: only these brands on the site
+filtered = []
+for p in items:
+    maker = (p.get('specs') or {}).get('manufacturer', '')
+    if p['brand'] == 'Saunabee':
+        if maker not in ALLOWED:
+            continue
+        p['brand'] = maker  # show the real maker, not the shop
+    if p['brand'] not in ALLOWED:
+        continue
+    filtered.append(p)
+items = filtered
 keep = []
 for p in items:
     p.pop('price', None)

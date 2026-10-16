@@ -41,7 +41,7 @@ Standart daxili ağac — cökədir. Termo cökə, sidr, abaşi, Afrika abaşisi
 
 ### 4. Soba
 
-Elektrik və ya odun sobası, onun gücü və brendi yekun məbləğə təsir edir. Barrel Sauna Harvia, SAWO və Saunabee sobalarını satır və quraşdırır. Sobanın gücü saunanın həcminə görə seçilir; variantlara [sobalar](/sobalar) səhifəsində baxa bilərsiniz.
+Elektrik və ya odun sobası, onun gücü və brendi yekun məbləğə təsir edir. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını satır və quraşdırır. Sobanın gücü saunanın həcminə görə seçilir; variantlara [sobalar](/sobalar) səhifəsində baxa bilərsiniz.
 
 ### 5. Əlavə otaqlar və funksiyalar
 

@@ -69,7 +69,7 @@ Qonaqlara tam SPA təcrübəsi təklif etmək istəyirsinizsə, [outdoor SPA kom
 
 ## Soba: odun, yoxsa elektrik
 
-Dağ bölgələrində iki variant da işləyir. Odun sobası klassik hamam ab-havası yaradır və elektrik xəttinin gücü məhdud olan ərazilərdə rahatdır. Elektrik soba isə gündəlik istifadədə və otel kimi tez-tez qızdırılan obyektlərdə daha praktikdir. Barrel Sauna Harvia, SAWO və Saunabee sobalarını satır və quraşdırır; güc saunanın həcminə görə seçilir.
+Dağ bölgələrində iki variant da işləyir. Odun sobası klassik hamam ab-havası yaradır və elektrik xəttinin gücü məhdud olan ərazilərdə rahatdır. Elektrik soba isə gündəlik istifadədə və otel kimi tez-tez qızdırılan obyektlərdə daha praktikdir. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını satır və quraşdırır; güc saunanın həcminə görə seçilir.
 
 ## Dağ şəraitində saunaya qulluq
 

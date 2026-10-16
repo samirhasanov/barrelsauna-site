@@ -69,7 +69,7 @@ For a complete spa offer, an [outdoor spa complex](/en/outdoor-spa-complex) for 
 
 ## Heater: wood or electric
 
-Both work in the mountains. A wood-burning heater gives a classic bathhouse atmosphere and helps where grid capacity is limited. An electric heater is more practical for daily use and for hotels that heat the sauna often. Barrel Sauna sells and installs Harvia, SAWO and Saunabee heaters, sized to the volume of the sauna room.
+Both work in the mountains. A wood-burning heater gives a classic bathhouse atmosphere and helps where grid capacity is limited. An electric heater is more practical for daily use and for hotels that heat the sauna often. Barrel Sauna sells and installs Harvia, SAWO, Teplodar, TMF and Fanlan heaters, sized to the volume of the sauna room.
 
 ## Delivery and installation in the regions
 

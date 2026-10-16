@@ -79,7 +79,7 @@ Qiymət ölçüdən, daxili ağacın növündən, sobadan və əlavələrdən (i
 
 ## Soba seçimi
 
-Barrel sauna həm elektrik, həm də odun sobası ilə işləyə bilər. Elektrik soba gündəlik istifadədə rahatdır, odun sobası isə klassik hamam ab-havası yaradır. Barrel Sauna Harvia, SAWO və Saunabee sobalarını satır və quraşdırır; güc saunanın həcminə görə seçilir.
+Barrel sauna həm elektrik, həm də odun sobası ilə işləyə bilər. Elektrik soba gündəlik istifadədə rahatdır, odun sobası isə klassik hamam ab-havası yaradır. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını satır və quraşdırır; güc saunanın həcminə görə seçilir.
 
 ## Barrel saunada seans necə keçirilir
 

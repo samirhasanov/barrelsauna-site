@@ -79,7 +79,7 @@ The final price depends on the length of the body, the interior wood, the stove 
 
 ## Choosing a stove
 
-A barrel sauna works with either an electric heater or a wood-burning stove. Electric is easiest for frequent use; wood brings a traditional atmosphere. We supply and install Harvia, SAWO and Saunabee stoves and size the output to the volume of the sauna room.
+A barrel sauna works with either an electric heater or a wood-burning stove. Electric is easiest for frequent use; wood brings a traditional atmosphere. We supply and install Harvia, SAWO, Teplodar, TMF and Fanlan stoves and size the output to the volume of the sauna room.
 
 ## Caring for a barrel sauna
 

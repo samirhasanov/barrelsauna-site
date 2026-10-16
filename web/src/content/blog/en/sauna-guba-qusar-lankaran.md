@@ -58,7 +58,7 @@ A practical tip for guest houses: if the sauna will be heated several times a da
 
 ## Heater: wood or electric
 
-In the villages around Guba and Qusar firewood is easy to come by, and a wood-burning heater delivers a classic bathhouse feel. In Lankaran, or at villas with a strong power supply, electric is more convenient: easy temperature control and effortless frequent use. Barrel Sauna sells and installs Harvia, SAWO and Saunabee heaters and sizes them to the sauna's volume. Compare options in our sauna heaters section.
+In the villages around Guba and Qusar firewood is easy to come by, and a wood-burning heater delivers a classic bathhouse feel. In Lankaran, or at villas with a strong power supply, electric is more convenient: easy temperature control and effortless frequent use. Barrel Sauna sells and installs Harvia, SAWO, Teplodar, TMF and Fanlan heaters and sizes them to the sauna's volume. Compare options in our sauna heaters section.
 
 ## Placement and foundation
 

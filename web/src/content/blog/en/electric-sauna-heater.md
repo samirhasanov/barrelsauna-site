@@ -1,10 +1,10 @@
 ---
 title: "Electric sauna heater: kW sizing, 230V vs 400V, controls"
-description: "How to choose an electric sauna heater: kW per m³, corrections for glass and stone walls, 230V vs 400V, control panels and Wi-Fi. Harvia, SAWO, EOS, HUUM."
+description: "How to choose an electric sauna heater: kW per m³, corrections for glass and stone walls, 230V vs 400V, control panels and Wi-Fi. Harvia, SAWO, Fanlan."
 pubDate: 2026-10-04
 lang: en
 translationKey: "c7"
-tags: ["electric sauna heater", "sauna heater sizing", "sauna control panel", "Harvia", "SAWO", "EOS", "HUUM"]
+tags: ["electric sauna heater", "sauna heater sizing", "sauna control panel", "Harvia", "SAWO", "Fanlan"]
 cover: "indoor-proj-10"
 coverAlt: "Electric sauna heater with stones in the corner of an indoor linden sauna, with wooden benches and a wall lamp"
 related: ["stoves", "indoor", "cabin"]
@@ -71,7 +71,7 @@ The panel is mounted outside the hot room — in the changing area or on a wall.
 - a display or touchscreen;
 - on some panels, **Wi-Fi** and app control.
 
-Examples: Harvia Xenio and Xenio WiFi, SAWO Saunova and Innova, EOS EmoTouch, HUUM UKU with its app. Always check that the panel is compatible with your heater model — some heaters only work with a separate control unit.
+Examples: Harvia Xenio and Xenio WiFi, SAWO Saunova and Innova. Always check that the panel is compatible with your heater model — some heaters only work with a separate control unit.
 
 ## Brands and example ranges
 
@@ -79,14 +79,13 @@ Examples: Harvia Xenio and Xenio WiFi, SAWO Saunova and Innova, EOS EmoTouch, HU
 |---|---|---|
 | Harvia (Finland) | Vega, KIP, Cilindro, Legend, Virta, Spirit | The widest range, from compact wall units to large stone towers |
 | SAWO (Finland) | Tower, Nordex, Scandia, Krios, Cumulus | Tower heaters, bench-integrated models, big stone capacity |
-| EOS (Germany) | Cubo, Thermat, Invisio | Premium design, concealed installation options |
-| HUUM (Estonia) | Drop, Hive, Cliff | Open, stone-filled look and app control |
+| Fanlan | SA, SAV, SCA, DM, FT | Wide choice of electric heaters for home and commercial saunas, up to 30 kW |
 
 All of these brands are in our [sauna heaters catalogue](/en/sauna-heaters), with output, suitable room volume and stone capacity listed for each model. Barrel Sauna sells and installs Harvia and SAWO heaters, and we're happy to advise on the others too.
 
 ## Stones and steam
 
-Stone capacity shapes the steam. Compact wall-mounted heaters hold around 20 kg of stones — they heat up fast but the steam is sharper. Models with a large stone load (such as SAWO Krios, Harvia Legend or HUUM Hive) hold heat longer and give softer steam. Check the stones once a year and replace any that crumble.
+Stone capacity shapes the steam. Compact wall-mounted heaters hold around 20 kg of stones — they heat up fast but the steam is sharper. Models with a large stone load (such as SAWO Krios or Harvia Legend) hold heat longer and give softer steam. Check the stones once a year and replace any that crumble.
 
 ## Installation checklist
 

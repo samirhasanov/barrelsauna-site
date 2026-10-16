@@ -77,7 +77,7 @@ Açıq SPA kompleksinin təxmini qiyməti **15,000–45,000 AZN**-dir. Məbləğ
 - isti otaqların sayı və ölçüsü;
 - hovuz və ya çənin olub-olmaması — [jakuzi və çənlər](/jakuzi-vanna) ayrıca seçilə bilər;
 - daxili ağac (cökə, sidr, abaşi, tik) və dekor (Himalay duz panelləri, dekorativ daşlar, LED işıqlandırma);
-- sobalar — Harvia, SAWO və ya Saunabee, odun və ya elektrik;
+- sobalar — Harvia, SAWO, Teplodar, TMF və ya Fanlan, odun və ya elektrik;
 - terras, örtük və həyət abadlaşdırması;
 - kommunikasiyaların uzunluğu və sahənin relyefi.
 

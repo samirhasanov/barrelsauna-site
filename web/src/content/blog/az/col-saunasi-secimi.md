@@ -98,7 +98,7 @@ Sauna nə qədər keyfiyyətli olsa da, düzgün hazırlanmamış sahədə probl
 | Tələblər | Güclü elektrik xətti | Baca və yanğın təhlükəsizliyi tədbirləri |
 | Kimə uyğundur | Tez-tez, qısa seanslar | Təbiət həvəskarları, kənd və dağ evləri |
 
-Barrel Sauna Harvia, SAWO və Saunabee brendlərinin sobalarını satır və quraşdırır. Sobanın gücü saunanın daxili həcminə görə hesablanır. Bütün variantlara [sobalar](/sobalar) səhifəsində baxa bilərsiniz.
+Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan brendlərinin sobalarını satır və quraşdırır. Sobanın gücü saunanın daxili həcminə görə hesablanır. Bütün variantlara [sobalar](/sobalar) səhifəsində baxa bilərsiniz.
 
 ## Büdcəni necə planlaşdırmalı
 

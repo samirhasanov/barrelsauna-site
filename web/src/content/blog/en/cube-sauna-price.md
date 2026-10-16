@@ -41,7 +41,7 @@ Exact dimensions are designed around your site and bench layout — a cube sauna
 1. **Capacity.** A bigger cube means more timber, more insulation and a more powerful stove.
 2. **Interior wood.** Linden is standard; cedar, abachi or teak cost more. A good compromise: linden walls, abachi benches.
 3. **Glass front.** The cube's signature feature is a fully glazed front wall. On a site with a view, it's close to essential.
-4. **Stove.** Electric or wood-burning — Harvia, SAWO or Saunabee, sized to the room volume.
+4. **Stove.** Electric or wood-burning — Harvia, SAWO, Teplodar, TMF or Fanlan, sized to the room volume.
 5. **Extras.** LED lighting, decorative stones, Himalayan salt panels, accessories.
 
 You can compare all model ranges on our [sauna prices](/en/sauna-prices) page.

@@ -71,7 +71,7 @@ Saunanı taxta terrasın üzərinə qoymaq mümkündür, amma əvvəlcə terras�
 
 ## Kiçik sauna üçün soba
 
-Kiçik həcm üçün güclü soba lazım deyil — əksinə, həddən artıq güclü soba otağı çox sərt qızdırır. Adətən kiçik saunalar üçün aşağı güclü elektrik sobaları (təxminən 3–4,5 kVt) kifayət edir; dəqiq güc saunanın həcminə görə hesablanır və elektrik xətti peşəkar elektriklə dəqiqləşdirilir. Odun sobası sevənlər üçün kompakt modellər də var. Barrel Sauna Harvia, SAWO və Saunabee sobalarını satır və quraşdırır — seçimlərə [sobalar](/sobalar) səhifəsində baxın.
+Kiçik həcm üçün güclü soba lazım deyil — əksinə, həddən artıq güclü soba otağı çox sərt qızdırır. Adətən kiçik saunalar üçün aşağı güclü elektrik sobaları (təxminən 3–4,5 kVt) kifayət edir; dəqiq güc saunanın həcminə görə hesablanır və elektrik xətti peşəkar elektriklə dəqiqləşdirilir. Odun sobası sevənlər üçün kompakt modellər də var. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını satır və quraşdırır — seçimlərə [sobalar](/sobalar) səhifəsində baxın.
 
 ## Kiçik saunada da keyfiyyət eynidir
 

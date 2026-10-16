@@ -61,7 +61,7 @@ A cottage sauna costs roughly **10,000–50,000 AZN**. The range is wide because
 - total floor area and number of rooms;
 - wet zones such as a hammam, steam room or pool, which need extra waterproofing and engineering;
 - interior timber: standard linden, or cedar, abachi or teak;
-- heater type and output (Harvia, SAWO, Saunabee);
+- heater type and output (Harvia, SAWO, Teplodar, TMF, Fanlan);
 - roofing, windows, lighting and décor (salt panels, decorative stone, log-cut décor, LED).
 
 For a first estimate, try the calculator on our [sauna prices](/en/sauna-prices) page or send us a message.

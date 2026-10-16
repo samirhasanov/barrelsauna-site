@@ -45,7 +45,7 @@ Many saunas also have a **drying vent** near the ceiling: closed during the sess
 
 ### Saunas with an electric heater
 
-An electric heater doesn't burn air, so ventilation is about comfort and moisture balance. The inlet sits near the heater so incoming air warms straight away. Heater output and vent positions follow the manufacturer's manual — Harvia, SAWO and Saunabee all specify these requirements for their heaters.
+An electric heater doesn't burn air, so ventilation is about comfort and moisture balance. The inlet sits near the heater so incoming air warms straight away. Heater output and vent positions follow the manufacturer's manual — Harvia, SAWO, Teplodar, TMF and Fanlan all specify these requirements for their heaters.
 
 ### Saunas with a wood-fired heater
 

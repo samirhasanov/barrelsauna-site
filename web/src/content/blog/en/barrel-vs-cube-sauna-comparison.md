@@ -92,7 +92,7 @@ Whatever the shape, our outdoor saunas are built to the same standard:
 - **Interior lining:** linden by default; cedar, abachi, African abachi or teak on request.
 - **Walls:** multilayer build with mineral stone wool and a special moisture-blocking membrane.
 - **Roof:** tegola shingles over roofing felt; ondulin or profiled metal sheet on some models.
-- **Heater:** Harvia, SAWO or Saunabee — wood-burning or electric.
+- **Heater:** Harvia, SAWO, Teplodar, TMF or Fanlan — wood-burning or electric.
 
 ## Before you choose: site and installation
 

@@ -44,7 +44,7 @@ Premium ağac qiyməti artırır, lakin bütün interyeri dəyişmək şərt dey
 
 ### 3. Soba növü
 
-Barrel sauna **elektrik** və ya **odun** sobası ilə işləyə bilər. Elektrik soba gündəlik istifadədə rahatdır, odun sobası isə klassik hamam ab-havası yaradır və elektrik xəttinə ehtiyac duymur. Barrel Sauna Harvia, SAWO və Saunabee sobalarını təklif edir; güc saunanın həcminə görə seçilir. Soba modelləri [sobalar](/sobalar) səhifəsindədir.
+Barrel sauna **elektrik** və ya **odun** sobası ilə işləyə bilər. Elektrik soba gündəlik istifadədə rahatdır, odun sobası isə klassik hamam ab-havası yaradır və elektrik xəttinə ehtiyac duymur. Barrel Sauna Harvia, SAWO, Teplodar, TMF və Fanlan sobalarını təklif edir; güc saunanın həcminə görə seçilir. Soba modelləri [sobalar](/sobalar) səhifəsindədir.
 
 ### 4. Şüşə
 

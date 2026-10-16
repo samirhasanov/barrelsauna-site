@@ -34,7 +34,7 @@ This is where the key decisions are made:
 
 - **Capacity** — how many people usually bathe together.
 - **Interior wood** — linden (standard), cedar, abachi, African abachi or teak.
-- **Stove** — electric or wood-burning; Harvia, SAWO or Saunabee.
+- **Stove** — electric or wood-burning; Harvia, SAWO, Teplodar, TMF or Fanlan.
 - **Glass** — a classic window, a panoramic wall or a fully glazed front.
 - **Extras** — a terrace, LED lighting, decor (decorative stones, Himalayan salt panels, log-cut decor), accessories.
 - **Rooms for cottages and SPA complexes** — sauna, steam room, salt room, Turkish hamam, broom (venik) room, massage room, hot or cold tub, pool, shower/WC, lounge.

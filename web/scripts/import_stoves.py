@@ -115,8 +115,12 @@ for k, fs in names.items():
             if len(f['variants']) == 1: drop.add(f['id'])
 families = [f for f in families if f['id'] not in drop]
 
+# owner 2026-10-16: the site shows ONLY these brands
+ALLOWED = {'Harvia', 'SAWO', 'Teplodar', 'TMF', 'Fanlan'}
+families = [f for f in families if f['brand'] in ALLOWED]
+
 order = {'wood-stove': 0, 'electric-stove': 1, 'combi-stove': 2, 'steam-generator': 3, 'control-panel': 4, 'infrared': 5}
-brand_order = {'Harvia': 0, 'SAWO': 1, 'Teplodar': 2, 'TMF': 3}
+brand_order = {'Harvia': 0, 'SAWO': 1, 'Teplodar': 2, 'TMF': 3, 'Fanlan': 4}
 # well-known series first inside each brand
 BOOST = ['legend', 'cilindro', 'vega', 'kip', ' m3', 'pro 20', 'virta', 'the wall', 'spirit', 'linear',
          'tower', 'nordex', 'scandia', 'krios', 'cumulus', 'savonia', 'mini x', 'heaterking', 'aries',
@@ -129,7 +133,7 @@ families.sort(key=lambda f: (order[f['category']], brand_order.get(f['brand'], 9
 
 # Default "All" view: round-robin the most popular brands' wood + electric heaters,
 # then everything else in category order.
-POPULAR = ['Harvia', 'SAWO', 'Teplodar', 'TMF']
+POPULAR = ['Harvia', 'SAWO', 'Teplodar', 'TMF', 'Fanlan']
 buckets = [[f for f in families if f['brand'] == b and f['category'] == c] for c in ('wood-stove', 'electric-stove') for b in POPULAR]
 def spread(bucket):
     # one family per series first (e.g. Legend, Cilindro, Vega…), then the rest
