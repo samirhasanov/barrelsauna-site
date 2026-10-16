@@ -2623,5 +2623,118 @@
   },
   "image": "img/sawo-wooden-hook-rack-5.webp",
   "source_url": "https://www.sawo.com/accessory-products/#section-cloth-hangers"
+ },
+ {
+  "id": "fanlan-kd-004a-bucket-ladle",
+  "brand": "Fanlan",
+  "category": "bucket-ladle",
+  "name": "Fanlan KD-004A wooden bucket and ladle",
+  "specs": {
+   "model_code": "KD-004A",
+   "capacity": "4 L (6 L and 7 L on request)",
+   "material": "Pine or red cedar staves, plastic inner liner; wooden ladle (≈35 cm)",
+   "size": "26 × 22 × 27 cm"
+  },
+  "description": {
+   "az": "Şam və ya qırmızı sidr taxtasından yığılmış, içində plastik qabı olan klassik sauna vedrəsi və uzun saplı taxta çömçə dəsti. Plastik layner suyun sızmasının qarşısını alır, 4 litrlik həcmdən başqa 6 və 7 litrlik variantlar da var.",
+   "ru": "Классический набор из ведра для сауны из сосны или красного кедра с пластиковым вкладышем и деревянного ковша с длинной ручкой. Вкладыш не даёт воде протекать; кроме 4 л, есть варианты на 6 и 7 л.",
+   "en": "A classic sauna bucket in pine or red cedar with a plastic liner, paired with a long-handled wooden ladle. The liner keeps it watertight, and besides the 4-litre size there are 6 and 7-litre versions."
+  },
+  "image": "img/fanlan-bucket-ladle-kd-004a.jpg",
+  "source_url": "https://www.fanlansauna.com/sauna-series-accessories-wooden-sauna-bucket-and-spoon-for-sauna-dry-room.html"
+ },
+ {
+  "id": "fanlan-led-sauna-light",
+  "brand": "Fanlan",
+  "category": "lighting",
+  "name": "Fanlan heat-resistant LED sauna light",
+  "specs": {
+   "size": "22 × 11 × 9 cm",
+   "material": "Shatter-resistant glass, reinforced plastic housing",
+   "light": "LED, 2700 K warm white, dimmable",
+   "protection": "IP65",
+   "options": "wall mounting, vertical or horizontal; surface or recessed; low-voltage versions"
+  },
+  "description": {
+   "az": "Quru sauna və buxar otaqları üçün suya davamlı (IP65), sınmayan şüşəli oval divar lampası. 2700 K isti ağ LED işığı tənzimlənə bilir, lampa şaquli və ya üfüqi quraşdırılır.",
+   "ru": "Влагозащищённый (IP65) овальный настенный светильник с ударопрочным стеклом для сухих саун и паровых комнат. Тёплый белый LED-свет 2700 K регулируется по яркости, монтаж вертикальный или горизонтальный.",
+   "en": "A waterproof (IP65) oval wall light with shatter-resistant glass for dry saunas and steam rooms. Its 2700 K warm white LED light is dimmable, and it mounts vertically or horizontally."
+  },
+  "image": "img/fanlan-led-sauna-light.jpg",
+  "source_url": "https://www.fanlansauna.com/Heat-Resistant-LED-Sauna-Light-for-Steam-Rooms-pd559176548.html"
+ },
+ {
+  "id": "fanlan-wooden-sauna-backrest",
+  "brand": "Fanlan",
+  "category": "headrest-backrest",
+  "name": "Fanlan wooden sauna backrest",
+  "specs": {
+   "material": "Canadian cedar or thermo-treated hemlock, mineral-oil finish",
+   "size": "approx. 61 × 46 cm (24″ × 18″)",
+   "options": "matching headrest approx. 30 × 15 cm (12″ × 6″)"
+  },
+  "description": {
+   "az": "Kanada sidrindən və ya termik işlənmiş hemlok ağacından hazırlanmış, belin təbii əyriliyinə uyğun qövsvari sauna söykənəcəyi. Divara gizli bərkidicilərlə asılır, kürəyi isti taxta skamyadan qoruyur.",
+   "ru": "Изогнутая спинка для сауны из канадского кедра или термообработанной тсуги, повторяющая естественный изгиб спины. Крепится к стене на скрытый крепёж и защищает спину от горячей скамьи.",
+   "en": "A curved sauna backrest in Canadian cedar or thermo-treated hemlock that follows the natural line of the spine. It fixes to the wall with hidden hardware and keeps your back off the hot bench."
+  },
+  "image": "img/fanlan-wooden-backrest.jpg",
+  "source_url": "https://www.fanlansauna.com/Portable-Wooden-Sauna-Backrest-Sauna-Accessories-pd579176548.html"
+ },
+ {
+  "id": "fanlan-thermometer-hygrometer",
+  "brand": "Fanlan",
+  "category": "thermometer-hygrometer",
+  "name": "Fanlan sauna thermometer-hygrometer",
+  "specs": {
+   "range": "0–120 °C, 10–100 % RH",
+   "material": "Wooden frame, brass details, shatterproof glass",
+   "options": "°C / °F scale"
+  },
+  "description": {
+   "az": "Taxta çərçivəli, iki siferblatlı termometr-hiqrometr saunada temperaturu 0–120 °C, nəmliyi isə 10–100 % aralığında göstərir. Tavandan təxminən 30 sm aşağıda, soba və qapıdan uzaqda divara bərkidilir.",
+   "ru": "Термогигрометр с двумя циферблатами в деревянной рамке показывает температуру 0–120 °C и влажность 10–100 %. Крепится на стену примерно в 30 см под потолком, подальше от печи и двери.",
+   "en": "A twin-dial thermometer-hygrometer in a wooden frame that reads 0–120 °C and 10–100 % humidity. It hangs on the wall about 30 cm below the ceiling, away from the heater and the door."
+  },
+  "image": "img/fanlan-thermometer-hygrometer.jpg",
+  "source_url": "https://www.fanlansauna.com/Sauna-Thermometer-Hygrometer-for-Temperature-and-Humidity-Monitoring-pd599176548.html"
+ },
+ {
+  "id": "fanlan-tempered-glass-sauna-door",
+  "brand": "Fanlan",
+  "category": "door-window",
+  "name": "Fanlan tempered glass sauna door",
+  "specs": {
+   "glass": "5, 6 or 8 mm tempered safety glass, clear or frosted patterns",
+   "frame": "Aluminium alloy, natural-wood or dark-brown finish",
+   "size": "1860 × 760 / 670 mm (custom sizes available)",
+   "options": "hinged or sliding; door-and-window combinations; reversible swing"
+  },
+  "description": {
+   "az": "5, 6 və ya 8 mm qalınlığında möhkəmləndirilmiş şüşədən, təbii ağac və ya tünd qəhvəyi rəngli alüminium çərçivəli sauna qapısı. Standart ölçüsü 1860 × 760/670 mm-dir, fərdi ölçülər, sürüşən və pəncərəli variantlar da sifariş edilir.",
+   "ru": "Дверь для сауны из закалённого стекла толщиной 5, 6 или 8 мм в алюминиевой раме под натуральное дерево или тёмно-коричневого цвета. Стандартный размер 1860 × 760/670 мм; доступны нестандартные размеры, раздвижные модели и варианты с окном.",
+   "en": "A sauna door in 5, 6 or 8 mm tempered glass with an aluminium frame in a natural-wood or dark-brown finish. The standard size is 1860 × 760/670 mm, and custom sizes, sliding versions and door-and-window units are available."
+  },
+  "image": "img/fanlan-glass-door.jpg",
+  "source_url": "https://www.fanlansauna.com/Tempered-Glass-Sauna-Door-with-Aluminum-Frame-Options-pd589176548.html"
+ },
+ {
+  "id": "fanlan-heating-tube-2kw",
+  "brand": "Fanlan",
+  "category": "other-accessory",
+  "name": "Fanlan 2 kW heating element (spare part)",
+  "specs": {
+   "power_kw": "2",
+   "material": "304 stainless steel tube, nickel-chrome wire, mineral-oxide insulation",
+   "size": "Ø 8 or 10 mm, length 300–1200 mm",
+   "use": "replacement element for sauna heaters and steam generators"
+  },
+  "description": {
+   "az": "Sauna sobaları və buxar generatorları üçün 2 kVt gücündə ehtiyat qızdırıcı element (TEN): 304 paslanmayan polad boru, nikel-xrom spiral və mineral izolyasiya. 8 və ya 10 mm diametrdə, 300–1200 mm uzunluqda sifariş edilir.",
+   "ru": "Запасной ТЭН мощностью 2 кВт для электрокаменок и парогенераторов: трубка из нержавеющей стали 304, нихромовая спираль и минеральная изоляция. Диаметр 8 или 10 мм, длина от 300 до 1200 мм.",
+   "en": "A 2 kW spare heating element for sauna heaters and steam generators, with a 304 stainless steel tube, nickel-chrome wire and mineral insulation. It is made in 8 or 10 mm diameters and lengths from 300 to 1200 mm."
+  },
+  "image": "img/fanlan-heating-tube-2kw.jpg",
+  "source_url": "https://www.fanlansauna.com/2kW-Sauna-Heating-Tube-for-Steam-Generator-Elements-pd569176548.html"
  }
 ]

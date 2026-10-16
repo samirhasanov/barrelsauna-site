@@ -6,10 +6,11 @@ SRC = os.path.join(ROOT, '..', '_research', 'products')
 OUT_IMG = os.path.join(ROOT, 'src', 'assets', 'products')
 os.makedirs(OUT_IMG, exist_ok=True)
 items = json.load(open(os.path.join(SRC, 'products.json')))
-extra = os.path.join(SRC, 'accessories2.json')
-if os.path.exists(extra):
-    names = {p['name'] for p in items}
-    items += [p for p in json.load(open(extra)) if p['name'] not in names]
+for extra in ('accessories2.json', 'fanlan-accessories.json'):
+    extra = os.path.join(SRC, extra)
+    if os.path.exists(extra):
+        names = {p['name'] for p in items}
+        items += [p for p in json.load(open(extra)) if p['name'] not in names]
 keep = []
 for p in items:
     p.pop('price', None)

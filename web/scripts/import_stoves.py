@@ -29,6 +29,15 @@ for p in json.load(open(os.path.join(RES, 'stoves', 'saunabee.json'))):
     p['_img'] = os.path.join(RES, 'stoves', p['image'])
     items.append(p)
 print('saunabee skipped: dupes', skipped_dupe, 'no image', skipped_noimg)
+# any other supplier catalogs dropped into _research/stoves (e.g. fanlan.json)
+for f in sorted(glob.glob(os.path.join(RES, 'stoves', '*.json'))):
+    if os.path.basename(f) in ('harvia.json', 'sawo.json', 'saunabee.json'):
+        continue
+    extra = [p for p in json.load(open(f)) if p.get('image')]
+    for p in extra:
+        p['_img'] = os.path.join(RES, 'stoves', p['image'])
+    items += extra
+    print('extra catalog', os.path.basename(f), len(extra))
 # stoves already curated in products.json (images in _research/products)
 for p in json.load(open(os.path.join(ROOT, 'src', 'data', 'products.json'))):
     if p['category'] in STOVE_CATS:
@@ -41,7 +50,10 @@ for p in items:
     p.pop('price', None)
     if p['category'] not in STOVE_CATS:
         continue
-    key = (p['specs'].get('model_code') or p['name']).lower().replace(' ', '')
+    # same model code = same product (Harvia/SAWO come from both the official sites and Saunabee);
+    # Fanlan reuses codes across different series (CH Round vs DMA), so include the series there
+    series = (p.get('series') or '') if p['brand'] == 'Fanlan' else ''
+    key = (p['brand'] + '|' + series + '|' + (p['specs'].get('model_code') or p['name'])).lower().replace(' ', '')
     if key in seen:
         continue
     seen.add(key); uniq.append(p)
